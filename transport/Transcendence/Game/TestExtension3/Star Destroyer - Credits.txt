@@ -1,0 +1,20 @@
+                                                                         Imperial Class Star Destroyer by Darth Saber    
+                                                                                   (darth_saber@live.com)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ "Manufactured by the Kuat Drive Yards, from modified plans (images) stolen from the Central Databank on Coruscant (Star Wars: Empire At War), this version of the Imperial Star Destroyer is sure to strike fear in the hearts og any Rebellion. 
+
+Credit Where Credit Is Due
+-----------------------------
+Original graphics                         - LucasArts
+Stolen graphics, heavily modified - Darth Saber
+xml                                             - Darth Saber
+modding help and instruction       - dvlenk6
+image manipulation                     - Windows Paint; Gimp; EZ Image Rotator; and the "Print Screen" keyboard key (screenshots)
+Katana Missile Defense Turret   - konekone0807
+--------------------------------------------------------------------------------------------------------------------------------                                 
+
+Additional Notes 
+------------------
+1. The image of the Star Destroyer originally came from the PC game: "Star Wars: Empire At War;" however, since I am a Sith Master, current legalities do not really concern me at this point. Use for your own pleasure, and at your own risk; but never charge any money for this mod. 
+
+2. The Katana Missile Defense Turret was created by konekone0807 as part of his Aquila Cruiser / Explorer mod. I copied his code and used it to create a stand alone mod; however, I kept everything exactly as he had it, right down to his UNID; if you have his mod installed, then you will not need to install the KMDT which I have included. The reason I did this is so that my Star Destroyer could use six KMDTs as part of its xml coding. Thus any credit for the Katana Missile Defense Turret rightly belongs to its creator: konekone0807.

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?> 
+
+<!DOCTYPE TranscendenceExtension 
+[	<!ENTITY nwgImage		"0xDA7AFFFF"> 
+
+]> 
+
+
+<TranscendenceExtension UNID="0xDA7AFFFE" version="0.99c"> 
+
+
+<!-- image resources -->
+
+<Image UNID="&nwgImage;"		bitmap="test.jpg" bitmask="test.jpg" />
+
+</TranscendenceExtension>
+

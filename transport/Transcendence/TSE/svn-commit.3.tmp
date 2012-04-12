@@ -1,0 +1,5 @@
+When the number of timers gets changed (removed) during a timer event, the index outstanding may no longer be valid.  If that's the case, search through the outstanding timers to re-discover the current location before proceeding.
+Fix for #82, thanks to Demanther and alterecco.
+--This line, and those below, will be ignored--
+
+M    CSystem.cpp

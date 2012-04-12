@@ -1,0 +1,14 @@
+level	category	frequency	shortName	mass	totalCount	averageDamage			
+6	Missile	C	kiloton cannon shell	150	1268.59	264	frag	20	 13.2 
+7	Missile	UC	thermo cannon shell cartridge	25	3438.66	26		20	 1.3 
+7	Missile	UC	XM900 Lucifer missile	100	365.05	75	seek	20	 3.8 
+7	Missile	C	CRM100 Fatboy mine	150	326.52	507	frag	20	 25.4 
+8	Missile	C	Gotha-10 missile	50	1785.37	26		25	 1.0 
+8	Missile	UC	TM7 warhead	60	4035.43	30		25	 1.2 
+8	Missile	UC	high-flux MAG	60	103.1	100		25	 4.0 
+8	Missile	UC	CRM500 Running Man mine	150	159.57	507	frag	25	 20.3 
+9	Missile	C	Gotha-400 seeker	50	1219.86	26	seek	32	 0.8 
+9	Missile	UC	S3 Medusa missile	300	62.99	26		32	 0.8 
+9	Missile	R	Black Strelka missile	35	345.21	58	frag	32	 1.8 
+9	Missile	R	M2 Vulcan missile	350	380.59	125	area	32	 3.9 
+10	Missile	R	M5 Nemesis missile	500	4.23	187	area	40	 4.7 

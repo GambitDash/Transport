@@ -1,0 +1,4 @@
+Fully clear the adventure screen.
+--This line, and those below, will be ignored--
+
+M    CAdventureDescDisplay.cpp

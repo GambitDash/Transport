@@ -1,0 +1,419 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+AGArea	AGArea.cpp	/^AGArea::AGArea (void) : CObject(NULL),$/;"	f	class:AGArea
+AGScreen	AGScreen.cpp	/^AGScreen::AGScreen (const RECT &rcRect) : CObject(NULL),$/;"	f	class:AGScreen
+AGScreen	AGScreen.cpp	/^AGScreen::AGScreen (void) : CObject(NULL)$/;"	f	class:AGScreen
+AddArea	AGScreen.cpp	/^ALERROR AGScreen::AddArea (AGArea *pArea, const RECT &rcRect, DWORD dwTag)$/;"	f	class:AGScreen
+AddArea	CGFrameArea.cpp	/^ALERROR CGFrameArea::AddArea (AGArea *pArea, const RECT &rcRect, DWORD dwTag)$/;"	f	class:CGFrameArea
+AddEffect	AGArea.cpp	/^void AGArea::AddEffect (const SEffectDesc &Effect)$/;"	f	class:AGArea
+AddShadowEffect	AGArea.cpp	/^void AGArea::AddShadowEffect (void)$/;"	f	class:AGArea
+AdjustCoords	CG16bitImage.cpp	/^bool CG16bitImage::AdjustCoords (int *xSrc, int *ySrc, int cxSrc, int cySrc,$/;"	f	class:CG16bitImage
+AdjustCoords	CGImage.cpp	/^bool CGImage::AdjustCoords (int *xSrc, int *ySrc, int cxSrc, int cySrc, int *xDest, int *yDest, int *cxWidth, int *cyHeight) const$/;"	f	class:CGImage
+AdvanceAET	Polygon.cpp	/^void AdvanceAET (void)$/;"	f
+BindSurface	CG16bitImage.cpp	/^ALERROR CG16bitImage::BindSurface(SDL_Surface *pSurf)$/;"	f	class:CG16bitImage
+BindSurface	CGImage.cpp	/^ALERROR CGImage::BindSurface(struct SDL_Surface *img) $/;"	f	class:CGImage
+BlendColor	CGImage.cpp	/^COLORREF CGImage::BlendColor (COLORREF pxDest, COLORREF pxSource, BYTE bAlpha) $/;"	f	class:CGImage
+BlendPixel	CG16bitImage.cpp	/^WORD CG16bitImage::BlendPixel (WORD pxDest, WORD pxSource, DWORD byOpacity)$/;"	f	class:CG16bitImage
+BlendPixelGray	CG16bitImage.cpp	/^WORD CG16bitImage::BlendPixelGray (WORD pxDest, WORD pxSource, DWORD byOpacity)$/;"	f	class:CG16bitImage
+BlendPixelPM	CG16bitImage.cpp	/^WORD CG16bitImage::BlendPixelPM (DWORD pxDest, DWORD pxSource, DWORD byOpacity)$/;"	f	class:CG16bitImage
+Blt	CG16bitImage.cpp	/^void CG16bitImage::Blt (int xSrc, int ySrc, int cxWidth, int cyHeight, const CG16bitImage &Source, int xDest, int yDest)$/;"	f	class:CG16bitImage
+Blt	CGImage.cpp	/^void CGImage::Blt (int x, int y, CGImage &Source, int xSrc, int ySrc, int x2Src, int y2Src, bool bUseAlpha)$/;"	f	class:CGImage
+BltInto	CG16bitImage.cpp	/^void CG16bitImage::BltInto (struct SDL_Surface *src, int x, int y)$/;"	f	class:CG16bitImage
+BltLighten	CG16bitImage.cpp	/^void CG16bitImage::BltLighten (int xSrc, int ySrc, int cxWidth, int cyHeight, int iAlpha, const CG16bitImage &Source, int xDest, int yDest)$/;"	f	class:CG16bitImage
+BltRotoZ	CGImage.cpp	/^void CGImage::BltRotoZ (int x, int y, int x2, int y2, CGImage &Source,$/;"	f	class:CGImage
+BltToAlpha	CGImage.cpp	/^ALERROR CGImage::BltToAlpha (struct SDL_Surface *sAlpha)$/;"	f	class:CGImage
+BltToDC	CG16bitImage.cpp	/^void CG16bitImage::BltToDC (int x, int y)$/;"	f	class:CG16bitImage
+BltToSurface	CG16bitImage.cpp	/^void CG16bitImage::BltToSurface (SDL_Surface *dst, int x, int y)$/;"	f	class:CG16bitImage
+BltWithMask	CG16bitImage.cpp	/^void CG16bitImage::BltWithMask (int xSrc, int ySrc, int cxWidth, int cyHeight, const CG16bitImage &Mask, const CG16bitImage &Source, int xDest, int yDest)$/;"	f	class:CG16bitImage
+BreakText	CG16bitFont.cpp	/^void CG16bitFont::BreakText (const CString &sText, int cxWidth, CStringArray *pLines, DWORD dwFlags) const$/;"	f	class:CG16bitFont
+BresenhamLine	16bitImageDrawing.cpp	/^void CG16bitImage::BresenhamLine (int x1, int y1, $/;"	f	class:CG16bitImage
+BresenhamLineAA	16bitImageDrawing.cpp	/^void CG16bitImage::BresenhamLineAA (int x1, int y1, $/;"	f	class:CG16bitImage
+BresenhamLineAAFade	16bitImageDrawing.cpp	/^void CG16bitImage::BresenhamLineAAFade (int x1, int y1, $/;"	f	class:CG16bitImage
+BuildGlobalEdgeTable	Polygon.cpp	/^void BuildGlobalEdgeTable (int iVertexCount, SPoint *pVertexList, SEdgeState *NextFreeEdgeStruc)$/;"	f
+CG16bitFont	CG16bitFont.cpp	/^CG16bitFont::CG16bitFont (void) : CObject(NULL), m_Font(NULL)$/;"	f	class:CG16bitFont
+CG16bitImage	CG16bitImage.cpp	/^CG16bitImage::CG16bitImage (void) : CObject(NULL),$/;"	f	class:CG16bitImage
+CG16bitRegion	CG16bitRegion.cpp	/^CG16bitRegion::CG16bitRegion (void) : m_iCount(0), m_pList(NULL)$/;"	f	class:CG16bitRegion
+CG16bitSprite	CG16bitSprite.cpp	/^CG16bitSprite::CG16bitSprite (void) :$/;"	f	class:CG16bitSprite
+CGButtonArea	CGButtonArea.cpp	/^CGButtonArea::CGButtonArea (void) : m_pLabelFont(NULL),$/;"	f	class:CGButtonArea
+CGFrameArea	CGFrameArea.cpp	/^CGFrameArea::CGFrameArea (void) :$/;"	f	class:CGFrameArea
+CGImage	CGImage.cpp	/^CGImage::CGImage (void) : CObject(NULL), m_Img(NULL)$/;"	f	class:CGImage
+CGImageArea	CGImageArea.cpp	/^CGImageArea::CGImageArea (void) : m_pImage(NULL),$/;"	f	class:CGImageArea
+CGTextArea	CGTextArea.cpp	/^CGTextArea::CGTextArea (void) :$/;"	f	class:CGTextArea
+CSoundMgr	Sound.cpp	/^CSoundMgr::CSoundMgr (void) : m_Music(NULL), m_iSoundVolume(SDL_MIX_MAXVOLUME),$/;"	f	class:CSoundMgr
+CharMetrics	CG16bitFont.cpp	/^struct CharMetrics$/;"	s	file:
+CleanUp	Sound.cpp	/^void CSoundMgr::CleanUp (void)$/;"	f	class:CSoundMgr
+ColorTransBlt	CG16bitImage.cpp	/^void CG16bitImage::ColorTransBlt (int xSrc, int ySrc, int cxWidth, int cyHeight, int iAlpha, const CG16bitImage &Source, int xDest, int yDest)$/;"	f	class:CG16bitImage
+ColorTransBlt	CG16bitSprite.cpp	/^void CG16bitSprite::ColorTransBlt (CG16bitImage &Dest, int xDest, int yDest, int xSrc, int ySrc, int cxWidth, int cyHeight)$/;"	f	class:CG16bitSprite
+ConvertTo16Bit	CG16bitImage.cpp	/^SDL_Surface *ConvertTo16Bit(SDL_Surface *src, BOOL &bConvert)$/;"	f
+ConvertToSprite	CG16bitImage.cpp	/^void CG16bitImage::ConvertToSprite (void)$/;"	f	class:CG16bitImage
+CopyAlpha	CG16bitImage.cpp	/^void CG16bitImage::CopyAlpha (int xSrc, int ySrc, int cxWidth, int cyHeight, const CG16bitImage &Source, int xDest, int yDest)$/;"	f	class:CG16bitImage
+CopyAlpha	CGImage.cpp	/^void CGImage::CopyAlpha (int xSrc, int ySrc, int cxWidth, int cyHeight, const CGImage &Soruce, int xDest, int yDest) $/;"	f	class:CGImage
+Create	CG16bitFont.cpp	/^ALERROR CG16bitFont::Create (const CString &sTypeface, int iSize, bool bBold, bool bItalic, bool bUnderline)$/;"	f	class:CG16bitFont
+Create	CGImage.cpp	/^ALERROR CGImage::Create (int cxWidth, int cyHeight, BYTE depth)$/;"	f	class:CGImage
+CreateBlank	CG16bitImage.cpp	/^ALERROR CG16bitImage::CreateBlank (int cxWidth, int cyHeight, bool bAlphaMask)$/;"	f	class:CG16bitImage
+CreateBlankAlpha	CG16bitImage.cpp	/^ALERROR CG16bitImage::CreateBlankAlpha (int cxWidth, int cyHeight, bool bInitialize)$/;"	f	class:CG16bitImage
+CreateFromBitmap	CG16bitImage.cpp	/^ALERROR CG16bitImage::CreateFromBitmap (CString &sFilename, bool bPremultAlpha)$/;"	f	class:CG16bitImage
+CreateFromConvexPolygon	CG16bitRegion.cpp	/^void CG16bitRegion::CreateFromConvexPolygon (int iVertexCount, SPoint *pVertexList)$/;"	f	class:CG16bitRegion
+CreateFromFile	CGImage.cpp	/^ALERROR CGImage::CreateFromFile (CString &sFilename)$/;"	f	class:CGImage
+CreateFromImage	CG16bitSprite.cpp	/^ALERROR CG16bitSprite::CreateFromImage (const CG16bitImage &Source)$/;"	f	class:CG16bitSprite
+CreateFromPolygon	CG16bitRegion.cpp	/^void CG16bitRegion::CreateFromPolygon (int iVertexCount, SPoint *pVertexList)$/;"	f	class:CG16bitRegion
+CreateFromSurface	CG16bitImage.cpp	/^ALERROR CG16bitImage::CreateFromSurface (SDL_Surface *bmp, SDL_Surface *bmsk, bool bPremultAlpha)$/;"	f	class:CG16bitImage
+CreateFromSurface	CGImage.cpp	/^ALERROR CGImage::CreateFromSurface (struct SDL_Surface *sData, struct SDL_Surface *sAlpha, bool _notused)$/;"	f	class:CGImage
+CreateScanLinesFromPolygon	Polygon.cpp	/^int CreateScanLinesFromPolygon (int iVertexCount, SPoint *pVertexList, CG16bitRegion::SRun **retpLines)$/;"	f
+CreateScanLinesFromSimplePolygon	PolygonSimple.cpp	/^int CreateScanLinesFromSimplePolygon (int iVertexCount, SPoint *pVertexList, CG16bitRegion::SRun **retpLines)$/;"	f
+DRAW_PIXEL	16bitDrawCircle.cpp	1146;"	d	file:
+DRAW_PIXEL	16bitDrawCircle.cpp	1177;"	d	file:
+DRAW_PIXEL	16bitDrawCircle.cpp	128;"	d	file:
+DRAW_PIXEL	16bitDrawCircle.cpp	363;"	d	file:
+DRAW_PIXEL	16bitDrawCircle.cpp	432;"	d	file:
+DRAW_PIXEL	16bitDrawCircle.cpp	489;"	d	file:
+DRAW_PIXEL	16bitDrawCircle.cpp	554;"	d	file:
+DRAW_PIXEL	16bitDrawCircle.cpp	606;"	d	file:
+DRAW_PIXEL	16bitDrawCircle.cpp	677;"	d	file:
+DRAW_PIXEL	16bitDrawCircle.cpp	97;"	d	file:
+DeleteData	CG16bitImage.cpp	/^void CG16bitImage::DeleteData (void)$/;"	f	class:CG16bitImage
+DeleteData	CG16bitSprite.cpp	/^void CG16bitSprite::DeleteData (void)$/;"	f	class:CG16bitSprite
+Destroy	CG16bitFont.cpp	/^void CG16bitFont::Destroy (void)$/;"	f	class:CG16bitFont
+DestroyArea	AGScreen.cpp	/^void AGScreen::DestroyArea (AGArea *pArea)$/;"	f	class:AGScreen
+DiscardSurface	CG16bitImage.cpp	/^void CG16bitImage::DiscardSurface (void)$/;"	f	class:CG16bitImage
+DiscardSurface	CGImage.cpp	/^void CGImage::DiscardSurface (void) $/;"	f	class:CGImage
+DispPixFormat	CGImage.cpp	/^struct SDL_PixelFormat *CGImage::DispPixFormat;$/;"	m	class:CGImage	file:
+DrawAlpha	CG16bitImage.cpp	/^void CG16bitImage::DrawAlpha(int xSrc, int ySrc, int cxWidth, int cyHeight, SDL_Surface *Source, WORD wColor, int xDest, int yDest, BYTE byOpacity)$/;"	f	class:CG16bitImage
+DrawAlphaGradientCircle	16bitDrawCircle.cpp	/^void DrawAlphaGradientCircle (CG16bitImage &Dest, $/;"	f
+DrawAlphaGradientCircleLine	16bitDrawCircle.cpp	/^void DrawAlphaGradientCircleLine (const SAlphaGradientCircleLineCtx &Ctx, int x, int y)$/;"	f
+DrawBltCircle	16bitDrawCircle.cpp	/^void DrawBltCircle (CG16bitImage &Dest, $/;"	f
+DrawBltCircleLine	16bitDrawCircle.cpp	/^void DrawBltCircleLine (const SBltCircleLineCtx &Ctx, int x, int y)$/;"	f
+DrawBrokenLine	16bitImageDrawing.cpp	/^void DrawBrokenLine (CG16bitImage &Dest, int xSrc, int ySrc, int xDest, int yDest, int xyBreak, WORD wColor)$/;"	f
+DrawCircleBlt	CGImage.cpp	/^void CGImage::DrawCircleBlt (int x, int y, int iRadius, const CGImage &Src, int xSrc, int ySrc, int x2Src, int y2Src, BYTE bAlpha)$/;"	f	class:CGImage
+DrawCircleFilled	CGImage.cpp	/^void CGImage::DrawCircleFilled (int x, int y, int iRadius, COLORREF wColor) $/;"	f	class:CGImage
+DrawCircleGradient	CGImage.cpp	/^void CGImage::DrawCircleGradient (int x, int y, int iRadius, COLORREF wColor) $/;"	f	class:CGImage
+DrawDot	16bitImageDrawing.cpp	/^void CG16bitImage::DrawDot (int x, int y, WORD wColor, MarkerTypes iMarker)$/;"	f	class:CG16bitImage
+DrawDot	CGImage.cpp	/^void CGImage::DrawDot (int x, int y, COLORREF wColor, MarkerTypes iMarker) $/;"	f	class:CGImage
+DrawDottedLine	16bitImageDrawing.cpp	/^void DrawDottedLine (CG16bitImage &Dest, int x1, int y1, int x2, int y2, WORD wColor)$/;"	f
+DrawFilledCircle	16bitDrawCircle.cpp	/^void DrawFilledCircle (CG16bitImage &Dest, int xDest, int yDest, int iRadius, WORD wColor)$/;"	f
+DrawFilledCircleGray	16bitDrawCircle.cpp	/^void DrawFilledCircleGray (CG16bitImage &Dest, int xDest, int yDest, int iRadius, WORD wColor, DWORD byOpacity)$/;"	f
+DrawFilledCircleTrans	16bitDrawCircle.cpp	/^void DrawFilledCircleTrans (CG16bitImage &Dest, int xDest, int yDest, int iRadius, WORD wColor, DWORD byOpacity)$/;"	f
+DrawGlowImage	CGImage.cpp	/^void CGImage::DrawGlowImage (int x, int y, CGImage &Src, int xSrc, int ySrc, int x2Src, int y2Src, int iGlowSize)$/;"	f	class:CGImage
+DrawGlowRing	16bitDrawCircle.cpp	/^void DrawGlowRing (CG16bitImage &Dest,$/;"	f
+DrawGlowRingLine	16bitDrawCircle.cpp	/^void DrawGlowRingLine (const SGlowRingLineCtx &Ctx, int x, int y)$/;"	f
+DrawLine	CGImage.cpp	/^void CGImage::DrawLine (int x1, int y1, int x2, int y2, int iWidth, COLORREF wColor) $/;"	f	class:CGImage
+DrawLineBiColor	CGImage.cpp	/^void CGImage::DrawLineBiColor (int x1, int y1, int x2, int y2, int iWidth, COLORREF wColor1, COLORREF wColor2) $/;"	f	class:CGImage
+DrawLineBroken	CGImage.cpp	/^void CGImage::DrawLineBroken (int x, int y, int x2, int y2, int xyBreak, COLORREF wColor) $/;"	f	class:CGImage
+DrawLineDotted	CGImage.cpp	/^void CGImage::DrawLineDotted (int x, int y, int x2, int y2, COLORREF wColor) $/;"	f	class:CGImage
+DrawLineProc	16bitImageDrawing.cpp	/^void CG16bitImage::DrawLineProc (SDrawLineCtx *pCtx, DRAWLINEPROC pfProc)$/;"	f	class:CG16bitImage
+DrawLineProc	CGImage.cpp	/^void CGImage::DrawLineProc (SDrawLineCtx *pCtx, DRAWLINEPROC pfProc) $/;"	f	class:CGImage
+DrawLineProcInit	16bitImageDrawing.cpp	/^void CG16bitImage::DrawLineProcInit (int x1, int y1, int x2, int y2, SDrawLineCtx *pCtx)$/;"	f	class:CG16bitImage
+DrawLineProcInit	CGImage.cpp	/^void CGImage::DrawLineProcInit (int x1, int y1, int x2, int y2, SDrawLineCtx *pCtx) $/;"	f	class:CGImage
+DrawMask	CGImage.cpp	/^void CGImage::DrawMask (int x, int y, const CGImage &Src, int xSrc, int ySrc, int x2Src, int y2Src, COLORREF wColor)$/;"	f	class:CGImage
+DrawRect	CGImage.cpp	/^void CGImage::DrawRect (int x, int y, int x2, int y2, COLORREF wColor) $/;"	f	class:CGImage
+DrawRectDotted	16bitImageDrawing.cpp	/^void DrawRectDotted (CG16bitImage &Dest, int x, int y, int cxWidth, int cyHeight, WORD wColor)$/;"	f
+DrawRectDotted	CGImage.cpp	/^void CGImage::DrawRectDotted (int x, int y, int x2, int y2, COLORREF wColor) $/;"	f	class:CGImage
+DrawRectFilled	CGImage.cpp	/^void CGImage::DrawRectFilled (int x, int y, int x2, int y2, COLORREF wColor)$/;"	f	class:CGImage
+DrawRingGradient	CGImage.cpp	/^void CGImage::DrawRingGradient (int x, int y, int iRadius, int iRingThickness, COLORREF *wColorRamp, BYTE *bAlphaRamp)$/;"	f	class:CGImage
+DrawText	CG16bitFont.cpp	/^void CG16bitFont::DrawText (CG16bitImage &Dest, $/;"	f	class:CG16bitFont
+DrawText	CG16bitImage.cpp	/^void CG16bitImage::DrawText (int x, int y, const CG16bitFont &Font, WORD wColor, CString sText, DWORD dwFlags, int *retx)$/;"	f	class:CG16bitImage
+DrawText	CGImage.cpp	/^void CGImage::DrawText (int x, int y, const CG16bitFont &Font, COLORREF wColor, CString sText, DWORD dwFlags, int *retx) $/;"	f	class:CGImage
+DrawTextEffect	CG16bitFont.cpp	/^void CG16bitFont::DrawTextEffect (CG16bitImage &Dest,$/;"	f	class:CG16bitFont
+EPSILON	CGImage.cpp	73;"	d	file:
+FadeColor	CG16bitImage.cpp	/^WORD CG16bitImage::FadeColor (WORD wStart, WORD wEnd, int iFade)$/;"	f	class:CG16bitImage
+Fill	CG16bitImage.cpp	/^void CG16bitImage::Fill (int x, int y, int cxWidth, int cyHeight, WORD wColor)$/;"	f	class:CG16bitImage
+Fill	CG16bitRegion.cpp	/^void CG16bitRegion::Fill (CG16bitImage &Dest, int x, int y, WORD wColor) const$/;"	f	class:CG16bitRegion
+FillColumn	CG16bitImage.cpp	/^void CG16bitImage::FillColumn (int x, int y, int cyHeight, WORD wColor)$/;"	f	class:CG16bitImage
+FillLine	CG16bitImage.cpp	/^void CG16bitImage::FillLine (int x, int y, int cxWidth, WORD wColor)$/;"	f	class:CG16bitImage
+FillLineGray	CG16bitImage.cpp	/^void CG16bitImage::FillLineGray (int x, int y, int cxWidth, WORD wColor, DWORD byOpacity)$/;"	f	class:CG16bitImage
+FillLineTrans	CG16bitImage.cpp	/^void CG16bitImage::FillLineTrans (int x, int y, int cxWidth, WORD wColor, DWORD byOpacity)$/;"	f	class:CG16bitImage
+FillMask	CG16bitImage.cpp	/^void CG16bitImage::FillMask (int xSrc, int ySrc, int cxWidth, int cyHeight, const CG16bitImage &Source, WORD wColor, int xDest, int yDest, BYTE byOpacity)$/;"	f	class:CG16bitImage
+FillRGB	CG16bitImage.cpp	/^void CG16bitImage::FillRGB (int x, int y, int cxWidth, int cyHeight, COLORREF rgbValue)$/;"	f	class:CG16bitImage
+FillTrans	CG16bitImage.cpp	/^void CG16bitImage::FillTrans (int x, int y, int cxWidth, int cyHeight, WORD wColor, DWORD byOpacity)$/;"	f	class:CG16bitImage
+FillTrans	CG16bitRegion.cpp	/^void CG16bitRegion::FillTrans (CG16bitImage &Dest, int x, int y, WORD wColor, DWORD byOpacity) const$/;"	f	class:CG16bitRegion
+FillTransGray	CG16bitImage.cpp	/^void CG16bitImage::FillTransGray (int x, int y, int cxWidth, int cyHeight, WORD wColor, DWORD byOpacity)$/;"	f	class:CG16bitImage
+FillTransRGB	CG16bitImage.cpp	/^void CG16bitImage::FillTransRGB (int x, int y, int cxWidth, int cyHeight, COLORREF rgbValue, int iAlpha)$/;"	f	class:CG16bitImage
+FindArea	AGScreen.cpp	/^AGArea *AGScreen::FindArea (DWORD dwTag)$/;"	f	class:AGScreen
+FindArea	CGFrameArea.cpp	/^AGArea *CGFrameArea::FindArea (DWORD dwTag)$/;"	f	class:CGFrameArea
+FireMouseMove	AGScreen.cpp	/^void AGScreen::FireMouseMove (const POINT &pt)$/;"	f	class:AGScreen
+FormatLine	CG16bitFont.cpp	/^static void FormatLine (char *pPos, int iLen, bool *ioInSmartQuotes, CStringArray *pLines)$/;"	f	file:
+GaussianScaledBlt	CG16bitImage.cpp	/^void CG16bitImage::GaussianScaledBlt (int xSrc, int ySrc, int cxWidth, int cyHeight, CG16bitImage &Source, int xDest, int yDest, int cxDestWidth, int cyDestHeight)$/;"	f	class:CG16bitImage
+GetAlpha	CGImage.cpp	/^BYTE CGImage::GetAlpha ()$/;"	f	class:CGImage
+GetAverageWidth	CG16bitFont.cpp	/^int CG16bitFont::GetAverageWidth (void) const$/;"	f	class:CG16bitFont
+GetBackColor	CGImage.cpp	/^COLORREF CGImage::GetBackColor () const$/;"	f	class:CGImage
+GetClipRect	CGImage.cpp	/^RECT CGImage::GetClipRect (void) const$/;"	f	class:CGImage
+GetHeight	CG16bitFont.cpp	/^int CG16bitFont::GetHeight() const$/;"	f	class:CG16bitFont
+GetMousePos	AGScreen.cpp	/^void AGScreen::GetMousePos (POINT *retpt)$/;"	f	class:AGScreen
+GetPixelAlpha	CG16bitImage.cpp	/^WORD CG16bitImage::GetPixelAlpha (int x, int y)$/;"	f	class:CG16bitImage
+GetRealPixel	CG16bitImage.cpp	/^CG16bitImage::RealPixel CG16bitImage::GetRealPixel (const RECT &rcRange, float rX, float rY, bool *retbBlack)$/;"	f	class:CG16bitImage
+GetTransparentColor	CGImage.cpp	/^COLORREF CGImage::GetTransparentColor ()$/;"	f	class:CGImage
+HitTest	AGScreen.cpp	/^AGArea *AGScreen::HitTest (const POINT &pt)$/;"	f	class:AGScreen
+INCL_TESTCG16BITIMAGE	test/TestCG16bitFont.h	3;"	d
+INCL_TESTCG16BITIMAGE	test/TestCG16bitImage.h	3;"	d
+INCL_TESTCG16BITIMAGE	test/image.h	3;"	d
+INCL_TESTCOMMON	test/TestCommon.h	2;"	d
+INDEX_BACKWARD	PolygonSimple.cpp	24;"	d	file:
+INDEX_FORWARD	PolygonSimple.cpp	18;"	d	file:
+INDEX_MOVE	PolygonSimple.cpp	30;"	d	file:
+INIT_ARRAY_ALLOC	Polygon.cpp	/^const int INIT_ARRAY_ALLOC =						100;$/;"	v
+IndexBackward	CG16bitRegion.cpp	/^inline int IndexBackward (int iIndex, int iCount) { return ((iIndex - 1 + iCount) % iCount); }$/;"	f
+IndexForward	CG16bitRegion.cpp	/^inline int IndexForward (int iIndex, int iCount) { return ((iIndex + 1) % iCount); }$/;"	f
+IndexMove	CG16bitRegion.cpp	/^inline int IndexMove (int iIndex, int iDir, int iCount)$/;"	f
+Init	AGArea.cpp	/^ALERROR AGArea::Init (AGScreen *pScreen, IAreaContainer *pParent, const RECT &rcRect, DWORD dwTag)$/;"	f	class:AGArea
+Init	Sound.cpp	/^ALERROR CSoundMgr::Init ()$/;"	f	class:CSoundMgr
+InitBlendPixelTables	CG16bitImage.cpp	/^bool InitBlendPixelTables (void)$/;"	f
+IntMult	CG16bitImage.cpp	31;"	d	file:
+Intersect	CGImage.cpp	/^bool CGImage::Intersect(int x, int y, int x2, int y2, CGImage &Source, int xSrc, int ySrc)$/;"	f	class:CGImage
+IsConvexPolygon	PolygonSimple.cpp	/^bool IsConvexPolygon (int iVertexCount, SPoint *pVertexList)$/;"	f
+IsSimplePolygon	PolygonSimple.cpp	/^bool IsSimplePolygon (int iVertexCount, SPoint *pVertexList)$/;"	f
+Justify	CGTextArea.cpp	/^int CGTextArea::Justify (const RECT &rcRect)$/;"	f	class:CGTextArea
+LButtonDoubleClick	AGScreen.cpp	/^void AGScreen::LButtonDoubleClick (int x, int y)$/;"	f	class:AGScreen
+LButtonDoubleClick	CGFrameArea.cpp	/^bool CGFrameArea::LButtonDoubleClick (int x, int y)$/;"	f	class:CGFrameArea
+LButtonDown	AGScreen.cpp	/^void AGScreen::LButtonDown (int x, int y)$/;"	f	class:AGScreen
+LButtonDown	CGFrameArea.cpp	/^bool CGFrameArea::LButtonDown (int x, int y)$/;"	f	class:CGFrameArea
+LButtonUp	AGScreen.cpp	/^void AGScreen::LButtonUp (int x, int y)$/;"	f	class:AGScreen
+LButtonUp	CGButtonArea.cpp	/^void CGButtonArea::LButtonUp (int x, int y)$/;"	f	class:CGButtonArea
+LButtonUp	CGFrameArea.cpp	/^void CGFrameArea::LButtonUp (int x, int y)$/;"	f	class:CGFrameArea
+LoadWaveFile	Sound.cpp	/^ALERROR CSoundMgr::LoadWaveFile (const CString &sFilename, int *retiChannel)$/;"	f	class:CSoundMgr
+LoadWaveFromBuffer	Sound.cpp	/^ALERROR CSoundMgr::LoadWaveFromBuffer (IReadBlock &Data, int *retiChannel)$/;"	f	class:CSoundMgr
+MAX_VOLUME	Sound.cpp	/^const int MAX_VOLUME = 0;$/;"	v
+MAX_VOLUME_LEVEL	Sound.cpp	/^const int MAX_VOLUME_LEVEL = 10;$/;"	v
+MEDIUM_SQUARE_SIZE	16bitImageDrawing.cpp	14;"	d	file:
+MIN_VOLUME	Sound.cpp	/^const int MIN_VOLUME = -10000;$/;"	v
+MIX_STEREO	Sound.cpp	/^const int MIX_STEREO = 2;$/;"	v
+MaskedBlt	CG16bitImage.cpp	/^void CG16bitImage::MaskedBlt (int xSrc, int ySrc, int cxWidth, int cyHeight, CG16bitImage &Source, int xDest, int yDest)$/;"	f	class:CG16bitImage
+MeasureText	CG16bitFont.cpp	/^int CG16bitFont::MeasureText (CString sText, int *retcyHeight) const$/;"	f	class:CG16bitFont
+MouseEnter	CGButtonArea.cpp	/^void CGButtonArea::MouseEnter (void)$/;"	f	class:CGButtonArea
+MouseLeave	CGButtonArea.cpp	/^void CGButtonArea::MouseLeave (void)$/;"	f	class:CGButtonArea
+MouseMove	AGScreen.cpp	/^void AGScreen::MouseMove (int x, int y)$/;"	f	class:AGScreen
+MouseMove	CGFrameArea.cpp	/^void CGFrameArea::MouseMove (int x, int y)$/;"	f	class:CGFrameArea
+MoveXSortedToAET	Polygon.cpp	/^void MoveXSortedToAET (int YToMove)$/;"	f
+OUT_FNT_0	test/TestCG16bitFont.cpp	22;"	d	file:
+OUT_FNT_1	test/TestCG16bitFont.cpp	23;"	d	file:
+OUT_FNT_2	test/TestCG16bitFont.cpp	24;"	d	file:
+OUT_FNT_3	test/TestCG16bitFont.cpp	25;"	d	file:
+OUT_IMG_0	test/TestCG16bitImage.cpp	25;"	d	file:
+OUT_IMG_0	test/image.cpp	25;"	d	file:
+OUT_IMG_1	test/TestCG16bitImage.cpp	26;"	d	file:
+OUT_IMG_1	test/image.cpp	26;"	d	file:
+OUT_IMG_1B	test/TestCG16bitImage.cpp	27;"	d	file:
+OUT_IMG_1B	test/image.cpp	27;"	d	file:
+OUT_IMG_2	test/TestCG16bitImage.cpp	28;"	d	file:
+OUT_IMG_2	test/image.cpp	28;"	d	file:
+OUT_IMG_3	test/TestCG16bitImage.cpp	29;"	d	file:
+OUT_IMG_3	test/image.cpp	29;"	d	file:
+OUT_IMG_4	test/TestCG16bitImage.cpp	30;"	d	file:
+OUT_IMG_4	test/image.cpp	30;"	d	file:
+OUT_IMG_5	test/TestCG16bitImage.cpp	31;"	d	file:
+OUT_IMG_5	test/image.cpp	31;"	d	file:
+OUT_IMG_5B	test/TestCG16bitImage.cpp	32;"	d	file:
+OUT_IMG_5B	test/image.cpp	32;"	d	file:
+OUT_IMG_6	test/TestCG16bitImage.cpp	33;"	d	file:
+OUT_IMG_6	test/image.cpp	33;"	d	file:
+OUT_IMG_7	test/TestCG16bitImage.cpp	34;"	d	file:
+OUT_IMG_7	test/image.cpp	34;"	d	file:
+OUT_IMG_8	test/TestCG16bitImage.cpp	35;"	d	file:
+OUT_IMG_8	test/image.cpp	35;"	d	file:
+OUT_IMG_9	test/TestCG16bitImage.cpp	36;"	d	file:
+OUT_IMG_9	test/image.cpp	36;"	d	file:
+OnAreaSetRect	AGScreen.cpp	/^void AGScreen::OnAreaSetRect (void)$/;"	f	class:AGScreen
+OnAreaSetRect	CGFrameArea.cpp	/^void CGFrameArea::OnAreaSetRect (void)$/;"	f	class:CGFrameArea
+OnSetRect	CGButtonArea.cpp	/^void CGButtonArea::OnSetRect (void)$/;"	f	class:CGButtonArea
+Paint	AGScreen.cpp	/^void AGScreen::Paint (CG16bitImage &Dest)$/;"	f	class:AGScreen
+Paint	CGButtonArea.cpp	/^void CGButtonArea::Paint (CG16bitImage &Dest, const RECT &rcRect)$/;"	f	class:CGButtonArea
+Paint	CGFrameArea.cpp	/^void CGFrameArea::Paint (CG16bitImage &Dest, const RECT &rcRect)$/;"	f	class:CGFrameArea
+Paint	CGImageArea.cpp	/^void CGImageArea::Paint (CG16bitImage &Dest, const RECT &rcRect)$/;"	f	class:CGImageArea
+Paint	CGTextArea.cpp	/^void CGTextArea::Paint (CG16bitImage &Dest, const RECT &rcRect)$/;"	f	class:CGTextArea
+Play	Sound.cpp	/^void CSoundMgr::Play (int iChannel, int iVolume, int iPan)$/;"	f	class:CSoundMgr
+PlayMusic	Sound.cpp	/^void CSoundMgr::PlayMusic (const CString &sFilename)$/;"	f	class:CSoundMgr
+RGB_DISABLED_TEXT	CGButtonArea.cpp	16;"	d	file:
+ResetClipRect	CG16bitImage.cpp	/^void CG16bitImage::ResetClipRect (void)$/;"	f	class:CG16bitImage
+ResetClipRect	CGImage.cpp	/^void CGImage::ResetClipRect (void)$/;"	f	class:CGImage
+SAlphaGradientCircleLineCtx	16bitDrawCircle.cpp	/^struct SAlphaGradientCircleLineCtx$/;"	s	file:
+SBltCircleLineCtx	16bitDrawCircle.cpp	/^struct SBltCircleLineCtx$/;"	s	file:
+SDL_COLORREF_TO_RGB	CGImage.cpp	282;"	d	file:
+SDL_COLORREF_TO_RGBA	CGImage.cpp	281;"	d	file:
+SDL_DoLockSurface	CG16bitImage.cpp	20;"	d	file:
+SDL_DoLockSurface	CGImage.cpp	75;"	d	file:
+SDL_DoUnlockSurface	CG16bitImage.cpp	24;"	d	file:
+SDL_DoUnlockSurface	CGImage.cpp	79;"	d	file:
+SDL_GetPixel	CGImage.cpp	/^static COLORREF SDL_GetPixel(SDL_Surface *surface, int x, int y)$/;"	f	file:
+SDL_GetPixelRGBA	CGImage.cpp	/^static void SDL_GetPixelRGBA(SDL_Surface *surface, int i, BYTE *r, BYTE *g, BYTE *b, BYTE *a)$/;"	f	file:
+SDL_GetPixelRGBA	CGImage.cpp	/^static void SDL_GetPixelRGBA(SDL_Surface *surface, int x, int y, BYTE *r, BYTE *g, BYTE *b, BYTE *a)$/;"	f	file:
+SDL_SetAlphaChannel	CGImage.cpp	/^static int SDL_SetAlphaChannel(SDL_Surface *surface, Uint8 value)$/;"	f	file:
+SDL_SetPixelAlpha	CGImage.cpp	/^static void SDL_SetPixelAlpha(SDL_Surface *surface, int i, BYTE alpha)$/;"	f	file:
+SDL_SetPixelAlpha	CGImage.cpp	/^static void SDL_SetPixelAlpha(SDL_Surface *surface, int x, int y, BYTE alpha)$/;"	f	file:
+SDL_SetPixelRGB	CGImage.cpp	/^static void SDL_SetPixelRGB(SDL_Surface *surface, int i, BYTE r, BYTE g, BYTE b)$/;"	f	file:
+SDL_SetPixelRGBA	CGImage.cpp	/^static void SDL_SetPixelRGBA(SDL_Surface *surface, int i, BYTE r, BYTE g, BYTE b, BYTE a)$/;"	f	file:
+SDL_SetPixelRGBA	CGImage.cpp	/^static void SDL_SetPixelRGBA(SDL_Surface *surface, int x, int y, BYTE r, BYTE g, BYTE b, BYTE a)$/;"	f	file:
+SDL_XY_TO_IDX	CGImage.cpp	280;"	d	file:
+SEdgeState	Polygon.cpp	/^struct SEdgeState$/;"	s	file:
+SGlowRingLineCtx	16bitDrawCircle.cpp	/^struct SGlowRingLineCtx$/;"	s	file:
+SIGNUM	PolygonSimple.cpp	13;"	d	file:
+SMALL_SQUARE_SIZE	16bitImageDrawing.cpp	13;"	d	file:
+STR_ELLIPSIS	CG16bitFont.cpp	16;"	d	file:
+SaveImg	CG16bitImage.cpp	/^ALERROR SaveImg(CG16bitImage *img, const char *fn)$/;"	f
+SaveImg	CGImage.cpp	/^ALERROR SaveImg(CGImage *img, const char *fn)$/;"	f
+SaveSurface	CG16bitImage.cpp	/^ALERROR SaveSurface(SDL_Surface *img, const char *fn)$/;"	f
+SaveSurface	CGImage.cpp	/^ALERROR SaveSurface(SDL_Surface *surface, const char *const fname)$/;"	f
+SaveSurfaceBMP	CGImage.cpp	/^ALERROR SaveSurfaceBMP(SDL_Surface *img, const char *fn)$/;"	f
+ScanEdge	CG16bitRegion.cpp	/^void CG16bitRegion::ScanEdge (int X1,$/;"	f	class:CG16bitRegion
+ScanEdge	PolygonSimple.cpp	/^void ScanEdge (int X1,$/;"	f
+ScanOutAET	Polygon.cpp	/^void ScanOutAET (int YToScan)$/;"	f
+SetAlpha	CGImage.cpp	/^void CGImage::SetAlpha (BYTE bAlpha) $/;"	f	class:CGImage
+SetAlphaChannel	CGImage.cpp	/^void CGImage::SetAlphaChannel (BYTE bAlpha) $/;"	f	class:CGImage
+SetBackColor	CGImage.cpp	/^void CGImage::SetBackColor (COLORREF wColor)$/;"	f	class:CGImage
+SetBlending	CG16bitImage.cpp	/^void CG16bitImage::SetBlending (WORD wAlpha)$/;"	f	class:CG16bitImage
+SetClipRect	CG16bitImage.cpp	/^void CG16bitImage::SetClipRect (const RECT &rcClip)$/;"	f	class:CG16bitImage
+SetClipRect	CGImage.cpp	/^void CGImage::SetClipRect (const RECT &rcClip)$/;"	f	class:CGImage
+SetLabelAccelerator	CGButtonArea.cpp	/^void CGButtonArea::SetLabelAccelerator (const CString &sKey)$/;"	f	class:CGButtonArea
+SetMouseOver	AGScreen.cpp	/^void AGScreen::SetMouseOver (AGArea *pArea)$/;"	f	class:AGScreen
+SetRealPixel	CG16bitImage.cpp	/^void CG16bitImage::SetRealPixel (float rX, float rY, const RealPixel &Value, bool bNotBlack)$/;"	f	class:CG16bitImage
+SetRect	AGArea.cpp	/^void AGArea::SetRect (const RECT &rcRect)$/;"	f	class:AGArea
+SetTransparentColor	CG16bitImage.cpp	/^void CG16bitImage::SetTransparentColor (WORD wColor)$/;"	f	class:CG16bitImage
+SetTransparentColor	CGImage.cpp	/^void CGImage::SetTransparentColor (COLORREF wColor) $/;"	f	class:CGImage
+ShowHide	AGArea.cpp	/^void AGArea::ShowHide (bool bShow)$/;"	f	class:AGArea
+SignalAction	AGArea.cpp	/^void AGArea::SignalAction (DWORD dwData)$/;"	f	class:AGArea
+StopMusic	Sound.cpp	/^void CSoundMgr::StopMusic (void)$/;"	f	class:CSoundMgr
+TEST_FNT_0	test/TestCG16bitFont.cpp	27;"	d	file:
+TEST_IMG_0	test/TestCG16bitFont.cpp	19;"	d	file:
+TEST_IMG_0	test/TestCG16bitImage.cpp	17;"	d	file:
+TEST_IMG_0	test/image.cpp	17;"	d	file:
+TEST_IMG_1	test/TestCG16bitFont.cpp	20;"	d	file:
+TEST_IMG_1	test/TestCG16bitImage.cpp	18;"	d	file:
+TEST_IMG_1	test/image.cpp	18;"	d	file:
+TEST_IMG_2	test/TestCG16bitFont.cpp	21;"	d	file:
+TEST_IMG_2	test/TestCG16bitImage.cpp	19;"	d	file:
+TEST_IMG_2	test/image.cpp	19;"	d	file:
+TEST_IMG_3	test/TestCG16bitImage.cpp	20;"	d	file:
+TEST_IMG_3	test/image.cpp	20;"	d	file:
+TEST_IMG_4	test/TestCG16bitImage.cpp	21;"	d	file:
+TEST_IMG_4	test/image.cpp	21;"	d	file:
+TEST_IMG_4A	test/TestCG16bitImage.cpp	22;"	d	file:
+TEST_IMG_4A	test/image.cpp	22;"	d	file:
+TEST_IMG_5	test/TestCG16bitImage.cpp	23;"	d	file:
+TEST_IMG_5	test/image.cpp	23;"	d	file:
+TEST_IMG_5A	test/TestCG16bitImage.cpp	24;"	d	file:
+TEST_IMG_5A	test/image.cpp	24;"	d	file:
+TEST_STR_0	test/TestCG16bitFont.cpp	29;"	d	file:
+TEST_STR_1	test/TestCG16bitFont.cpp	30;"	d	file:
+Test	CG16bitImage.cpp	/^		Test (void)$/;"	f	class:Test
+Test	CG16bitImage.cpp	/^class Test$/;"	c	file:
+TestCG16bitFont	test/TestCG16bitFont.cpp	/^CPPUNIT_TEST_SUITE_REGISTRATION( TestCG16bitFont );$/;"	v
+TestCG16bitFont	test/TestCG16bitFont.h	/^class TestCG16bitFont : public CPPUNIT_NS::TestFixture$/;"	c
+TestCG16bitImage	test/TestCG16bitImage.cpp	/^CPPUNIT_TEST_SUITE_REGISTRATION( TestCG16bitImage );$/;"	v
+TestCG16bitImage	test/TestCG16bitImage.h	/^class TestCG16bitImage : public CPPUNIT_NS::TestFixture$/;"	c
+TestCG16bitImage	test/image.cpp	/^CPPUNIT_TEST_SUITE_REGISTRATION( TestCG16bitImage );$/;"	v
+TestCG16bitImage	test/image.h	/^class TestCG16bitImage : public CPPUNIT_NS::TestFixture$/;"	c
+Testing	CG16bitImage.cpp	/^Test Testing;$/;"	v
+TransBlt	CG16bitImage.cpp	/^void CG16bitImage::TransBlt (int xSrc, int ySrc, int cxWidth, int cyHeight, int iAlpha, CG16bitImage &Source, int xDest, int yDest)$/;"	f	class:CG16bitImage
+UnbindSurface	CG16bitImage.cpp	/^ALERROR CG16bitImage::UnbindSurface()$/;"	f	class:CG16bitImage
+UnbindSurface	CGImage.cpp	/^ALERROR CGImage::UnbindSurface() $/;"	f	class:CGImage
+Update	AGScreen.cpp	/^void AGScreen::Update (void)$/;"	f	class:AGScreen
+VOLUME_STEP	Sound.cpp	/^const int VOLUME_STEP = 250;$/;"	v
+WU_ERROR_BITS	16bitImageDrawing.cpp	16;"	d	file:
+WU_INTENSITY_SHIFT	16bitImageDrawing.cpp	17;"	d	file:
+WU_WEIGHTING_COMPLEMENT_MASK	16bitImageDrawing.cpp	18;"	d	file:
+WuLine	16bitImageDrawing.cpp	/^void CG16bitImage::WuLine (int x0, int y0, $/;"	f	class:CG16bitImage
+XSortAET	Polygon.cpp	/^void XSortAET (void)$/;"	f
+advance	CG16bitFont.cpp	/^	int advance;$/;"	m	struct:CharMetrics	file:
+byOpacity	16bitDrawCircle.cpp	/^	DWORD *byOpacity;$/;"	m	struct:SGlowRingLineCtx	file:
+byOpacity	16bitDrawCircle.cpp	/^	DWORD byOpacity;$/;"	m	struct:SBltCircleLineCtx	file:
+create_and_delete	test/TestCG16bitFont.cpp	/^void TestCG16bitFont::create_and_delete()$/;"	f	class:TestCG16bitFont
+create_and_delete	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::create_and_delete()$/;"	f	class:TestCG16bitImage
+create_and_delete	test/image.cpp	/^void TestCG16bitImage::create_and_delete()$/;"	f	class:TestCG16bitImage
+create_blank	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::create_blank()$/;"	f	class:TestCG16bitImage
+create_blank	test/image.cpp	/^void TestCG16bitImage::create_blank()$/;"	f	class:TestCG16bitImage
+cxSrc	16bitDrawCircle.cpp	/^	int cxSrc;$/;"	m	struct:SBltCircleLineCtx	file:
+cySrc	16bitDrawCircle.cpp	/^	int cySrc;$/;"	m	struct:SBltCircleLineCtx	file:
+draw_glow_img	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::draw_glow_img()$/;"	f	class:TestCG16bitImage
+draw_glow_img	test/image.cpp	/^void TestCG16bitImage::draw_glow_img()$/;"	f	class:TestCG16bitImage
+draw_primitives	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::draw_primitives()$/;"	f	class:TestCG16bitImage
+draw_primitives	test/image.cpp	/^void TestCG16bitImage::draw_primitives()$/;"	f	class:TestCG16bitImage
+dwBlue	16bitDrawCircle.cpp	/^	DWORD *dwBlue;$/;"	m	struct:SGlowRingLineCtx	file:
+dwBlue	16bitDrawCircle.cpp	/^	DWORD dwBlue;$/;"	m	struct:SAlphaGradientCircleLineCtx	file:
+dwGreen	16bitDrawCircle.cpp	/^	DWORD *dwGreen;$/;"	m	struct:SGlowRingLineCtx	file:
+dwGreen	16bitDrawCircle.cpp	/^	DWORD dwGreen;$/;"	m	struct:SAlphaGradientCircleLineCtx	file:
+dwRed	16bitDrawCircle.cpp	/^	DWORD *dwRed;$/;"	m	struct:SGlowRingLineCtx	file:
+dwRed	16bitDrawCircle.cpp	/^	DWORD dwRed;$/;"	m	struct:SAlphaGradientCircleLineCtx	file:
+g_Alpha5	CG16bitImage.cpp	/^AlphaArray5 g_Alpha5 [256];$/;"	v
+g_Alpha6	CG16bitImage.cpp	/^AlphaArray6 g_Alpha6 [256];$/;"	v
+g_bInit	CG16bitImage.cpp	/^bool g_bInit = InitBlendPixelTables();$/;"	v
+g_iCharCount	CG16bitFont.cpp	/^const int g_iCharCount = 0xff - g_iStartChar + 1;$/;"	v
+g_iConvertCount	CG16bitImage.cpp	/^static unsigned int g_iConvertCount = 0;$/;"	v	file:
+g_iRunAlloc	Polygon.cpp	/^static int g_iRunAlloc;$/;"	v	file:
+g_iRunCount	Polygon.cpp	/^static int g_iRunCount;$/;"	v	file:
+g_iStartChar	CG16bitFont.cpp	/^const int g_iStartChar = ' ';$/;"	v
+g_iTemp	CG16bitImage.cpp	/^int g_iTemp;$/;"	v
+g_pAET	Polygon.cpp	/^static SEdgeState *g_pAET;$/;"	v	file:
+g_pGET	Polygon.cpp	/^static SEdgeState *g_pGET;$/;"	v	file:
+g_pRuns	Polygon.cpp	/^static CG16bitRegion::SRun *g_pRuns;$/;"	v	file:
+g_screen	test/main.cpp	/^CGImage *g_screen;$/;"	v
+g_wSmallRoundMask	16bitImageDrawing.cpp	/^const BYTE g_wSmallRoundMask[9] = $/;"	v
+iCount	Polygon.cpp	/^    int iCount;$/;"	m	struct:SEdgeState	file:
+iErrorTerm	Polygon.cpp	/^    int iErrorTerm;$/;"	m	struct:SEdgeState	file:
+iErrorTermAdjDown	Polygon.cpp	/^    int iErrorTermAdjDown;$/;"	m	struct:SEdgeState	file:
+iErrorTermAdjUp	Polygon.cpp	/^    int iErrorTermAdjUp;$/;"	m	struct:SEdgeState	file:
+iRadius	16bitDrawCircle.cpp	/^	int iRadius;$/;"	m	struct:SAlphaGradientCircleLineCtx	file:
+iRadius	16bitDrawCircle.cpp	/^	int iRadius;$/;"	m	struct:SBltCircleLineCtx	file:
+iRadius	16bitDrawCircle.cpp	/^	int iRadius;$/;"	m	struct:SGlowRingLineCtx	file:
+iRingThickness	16bitDrawCircle.cpp	/^	int iRingThickness;$/;"	m	struct:SGlowRingLineCtx	file:
+img_mask	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::img_mask()$/;"	f	class:TestCG16bitImage
+img_mask	test/image.cpp	/^void TestCG16bitImage::img_mask()$/;"	f	class:TestCG16bitImage
+img_mask_scale	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::img_mask_scale()$/;"	f	class:TestCG16bitImage
+img_mask_scale	test/image.cpp	/^void TestCG16bitImage::img_mask_scale()$/;"	f	class:TestCG16bitImage
+intersect_test	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::intersect_test()$/;"	f	class:TestCG16bitImage
+intersect_test	test/image.cpp	/^void TestCG16bitImage::intersect_test()$/;"	f	class:TestCG16bitImage
+load_and_saveimage	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::load_and_saveimage()$/;"	f	class:TestCG16bitImage
+load_and_saveimage	test/image.cpp	/^void TestCG16bitImage::load_and_saveimage()$/;"	f	class:TestCG16bitImage
+load_copy_save	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::load_copy_save()$/;"	f	class:TestCG16bitImage
+load_copy_save	test/image.cpp	/^void TestCG16bitImage::load_copy_save()$/;"	f	class:TestCG16bitImage
+load_display	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::load_display()$/;"	f	class:TestCG16bitImage
+load_display	test/image.cpp	/^void TestCG16bitImage::load_display()$/;"	f	class:TestCG16bitImage
+load_font	test/TestCG16bitFont.cpp	/^void TestCG16bitFont::load_font()$/;"	f	class:TestCG16bitFont
+load_image	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::load_image()$/;"	f	class:TestCG16bitImage
+load_image	test/image.cpp	/^void TestCG16bitImage::load_image()$/;"	f	class:TestCG16bitImage
+main	test/main.cpp	/^main(int, char* [])$/;"	f
+main	test/test.c	/^int main()$/;"	f
+maxx	CG16bitFont.cpp	/^	int maxx;$/;"	m	struct:CharMetrics	file:
+maxy	CG16bitFont.cpp	/^	int maxy;$/;"	m	struct:CharMetrics	file:
+minx	CG16bitFont.cpp	/^	int minx;$/;"	m	struct:CharMetrics	file:
+miny	CG16bitFont.cpp	/^	int miny;$/;"	m	struct:CharMetrics	file:
+pDest	16bitDrawCircle.cpp	/^	CG16bitImage *pDest;$/;"	m	struct:SAlphaGradientCircleLineCtx	file:
+pDest	16bitDrawCircle.cpp	/^	CG16bitImage *pDest;$/;"	m	struct:SBltCircleLineCtx	file:
+pDest	16bitDrawCircle.cpp	/^	CG16bitImage *pDest;$/;"	m	struct:SGlowRingLineCtx	file:
+pNextEdge	Polygon.cpp	/^    SEdgeState *pNextEdge;$/;"	m	struct:SEdgeState	file:
+pSrc	16bitDrawCircle.cpp	/^	const CG16bitImage *pSrc;$/;"	m	struct:SBltCircleLineCtx	file:
+roto_zoom_img	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::roto_zoom_img()$/;"	f	class:TestCG16bitImage
+roto_zoom_img	test/image.cpp	/^void TestCG16bitImage::roto_zoom_img()$/;"	f	class:TestCG16bitImage
+setUp	test/TestCG16bitFont.cpp	/^void TestCG16bitFont::setUp()$/;"	f	class:TestCG16bitFont
+setUp	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::setUp()$/;"	f	class:TestCG16bitImage
+setUp	test/image.cpp	/^void TestCG16bitImage::setUp()$/;"	f	class:TestCG16bitImage
+tearDown	test/TestCG16bitFont.cpp	/^void TestCG16bitFont::tearDown()$/;"	f	class:TestCG16bitFont
+tearDown	test/TestCG16bitImage.cpp	/^void TestCG16bitImage::tearDown()$/;"	f	class:TestCG16bitImage
+tearDown	test/image.cpp	/^void TestCG16bitImage::tearDown()$/;"	f	class:TestCG16bitImage
+wColor	16bitDrawCircle.cpp	/^	WORD *wColor;$/;"	m	struct:SGlowRingLineCtx	file:
+wColor	16bitDrawCircle.cpp	/^	WORD wColor;$/;"	m	struct:SAlphaGradientCircleLineCtx	file:
+wSmallRoundMask	test/test.c	/^const unsigned char wSmallRoundMask[3][3] = $/;"	v
+write_alpha	test/TestCG16bitFont.cpp	/^void TestCG16bitFont::write_alpha()$/;"	f	class:TestCG16bitFont
+write_basic	test/TestCG16bitFont.cpp	/^void TestCG16bitFont::write_basic()$/;"	f	class:TestCG16bitFont
+write_paragraph	test/TestCG16bitFont.cpp	/^void TestCG16bitFont::write_paragraph()$/;"	f	class:TestCG16bitFont
+x	Polygon.cpp	/^    int x;$/;"	m	struct:SEdgeState	file:
+xDest	16bitDrawCircle.cpp	/^	int xDest;$/;"	m	struct:SAlphaGradientCircleLineCtx	file:
+xDest	16bitDrawCircle.cpp	/^	int xDest;$/;"	m	struct:SBltCircleLineCtx	file:
+xDest	16bitDrawCircle.cpp	/^	int xDest;$/;"	m	struct:SGlowRingLineCtx	file:
+xDirection	Polygon.cpp	/^    int xDirection;$/;"	m	struct:SEdgeState	file:
+xSrc	16bitDrawCircle.cpp	/^	int xSrc;$/;"	m	struct:SBltCircleLineCtx	file:
+xWholePixelMove	Polygon.cpp	/^    int xWholePixelMove;$/;"	m	struct:SEdgeState	file:
+yDest	16bitDrawCircle.cpp	/^	int yDest;$/;"	m	struct:SAlphaGradientCircleLineCtx	file:
+yDest	16bitDrawCircle.cpp	/^	int yDest;$/;"	m	struct:SBltCircleLineCtx	file:
+yDest	16bitDrawCircle.cpp	/^	int yDest;$/;"	m	struct:SGlowRingLineCtx	file:
+ySrc	16bitDrawCircle.cpp	/^	int ySrc;$/;"	m	struct:SBltCircleLineCtx	file:
+yStart	Polygon.cpp	/^    int yStart;$/;"	m	struct:SEdgeState	file:
+~AGArea	AGArea.cpp	/^AGArea::~AGArea (void)$/;"	f	class:AGArea
+~AGScreen	AGScreen.cpp	/^AGScreen::~AGScreen (void)$/;"	f	class:AGScreen
+~CG16bitFont	CG16bitFont.cpp	/^CG16bitFont::~CG16bitFont()$/;"	f	class:CG16bitFont
+~CG16bitImage	CG16bitImage.cpp	/^CG16bitImage::~CG16bitImage (void)$/;"	f	class:CG16bitImage
+~CG16bitRegion	CG16bitRegion.cpp	/^CG16bitRegion::~CG16bitRegion (void)$/;"	f	class:CG16bitRegion
+~CG16bitSprite	CG16bitSprite.cpp	/^CG16bitSprite::~CG16bitSprite (void)$/;"	f	class:CG16bitSprite
+~CGImage	CGImage.cpp	/^CGImage::~CGImage () $/;"	f	class:CGImage
+~CSoundMgr	Sound.cpp	/^CSoundMgr::~CSoundMgr (void)$/;"	f	class:CSoundMgr

@@ -1,0 +1,64 @@
+Index: GameScreen.cpp
+===================================================================
+--- GameScreen.cpp	(revision 120)
++++ GameScreen.cpp	(working copy)
+@@ -329,8 +329,9 @@
+ 	if ((error = m_LRS.CreateBlank(g_LRSWidth, g_LRSHeight, false)))
+ 		return error;
+ 
++	/* XXX Need to set this only for pixels matching the mask from the HUD. */
+ 	if (m_bTransparencyEffects)
+-		m_LRS.SetBlending(200);
++		m_LRS.SetAlphaChannel(200);
+ 
+ 	//m_rcLRS.left = m_rcScreen.left;
+ 	m_rcLRS.left = m_rcScreen.right - g_LRSWidth;
+@@ -444,7 +445,7 @@
+ 		{
+ 		bool bNewEnemies;
+ 
+-		m_LRS.Blt(0, 0, g_LRSWidth, g_LRSHeight, *m_pLargeHUD, 0, 0);
++		m_LRS.Blt(0, 0, *m_pLargeHUD, 0, 0, g_LRSWidth, g_LRSHeight, false);
+ 
+ 		//	If we're not blind, paint the LRS
+ 
+Index: TSE/CObjectImage.cpp
+===================================================================
+--- TSE/CObjectImage.cpp	(revision 171)
++++ TSE/CObjectImage.cpp	(working copy)
+@@ -180,9 +180,10 @@
+ 	
+ 	if (m_bTransColor)
+ 		m_pBitmap->SetTransparentColor(m_wTransColor);
+-	
++
++	// XXX Useful snippet to save sample files.
+ 	//CString s;
+-	//s = strPatternSubst(CONSTLIT("res/%s.full.png"), pathGetFilename(m_sBitmap).GetPointer());
++	//s = strPatternSubst(CONSTLIT("res/%s.full.png"), pathGetFilename(pathSanitize(m_sBitmap).GetPointer()).GetPointer());
+ 	//SaveImg(m_pBitmap, s.GetPointer());
+ 
+ 	//	Convert to sprite
+Index: Game/Resources/LargeHUDMask.bmp
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+
+Property changes on: Game/Resources/LargeHUDMask.bmp
+___________________________________________________________________
+Added: svn:mime-type
+   + application/octet-stream
+
+Index: Game/PlayerShip.xml
+===================================================================
+--- Game/PlayerShip.xml	(revision 122)
++++ Game/PlayerShip.xml	(working copy)
+@@ -783,7 +783,7 @@
+ 	<Image UNID="&rsSapphireYacht;"		bitmap="Resources\ShipsSapphireYacht.jpg" bitmask="Resources\ShipsSapphireYachtMask.bmp" backColor="0x00000000"/>
+ 	<Image UNID="&rsZubrinArmor;"		bitmap="Resources\ArmorHUD.bmp" backColor="0x00000000"/>
+ 	<Image UNID="&rsZubrinLarge;"		bitmap="Resources\ZubrinLarge.jpg"		loadOnUse="true" />
+-	<Image UNID="&rsZubrinLRS;"			bitmap="Resources\LargeHUD.jpg"		backColor="0x00000000"/>
++	<Image UNID="&rsZubrinLRS;"			bitmap="Resources\LargeHUD.jpg" bitmask="Resources\LargeHUDMask.bmp" />
+ 	<Image UNID="&rsZubrinLRSBorder;"	bitmap="Resources\LRSBorder.jpg"		bitmask="Resources\LRSBorderMask.bmp"/>
+ 	<Image UNID="&rsZubrinReactor;"		bitmap="Resources\ReactorDisplay.jpg"	bitmask="Resources\ReactorDisplayMask.bmp"/>
+ 	<Image UNID="&rsZubrinShields;"		bitmap="Resources\ShieldsHUD.bmp" backColor="0x00000000"/>

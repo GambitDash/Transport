@@ -1,0 +1,4 @@
+rm mem.log.*
+rm out*.png
+rm diff*.png
+rm .test-passed

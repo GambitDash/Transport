@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceExtension
+	[
+	<!ENTITY modDSFScreenHook_ShipInterior			"0xDCBA0070">
+]>
+
+<TranscendenceExtension UNID="&modDSFScreenHook_ShipInterior;" version="0.99c">
+
+<!-- SHIP INTERIOR SCREEN -->
+<!-- Modifier: "+ShipInterior;" "+TerminalService;" -->
+
+	<DockScreen UNID="&dsShipInterior;"
+		name=				"Ship's Interior"
+		backgroundID=		"&rsShipInterior;"
+		>
+
+		<Panes>
+			<Default
+				desc=	"You are inside the main compartment of your ship. A hatch in front of you opens into the cargo hold. To the side there is a small ladder that leads to the reactor and the ship's engines.">
+
+				<Initialize>
+					<!-- TRAP START -->
+					(dsf_InitializeScreenHook 
+						'("+ShipInterior;" "+TerminalService;")
+						3
+					)
+					<!-- TRAP END -->
+				</Initialize>
+
+				<Actions>
+					<Action name="Ship configuration" key="S">
+						(scrShowScreen gScreen "&dsShipConfig;")
+					</Action>
+						
+					<Action name="View cargo hold" key="V" >
+						(block Nil
+							(setq gDest Nil)
+							(scrShowScreen gScreen "&dsCargoHold;")
+							)
+					</Action>
+
+					<Action name="Refuel engines" key="R" >
+						<Navigate screen="&dsManualRefuel;"/>
+					</Action>
+					
+					<Action name="External Interface" key="E">
+						<!-- TRAP START -->
+						(block Nil
+							(dsf_RunScreenHook 
+								'("+ShipInterior;" "+TerminalService;")
+								"External Interface"
+								"You feel a buzz as you hook into your External Interface"
+								"&dsShipInterior;"
+							)
+						)
+						<!-- TRAP END -->
+					</Action>
+
+					<Action name="Back to cockpit" cancel="1" key="B">
+						<Exit/>
+					</Action>
+				</Actions>
+
+			</Default>
+		</Panes>
+
+	</DockScreen>
+
+</TranscendenceExtension>

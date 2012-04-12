@@ -1,0 +1,3 @@
+Import('env')
+sources = [ 'CGFont.cpp', 'CGResourceFile.cpp', 'Misc.cpp', 'Raw.cpp', 'Regions.cpp' ]
+env.StaticLibrary('libgfx', sources, CPPPATH = ['/usr/local/include/SDL', '../../Includes', '.'] )

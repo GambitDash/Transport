@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceExtension
+[
+<!ENTITY itKatanaMissileDefense "0xD0C47607">
+]>
+
+<TranscendenceExtension UNID="0xD0C47607" version="0.98d">
+
+<!-- Katana Missile Defense Turret -->
+
+<ItemType UNID="&itKatanaMissileDefense;"
+		name=				"Katana missile defense turret"
+		level=				"8"
+		value=				"45000"
+		mass=				"5100"
+		frequency=			"common"
+		modifiers=			"MajorItem; Bushido; Military; EnergyWeapon; Specialty"
+
+		description=		"This device combines a fast-doppler sensor with a targeting computer. Hostile missiles in its range are blasted into dust by a Katana star cannon. It can only work in some customed ships which have omni dirctional device slots."
+		>
+
+	<Image imageID="&rsItems1;" imageX="0" imageY="192" imageWidth="96" imageHeight="96"/>
+
+	<AutoDefenseDevice
+			target=			"missiles"
+			weapon=			"&itStarCannon;"
+			rechargeTime=	"12"
+			/>
+
+</ItemType>
+
+</TranscendenceExtension>

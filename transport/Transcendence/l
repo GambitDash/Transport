@@ -1,0 +1,41 @@
+Index: MainSDL.cpp
+===================================================================
+--- MainSDL.cpp	(revision 141)
++++ MainSDL.cpp	(working copy)
+@@ -96,7 +96,8 @@
+ 		assert(0 && "ohnoes");
+ 		}
+ 
+-	if (false) // XXX Windowed mode not supported yet. || !m_Options.bWindowedMode)
++	const SDL_VideoInfo *vid_info = SDL_GetVideoInfo();
++	if (vid_info->current_w <= 1024 || vid_info->current_h <= 768)
+ 		{
+ 		SDL_WM_ToggleFullScreen(g_screen);
+ 		} 
+@@ -161,7 +162,6 @@
+ 			{
+ 			if (MainWndProc(g_pTrans, &evt))
+ 				{
+-				printf("MainWndProc returned true.\n");
+ 				return NOERROR;
+ 				}
+ 			}
+Index: SConscript
+===================================================================
+--- SConscript	(revision 141)
++++ SConscript	(working copy)
+@@ -6,8 +6,11 @@
+ 
+ libtrans = env.StaticLibrary('libtrans', sources, CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'] )
+ 
+-#env.Program('transcendence', ['MainSDL.cpp'], CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'], LIBS=['libtrans', 'libtse', 'libkernel', 'libcc', 'libdxutil', 'libcc', 'libjpegutil', 'libxmlutil', 'SDL', 'SDL_ttf', 'SDL_image', 'boost_system-gcc40-mt', 'boost_filesystem-gcc40-mt', 'libconfig'])
+ env.Program('transcendence', ['MainSDL.cpp'], CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'], LIBS=['libtrans', 'libtse', 'libkernel', 'libcc', 'libdxutil', 'libcc', 'libxmlutil', 'SDL', 'SDL_ttf', 'SDL_image', 'SDL_mixer', 'boost_system-gcc40-mt', 'boost_filesystem-gcc40-mt', 'libconfig'])
+ 
+-#env.Program('transcendence.static', ['MainSDL.cpp'], CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'], LIBS=['libtrans', 'libtse', 'libkernel', 'libcc', 'libdxutil', 'libcc', 'libjpegutil', 'libxmlutil', 'dl', File("/usr/local/lib/libSDL.a"), File("/usr/local/lib/libSDL_ttf.a"), File("/usr/local/lib/libSDL_image.a"), File("/usr/lib/libpng12.a"), File("/usr/lib/libconfig.a"), File("/usr/lib/libz.a"), File("/usr/lib/libfreetype.a"), File("/usr/lib/libaudio.a"), File("/usr/lib/libXau.a"), File("/usr/local/boost/lib/libboost_system-gcc40-mt-1_35.a"), File("/usr/local/boost/lib/libboost_filesystem-gcc40-mt-1_35.a")], LINKFLAGS=['-pthread'])
+-env.Program('transcendence.static', ['MainSDL.cpp'], CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'], LIBS=['libtrans', 'libtse', 'libkernel', 'libcc', 'libdxutil', 'libcc', 'libxmlutil', 'dl', File("/usr/local/lib/libSDL_ttf.a"), File("/usr/local/lib/libSDL_image.a"), File("/usr/local/lib/libSDL_mixer.a"), File("/usr/local/lib/libSDL.a"), File("/usr/lib/libpng12.a"), File("/usr/lib/libconfig.a"), File("/usr/lib/libz.a"), File("/usr/lib/libfreetype.a"), File("/usr/lib/libaudio.a"), File("/usr/lib/libXau.a"), File("/usr/local/boost/lib/libboost_system-gcc40-mt-1_35.a"), File("/usr/local/boost/lib/libboost_filesystem-gcc40-mt-1_35.a")], LINKFLAGS=['-pthread'])
++env.Program('transcendence.static', ['MainSDL.cpp'], CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'], LIBS=['libtrans', 'libtse', 'libkernel', 'libcc', 'libdxutil', 'libcc', 'libxmlutil', 'dl', File("/usr/local/lib/libSDL_ttf.a"), File("/usr/local/lib/libSDL_image.a"), File("/usr/local/lib/libSDL_mixer.a"), File("/usr/local/lib/libSDL.a"), File("/usr/lib/libpng12.a"), File("/usr/lib/libconfig.a"), File("/usr/lib/libz.a"), File("/usr/lib/libfreetype.a"), File("/usr/local/lib/libsmpeg.a"), File("/usr/lib/libXau.a"), File("/usr/local/boost/lib/libboost_system-gcc40-mt-1_35.a"), File("/usr/local/boost/lib/libboost_filesystem-gcc40-mt-1_35.a"), 'audio'], LINKFLAGS=['-pthread'])
++
++env.Program('transcendence.dynamic', ['MainSDL.cpp'], CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'], LIBS=['libtrans', 'libtse', 'libkernel', 'libcc', 'libdxutil', 'libcc', 'libxmlutil', 'dl', File("/usr/local/lib/libSDL_ttf.a"), File("/usr/local/lib/libSDL_image.a"), File("/usr/lib/libpng12.a"), File("/usr/lib/libconfig.a"), File("/usr/lib/libz.a"), File("/usr/lib/libfreetype.a"), File("/usr/local/boost/lib/libboost_system-gcc40-mt-1_35.a"), File("/usr/local/boost/lib/libboost_filesystem-gcc40-mt-1_35.a"), 'SDL_mixer', 'SDL', File("/usr/local/lib/libsmpeg.a")], LINKFLAGS=['-pthread'])
++
++#env.Program('mixer_test', ['mixer_test.c'], CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'], LIBS=[File('/usr/local/lib/libsmpeg.a'), 'SDL_mixer', 'SDL'], LINKFLAGS=['-pthread'])
++

@@ -1,0 +1,7 @@
+compare -metric PSNR ${P}out_$1_$2.png ${P}yes_$1_$2.png ${P}diff_$1_$2.png | grep "inf dB" > /dev/null
+V=$?
+if [ $V -ne 0 ]; then
+	echo -n " : Mismatch on $1_$2"
+	exit $V
+fi
+

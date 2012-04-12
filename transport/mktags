@@ -1,0 +1,6 @@
+ctags -R --exclude=ext
+ctags -a -R ext/SDL-1.2.13
+ctags -a -R ext/SDL_mixer-1.2.8
+ctags -a -R ext/SDL_image-1.2.6
+ctags -a -R ext/SDL_ttf-2.0.9
+ctags -a -R ext/SDL_gfx-2.0.18

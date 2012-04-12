@@ -1,0 +1,4 @@
+Properly paint the rotated images to the target surface, ignoring alpha.
+--This line, and those below, will be ignored--
+
+M    CObjectImageArray.cpp

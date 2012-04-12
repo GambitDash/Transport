@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<TranscendenceHighScores lastPlayerName="Gambit" lastPlayerGenome="1">
+
+	<Score name="gambit"	shipClass="EI500-class freighter"	genome="1"	score="10000"	epitaph="left Human Space on a journey to the Galactic Core"	time="00:00:09.9000"	resurrectCount="0"	adventureUNID="3"	debug="0"/>
+	<Score name="Gambit"	shipClass="Wolfen-class gunship"	genome="1"	score="50"	epitaph="destroyed by the explosion of Starton Dry Dock in the Eridani System"	time="00:07:59.479000"	resurrectCount="0"	adventureUNID="2455"	debug="0"/>
+	<Score name="gambit"	shipClass="Wolfen-class gunship"	genome="1"	score="25"	epitaph="destroyed by a Heliotrope gunship in the Jotunheim System"	time="00:05:29.329000"	resurrectCount="0"	adventureUNID="3"	debug="0"/>
+	<Score name="Gambit"	shipClass="EI500-class freighter"	genome="1"	score="20"	epitaph="destroyed by a Centauri heavy raider in the Eridani System"	time="00:01:08.68000"	resurrectCount="0"	adventureUNID="9301"	debug="0"/>
+
+</TranscendenceHighScores>

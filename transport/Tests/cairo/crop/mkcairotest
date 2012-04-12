@@ -1,0 +1,1 @@
+gcc -o cairotest cairotest.c -ggdb -I/usr/local/include/SDL -lSDL -lSDL_image -lcairo

@@ -1,0 +1,121 @@
+TINKER GATHERING
+
+name(s):			Tinker gatherings are named after famous inventors:
+
+					Tinker Alvarez; Tinker Bell; Tinker Cray; Tinker Draper;
+					Tinker Edison; Tinker Fermi; Tinker Goddard; Tinker Hale;
+					Tinker Julian; Tinker Kroll; Tinker Lawrence; Tinker Mazor;
+					Tinker Noyce; Tinker Olsen; Tinker Plank; Tinker Rohrer;
+					Tinker Sikorsky; Tinker Tesla; Tinker Wang
+
+levels found:		Commonwealth I		weight 20
+					Commonwealth II		weight 120
+					Commonwealth III	weight 80
+					Commonwealth IV		weight 140
+					Commonwealth V		weight 80
+					Commonwealth VI		weight 60
+					Commonwealth VII	weight 40
+
+sovereign:			independent
+
+configuration:		single station
+armor type:			reinforced titanium
+hit points:			250
+
+docking ports:		8 (standard)
+
+devices:			Flenser cannon
+
+ships:				1d4 from table:
+						50% Ronin/C gunship [guard]
+						25% Sapphire yacht [guard]
+						25% Hornet battlepod [guard]
+
+items:				3d6 random items:
+						categories=	"aswd"
+						level=		"3"
+						levelCurve=	"2"
+						modifiers=	"-Illegal; -Military"
+						[all items are damaged]
+
+image:				A tinker gathering is a single station composed of several
+					smaller and somewhat independent modules. The station looks like
+					a thrown together mess and has antennae and dishes sticking out
+					everywhere.
+
+notes:				DOCKING
+
+					A Tinker gathering provides the following services:
+
+					Buy Scrap
+					
+						Lets the user buy any of the items that the station
+						has. The markup is 10%.
+
+					Sell Scrap
+
+						Lets the user sell any damaged item. The mark-down is
+						0% because the Tinkers want as much scrap as possible.
+
+					Repair Device
+
+						Point to a device and the Tinker will repair it
+						for 30% of its cost when new.
+
+					Repair Armor
+					
+						Repairs armor as normal except at tech level 7 and with
+						the ability to repair armor no matter how damaged.
+
+					Custom Work
+
+						Tinkers can create custom devices using old scrap
+						and spare parts (plus a fee of 50 credits). The player
+						is given three choices of what to create: a weapon, a
+						shield generator, a segment of armor. Then the player is
+						asked for an item to use to create the device. Use the
+						following table to figure out what is created:
+
+						Armor
+
+						1. heavy titanium armor		<- titanium ore (2 tons)
+						2. XMH armor				<- water ice (4 barrels)
+						3. photorepair armor		<- armor repair paste (4 barrels)
+						3. carbon fiber shell		<- carbon spool (2)
+													<- carbon weaver nanos (2 barrels)
+						4. plasteel plate			<- plasteel blanks (6)
+						5. Tevlar composite armor	<- hyperfiber roll (4)
+						6. Duralloy armor			<- Duralloy ore (4 tons)
+
+						Shields
+
+						3. Solon shield generator	<- [damaged] class-II deflectors (2)
+													<- [damaged] class-I deflectors (4)
+						5. Tinker Deflector Shields <- Enhance shields ROM (4)
+
+						Weapons
+
+						3. dual recoilless			<- [damaged] recoilless cannon (4)
+						5. dual turbolaser			<- [damaged] turbolaser cannon (4)
+						5. Tinker cannon			<- KM100 Missiles (12)
+
+					TINKER ITEMS
+
+					Tinker have the following items that are unique to them:
+
+					Tinker Deflector Shields
+
+						Shield	R	5. Tinker Deflector Shields
+						hp:40 regen:15/30 dd:30*30
+
+					Tinker Cannon
+
+						Weapon	VR	5. Tinker Cannon
+						blast 2d6+2
+
+status:				proposed 1.2.2002
+
+checklist:			[x] Basic station added to game
+					[ ] Image done
+					[ ] Behavior implemented
+					[ ] Behavior when abandoned implemented

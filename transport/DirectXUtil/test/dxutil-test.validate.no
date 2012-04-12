@@ -1,0 +1,90 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	export P=./
+else
+	export P=$1/
+fi
+
+./img_test img 1
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 2
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 3
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 4
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 5
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 6
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 7
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+#./img_test img 8
+echo "WARNING: temporary ignore of test 8 until rotozoom issues resolved."
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 9
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 10
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 11
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 13
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test img 14
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test fnt 1
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test fnt 2
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+./img_test fnt 3
+RET=$?
+if [ $RET -ne 0 ]; then
+	exit $RET
+fi
+

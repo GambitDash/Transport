@@ -1,0 +1,193 @@
+OBSOLETE
+
+MILESTONES
+
+	M1: Experimental Version: All major features of Frontier are
+		implemented.
+
+	M2: Alpha Version (orbis 0.70): 90% of major game systems complete (e.g., invoking,
+		SFX frameworks, etc.) Plus all screen for introduction, saving, loading,
+		and end game are complete. Saving and loading games is implemented.
+
+	M3: Beta Version (orbis 0.80): All systems up to and including Heretic Gate
+		are complete. 50% of enemy ships and stations complete (enough
+		to play the game all the way through--not necessarily enough
+		to be fun).
+
+	M4: Release Candidate (orbis 0.90): 90% of all ships, stations, and items are complete.
+		Ready for feedback.
+
+	M5: First Public Release: Game tweaked and polished.
+
+SCHEDULE
+
+	M1
+
+	[x] Intro Screen: Buttons (New Game, Load Game, Quit)
+	[x] Save Game
+	[x] Load Game
+	[x] Battle Arena
+	[x] Insurance Company
+	[x] Program Icon
+	[x] Sound Effects
+	[x] Fit & Finish I
+	[x] Images I
+
+	M3
+
+	[x] Autons
+	[x] Black Market
+	[ ] Fit & Finish II
+	[ ] Images II
+	[x] Loading, Intro, and Epilogue Screens
+	[ ] Oracus & Domina
+	[x] Radiation
+	[x] Nebulae
+
+
+	CENTAURI WARLORDS
+
+	[x] Warlord-controlled settlement (when all warlord ships are destroyed, the station
+		rewards the player with a gift).
+	[x] Centauri raider (level I): S25; T200; M2; mass35; heavy titanium (x2); light recoilless cannon;
+		fr30; fa80.
+	[x] Centauri commandship (level III): S15; T200; M4; mass100; light-plasteel (x4); 
+		AK15 Partisan (omni); fr30; fa80.
+	[x] Centauri raider needs engine flame
+
+	CHARON PIRATES
+
+	[ ] Jakarta-class freighter: S20; T250; M6; mass400; light-plasteel (x4); laser cannon (omni);
+		fr50; fa85; Used by pirates to transport stolen booty.
+
+	FIT & FINISH I
+
+	[x] Name of stargate should include destination
+	[x] Player ship should be different color in LRS scan
+	[x] Show stats for shield items
+	[x] Rigel Aurelius system should have no random encounters
+	[x] Show effect when ship is blinded
+	[x] Need text when docked with stargate
+	[x] Show effect when ship is paralyzed by ion cannon
+	[x] Actinide waste cannon effect should be green
+	[x] Able to dump items into space. Also, consider allowing player to
+		dump items in wrecks and abandoned stations.
+
+	FIT & FINISH II
+
+	[x] When first entering a system, do not show "Enemy Ships Detected"
+	[x] DM600 missile rack should show up as launcher
+	[x] DM600 missile rack should cost less if missiles used
+
+	FIT & FINISH III
+
+
+	IMAGES I
+
+	[x] Sotho-class gunship
+	[x] Methane-giant image
+	[x] Corporate offices station image (use for insurance company)
+
+	IMAGES II
+
+
+	ITEM IMAGES
+
+	[x] Cargo holds
+	[x] MAGs
+	[x] ammo
+	[ ] Misc items (armor patches, super-conducting coils, etc).
+	[ ] Level V armor
+	[ ] Level V weapons
+	[ ] Level III weapons
+	[ ] Level V shields
+	[ ] Level V devices
+	[ ] Level III armor
+	[ ] Level III shields
+	[ ] Level VII weapons
+	[ ] Level VII armor
+	[ ] Level VII shields
+	[ ] Level III devices
+	[ ] Level IX weapons
+	[ ] Level IX armor
+	[ ] Level IX shields
+	[ ] Level VII devices
+	[ ] Level IX devices
+	[ ] Medals
+	[ ] Control rods
+	[ ] Armor patches
+
+	KOROLOV STATION
+
+	[x] Korolov Station (and perhaps others) should repair their ships
+	[x] When Korolov Station is destroyed, it still lets you escort ships
+
+	LOADING, INTRO, AND EPILOGUE SCREENS
+
+	[x] Loading: (while we load bitmaps, etc.)
+	[x] Loading: Show animated loading progress
+	[x] Intro: Enter a name for the player
+	[x] Intro: Read name from registry and save to registry (actually, to hiscore list)
+	[ ] Intro: Show welcome instead of scores
+	[x] Intro: Allow player to specify gender (or else change end message)
+	[x] Epilogue: Score + List Enemies killed
+	[x] Self-Destruct
+
+	MAJOR FEATURES
+
+	[ ] Autons
+	[ ] Fleet formations
+	[ ] Henchmen
+	[ ] Invoking powers
+	[x] Nebulae
+	[ ] Particle system weapons/missiles
+
+	ORACUS & DOMINA
+
+	[ ] Should not be able to invoke Sustain too often (unless relationship positive)
+
+
+	RADIATION
+
+	[x] Show effect when ship is radioactive
+	[x] Radiation fields (use particle system)
+	[x] Ships can be immune to radiation (by special armor)
+	[x] Item to decontaminate ship
+	[x] Armor paste that makes ship radioactive
+	[x] Commonwealth Dry Dock should also decontaminate on dock
+	[ ] Stations can be contaminated (initially and when damaged by radiation weapon)
+	[ ] Stations clean up radiation as long as they are not dead
+	[x] Docking with a radioactive station contaminates the ship
+	[x] Wrecks of ships destroyed while radioactive are radioactive
+
+OPTIONAL FEATURES
+
+MORGUE
+
+	M3
+
+	[x] Drug Lords Ship: Meth Enforcer-class gunship (IV)
+	[ ] Drug Lords Ship: Meth Punisher-class gunship (V)
+	[ ] Drug Lords Ship: Meth Assassin-class gunship (VI)
+	[ ] Drug Lords Ship: Endor-class freighter (VI)
+	[x] Marauder Ship: Tripoli-class destroyer (VI)
+	[ ] Penitent Ship: Crusader-class destroyer (VI)
+	[x] Pirate Ship: Drake-class missileship (IV)
+	[ ] Utopian Ship: Wolfhound-class sentinel (IV)
+	[ ] Utopian Ship: Netizen-class gunship (V)
+	[ ] Utopian Ship: Mastiff-class sentinel (VI)
+	[ ] Utopian Ship: Bazaar-class missileship (VI)
+	[ ] Xenophobe Ship: Sterilizer-class gunship (V)
+	[ ] Xenophobe Ship: Inflexible-class transport (VI)
+
+	[ ] Drug Distribution Outpost
+	[ ] Drug Lab
+	[ ] Drug Cartel Stronghold
+	[ ] Marauder Compound
+	[ ] Marauder Stronghold
+	[ ] Penitent Monastery
+	[ ] Utopian Commune
+	[ ] Utopian Citadel
+	[ ] Xenophobe Compound
+	[ ] Xenophobe Stronghold
+

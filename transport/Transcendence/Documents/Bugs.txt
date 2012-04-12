@@ -1,0 +1,120 @@
+Transcendence Bugs
+
+Priority
+1	Fix Immediately
+2	Fix Before Release
+3	Enhancement Request
+4	Fix in Next Release
+
+[Open]
+
+Pri	Date		Description
+-------------------------------------------------------------------------------
+ 1  08-11-2002	Need to disable StickyKeys while playing (otherwise, rapidly
+				pressing the shift key will activate StickyKeys (although perhaps
+				not in DX exclusive mode).
+ 1	09-08-2002	Insurance claim will probably not work if the player dies in the
+				battle arena or during Korolov missions.
+ 2  06-30-2002	Crash if we try to close the app while loading (race condition
+				with loading thread).
+ 2	09-02-2000	Areas inside of frames do not get a MouseLeave message when the
+				mouse leaves the frame. [DirectXUtil]
+ 2  07-13-2002	When destroyed by a named station we shouldn't use the indefinite
+				article (e.g., "destroyed by a Hellas Station")
+ 2	06-26-2004	Somehow I ended up with 2 installed front segments. I had an enhanced
+				segment of reactive armor. When I tried to install a segment of
+				plasteel, the reactive armor stayed installed.
+ 3  03-23-2002	Sometimes (rarely) stations end up on top of planets. When that
+				happens it is impossible to hit them.
+ 3  04-27-2002	Line drawing does not honor DirectXUtil image clip rects
+ 3	09-21-2002	If a station has multiple weapons of the same type and the station
+				is destroyed and 2 or more of the weapons survive, then they don't
+				appear as one CItem. The problem is that many of the SetXXXAtCursor
+				functions don't fold items together.
+
+
+[Fixed]
+
+Pri	Date		Description
+-------------------------------------------------------------------------------
+ 2	09-02-2000	LRS should use scaling algorithm that preserves relative relationship
+				of objects (see Map view).
+ 2	09-02-2000	Esc should work in map view.
+ 2  10-21-2000	Armor and devices looted from a wreck do not combine with existing
+				items of the same type.
+ 3  09-11-2000	Enemy ship laser beam don't seem to be straight. It looks like the
+				algorithm I use to make laser beams straight for the POV will distort
+				the beam for other objects. Should use two different algorithms.
+ 2	03-03-2001	Sometimes it seems that tenhove sentinels protecting a station
+				get lost and start wandering away.
+				Solution: The problem was that heuristic for calculating the
+				interception point was buggy. It would not properly take into account
+				the closing speed of the ship and would sometimes compute an interception
+				point behind the sentinel.
+ 2	04-15-2001	High-score list clips
+ 3	01-12-2001	When player has mining laser, beam doesn't seem to be straight.
+				[Fix: This was tricky to fix. We need to adjust the starting position
+				of the beam in order to make it look like it is coming out of the
+				ship that fired it (to compensate for the moving ship). Unfortunately,
+				the compensation calculation depended on the update order of the
+				objects in the system.]
+ 2  04-15-2001	While in the middle of docking, 'D' should not try to dock with
+				a different station (it should either do nothing or cancel the dock).
+				[Fix: Does nothing now.]
+ 2	04-15-2001	Tenhove sentinel bitmap needs to be fixed.
+ 1  06-19-2002	Crash when restarting the game a gating to a system. The problem was
+				that I wasn't clearing out the m_pSystem variable in the CTopologyNode
+				structure between games.
+ 1  07-27-2002	Crash CStandardShipAI.cpp(200). m_pTarget is NULL, but m_Goal
+				is goalDestroyTarget. This may have happened because of a load/save
+				problem. I added code in load game to ASSERT if we ever fail to
+				resolve all references.
+				[Fix: I believe that the problem was that when an enemy ship is
+				attacked, the CStandardShipAI code will attempt to set the goal
+				of attacking the attacker. However, in some cases, the "attacker"
+				is only the beam or missile hitting the ship. In that case, we
+				try to destroy the beam or missile and never hear about its
+				destruction. If we then go to save this state, we will try to save
+				a pointer to a bogus objects. On load, we will leave the pointer
+				NULL.]
+ 1	11-30-2001	Crash CStandardShipAI.cpp(87). Note: On 12-15-2001 I fixed a bug
+				in CSpaceObject::GetNearestEnemies that may explain this crash.
+				[Fix: Haven't seen this crash since then. 07-27-2002]
+ 2	05-12-2001	Install SmartCannon with 0 rounds. Now dock with station and
+				loot or buy some rounds. Target display does not update.
+ 2	10-28-2001	Ships with more than one missile type do not select the next missile
+				properly. [This should be fixed by new code to select missiles. 10-10-2002]
+ 1	02-09-2003	Crashed because we were unable to resolve object references on load.
+				[Fix: I believe the problem is that in CStandardShipAI.cpp(1126) we
+				try to NULL the pointers to targets that have been destroyed. Unfortunately,
+				the loop started at 1 instead of 0 because it assumed that the first entry
+				had already been fixed up. Instead, the first entry had been deleted, so
+				the second entry (now first) never got fixed-up.]
+ 1	03-16-2003	Crashed again because we were unable to resolve object references.
+				[Fix: I believe I didn't fix a previous bug (07-27-2002) correctly. There
+				were still parts of the code that would target a beam or a missile. In particular,
+				in the OnObjectDestroyed function I added a check of CanAttack before targeting
+				pDestroyer.]
+ 1	04-27-2003	Fixed a bug in which a random encounter was sent out to attack the CPOVMarker
+				object. This could happen if the player was destroyed (or gated out) just as an
+				encounter happened. Since the CPOVMarker object does not notify others when it
+				is destroyed (because it is a fake object) this could result in garbage in the
+				Orders table. I fixed this by not allowing CPOVMarker objects (any object that
+				can't attack) be the target of a random encounter.
+ 1	06-29-2004	If we exit the game while docked, we don't restore the game properly. Fixed this
+				by always Undocking when we exit. Thanks to Brian Lane.
+ 2	04-18-2001	Targeting computer should be cleared when we gate to a
+				different star system. [Tried on 7-24-2004 and it worked fine.]
+ 1	05-20-2003	Release build does not work on VPR Matrix because DirectX gets
+				hosed at start-up. This is probably related to exclusive mode and
+				to the fact that the game does not recover if it is ever minimized. [Works now, though
+				I don't know why. In any case, filed a different bug about minimized]
+ 2  09-11-2004	Got into a state in which a friendly station was firing on a wreck (or
+				possibly some invisible object). When I saved and restored, the station
+				stopped firing. Also, this was after a resurrection (died and continued)
+				but not immediately after. [Fix: Turns out that stations were not clearing the
+				m_pTarget variable after the target was destroyed or after the target went
+				out of range.]
+ 3	12-08-2004	Fixed a bug in which text was not wrapping correctly when high-ASCII characters
+				were present (e.g., em-dash).
+ 1  09-11-2004  DirectX screws-up when minimizing game. [Fixed in 0.8a]

@@ -1,0 +1,2170 @@
+GAME ELEMENTS
+-------------
+
+: Activate Heretic Gate: Enter through Heretic Gate to end the game
+	+ Obtain stargate control rod
+	
+: Obtain stargate control rod
+	+ Destroy Iocrym commandship (rods are on-board wreck)
+	
+: Destroy Iocrym commandship
+	+ Weapon against Iocrym commandship
+	+ Defense against Iocrym commandship
+	
+: Weapon against Iocrym commandship
+	+ One of:
+		- Level XIII anti-matter weapon gained via quest
+		- Level XII Kytryn plasma pod attack
+		- Level IX Qianlong archcannon
+
+: Defense against Iocrym commandship
+	+ One of:
+		- Level X Lazarus shield???
+		- Level IX Iocrym veil
+		- Level VIII Plasma shield generator
+
+: Level XII Kytryn plasma pod attack
+	+ Level XII Kytryn plasma pod
+	+ Level X Kytryn launcher
+
+: Level XII Kytryn plasma pods
+	+ One of:
+		- Iocrym vault
+
+: Level X Kytryn launcher
+	+ One of:
+		- 50% Buy at Ringer Shipyard (70,000 rin)
+		- Random treasure ???
+	+ Level X device install
+	+ Level III 25MW reactor
+
+: Level X device install
+	+ One of
+		- Ringer Shipyard Dock Services
+		
+: Level IX Iocrym veil
+	+ One of:
+		- 25% Buy at Ringer Shipyard (16,000 rin)
+		- 5% Buy at Ringer Collective (16,000 rin)
+		- Random treasure (Ranx Fortress)
+	+ Level IX device install
+	+ Level VII 250MW reactor
+		
+: Level IX Qianlong archcannon
+	+ One of
+		- 50% Buy at Ringer Shipyard (38,000 rin)
+		- 5% Buy at Ringer Collective (38,000 rin)
+		- 25% From wreck of Sung Citadel
+	+ Level IX device install
+	+ Level VI Longzhu sphere
+	+ Level III 25MW reactor
+	
+: Level IX device install
+	+ One of
+		- CSC Dock Services
+		- Ringer Shipyard Dock Services
+		
+: Level VIII Plasma shield generator
+	+ One of:
+		- From Doctor on CSC (>10,000 credits of medical supplies)
+		- From Black Market station at level 6 (Sindikat Lord)
+		- From wreck of Corporate Cruiser
+		- Random treasure (Ranx outpost, rogue fleet cache, Ventari colony)
+	+ Level VIII device install
+	+ Level VII 250MW reactor
+		
+: Level VIII device install
+	+ One of:
+		- CSC Dock Services
+		- Ringer Shipyard Dock Services
+		- Black Market Dock Services
+		- Weapons only, Arms Dealer (Rasiermesser, Makayev, or Bushido)
+		
+: Level VII 250MW reactor
+	+ One of:
+		- Ringer Shipyard Dock Services (12,000 rin)
+		- Random treasure (Gaian processor, Ranx Dreadnought, Xenophobe Worldship, ...)
+		
+THE TRANSCENDENCE TRILOGY
+-------------------------
+
+Transcendence consists of three adventures:
+
+EarthSpace Quarantine Zone (Level 1 - 10)
+
+The universe of Transcendence is introduced and the adventure begins.
+The player must break out of the Quarantine Zone set up by the ancient
+alien races to keep the upstart Humans from destabilizing the galaxy.
+
+This adventure consists of 24 star systems.
+
+The Galactics (Level 11 - 20)
+
+The Galaxy is unimaginably vast and filled with incredible wonders.
+If only the ancient alien races would leave the player alone. Battling
+one faction or another, the player must travel across the galactic disk
+searching for the mysterious secret of the Core.
+
+The adventure ends just as the player discovers that the aliens of the
+galactic disk are mere youngsters compared to the Old Ones of the Halo.
+There are 50 star systems in this adventure.
+
+Oracus & Domina (Level 21 - 25)
+
+Helped by the Halo races and drawn by the enchanting Domina, the player
+must journey to the twin black holes at the Galaxy's core and prevent
+a cataclysm that could destroy all life in the Galaxy.
+
+TRANSCENDENCE OUTLINE
+---------------------
+
+THE COMMONWEALTH
+
+SE.  Eridani			I		Starton Eridani
+C1.  Lalande			I		Commonwealth
+C2.  Tau Ceti			I		Commonwealth
+C3.  Ross 248			II		Commonwealth
+C3a. Cygni (50%)		II		Commonwealth
+BA.  Rigel Aurelius		II		Battle Arena
+C4.  Van Maanen			III		Commonwealth
+C4a. Manchester (50%)	III		Commonwealth
+CP.  New Wellington		III		Charon Pirate Fortress
+
+THE UNGOVERNED TERRITORIES
+
+SK.  St. Katharine		IV		St. Katharine's Star
+C5a. Dorado (50%)		IV		Commonwealth
+C5.  Humbolt			IV		Commonwealth
+C6.  Kinder's Star		V		Commonwealth
+C6a. Junger (50%)		V		Commonwealth
+C7.  Edo				V		Cathedral of Domina
+C8.  Nobunaga			VI		Commonwealth
+C8A. Maharashtra (50%)	VI		Commonwealth
+C9.  Jiang's Star		VI		Sung Slaver Palace
+
+THE WARFRONT
+
+C10. Sleng				VII		Commonwealth
+W1.  Chang Li			VII		Warfront
+W1a. Ki Xyrrmir	(50%)	VII		Warfront
+W2.  Zheling			VII		Warfront
+W3.  Katrin's Star		VIII	Warfront
+
+THE ARES ORTHODOXY
+
+A1.  Dao				VIII	Ares
+A1a. Umi (50%)			VIII	Ares
+A2.  Eta Ceti			VIII	Temple of Oracus
+A3.  Termoris			IX		Ares
+A3a  Crucifex (50%)		IX		Ares
+A4.  Denebola			IX		Ares
+A5.  Ares				IX		Ares Prime
+
+THE HERETIC GATE
+
+G1.  HD 44594			X		Iocrym Outpost
+G2.  Quarantine			X		Heretic Gate
+
+Notes:
+
+1. Perhaps Manchester could be the Charon Pirates' Capital.
+2. Jiang's Star could be another climax system. (Penitent?)
+3. Triton Alliance is a minor power in the Ungoverned Territories
+4. Terraformers are a minor power in the Ares sphere of influence
+
+FEATURES BY LEVEL
+-----------------
+
+LEVEL I
+-------------------------------------------------------------------------------
+Enemies				[x] Charon pirates (primary)
+					[x] Freeworlds anarchists
+					[x] Centauri raiders
+
+Enemy Abilities		[x] Normal damage
+
+Friendlies			[x] armor dealer
+					[x] fuel depot
+					[x] Korolov shipping
+
+Goals				[x] class II deflector
+					[x] fast-fire laser cannon
+					[x] TK10 Trident cannon
+
+New System Type		[x] Standard
+
+Special System		[x] Eridani System
+
+Notes				Commonwealth
+					Augmented Humans
+
+LEVEL II
+-------------------------------------------------------------------------------
+Enemies				[x] Charon pirates (primary)
+					[x] Outlaws
+					[x] Unlicensed miners
+
+Enemy Abilities		[x] Missiles
+
+Friendlies			[x] arms dealer
+					[x] ice farm
+					[x] merchant prince hotel
+					[x] salvager nomad
+					[x] tinker gathering
+
+Special Features	[x] Salvager
+
+Goals				[x] carbon fiber shell
+					[x] AK15 Partisan cannon
+					[x] turbolaser cannon
+					[x] NAMI missile launcher
+
+New System Type		[x] Asteroid system
+
+Special System		[x] Rigel Aurelius System
+
+Notes				Commonwealth
+					Augmented Humans; Luddites
+
+LEVEL III
+-------------------------------------------------------------------------------
+Enemies				[x] Charon pirates (primary)
+					[x] Sapiens Extremists (terrorists)
+					[x] Heliotropes
+
+Enemy Abilities		[x] Blindness
+
+Friendlies			[x] commonwealth dry dock
+					[x] sisters of domina
+					[x] corporate enclave
+					[x] black market station
+
+Goals				[x] plasteel plate
+					[x] class III deflector
+					[x] particle beam weapon
+					[x] slam cannon
+
+New System Type		[x] Red dwarf (ice)
+
+Special System		[x] New Wellington (Charon pirate homeworld)
+
+Notes				Commonwealth
+					Augmented Humans; Luddites; Pure Humans
+
+LEVEL IV
+-------------------------------------------------------------------------------
+Enemies				[x] Sung slavers (primary)
+					[x] Death Drugs cartel
+					[x] marauders
+
+Enemy Abilities		[x] Radiation
+
+Friendlies			[x] Clavius insurance
+					[x] commonwealth fortress
+
+Goals				[x] advanced reactive armor
+					[x] lancer cannon
+					[x] mark I howitzer
+					[x] 100MW reactor
+
+New System Type		[x] Blue star (desert)
+
+Special System		[x] St. Katharine's Star System
+
+Notes				Ungoverned Territories
+					Augmented Humans; Luddites; Pure Humans; AIs
+					Sung slavers are an aristocratic culture that depend on
+						various servant races, including zoanthropes.
+						Sung slavers are experts in the control of ships and
+						stations.
+
+LEVEL V
+-------------------------------------------------------------------------------
+Enemies				[x] Sung slavers (primary)
+					[x] Order of Penitence
+
+Enemy Abilities		[x] Ion cannon (paralysis)
+
+Friendlies			[x] Thor's wondrous devices
+					[x] (auton center)
+
+Goals				[x] Duralloy armor
+					[x] Trenton field generator
+					[x] star cannon
+					[x] mark III howitzer
+					[x] military ID
+
+New System Type		[x] Nebulae
+
+Special System		[ ] Edo (Cathedral of Domina)
+
+Notes				Ungoverned Territories
+					Augmented Humans; Luddites; Pure Humans; AIs; Simples
+
+LEVEL VI
+-------------------------------------------------------------------------------
+Enemies				[x] Sung slavers (primary)
+					[x] Xenophobes
+
+Enemy Abilities		[x] Computer attack (reboot, control, lower shields)
+
+Friendlies			[x] (ringer's collective)
+					[ ] (assassin club)
+
+Goals				[x] Gusoku armor
+					[ ] (device)
+					[x] Yoroi MX shields
+					[x] Qianlong archcannon
+					[x] Katana star cannon
+
+New System Type		[x] Red giant (volcanic)
+
+Special System		[ ] Jiang's Star (Sung Slaver Palace)
+
+Notes				Ungoverned Territories
+					Augmented Humans; Luddites; Pure Humans; AIs; Simples;
+					Zoanthropes
+
+LEVEL VII
+-------------------------------------------------------------------------------
+Enemies				[x] Ares Orthodoxy (primary)
+					[x] rogue fleet
+					[x] Ventari outpost
+
+Enemy Abilities		[x] Device damage
+
+Friendlies			[x] (fleet)
+					[ ] (settler colony)
+
+Special Features	[ ] Radiation fields
+
+Goals				[x] carbide carapace
+					[x] transpace jumpdrive
+					[ ] (shields)
+					[ ] (ion weapon)
+					[ ] (thermo weapon)
+
+New System Type		[ ] Smashed (radioactive)
+
+Special System		[x] Zheling (warfront)
+
+Notes				Warfront
+					Augmented Humans; Luddites; Pure Humans; AIs; Simples;
+					Zoanthropes; Enhanced Humans
+
+LEVEL VIII
+-------------------------------------------------------------------------------
+Enemies				[x] Ares Orthodoxy (primary)
+					[x] Luminous AI
+					[x] Ranx Fortress
+
+Enemy Abilities		[x] adapt to player strengths/weaknesses
+
+Friendlies			[ ] (settler outposts)
+					[ ] (refugee camps)
+
+Goals				[ ] (armor)
+					[ ] (device)
+					[x] Iocrym veil
+					[ ] ion disintegrator
+					[ ] (thermo weapon)
+
+New System Type		[ ] neutron star (ion storms)
+
+Special System		[ ] Eta Ceti (Temple of Oracus)
+
+Notes				Warfront
+					Augmented Humans; Luddites; Pure Humans; AIs; Simples;
+					Zoanthropes; Enhanced Humans; Neo-Humans
+
+LEVEL IX
+-------------------------------------------------------------------------------
+Enemies				[x] Ares Orthodoxy (primary)
+					[x] Terraformers
+
+Enemy Abilities		[ ] Disintegration
+
+Friendlies			[ ] (wrecked carrier)
+					[ ] (friendly)
+
+Goals				[x] diamond-lattice armor
+					[ ] (device)
+					[x] Lazarus shield generator
+					[x] positron beam weapon
+					[ ] plasma cannon
+					[x] 1GW reactor
+
+Special System		[ ] Ares Prime
+
+Notes				Warfront
+					Augmented Humans; Luddites; Pure Humans; AIs; Simples;
+					Enhanced Humans; Zoanthropes; Neo-Humans
+
+LEVEL X
+-------------------------------------------------------------------------------
+Enemies				[ ] Iocrym (primary)
+					[ ] Echtolian Parasites (Alien Parasites)
+
+Enemy Abilities		[ ] Parasite (kills player unless removed)
+
+Friendlies			[ ] (friendly)
+					[ ] (friendly)
+
+Goals				[ ] (armor)
+					[ ] (device)
+					[ ] (shields)
+					[ ] (positron weapon)
+					[ ] (plasma weapon)
+
+Special System		[x] Heretic System
+
+Notes				Alien
+					Augmented Humans; Luddites; Pure Humans; AIs; Simples;
+					Enhanced Humans; Zoanthropes; Neo-Humans;
+
+ENCOUNTERS
+----------
+
+ARES ORTHODOXY
+
+	[ ] Ares Redoubt (VII)
+	[x] Ares Outpost (VIII)
+	[ ] Ares Clone Vault (VIII)
+	[x] Ares Commune (VIII)
+	[ ] Ares Citadel (IX)
+	[ ] Ares Metropolis (X)
+
+	[x] Sandstorm-class gunship (VI)
+	[x] Polar-class freighter (VII)
+	[x] Tundra-class heavy gunship (VIII): lightning cannon; micro-nukes
+	[x] Cometfall-class gunship (VIII): positron beam
+	[ ] Olympus-class cruiser (IX): positron beam
+
+CENTAURI RAIDERS
+
+	[x] Centauri Occupation (I)
+	[x] Centauri Stronghold (II)
+
+	[x] Centauri raider (I)
+	[x] Centauri command ship (III)
+
+CHARON PIRATES
+
+	[x] Charon Pirate Cache (I)
+	[x] Charon Pirate Outpost (II)
+	[x] Charon Pirate Stronghold (III)
+
+	[x] Corsair-class gunship (I)
+	[x] Viking-class gunship (II)
+	[x] Corsair II-class gunship (III)
+	[x] Drake-class missileship (IV)
+
+DEATH DRUGS CARTEL
+
+	[x] Death Drugs Cartel Outpost (IV)
+
+	[x] Meth enforcer (IV)
+
+ECHTOLIAN PARASITES
+
+	[ ] Echtolian nest (X): Nest is in hull of dead starship
+
+	[ ] Echtolian drone (IX): Infects ship with parasite
+	[ ] Echtolian warrior (X)
+
+FREEWORLD ANARCHISTS
+
+	[x] Anarchist Camp (I)
+	[x] Anarchist Gathering (II)
+	[x] Anarchist Settlement (III)
+
+	[x] Hornet-class battlepod (I)
+	[x] Earthzone-class armed shuttle (II)
+
+HELIOTROPES
+
+	[x] Heliotrope Outpost (III)
+	[x] Heliotrope Colony (IV)
+
+	[x] Heliotrope gunship (III): Use imp image; blinder cannon
+	[x] Heliotrope destroyer (IV)
+
+IOCRYM
+
+	[ ] Iocrym sentinel (IX)
+
+	[ ] Iocrym gunship (X)
+	[x] Iocrym command ship (XII)
+
+LUMINOUS
+
+	[ ] Luminous subprocessor (IX)
+
+	[ ] Luminous manipulator (VIII)
+	[ ] Luminous hunter-killer (IX)
+
+MARAUDERS
+
+	[x] Marauder Outpost (IV)
+	[x] Marauder Compound (V)
+	[x] Marauder Stronghold (VI)
+
+	[x] Viking II-class gunship (IV)
+	[x] Drake-class missileship (IV)
+	[x] Marauder raid platform (V)
+	[x] Barbary-class gunship (V)
+	[x] Tripoli-class destroyer (VI)
+
+ORDER OF PENITENCE
+
+	[ ] Penitent Shrine (V): Player can contact Oracus
+	[ ] Penitent Sanctum (VI): Player can contact Oracus
+
+	[ ] Repentant-class gunship (V): Uses HARASS power of Oracus
+	[ ] Atonement-class heavy gunship (VI): Uses HARASS and CONTAMINATE powers of Oracus
+
+OUTLAWS
+
+	[x] Outlaw Camp (II)
+	[x] Outlaw Base (II)
+	[x] Outlaw Haven (III)
+
+	[x] Zulu-class gunship (I)
+	[x] Zulu II-class gunship (II)
+	[x] Oromo-class gunship (III)
+	[x] Sotho-class gunship (III)
+
+ROGUE FLEET
+
+	[x] Rogue Fleet Cache (VII)
+
+	[x] Centurion-class heavy gunship (VI)
+	[ ] Ballista-class missileship (VII)
+	[ ] Aquila-class destroyer (VIII)
+	[ ] CSC Antarctica (IX): Damaged, (otherwise it would be level X)
+
+SAPIENS EXTREMISTS
+
+	[x] Sapiens Extremists Camp (III)
+	[x] Sapiens Extremists Compound (IV)
+
+	[x] Plague-class gunship (III)
+	[x] Revelation-class missileship (IV)
+
+SALVAGERS
+
+	[x] Salvager nomad (IV)
+
+SUNG SLAVERS
+
+	[x] Sung slave camp (IV)
+	[x] Sung fortress (V)
+	[x] Sung border tower (V): wall surrounding fortress
+	[x] Sung citadel (VI): cyberattack (shields down)
+	[ ] Sung palace (VII): computer control?
+
+	[ ] Sung freighter (IV)
+	[x] Sung Wind slaver (IV): neutron blaster; polyceramic armor; very fast
+	[x] Sung Steel slaver (V): cyberattack (disarm); particle beam weapon; Yoroi S100 shields; polyceramic armor; slow
+	[x] Sung Earth slaver (VI): cyberattack (shields down); particle bolt cannon; Yoroi S100 shields; polyceramic armor; large
+	[ ] Sung Dragon slaver (VII): reboot computer; kiloton cannon; Yoroi S500 shields; polyceramic armor; fast
+
+TERRAFORMERS
+
+	[x] Gaian processor (IX): disintegration cannon
+
+	[ ] Gaian aleron (VIII)
+	[ ] Gaian persecutor (IX): disintegration cannon
+
+UNLICENSED MINERS
+
+	[x] Titanium Asteroid Mine (II)
+	[x] Duralloy Asteroid Mine (III)
+	[x] Pteracnium Asteroid Mine (IV)
+
+	[x] Borer-class gunship (I)
+	[x] Hammerhead-class gunship (I)
+	[x] Borer II-class gunship (II)
+	[x] Hammerhead II-class gunship (III)
+
+XENOPHOBES
+
+	[x] Xenophobe fleet (VI): Xenophobe defender, escorted by fighters
+	[x] Xenophobe worldship (VIII): Xenophobe worldship encounter
+
+	[x] Xenophobe fighter (V)
+	[x] Xenophobe defender (VI)
+
+STAR SYSTEM TYPES
+-----------------
+
+[x] planetary				standard systems (like sol system)
+[x] asteroid				large asteroid belt; 2 or 3 planets
+[x] red dwarf				small dim star; icy worlds
+[x] blue star				desert planets;
+[x] nebula					all gas giants; nebula
+[x] red giant				large red sun; volcanic worlds
+[ ] smashed					radioactive system
+
+[ ] comet					sparse asteroid belts; large moons/comets in eccentric orbits
+[ ] void					no star; very few asteroids in eccentric orbits
+[ ] binary					binary star system; desert
+[ ] pulsar					pulsar; high radiation levels
+
+STORY ARC
+---------
+
+COMMONWEALTH FLEET
+------------------
+
+Each of the twelve carriers has a different mission.
+
+All carriers have the following services available to any ship:
+
+Refueling (at high cost)
+Armor repair (normal cost)
+Weapon/device installation (normal cost)
+
+LEVEL VII
+
+Each level VII system has a 50% chance of having a carrier. When encountered,
+there is an equal chance that it will be CSC Sahara, CSC India, or CSC Arctica.
+[CSC Atlantica is always encountered in the Zheling system]. The same carrier
+cannot be encountered in two different systems.
+
+-------------------------------------------------------------------------------
+CSC Sahara					Sahara is a hospital ship, treating wounded from the
+							front. The player may sell medical supplies to the
+							ship for a good profit. Or she may give the supplies
+							away. If she gives enough supplies, the captain will
+							reward the player with some good shields.
+
+-------------------------------------------------------------------------------
+CSC India
+
+-------------------------------------------------------------------------------
+CSC Arctica					(same as CSC Sahara)
+
+-------------------------------------------------------------------------------
+CSC Atlantica				The Zheling system is an active warzone. If the
+							player wants to join in the war, she will participate
+							in an attack on a massive formation of Ares ships.
+							If the attack is successful, the player is rewarded
+							with a commendation and payment of some kind.
+
+LEVEL VIII
+
+-------------------------------------------------------------------------------
+CSC Terra (flagship)
+
+-------------------------------------------------------------------------------
+CSC Asia
+
+-------------------------------------------------------------------------------
+CSC Antarctica (rogue)
+
+-------------------------------------------------------------------------------
+CSC Amazonia (destroyed)
+
+LEVEL IX
+
+-------------------------------------------------------------------------------
+CSC Europa (destroyed)
+
+-------------------------------------------------------------------------------
+CSC Pacifica
+
+-------------------------------------------------------------------------------
+CSC Australia (destroyed)
+
+-------------------------------------------------------------------------------
+CSC America
+
+STATIONS BY LEVEL
+-----------------
+
+LEVEL I
+
+	[x] Anarchist Camp
+	[x] Centauri Occupation
+	[x] Pirate Cache
+
+LEVEL II
+
+	[x] Anarchist Gathering
+	[x] Centauri Stronghold
+	[x] Miner, Titanium
+	[x] Outlaw Camp
+	[x] Outlaw Base
+	[x] Pirate Outpost
+
+LEVEL III
+
+	[x] Anarchist Settlement
+	[x] Bioterrorist Camp
+	[x] Miner, Duralloy
+	[x] Outlaw Haven
+	[x] Pirate Stronghold
+
+LEVEL IV
+
+	[x] Bioterrorist Compound
+	[x] Drug Distribution Outpost
+	[x] Marauder Outpost
+	[x] Miner, Pteracnium
+	[x] Penitent Shrine
+
+LEVEL V
+
+	[ ] Drug Lab
+	[x] Marauder Compound
+	[x] Penitent Sanctum
+	[ ] Utopian Commune
+	[ ] Xenophobe Compound
+
+LEVEL VI
+
+	[ ] Drug Cartel Stronghold
+	[ ] Marauder Stronghold
+	[ ] Penitent Monastery
+	[ ] Utopian Citadel
+	[ ] Xenophobe Stronghold
+
+SHIPS BY SOVEREIGN
+------------------
+
+ANARCHISTS
+
+	[x] Hornet-class battlepod (I)
+	[x] EarthZone-class armed shuttle (II)
+
+	Notes:
+	
+		Anarchists use modified versions of various Freeworlds designs.
+		Weapons: laser cannon
+		Armor: titanium; ceramic plate
+
+BIOTERRORISTS
+
+	[x] Plague-class gunship (III)
+	[x] Revelations-class missileship (IV)
+
+	Notes:
+	
+		Bioterrorists use modified versions of various Freeworlds designs.
+		Weapons: actinide waste cannon; XM300 missile
+		Armor: light plasteel plate
+
+DRUG LORDS
+
+	[x] Meth Enforcer-class gunship (IV)
+	[ ] Meth Punisher-class gunship (V)
+	[ ] Meth Assassin-class gunship (VI)
+	[ ] Endor-class freighter (VI)
+
+MARAUDERS
+
+	[x] Viking II-class gunship (IV)
+	[x] Marauder Raid Platform (V)
+	[x] Barbary-class gunship (V)
+	[x] Tripoli-class destroyer (VI)
+
+	Notes:
+
+		Weapons: dual turbolasers; ion cannon
+		Armor: advanced reactive;
+
+MINERS
+
+	[x] Tenhove-class sentinel (I)
+	[x] Borer-class gunship (I)
+	[x] Hammerhead-class gunship (I)
+	[x] Borer II-class gunship (II)
+	[x] Hammerhead II-class gunship (III)
+
+OUTLAWS
+
+	[x] Zulu-class gunship (I)
+	[x] Zulu II-class gunship (II)
+	[x] Oromo-class gunship (III)
+	[x] Sotho-class gunship (III)
+
+	Notes:
+	
+		Outlaws use UAS ship designs.
+		Weapons: recoilless cannon; arbalest cannon
+		Armor: titanium armor; heavy titanium; ceramic armor; light plasteel
+
+PENITENTS
+
+	[ ]	Zealot-class missile (III)
+	[x] Repentent-class gunship (IV)
+	[x] Atonement-class gunship (V)
+	[ ] Crusader-class destroyer (VI)
+
+PIRATES
+
+	[x] Corsair-class gunship (I)
+	[x] Viking-class gunship (II)
+	[x] Corsair II-class gunship (III)
+	[x] Drake-class missileship (IV)
+
+	Notes:
+	
+		Pirates use modified versions of various corporate designs.
+		Weapons: laser cannon; turbolaser cannon
+		Armor: titanium; reactive armor
+
+UTOPIANS
+
+	[ ] Wolfhound-class sentinel (IV)
+	[ ] Netizen-class gunship (V)
+	[ ] Mastiff-class sentinel (VI)
+	[ ] Bazaar-class missileship (VI)
+
+XENOPHOBES
+
+	[ ] Sterilizer-class gunship (V)
+	[ ] Inflexible-class transport (VI)
+
+TREASURE TYPES
+--------------
+
+CONSUMABLES
+
+ammo (including missiles)
+consumable (fuel/ammo/armor patches/etc.)
+fuel
+treasure (otherwise useless to player)
+
+MINOR ITEMS
+
+armor
+enhancements (armor coatings/permanent roms)
+
+MAJOR ITEMS
+
+device (misc device/shield/weapon)
+misc device
+shield
+weapon
+
+The average ratio of treasure for stations of a given level should be:
+
+40% consumables
+40% minor items
+20% major items
+
+When balancing out the treasure for a station, allocate 100 points worth
+using the following costs (where n is the level of the station):
+
+1 major item of level n+1				400
+1 major item of level n					200
+1 minor item of level n+1				200
+1 major item of level n-1				100
+1 minor item of level n					100
+1 consumable of level n+1				100
+1 minor item of level n-1				50
+1 consumable of level n					50
+1 consumable of level n-1				25
+
+Costs are adjusted proportionally if the treasure only has a chance of appearing.
+For example, a 50% chance to find a major item of level n is 50% of 200 (or 100).
+
+TECHNOLOGY
+----------
+
+LEVEL I: LOW-TECH
+
+titanium alloys; lasers; mass-drivers
+
+	titanium plate
+
+LEVEL II: MANUFACTURING
+
+active armors; ceramics
+
+	ablative armor; ceramic armor; reactive armor; missiles
+
+LEVEL III
+
+carbon-fibers; compound plates; light-plasteel
+
+	carbon-fiber; light plasteel plate; polymesh
+
+LEVEL IV: HIGH-TECH
+
+advanced alloys/plasteel
+
+	plasteel plate
+
+LEVEL V
+
+polyceramics; particle beam weapons
+
+LEVEL VI: RESTRICTED/MILITARY
+
+Duralloy; basic nano-tech
+
+LEVEL VII
+
+biphase carbides; controlled fusion
+
+LEVEL VIII: EXPERIMENTAL
+
+carbide-composites; ion technologies
+
+	carbide-carapace
+
+LEVEL IX
+
+transuranic alloys
+
+LEVEL X: HIGH RACES
+
+nano-tech manufacturing; diamond-lattice; advanced fusion/plasma
+
+LEVEL XI
+
+neutronium; atomic anti-matter (positrons)
+
+LEVEL XII
+
+LEVEL XIII
+
+macroscale anti-matter
+
+LEVEL XIV
+
+advanced nano-technology
+
+LEVEL XV: HALO RACES
+
+LEVEL XVI
+
+gravitons; singularities; space-time weapons
+
+LEVEL XVII
+
+LEVEL XVIII
+
+LEVEL XIX
+
+LEVEL XX
+
+LEVEL XXI: HIERODULES
+
+dark matter energies; hierosteel
+
+LEVEL XXII
+
+LEVEL XXIII
+
+LEVEL XXIV
+
+LEVEL XXV
+
+
+SHIPS BY TECH ORDER
+-------------------
+
+Mech
+	invisible
+	illusion
+	light gunship (outdated)
+	light gunship (standard)
+	heavy gunship (outdated)
+	heavy gunship (standard)
+	missile ship (outdated)
+	capital ship (outdated)
+	freighter (small)
+	freighter (medium)
+
+Biomech
+	light gunship (advanced)
+	heavy gunship (advanced)
+	stun/paralyze
+	capital ship (standard)
+
+Nuclear
+	radiation
+	missile ship (standard)
+	missile ship (advanced)
+	retributive strike
+
+Megascale
+	asteroid ship
+	carrier
+	freighter (large)
+
+Biotech
+	organic
+
+Replicator
+	replicator
+
+Nano
+	parasite
+
+Nanotok
+	capital ship (advanced)
+
+Demonology
+	inertialess
+
+EARTHSPACE QUARANTINE ZONE STORY ARC
+------------------------------------
+
+CHOSEN
+
+A dream convinces the player that he must journey to the Galactic Core.
+There he will receive a glimpse of the Eternal Pattern of the Cosmos
+in exchange for a small favor. But first he has to get there... [Opening
+screen.]
+
+EARTHSPACE QUARANTINE ZONE
+
+Getting around the Galaxy is easy. The network of stargates built by
+the Galactics leads to the Core. Unfortunately, the alien races have
+blockaded the stargates leading out of EarthSpace to prevent the
+Galaxy from being overrun by the violent and unpredictable humans.
+
+Charon Pirates
+Break the Alien Quarantine
+
+SHIP CAPABILITIES AND CHARACTERISTICS
+-------------------------------------
+
+Armor
+	Armor coatings
+	Armor repair
+Shield Generator
+	Enhancement
+Primary Weapon
+	Enhancement
+Missile Launcher
+	Missiles
+Cargo Space
+	Smuggling cargo hold
+Drive
+	Max Speed
+	Thrust
+Reactor
+	Devices supported
+	Fuel
+Scanners
+Stealth
+Computer
+	Autopilot
+	Targeting
+
+WEAPON LINES
+------------
+
+LASER
+
+I. laser cannon						1d4
+III. dual laser cannons				1d4 (x2)
+III. turbolaser cannon				3d4
+V. dual turbolaser cannons			3d4 (x2)
+VIII. X-ray laser cannon			6d4 (x2)
+
+IMPACT
+
+I. recoilless cannon				1d6+1
+II. heavy recoilless cannon			2d6-1
+III. Arbalest cannon				1d6 (x3)
+III. dual recoilless cannon			1d6+1 (x2)
+IV. Flenser cannon					2d6+2
+VI. dual Flenser cannons			2d6+2 (x2)
+IX. (Vulcan hammer)					5d6+2 (x2) + momentum
+
+MISSILES
+
+II. KM100							5d6
+III. Fragmentation					5d6 + shrapnel
+IV. KM500							5d6 tracking
+IV. (XM100 spirit missile) 			ion (paralysis)
+V. XM300							5d6 + radiation
+IX. XM900							10d12 thermo
+
+MAGs
+
+III. 400 Hexagene MAG				4d6
+IV.  600 Hexagene MAG				6d6
+V. 800F Hexagene MAG				8d6 + shrapnel
+VI. ZG24 Cluster MAG				3d6 (x24) area
+VII. 3K Siege MAG					30d6 (very slow)
+VIII. High-Flux MAG					6d12 thermo + radiation area
+
+ION
+
+III. (blinder cannon)				ion (blinding)
+V. ion cannon						ion (paralysis)
+VII. (EMP cannon)					ion (paralysis) + area of effect
+VIII. (radiation cannon)			ion (radiation)
+
+ARMOR BY TYPE
+-------------
+
+NORMAL
+
+I. titanium
+I. heavy titanium
+II. ceramic plate
+III. light plasteel plate
+IV. plasteel plate
+V. polyceramic plate
+V. tevlar composite armor (very light)
+VII. heavy plasteel plate
+VIII. carbide carapace
+
+RESISTANT
+
+II. ablative armor (laser-resistant)
+II. reactive armor (impact-resistant)
+III. carbon fiber shell (laser-resistant)
+III. polymesh armor (impact-resistant; laser-vulnerable)
+IV. advanced reactive (impact-resistant)
+
+SPECIAL
+
+II. XMH armor (very strong; can't be repaired)
+III. photo-organic armor (repairs with sunlight)
+VI. Duralloy armor (repairs automatically)
+VI. stealth armor
+IX. transuranic plate (very strong; can't be repaired)
+
+DAMAGE TYPES
+------------
+
+Levels		Damage Type		Composition
+---------------------------------------
+I-III		laser			energy
+I-III		kinetic			matter
+IV-VI		particle		energy
+IV-VI		blast			matter
+VII-IX		ion				energy
+VII-IX		thermo			matter
+X-XII		positron		energy
+X-XII		plasma			matter
+XIII-XV		anti-matter		energy
+XIII-XV		nano			matter
+XVI-XVIII	graviton		energy
+XVI-XVIII	singularity		matter
+XIX-XXI		dark acid		energy
+XIX-XXI		dark steel		matter
+XXII-XXIV	dark lightning	energy
+XXII-XXIV	dark fire		matter
+
+WEAPON DAMAGE BY LEVEL
+----------------------
+
+LEVEL I		(4)
+
+Cost:		250
+Laser:		1d4 (2.5)			High rate of fire (laser cannon)
+Kinetic:	1d6+2 (5.5)			Low rate of fire (recoilless cannon)
+
+LEVEL II	(6)
+
+Cost:		650
+Laser:		2d4 (5)				High rate of fire
+Kinetic:	2d6+2 (9)			Low rate of fire
+
+LEVEL III	(8)
+
+Cost:		1500
+Laser:		3d4 (7.5)
+Kinetic:	3d6+2 (12.5)		Low rate of fire
+Particle:	1d8+1 (5.5)			(particle beam weapon)
+Blast:		5d6 (17.5)			Missile
+
+LEVEL IV	(9)
+
+Cost:		3250
+Laser:		5d4 (12.5)
+Particle:	2d8 (9)
+Blast:		6d6 (21)			Missile
+
+LEVEL V		(11)
+
+Cost:		8K
+Particle:	2d8+2 (11)
+Blast:		2d6+2 (9)			(Dragonfly missile system)
+Blast:		7d6 (24.5)			Missile
+
+LEVEL VI	(12)
+
+Cost:		17K
+Particle:	3d8 (13.5)
+Blast:		8d8 (28)			Missile
+
+LEVEL VII	(14)
+
+Cost:		40K
+Ion:		3d8 (13.5)			Ion cannon
+Thermo:		5d12 (32.5)			Missile
+
+LEVEL VIII	(15)
+
+Cost:		90K
+Ion:		3d8+2 (15.5)		Enhanced ion cannon
+Thermo:		6d12 (39)			Missile
+
+LEVEL IX	(17)
+
+Cost:		190K
+Ion:		4d8 (18)			Ion storm
+Thermo:		3d12 (19.5)			Concussion weapons
+Thermo:		8d12 (52)			Missile
+
+LEVEL X		(18.5)
+
+Cost:		400K
+Positron:	4d8+1 (19)
+Plasma:		5d6+1 (18.5)		Plasma cannon
+
+LEVEL XI	(20.5)
+
+Cost:		1M
+Positron:	4d8+3 (21)
+Plasma:		5d6+3 (20.5)
+
+LEVEL XII	(23)
+
+Cost:		2M
+Positron:	5d8+1 (23.5)
+Plasma:		6d6+2 (23)
+
+LEVEL XIII	(26)
+
+Cost:		4M
+
+LEVEL XIV	(30)
+
+Cost:		8M
+
+LEVEL XV	(34)
+
+Cost:		15M
+
+LEVEL XVI	(38)
+
+Cost:		30M
+
+LEVEL XVII	(43)
+
+Cost:		50M
+
+LEVEL XVIII	(49)
+
+Cost:		100M
+
+LEVEL XIX	(56)
+
+Cost:		***
+
+LEVEL XX	(63)
+
+Cost:		***
+
+LEVEL XXI	(70)
+
+Cost:		***
+
+LEVEL XXII	(78)
+
+Cost:		***
+
+LEVEL XXIII	(84)
+
+Cost:		***
+
+LEVEL XXIV	(92)
+
+Cost:		***
+
+ARMOR AND DAMAGE BY LEVEL
+-------------------------
+
+LEVEL I-III
+
+Armor HP: 20
+Cost: 150
+Damage Types: Laser, Kinetic mass drivers
+Weapon Damage: 2d6 (7)
+
+LEVEL IV-VI
+
+Armor HP: 30
+Cost: 1000
+Damage Types: Particle beam weapons, Chemical explosives
+Weapon Damage: 3d6 (10.5)
+
+LEVEL VII-IX
+
+Armor HP: 50
+Cost: 10K
+Damage Types: Ionizing radiation, Thermonuclear energy
+Weapon Damage: 4d6 (14)
+
+LEVEL X-XII
+
+Armor HP: 80
+Cost: 100K
+Damage Types: Positron beam, Fusion weapons/plasma
+Weapon Damage: 3d12 (19.5)
+
+LEVEL XIII-XV
+
+Armor HP: 130
+Cost: 800K
+Damage Types: Anti-matter torpedo, Corrosive nanomachines
+Weapon Damage: 5d12 (32.5)
+
+LEVEL XVI-XVIII
+
+Armor HP: 210
+Cost: 4M
+Damage Types: Graviton beam, Singularity/spacetime weapons
+Weapon Damage: 4d20 (42)
+
+LEVEL XIX-XXI
+
+Armor HP: 340
+Cost: ***
+Damage Types: Exotics: dark steel, Exotics: dark acid
+Weapon Damage: 6d20 (63)
+
+LEVEL XXII-XXIV
+
+Armor HP: 550
+Cost: ***
+Damage Types: Exotics: dark lightning, Exotics: dark fire
+Weapon Damage: 8d20 (84)
+
+ARMOR STRENGTH BY DAMAGE TYPE
+-----------------------------
+
+Lvl		 Lsr  Par  Bst  Kin  Ion  Thr  Pls  Pos  A-M  Nan  Grv  Sin  DSt  DAc  DLt  DFr
+---------------------------------------------------------------------------------------
+I          8    8    8    8    8    8    8    8    8    8    8    8    8    8    8    8
+II        16   12   12   16   12   12   12   12   12   12   12   12   12   12   12   12
+III       40   20   20   40   20   20   20   20   20   20   20   20   20   20   20   20
+                                                                                       
+IV        76   25   25   76   25   25   25   25   25   25   25   25   25   25   25   25
+V        150   40   40  150   30   30   30   30   30   30   30   30   30   30   30   30
+VI       292   70   70  292   35   35   35   35   35   35   35   35   35   35   35   35
+                                                                                       
+VII      500  121  121  500   40   40   40   40   40   40   40   40   40   40   40   40
+VIII    1000  250  250 1000   67   50   50   50   50   50   50   50   50   50   50   50
+IX      2000  500  500 2000  120   80   60   60   60   60   60   60   60   60   60   60
+                                                                                       
+X       3500  875  875 3500  212  140   70   70   70   70   70   70   70   70   70   70
+XI      8000 1600 1600 8000  400  242  107   80   80   80   80   80   80   80   80   80
+XII       -  3166 3166   -   792  475  190  127   95   95   95   95   95   95   95   95
+                                                                                       
+XIII      -  5500 5500   -  1375  917  333  220  110  110  110  110  110  110  110  110
+XIV       -    -    -    -  2600 1625  650  394  130  173  130  130  130  130  130  130
+XV        -    -    -    -  5000 3000 1250  750  150  300  150  150  150  150  150  150
+                                                                                       
+XVI	      -    -    -    -  9000 6000 2250 1500  240  545  180  180  180  180  180  180
+XVII      -    -    -    -    -    -  4200 2625  420 1050  280  210  210  210  210  210
+XVIII     -    -    -    -    -    -  8333 5000  758 2083  500  250  250  250  250  250
+                                                                                       
+XIX       -    -    -    -    -    -    -  9666 1450 3625  879  367  290  290  290  290
+XX        -    -    -    -    -    -    -    -  2833 6800 1700  680  453  340  340  340
+XXI       -    -    -    -    -    -    -    -  5000   -  3333 1212  800  400  400  400
+                                                                                       
+XXII      -    -    -    -    -    -    -    -  9400   -  5875 2350 1424  626  470  470
+XXIII     -    -    -    -    -    -    -    -    -    -    -  4583 2750 1100  733  550
+XXIV      -    -    -    -    -    -    -    -    -    -    -  8000 5333 1939 1280  640
+                                                                                       
+XXV       -    -    -    -    -    -    -    -    -    -    -    -    -  3200 2350 1280
+
+ARMOR ADJUSTMENT BY DAMAGE TYPE
+-------------------------------
+
+Lvl		 Lsr  Par  Bst  Kin  Ion  Thr  Pls  Pos  A-M  Nan  Grv  Sin  DSt  DAc  DLt  DFr
+---------------------------------------------------------------------------------------
+I        100  100  100  100  100  100  100  100  100  100  100  100  100  100  100  100
+II        75  100  100   75  100  100  100  100  100  100  100  100  100  100  100  100
+III       50  100  100   50  100  100  100  100  100  100  100  100  100  100  100  100
+                                                                                       
+IV        33  100  100   33  100  100  100  100  100  100  100  100  100  100  100  100
+V         20   75   75   20  100  100  100  100  100  100  100  100  100  100  100  100
+VI        12   50   50   12  100  100  100  100  100  100  100  100  100  100  100  100
+                                                                                       
+VII        8   33   33    8  100  100  100  100  100  100  100  100  100  100  100  100
+VIII       5   20   20    5   75  100  100  100  100  100  100  100  100  100  100  100
+IX         3   12   12    3   50   75  100  100  100  100  100  100  100  100  100  100
+                                                                                       
+X          2    8    8    2   33   50  100  100  100  100  100  100  100  100  100  100
+XI         1    5    5    1   20   33   75  100  100  100  100  100  100  100  100  100
+XII        0    3    3    0   12   20   50   75  100  100  100  100  100  100  100  100
+                                                                                       
+XIII       0    2    2    0    8   12   33   50  100  100  100  100  100  100  100  100
+XIV        0    1    1    0    5    8   20   33  100   75  100  100  100  100  100  100
+XV         0    0    0    0    3    5   12   20  100   50  100  100  100  100  100  100
+                                                                                       
+XVI	       0    0    0    0    2    3    8   12   75   33  100  100  100  100  100  100
+XVII       0    0    0    0    1    2    5    8   50   20   75  100  100  100  100  100
+XVIII      0    0    0    0    0    1    3    5   33   12   50  100  100  100  100  100
+                                                                                     
+XIX        0    0    0    0    0    0    2    3   20    8   33   75  100  100  100  100
+XX         0    0    0    0    0    0    1    2   12    5   20   50   75  100  100  100
+XXI        0    0    0    0    0    0    0    1    8    3   12   33   50  100  100  100
+                                                                                       
+XXII       0    0    0    0    0    0    0    0    5    2    8   20   33   75  100  100
+XXIII      0    0    0    0    0    0    0    0    3    1    5   12   20   50   75  100
+XXIV       0    0    0    0    0    0    0    0    2    0    3    8   12   33   50  100
+                                                                                       
+XXV        0    0    0    0    0    0    0    0    1    0    2    5    8   20   33   75
+
+ARMOR REPAIR TECH
+-----------------
+
+X		(military dry dock)			10. diamond lattice
+									3. photo-organic
+
+IX		Sisters of domina
+
+VIII	Tinkers						6. duralloy
+
+VII		Dry dock					6. stealth plate
+									2. XMH armor
+
+VI		Commonwealth station,		6. blast plate,
+		Korolov shipping			5. hardened plasteel,
+									8. carbide carapace,
+									9. transuranic
+
+V		armor dealer				5. advanced reactive,
+									5. polyceramic,
+									4. solar armor,
+
+IV									4. tevlar composite,
+									4. plasteel, 7. heavy plasteel
+
+III		Commonwealth colony,		3. polymesh,
+		Battle arena				3. light plateel,
+									3. carbon fiber
+
+II									2. reactive armor,
+									2. ceramic plate,
+									2. ablative armor,
+
+I									1. titanium (heavy, reinforced, etc)
+
+HULL TYPE AND SHIP MASS
+-----------------------
+
+A	1T-10T			battlepods, sentinels, exosuits
+B	10T-50T			light gunships
+C	50T-250T		shuttles, heavy gunships
+D	250T-1KT		freighters, missileships
+E	1KT-5KT			destroyers, frigates, transports
+F	5KT-25KT		crusiers, bulk freighters
+G	25KT-100KT		carriers
+H	100KT-500KT		alien destroyers
+I	500KT-2.5MT		alien cruisers
+J	2.5MT-10MT		alien carriers/commandship
+
+COMMODITIES
+-----------
+
+PROGRESSION
+
+1-2		basic foods
+1-2		basic metals/ores
+2-3		basic chemicals/fuels
+1-3		basic medical supplies
+1-2		basic consumer goods (clothing, cheap liquor)
+
+3-5		gourmet foods/spices
+3-5		advanced alloys/ores
+4-6		complex chemicals/fuels
+4-7		advanced medical supplies
+3-5		expensive consumer goods (fine clothing, mass electronics, software, good liquor)
+4-7		basic alien goods
+
+5-8		exotic foods
+6-8		rare alloys/exotic ores
+7-9		exotic chemicals/nanofactured substances
+8-10	exotic medical supplies
+6-9		luxury goods (designer/art clothing, expensive liquor/cigars/etc)
+8-10	alien personal technology
+
+5-10	original artwork
+8-15	museum quality art/artifacts
+12-20	alien artwork
+
+LEVEL VI
+
+crate of frozen Terran steaks
+barrel of Indian rice
+kilo of asian ginger
+Rolex wrist computer
+human organs
+
+LEVEL VII
+
+kilo of Mediterranean basil
+Sony THX surround implant (much more expensive than the NeuroSoft Sonifier, but audiophiles prefer the softer analogue impulses)
+microsaur
+neutronium ore
+
+LEVEL VIII
+
+crate of frozen Siberian salmon
+kilo of Jovian cloud spice
+
+STATION DEFENSES BY LEVEL
+-------------------------
+
+Lvl		Armor/HP	DefSats		Perimeter	SuperWeapon
+---------------------------------------------------------------------------------------
+I		40			-			-			-
+II		60			-			-			-
+III		100			1			-			-
+IV		125			1			-			-
+V		150			1			-			-
+VI		175			1d2			III			-
+VII		200			1d2			IV			-
+VIII	250			1d2			V			-
+IX		300			1d4			VI			XII
+X		350			1d4			VIII		XIII
+XI		400			1d4			IX			XIV
+XII		475			1d6			X			XV
+XIII	550			1d6			XI			XVI
+XIV		650			1d6			XII			XVI
+XV		750			1d6			XIV			XVII
+XVI		900			2d4			XV			XVIII
+XVII	1050		2d4			XVI			XIX
+XVIII	1250		2d4			XVII		XIX
+XIX		1450		2d4			XVIII		XX
+XX		1700		2d4			XX			XXI
+XXI		2000		2d4			XXI			XXII
+XXII	2350		2d4			XXII		XXIII
+XXIII	2750		2d4			XXIII		XXIII
+XXIV	3200		2d4			XXIV		XXIV
+XXV		4800		2d4			XXV			XXV
+
+REACTORS & FUEL
+---------------
+
+III		25MW	(I-III) helium fuel rods					60,000
+IV		50MW	(I-IV) helium fuel rods, helium assembly	120,000
+V		100MW	(II-V) helium assembly, xenotite			250,000
+VI		150MW	(III-VI) helium assembly, xenotite			375,000
+VII		250MW	(IV-VII) helium assembly, xenotite, pteracnium		600,000
+VIII	500MW	(V-VIII) xenotite, pteracnium				1,200,000
+IX		1GW		(VI-IX) pteracnium, hadron-vacuum			2,500,000
+
+I		helium fuel rod		2500		25 (100)		100
+IV		helium assembly		10000		75 (133)		150
+V		xenotite fuel		20000		160 (125)
+V		heliotrope			25000		400 (63)
+VII		pteracnium			50000		300 (166)
+IX		hadron-vacuum		250000		2000 (125)
+
+MAJOR GAME ELEMENTS BY LEVEL
+----------------------------
+
+LEVEL I
+
+	[x]	Korolov Station
+
+LEVEL II
+
+	[ ] Underworld (smuggle, etc.)
+	[x]	Battle Arena
+
+LEVEL III
+
+	[ ] Autons
+	[ ] Royal Museum of Humanity
+	[ ] Self-replicating alien parasites
+
+LEVEL IV
+
+	[x] Insurance Company
+	[ ] Commonwealth Fortress (militia missions)
+
+LEVEL V
+
+	[ ] Nebulae
+	[ ] Recruit allies
+
+LEVEL VI
+
+	[ ] Military permit required for better weapons/armor
+	[ ]	Temple of Domina (gain powers of Domina)
+
+LEVEL VII
+
+	[ ] Warfront Systems
+
+LEVEL VIII
+
+	[ ] Ares Systems
+
+LEVEL IX
+
+LEVEL X
+
+	[ ]	Heretic Gate
+
+LEVEL X+
+
+	Jump to any system (reprogram gates?)
+	Adaptive enemies
+
+TECH ORDERS
+-----------
+
+MECH (Primary Order)
+
+	description: Chemicals, lasers, optics, kinetic, digital computers.
+	levels: I
+	opposite: Nano
+	role: Offensive
+	alignment: constructive physical
+	sovereigns: Charon Pirates, Commonwealth, Concatenated Digital Metropolis
+	primary weapon: lasers, chemical missiles
+
+	primary enemy: Charon Pirates
+	primary friend: Commonwealth
+
+BIOMECH (Biotech + Mech)
+
+	description: cyborg
+	level: II
+	alignment: constructive neutral
+	sovereigns: Corporate Hierarchy, Ringers Collective
+	primary weapons: lasers, particle beam
+
+	primary enemy: Triton Alliance (military dictatorship)
+	primary friend: Corporate Hierarchy
+
+NUCLEAR (Primary Order)
+
+	description: fission, fusion, radiation, themo, plasma, ionizing.
+	level: III
+	opposite: Biotech
+	role: Offensive
+	alignment: destructive physical
+	sovereigns: Cholovka Cabal
+	primary weapons: microfusion mines, radiation, thermonuclear missiles
+
+	primary enemy: Cholovka Cabal
+	primary friend: UAS
+
+MEGASCALE (Mech + Nuclear)
+
+	description: asteroid ships, planetary scale structures
+	level: IV
+	alignment: neutral physical
+	sovereigns: Asian Pacific Directorate
+	primary weapons: plasma, antimatter
+
+	primary enemy: Eon Ships (asteroid ships)
+	primary friend: Asian Pacific Directorate
+
+BIOTECH (Primary Order)
+
+	description: organics, poisons, living ships, genetic engineering.
+	level: V
+	opposite: Nuclear
+	role: Defensive
+	alignment: constructive organic
+	sovereigns: Ares Sect, Bioanarchists, Syrtis Conclave
+	primary weapons: bioweapons, organic acid
+
+	primary enemy: Ares Sect
+	primary friend: Syrtis Conclave
+
+REPLICATOR (Nano + Biotech)
+
+	description: von neumann replicators
+	level: VI
+	alignment: neutral organic
+	sovereigns: Krin
+	primary weapons: ion, positron, plasma
+
+	primary enemy: Krin
+
+NANO (Primary Order)
+
+	description: corrosives, transmuters, repair, create.
+	level: VII
+	opposite: Mech
+	role: Defensive
+	alignment: destructive organic
+	sovereigns:
+	primary weapons: nano
+
+	primary enemy: 
+
+NANOTOK (Nuclear + Nano)
+
+	description: Micronuclear tech, stasis fields
+	level: VIII
+	alignment: destructive neutral
+	sovereigns: terraformers
+	primary weapons: plasma, positron
+
+	primary enemy: terraformers
+
+DEMONOLOGY (Primary Order)
+
+	description: dark matter, quantum, graviton, hierodules, exotics.
+	level: IX
+	opposite: None
+	role: None
+	alignment: neutral
+	sovereigns: Halo Races, Core Minds
+	primary weapons: exotics
+
+MAJOR PROFESSIONS
+-----------------
+
+CRIME SYNDICATE MEMBER
+
+levels				1. Mule
+					2. Smuggler
+					3. Enforcer
+					4. Syndicate Member
+					5. Syndicate Lieutenant
+					6. Syndicate Lord
+
+benefits			Black Market ID
+					At level 2, gain: Ability to take out loans
+					At level 3, gain: Hacked Military Weapons Permit
+					At level 4, gain: Ability to change identity
+					At level 5, gain: Kickbacks from other members
+					1-4 bodyguards (level 6)
+
+DISCIPLE OF DOMINA
+
+levels				1. Novice
+					2. Disciple
+					3. Master
+					4. Defender of Domina
+					5. Avenger of Domina
+					6. Archon of Domina
+
+benefits			Bonus to relationship with Domina depending on level:
+
+						Level 1: +1 per 30 ticks
+						Level 2: +2 per 30 ticks
+						Level 3: +3 per 30 ticks
+						Level 4: +5 per 30 ticks
+						Level 5: +10 per 30 ticks
+						Level 6: +25 per 30 ticks
+					
+					At level 2, gain: KNOWLEDGE (cost: 20) System is scanned.
+					At level 3, gain: GUARDIAN FORCE (cost: 40) Powerful shield that last for 40-60 seconds
+					At level 4, gain: DEFENDER DISCIPLINE (cost: 80) Double-damage to weapons for 40-60 seconds
+					At level 5, gain: WRATH OF DOMINA (cost: 200) All ships in area hit with 5d12 dark lightning
+					Major Hierodule guards player (level 6)					
+
+FLEET MEMBER
+
+levels				1. Squadron Pilot
+					2. Squadron Leader
+					3. Wing Commander
+					4. Fleet Officer
+					5. Fleet Captain
+					6. Fleet Admiral
+
+benefits			Military ID (can use military weapons)
+					At level 2, gain: level V weapon or armor
+					At level 3, gain: level VII weapon or armor
+					At level 4, gain: 1-2 level III ships
+					At level 5, gain: 1-4 level V ships
+					At level 6, gain: 1-4 level VII ships
+
+PROFESSOR OF ALIEN STUDIES
+
+levels				1. Student of Alien Studies
+					2. Bachelor of Alien Arts & Sciences
+					3. Master of Alien Arts & Sciences
+					4. Doctor of Alien Arcana
+					5. Doctor of Halo Knowledge
+					6. Doctor of Applied Theology
+
+benefits			University ID (can identify at will)
+					At level 2, gain: level V alien weapon/armor/device
+					At level 3, gain: level VII alien weapon/armor/device
+					At level 4, gain: level IX alien weapon/armor/device
+					At level 5, gain: level XI alien weapon/armor/device
+					At level 6, gain: level XIII alien weapon/armor/device
+
+APPLIED THEOLOGY
+----------------
+
+RELATIONSHIP WITH DOMINA
+
+Offer optical knowledge array				+20
+Offer crystalline data rod					+100
+Offer halo monolith							+1000
+Invoking before the invocation timeout		-20
+Offer to Temple of Oracus					-20
+Invoke power of Oracus						-100
+
+RELATIONSHIP WITH ORACUS
+
+Offer human death cube						+25
+Offer sarcophagus of ancient races			+125
+Offer receptacle of the halo guardian		+1000
+
+INVOKING THE POWERS OF DOMINA
+
+The powers of Domina may be invoked as long as:
+
+1. Relationship with Oracus is 0 or less
+2. Powers were invoked more than the invocation timeout.
+
+	SUSTAIN (cost: 0)
+
+	If the player is under attack, he is protected by an impenetrable
+	shield for some amount of time.
+
+	Otherwise, if the player is out of fuel, the ship is refueled.
+
+	HEAL (cost: 20)
+
+	All armor is repaired fully (no matter its condition) and shields
+	are instantly regenerated.
+
+	STRENGTHEN (cost: 40)
+
+	Player's weapons do triple damage for some amount of time.
+
+	DEFEND (cost: 80)
+
+	Minor hierodule appears and fights for the player.
+
+	AVENGE (cost: 200)
+
+	Major hierodule appears and fights for the player.
+
+	RESURRECT (cost: 1000)
+
+	If the player's ship is destroyed and he has 1000 or greater
+	relationship with Domina (and no relationship with Oracus), then he
+	is resurrected with an intact ship in some other area of the system.
+
+If the powers of Domina are invoked before the invocation timeout,
+or if the player invokes powers with a negative relationship,
+then the following things will happen to the player:
+
+Relationship < 0:	"I cannot help those who cannot help themselves"
+					-100 relationship
+
+Relationship = 0:	"Allowing you to struggle is the best help I can offer"
+					-25 relationship
+
+Relationship > 0:	"Do not rely on my powers, child"
+					-20 relationship
+
+If the player's relationship with Domina is negative, then he gains
+one point every 100 ticks.
+
+INVOKING THE POWERS OF ORACUS
+
+The powers of Oracus may be invoked as long as:
+
+1. Relationship with Oracus is greater than 0
+
+	HARASS (cost: 20)
+
+	Enemy ships in the area are hit with 1d12 points of dark acid damage.
+
+	CONTAMINATE (cost: 40)
+
+	Enemy ships in the area are contaminated with radiation.
+
+	SUMMON (cost: 80)
+
+	Major hierodule appears and fights for the player. If the player's
+	armor is not damaged, the hierodule attacks the player (because
+	he should only call in emergencies).
+
+	ANNIHILATE (cost: 200)
+
+	All enemy ships in area are hit with 5d12 point of dark acid damage.
+	Player's shields are depleted.
+
+	GENOCIDE (cost: 1000)
+
+	Player is asked to pick a ship class. That ship class is eradicated
+	from the galaxy.
+
+TRANSCENDENCE FEATURE IDEAS
+---------------------------
+
+ADVENTURES
+	[x] *Deep Space Freighters Association: Escorting freighters to defend
+			them against pirates.
+	[x] *Maximus Battle Arena: Gladiatorial combat.
+	[ ] *Cowardly Station: Destroy all pirate stations in system.
+	[ ] Archeologist: Look for ancient alien artifacts
+	[ ] Cryptozoologist Group: Hunting giant undiscovered space monsters.
+	[ ] Crime Lord: Work for a crime syndicate.
+	[x] Join the Fleet: Go on missions against Ares Sect.
+
+ARMOR
+	[x] Duralloy
+	[x] Photo-organic
+	[x] Polyceramic-carbon plate: level VI; 35hp; 1250cr; 4000kg.
+	[x] Tevlar-composite armor: level V; 30hp; 750cr; 2000kg.
+	[x] Transuranic
+	[x] Armor that is immune to radiation
+	[x] Solar powered armor that recharges reactor when close to sun.
+
+ARMOR COATINGS
+	[x] *Ablative: Damage adj for laser and particle reduced to 50.
+	[x] *Carbon-Weaver: Armor gains 8 hit points.
+	[x] *Degenerating Nanos: Armor takes 1d4 corrosive nanomachine damage every 
+			60 seconds.
+	[x] *Organic Acid: Armor takes 3d6 corrosive nanomachine damage.
+	[x] *Reactive: Damage adj for kinetic and chemical damaged reduced to 50.
+	[x] *Reflective: Chance that laser damage is reflected (proportional to damage).
+	[x] *Regenerating Nanos: Armor repairs 1 point of damage every 60 seconds.
+	[x] *Repairing Nanos: Armor repairs 3d12 points of damage.
+	[x] *Silicone Patch: Armor repairs 2d6 points of damage
+	[x] Decon gel: Decontaminates radiation poisoning
+
+ASTEROIDS
+	[ ] Hitting an asteroid with weapons should (sometimes) release a space slug
+	[x] Damage by blast weapons should throw shrapnel out (does damage
+		as a kinetic weapons, proportional to energy of original)
+	[ ] Damage by singularity weapons creates a mini-black hole.
+	[ ] Damage by thermo or anti-matter (above a certain energy) should
+		pulverize into a shower of shrapnel.
+
+AUTONS
+	[x] *Sentinel
+
+CARGO CONTAINERS
+	[x] Randomly contains stuff
+	[x] Randomly contains organic acid (destroys a random item)
+	[x] Randomly turns out to be a pirate base (enemy ships appear)
+	[x] Randomly contains refugees
+	[ ] Randomly contains radioactive waste
+	[X] Containers can be destroyed by sufficient damage
+	[ ] Locked containers
+	[ ] Locked containers can be blasted to crack open. Kinetic, laser, particle,
+		and positron damage can make a hole (other kind of damage just destroys
+		the container).
+	[ ] Locked containers can be opened if player has special ROM
+	[ ] A container with enough explosive items will explode when hit. For example,
+		missile, barrels of hydrocarbons, pteracnium ore, etc.
+	[ ] Need some item (or means) to scan sealed cargo containers
+
+DEBRIS FIELD
+	[ ] Debris field reacts as ships or objects pass through it
+	[ ] Certain kinds of weapon fire do not go through a debris field
+	[x] Radioactive debris field that contaminates player
+
+DEVICES
+	[x] *Armor Patcher: Repairs armor.
+	[x] *Auto-Defense Turret
+	[x] *Cargo Expansion
+	[ ] *Cloaking Device
+	[x] *Drive Upgrades
+	[x] *Emergency Jump Drive
+	[x] *Inertialess Drive
+	[x] *Reactor Upgrades
+	[x] *Solar Panels: Recharges generator when close to star.
+	[x] Smuggling containers: If carried, illegal items are not immediately
+		seized by stations.
+
+GAME
+	[x] *Intro Screen
+	[x] *Help Screen
+	[x] *High Score List
+	[x] *Restart Game
+	[x] *Self-destruct
+	[x] *Highlight player's score at end game
+
+IDS
+	[x] *Black market identification: Can't sell illegal items without this
+	[ ] Antiquities dealer permit: Can't sell items to museum without this
+	[x] Military weapons permit: Can't install military-grade weapons without this.
+	[ ] Nuclear weapons permit: Can't dock with a commonwealth outpost without this
+
+ITEMS
+	[ ] *Engineer Droid: Installs devices, repairs devices.
+	[x] Decontamination kit: Removes radiation
+	[x] Armor patches: Repairs armor
+
+LRS
+	[x] Clip to circular display area
+	[ ] Solar interference
+
+MAP
+	[x] *Show stations
+	[x] Show name of system
+	[x] Allow map to zoom in and out. When zooming in, map should show additional
+			objects (e.g., wrecks and such).
+
+MISCELLANEOUS
+	[x] *Friendly stations should get mad if attacked
+	[x] *Random Encounters
+	[x]	*Unknown Items Support
+	[x] *Wrecks should be able to be destroyed
+	[x] *Illegal items
+	[ ] *Ship's Log: Item that reveals a random secret in the game
+	[x] *Some weapons should push target (e.g., large missiles)
+	[ ] *Ion Storms: Ship is disabled
+	[ ] Artifacts: Appear as old or odd objects; if authentic, museum will
+			pay money for these.
+	[ ] Dark Nebulae: SRS range is restricted
+	[ ] Ion Storms: Shields are disabled
+	[x] Nebulae: LRS is disabled
+	[ ] Dense Nebulae: Ships are slowed down
+	[ ] Hidden stations
+	[ ] Destroying a stargate should turn it into a wormhole
+	[x] All stations around a beacon should be known
+
+PLAYER SHIP
+	[x] *Discard items
+	[x] *Indicator lights for: autopilot in use, fuel low, radiation sickness
+	[x] *Warning when random encounters appear
+	[x] Out-of-Fuel Grace Period: When running out of fuel, if the ship has any
+			fuel rods on board, shutdown the ship but allow the player some time
+			to refuel (instead of ending the game).
+	[x] When player drops cargo, turn into a cargo container
+	[ ] Ship Repair Skill: Improves as player repairs his own ship. At higher
+			levels, player can install devices, repair armor, etc.
+	[ ] Combat Skill: Improves with each hit; degrades on misses. Skill gives
+			bonuses to damage.
+	[x] Show armor coatings on armor display
+
+ROM BIOSOFT
+	[x]	*Autopilot
+	[x] *Defective Display Extensions: Scrambles screen intermittently.
+	[X] *Defective Shield Upgrade ROM
+	[ ] *Early Warning ROM
+	[ ] *Emergency Distress Call
+	[x] *Identification: Identifies the user for a particular purpose.
+	[ ] *Incompatible ROM: Ship freezes while computer reboots.
+	[x] *Shield Upgrade ROM
+	[x] *System Map
+	[x] *Targeting Computer
+	[ ] *Technical Reference ROM: Identifies a particular item.
+	[x] *Visual Display Extensions
+	[x] Fire rate enhancement
+	[x] Weapon enhancement ROM
+	[x] Rowena's Weapons & Armor: ROMs that can be installed to show
+			technical stats for weapons and armor. 3 volumes: I: Armors & Shields;
+			II: Weapons & Missiles; III: Alien Weapons & Armor
+
+
+SFX
+	[x] *Large Explosion when Ship Destroyed
+	[x] *Sound
+	[x] *SRS damage should be shown as static
+	[x] *Stargate flash
+	[x] *Stargate needs mask
+	[x] *Fragmentation missile image
+	[x] *SRS flash when ship is hit
+	[x] *Effect when ship is hit by EM cannon
+	[ ] SRS flash when gate is activated near ship
+	[x] Effect when ship is contaminated
+	[ ] Better station explosions
+	[x] Engine exhaust
+	[x] Hit-testing should be based on mask rather than constant rectangle
+	[ ] Local Traffic Around Stations
+	[x] Muzzle flash
+	[x] Space Changes Color Near Sun
+	[x] Image for ringed gas giant
+	[x] Image for methane gas giant
+	[x] Wrecks need a mask
+	[ ] Small asteroid bitmaps should be different from medium
+	[ ] Need special bitmap for ships and station in targeting computer
+	[ ] Show stars (or something) behind map
+	[X] Missiles should leave exhaust trail
+	[x] Sotho
+
+SHIPS
+	[x] *Count Cargo as Mass
+	[x] *Limit Cargo Space
+	[x] *Enemy ships should not hit each other
+	[x] *Ships should not attack abandoned stations (like containers)
+	[x] *Radioactive contamination kills from radiation sickness after
+			a certain amount of time.
+	[x] *Ships should retreat when shields are down
+	[x] *Missile ships should seek a safe distance
+
+STATIONS
+	[x] *Looting should prompt for number of items to loot
+	[x] *Show Damage
+	[x] *Stations shouldn't buy items that they don't want
+	[x] *Stations should pay more for enhanced items
+	[x] *Weapons on Stations
+	[x] *Neutral stations should attack player if attacks
+	[x] *Stations should get reinforcements
+	[x] Docking Positions Specified by Station
+	[x] Ships should dock to closest docking position
+	[x] Stations should have a limit on how much they will pay for an item
+	[ ] Docking positions should specify a rotation
+
+STATION TYPES
+	[x] *Agricultural Colony
+	[ ] *Arakrin Trap
+	[x]	*Armor outfitters
+	[x] *Arms dealer stations
+	[x] *Asteroid mine (mining: minerals, pteracnium, alien artifacts)
+	[x] *Black Market Station: Buy/sell illegal items
+	[X] *Captain's Bar: Gives rumors about stations that are in the system
+	[ ] *Cyber Corporation HQ
+	[ ] *EarthRise Spaceport
+	[ ] *Engineer Lab: Enhances weapons
+	[ ] *Debris field
+	[x] *Helium Refinery: Buy/sell fuel
+	[x] *Hotel: Contact someone from the black market
+	[x] *Insurance Agency
+	[ ] *Refugee camp
+	[ ] *Royal Museum: Buys artifacts (normal commodity exchanges will not pay
+			much money).
+	[ ] Castaways (shipwreck with survivors from the past who talk about
+			what things were like before).
+	[ ] Cenobite Laboratories: On first visit, gives player experimental
+			armor (XMH armor). On subsequent visit, if more than a certain
+			amount of time has elapsed, gives the player an upgraded version.
+			Different labs could do the same thing with different items.
+	[ ] Crime Lord: Loans player money
+	[ ] Deactivated Drone: Different things happen upon activation
+	[ ] Giant starship wreck
+	[ ] Hospital
+	[ ] Hotel: Transport passanger to another system
+	[ ] Prison
+	[ ] Smuggler's Haven
+	[x] Sisters of Domina
+	[ ] Temple
+	[ ] University
+	[ ] Water Tanks (buy/sell ice and water)
+
+WEAPONS
+	[x] *EM pulse cannon
+	[x] *Fragmentation Missile
+	[x] *Missile Launcher
+	[x] *Spray Cannons (Anti-Matter Spray Cannon)
+	[x] *Tracking Missile
+	[x] *Smart cannon
+	[x] *Bolide laser blaster (heavy laser cannon)
+	[x] *Weapons with momentum damage
+	[x] *Radiation cannon
+	[x] Arbalest cannon (Gatling gun)
+	[ ] Need some way of upgrading Arbalest cannon to fire continuously (instead
+		of in bursts of 4).
+	[x] Blinding laser weapon
+
+*Indicates a feature that is in Frontier
+
+

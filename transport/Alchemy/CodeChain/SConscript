@@ -1,0 +1,3 @@
+Import("env")
+sources = [ 'CCAtomTable.cpp', 'CCInteger.cpp', 'CCItemPool.cpp', 'CCLambda.cpp', 'CCLinkedList.cpp', 'CCNil.cpp', 'CConsPool.cpp', 'CCPrimitive.cpp', 'CCString.cpp', 'CCSymbolTable.cpp', 'CCTrue.cpp', 'CCVector.cpp', 'CodeChain.cpp', 'Functions.cpp', 'ICCItem.cpp', 'Link.cpp', 'LoadApp.cpp' ]
+env.StaticLibrary('libcc', sources, CPPPATH = ['/usr/local/include/SDL', '../../Includes', '.'] )

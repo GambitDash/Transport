@@ -1,0 +1,167 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "ALConsole"=.\ALConsole\ALConsole.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Alchemy
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ALGUI"=.\ALGUI\ALGUI.DSP - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Alchemy
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Alchemy"=.\Alchemy.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Kernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name CodeChain
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Graphics
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Aristotle"=.\Aristotle\Aristotle.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ALConsole
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "CCLink"=.\CCLink\CCLink.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ALConsole
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "CodeChain"=.\CodeChain\CodeChain.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Graphics"=.\Graphics\Graphics.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Kernel"=.\Kernel\Kernel.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TerraFirma"=.\TerraFirma\TerraFirma.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name Alchemy
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "cce"=.\cce\cce.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name CodeChain
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Kernel
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

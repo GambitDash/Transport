@@ -1,0 +1,393 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceExtension
+	[
+	<!ENTITY modAdonai		      	"0xDCBA9995">
+	<!ENTITY scAdonai      			"0xDCBA9996">
+	<!ENTITY rsAdonaiPlayer			"0xDCBA9997">
+	<!ENTITY rsAdonaiShields		"0xDCBA9998">
+	<!ENTITY stZoneMarker			"0xDCBA9999">
+	<!ENTITY rsZoneMarker			"0xDCBA999A">
+	<!ENTITY stZoneMarkerFriend		"0xDCBA999B">
+	<!ENTITY itAdonaiWeaponizer		"0xDCBA999C">
+]>
+
+<TranscendenceExtension UNID="&modAdonai;" version="0.99c">
+
+	<Image UNID="&rsAdonaiPlayer;" bitmap="Adonai\Adonai.jpg" bitmask="Adonai\Adonai.bmp" backColor="0x00000000"/>
+	<Image UNID="&rsAdonaiShields;" bitmap="Adonai\AdonaiShields.bmp" backColor="0x00000000"/>
+	<Image UNID="&rsZoneMarker;" bitmap="Adonai/zoneMarker.jpg" bitmask="Adonai/zoneMarkerMask.bmp" backColor="0x00000000"/>
+
+	<Globals>
+		<!-- TRAP START -->
+			(block Nil
+				(setq gCurrentTarget Nil)
+				(setq gGunList (list))
+				(setq gLauncherList (list))
+				(setq gGunPos 0)
+				(setq gLauncherPos 0)
+				(setq gCycleMode Nil)
+				
+				(setq runIntercept (lambda Nil
+					(block Nil
+						(setq target (objGetTarget gPlayerShip))
+						;; check if our current target is different then
+						;; the one we have stored
+						(if (not (eq target gCurrentTarget))
+							(block Nil
+								(switch
+									(objIsEnemy gPlayerShip target)
+										(cycleBack)
+									(not (objIsEnemy gPlayerShip target))
+										(cycleForward)
+								)
+								(setq gCurrentTarget target)
+							)
+						)
+					)
+				))
+				
+				(setq switchMode (lambda Nil
+					(block Nil
+						(dbgOutput "Switch")
+						(if gCycleMode
+							(block Nil
+								(setq gCycleMode Nil)
+								(plyMessage gPlayer "Switched to Primary Weapons")
+							)
+							(block Nil
+								(setq gCycleMode True)
+								(plyMessage gPlayer "Switched to Launchers")
+							)
+						)
+					)
+				))
+				
+				(setq cycleBack (lambda Nil
+					(block Nil
+						(dbgOutput "Back")
+						(if gCycleMode
+							;; launcher
+							(if (gr (count gLauncherList) 0)
+								(block (size l)
+									(setq size (count gLauncherList))
+									(setq gLauncherPos (subtract gLauncherPos 1))
+									;; make sure our pos is sane
+									(if (ls gLauncherPos 0)
+										(setq gLauncherPos (subtract size 1))
+									)
+									(setq l (item gLauncherList gLauncherPos))
+									;; clear out the old weapons
+									(objEnumItems gPlayerShip "lI" itm
+										(shpRemoveDevice gPlayerShip itm)
+									)
+									(setq l (itmCreate l 1))
+									(objAddItem gPlayerShip l)
+									(shpInstallDevice gPlayerShip l)
+								)
+								(plyMessage gPlayer "You have no launcherlist!! Start over please. Sorry. :P")
+							)
+							;; guns
+							;;check if we have any guns at all
+							(if (gr (count gGunList) 0)
+								(block (size w)
+									(setq size (count gGunList))
+									(setq gGunPos (subtract gGunPos 1))
+									;; make sure our pos is sane
+									(if (ls gGunPos 0)
+										(setq gGunPos (subtract size 1))
+									)
+									(setq w (item gGunList gGunPos))
+									;; clear out the old weapons
+									(objEnumItems gPlayerShip "w~lI" itm
+										(shpRemoveDevice gPlayerShip itm)
+									)
+									(setq w (itmCreate w 1))
+									(objAddItem gPlayerShip w)
+									(shpInstallDevice gPlayerShip w)
+								)
+								(plyMessage gPlayer "You have no gunlist!! Start over please. Sorry. :P")
+							)
+						)
+					)
+				))
+				
+				(setq cycleForward (lambda Nil
+					(block Nil
+						(dbgOutput "Forward")
+						(if gCycleMode
+							;; launcher
+							(if (gr (count gLauncherList) 0)
+								(block (size l)
+									(setq size (count gLauncherList))
+									(setq gLauncherPos (add gLauncherPos 1))
+									;; make sure our pos is sane
+									(if (eq gLauncherPos size)
+										(setq gLauncherPos 0)
+									)
+									(setq l (item gLauncherList gLauncherPos))
+									;; clear out the old weapons
+									(objEnumItems gPlayerShip "lI" itm
+										(shpRemoveDevice gPlayerShip itm)
+									)
+									(setq l (itmCreate l 1))
+									(objAddItem gPlayerShip l)
+									(shpInstallDevice gPlayerShip l)
+								)
+								(plyMessage gPlayer "You have no launcherlist!! Start over please. Sorry. :P")
+							)
+							;; guns
+							;;check if we have any guns at all
+							(if (gr (count gGunList) 0)
+								(block (size w)
+									(setq size (count gGunList))
+									(setq gGunPos (add gGunPos 1))
+									;; make sure our pos is sane
+									(if (eq gGunPos size)
+										(setq gGunPos 0)
+									)
+									(setq w (item gGunList gGunPos))
+									;; clear out the old weapons
+									(objEnumItems gPlayerShip "w~lI" itm
+										(shpRemoveDevice gPlayerShip itm)
+									)
+									(setq w (itmCreate w 1))
+									(objAddItem gPlayerShip w)
+									(shpInstallDevice gPlayerShip w)
+								)
+								(plyMessage gPlayer "You have no gunlist!! Start over please. Sorry. :P")
+							)
+						)
+					)
+				))
+
+				(setq spawnSafeTargets (lambda Nil
+					(block Nil
+						(objMoveTo gPlayerShip
+							(sysVectorRandom Nil 10000 500 Nil)
+						)
+						(sysCreateStation
+							&stZoneMarkerFriend;
+							(sysVectorRandom (objGetPos gPlayerShip) 10 5 Nil)
+						)
+						(sysCreateStation
+							&stZoneMarkerFriend;
+							(sysVectorRandom (objGetPos gPlayerShip) 10 5 Nil)
+						)
+						(sysCreateStation
+							&stZoneMarker;
+							(sysVectorRandom (objGetPos gPlayerShip) 10 5 Nil)
+						)
+						(sysCreateStation
+							&stZoneMarker;
+							(sysVectorRandom (objGetPos gPlayerShip) 10 5 Nil)
+						)
+					)
+				))
+				
+				(setq fillMeUpWithGuns (lambda (source)
+					(block Nil
+						(setq gunlist (list))
+						(itmEnumTypes "w~l" w (block Nil
+							;(objAddItem gSource w)
+							(lnkAppend gGunlist (itmGetUNID w))
+						))
+						(itmEnumTypes "l" l (block Nil
+							;(objAddItem gSource l)
+							(lnkAppend gLauncherList (itmGetUNID l))
+						))
+						(restockAmmo)
+					)
+				))
+				
+				(setq restockAmmo (lambda Nil
+					(block Nil
+						(itmEnumTypes "m" m
+							(objAddItem gSource m 1000)
+						)
+						(objAddItem gSource (itmCreate &itLongzhuSphere; 1))
+					)
+				))
+			)
+		<!-- TRAP END -->
+	</Globals>
+
+	<ItemType UNID="&itAdonaiWeaponizer;"
+		name=				"Weaponizer"
+		mass=				"5"
+		modifiers=			"MinorItem; NotForSale; NotRandom;"
+		description=		"As if by magic, this little item fills your cargo hold with ammo (and switches primary/launcher)."
+		>
+		<Image imageID="&rsItems1;" imageX="0" imageY="192" imageWidth="96" imageHeight="96"/>
+		<Invoke key="P">
+			<!-- TRAP START -->
+			(block
+				(dbgOutput "Switching")
+				(switchMode)
+				(restockAmmo)
+			)
+			<!-- TRAP END -->
+		</Invoke>
+	</ItemType>
+	
+	<ShipClass UNID="&scAdonai;"
+		manufacturer=		"Molotok Corporation"
+		class=				"Adonai"
+		type=				"Godling"
+		score=				"240"
+		techOrder=			"biomech"
+	
+		mass=				"200"
+		reactorPower=		"200"
+		fuelCapacity=		"80000"
+		cargoSpace=			"20000"
+		thrust=				"850"
+		rotationCount=		"40"
+		maneuver=			"2"
+		maxSpeed=			"35"
+		
+		maxArmor=			"150000"
+		maxCargoSpace=		"575000"
+		maxDevices=			"25"
+		sortName=			"adonai"
+		>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightPlasteelPlate;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itLightPlasteelPlate;" areaSet="3,4" />
+			<ArmorSection start="45"  span="90" armorID="&itLightPlasteelPlate;" areaSet="7,13" />
+			<ArmorSection start="135" span="90" armorID="&itLightPlasteelPlate;" areaSet="1,6" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itOmniIonBlaster;"/>
+			<Device deviceID="&it1GWReactor;"/>
+			<Device deviceID="&itHullPlateIonizer;"/>
+		</Devices>
+		
+		<Items>
+			<Item count="150d4" item="&itHelium3FuelRod;"/>
+			<Item count="1" item="&itAdonaiWeaponizer;"/>
+		</Items>
+
+		<Image imageID="&rsAdonaiPlayer;" imageX="0" imageY="0" imageWidth="64" imageHeight="64" imageFrameCount="0" imageTicksPerFrame="0"/>
+		<DriveImages>
+			<NozzleImage imageID="&rsDriveExhaust2;" imageX="0" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+			<NozzlePos x="-42" y="5"/>
+			<NozzlePos x="-42" y="-5"/>
+		</DriveImages>
+		
+		<PlayerSettings
+			desc=				"Unbelievable ship. The Adonai does it all."
+			initialClass=		"true"
+			>
+
+			<ArmorDisplay>
+				<ArmorSection name="forward"
+						imageID="&rsWolfenArmor;" 
+						imageX="0" imageY="0" imageWidth="52" imageHeight="15"
+						destX="42" destY="19" hpX="55" hpY="18"
+						nameY="8" nameBreakWidth="200" nameDestX="0" nameDestY="10" />
+
+				<ArmorSection name="starboard"
+						imageID="&rsWolfenArmor;" 
+						imageX="75" imageY="0" imageWidth="23" imageHeight="69"
+						destX="94" destY="34" hpX="97" hpY="60"
+						nameY="30" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+
+				<ArmorSection name="port"
+						imageID="&rsWolfenArmor;" 
+						imageX="52" imageY="0" imageWidth="23" imageHeight="69"
+						destX="19" destY="34" hpX="13" hpY="60"
+						nameY="52" nameBreakWidth="200" nameDestX="0" nameDestY="8" />
+
+				<ArmorSection name="aft"
+						imageID="&rsWolfenArmor;" 
+						imageX="0" imageY="75" imageWidth="52" imageHeight="16"
+						destX="42" destY="103" hpX="55" hpY="107"
+						nameY="74" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+			</ArmorDisplay>
+
+			<ShieldDisplay>
+				<Image imageID="&rsAdonaiShields;" imageX="0" imageY="0" imageWidth="136" imageHeight="136"/>
+			</ShieldDisplay>
+
+			<ReactorDisplay>
+				<Image imageID="&rsZubrinReactor;" 
+						imageX="0" imageY="0" imageWidth="256" imageHeight="60"/>
+				
+				<PowerLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="60" imageWidth="202" imageHeight="14"
+						destX="54" destY="9"/>
+						
+				<FuelLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="74" imageWidth="194" imageHeight="14"
+						destX="54" destY="37"/>
+						
+				<FuelLowLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="88" imageWidth="194" imageHeight="14"/>
+						
+				<ReactorText x="62" y="22" width="154" height="14"/>
+				<PowerLevelText x="62" y="0" width="154" height="9"/>
+				<FuelLevelText x="62" y="51" width="154" height="9"/>
+			</ReactorDisplay>
+			
+		</PlayerSettings>
+
+		<Events>
+			<OnCreate>
+				(block Nil
+					(shpInstallTargetingComputer gSource)
+					(fillMeUpWithGuns gSource)
+					(sysAddObjTimerEvent 30 gSource "Delay")
+				)
+			</OnCreate>
+			<Delay>
+				(block Nil
+					(sysAddObjRecurringTimerEvent 1 gSource "Intercept")
+					(spawnSafeTargets)
+				)
+			</Delay>
+			<Intercept>
+				(runIntercept gSource)
+			</Intercept>
+		</Events>
+		
+	</ShipClass>
+
+	
+	<StationType UNID="&stZoneMarker;"
+			name=				"Enemy Target"
+			sovereign=			"&svUrakWarlords;"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itUrakArmorLight;"
+			maxHitPoints=		"75"
+			hitPoints=			"75"
+
+			attributes=			"urakWarlords,enemy,envAir,envAvoidsFire,populated"
+		>
+		<ImageVariants>
+			<Image imageID="&rsZoneMarker;" imageX="0" imageY="0"  imageWidth="64" imageHeight="64"/>
+		</ImageVariants>
+		<Events>
+			<OnDamage>
+				0
+			</OnDamage>
+		</Events>
+	</StationType>
+	
+	<StationType UNID="&stZoneMarkerFriend;"
+		name=			"ZoneMarker"
+		>
+		<ImageVariants>
+			<Image imageID="&rsZoneMarker;" imageX="0" imageY="64" imageWidth="64" imageHeight="64"/>
+		</ImageVariants>
+		<Events>
+			<OnDamage>
+				0
+			</OnDamage>
+		</Events>
+	</StationType>
+	
+</TranscendenceExtension>

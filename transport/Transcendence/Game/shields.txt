@@ -1,0 +1,19 @@
+level	category	frequency	shortName	cost	reference
+1	Shield	UC	class I deflector	250	20 hp (average regen); 1MW
+2	Shield	UC	class II deflector	650	30 hp (slow regen); 2MW
+2	Shield	UC	hull plate ionizer	900	"15-45 hp (slow regen); 2MW; resistant to: impact, blast; laser-vulnerable"
+3	Shield	UC	monopole deflector screen	1200	"40 hp (average regen); 5MW; resistant to: impact, blast; laser-vulnerable"
+3	Shield	R	Solon shield generator	1200	40 hp (slow regen); 5MW; laser-immune; impact-vulnerable
+4	Shield	UC	class III deflector	1500	60 hp (slow regen); 10MW
+4	Shield	UC	R1 deflector	2000	"60 hp (slow regen); 20MW; resistant to: ion, thermonuclear; vulnerable to: laser, impact"
+5	Shield	C	Yoroi S100 shield generator	3000	75 hp (average regen); 20MW
+5	Shield	R	superconducting shield generator	3000	"120 hp (none regen); 5MW; resistant to: particle beam, ion, positron beam"
+6	Shield	UC	R5 deflector	9000	"90 hp (average regen); 40MW; resistant to: ion, thermonuclear, positron beam; vulnerable to: laser, impact, particle beam, blast, plasma"
+6	Shield	UC	Yoroi S500 shield generator	8000	95 hp (average regen); 30MW
+6	Shield	R	Cydonian shield generator	10000	90 hp (slow regen); 30MW
+7	Shield	UC	Yoroi MX shield generator	20000	120 hp (average regen); 50MW
+7	Shield	R	Trenton field generator	19000	120 hp (slow regen); 50MW; vulnerable to all damage
+8	Shield	UC	plasma shield generator	35500	150 hp (slow regen); 100MW
+9	Shield	R	Iocrym veil	80000	180 hp (average regen); 200MW
+10	Shield	UC	Lazarus shield generator	50000	75 hp (instantaneous regen); 300MW
+13	Shield	VR	Iocrym cocoon	500000	350 hp (slow regen); 1000MW

@@ -1,0 +1,661 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceExtension
+	[
+	<!ENTITY modDSFWalkAbout				"0xDCBA006A">
+	<!ENTITY itDSFWA_ScreenShower			"0xDCBA006B">
+]>
+<TranscendenceExtension UNID="&modDSFWalkAbout;" version="0.99c">
+<!--
+	Requires:
+		DockScreenFramework
+		HashFunctions
+
+	Conventions:
+		DS: 			DockScreen
+		DSF:			DockScreen Framework
+		Tscript:		Transcendence Script Language
+
+	Purpose:
+		The DSFWalkAbout serves as an introduction to the DSF. It is meant as a
+		"hands on" guide, and will try to get you making DockScreens. We will
+		build several examples, from the extremely simple to some more complex.
+		
+		
+		DELAYED: As a final example we will build a full mod, representing a capable
+		Captains Log. This mod will be a "point of reference" for the DSF, and
+		will serve as a sort of test suite.  
+		
+		As of now, both this WalkAbout and the DSF itself are still under 
+		development, so changes and updates may occur. That being said, if you
+		are reading this, and will use the DSF, I would love to have it handle
+		as many situations as possible, so if you find you need a feature,
+		please don't hesitate to mention it or share your implementation.  The
+		DSF itself is very heavily commented, so it should be possible to
+		actually get an idea of how it works internally.
+		
+		The DSF consists of two parts. One is the base DS framework, used for 
+		constructing DS's from pure tscript, the other is the screen hook
+		framework, which uses the DS framework to build it's screens.
+		I will be going over both in as much detail as possible, starting with
+		the base framework. Read on below to get started. Have fun! .]
+
+-->
+
+	<Globals>
+		(block Nil
+			
+		)
+	</Globals>
+</TranscendenceExtension>
+
+<!--
+	
+	NOTE: 	In expectance of some criticism on writing too much, or writing too
+			little here is an answer for both: Download the mod, download the 
+			G.O.D mod, read it, use it. Have fun.
+	
+	1. THE BASICS
+	
+	1.1 MOTIVATION
+	
+		So, why build a DockScreen Framework? The base answer for me is that I
+		dislike XML. I find it cludgy and extremely verbose. Building DS's in
+		Transcendence is also quite tedious, having to define a new UNID for
+		every screen, and using very static constructs. MAny times I found I
+		were doing the same things to acheive the dynamic results I wanted, so I
+		decided to try and abstract it away by building a framework. In the end
+		it turned out to open a new way of building large complex screens,
+		without repeating myself all over the place. So I hope you will like it
+		also, and make some wicked DS adventures and tools for the community.
+		
+	1.2 ABOUT YOU
+	
+		I will suppose some things about you. You know how to use the console,
+		how to modify/create a playership and other mod types. You know enough
+		about tscript to not wonder what all those parentheses are doing there,
+		and why some lines start with a semi-colon, and some not. (If you don't,
+		please complain on Forums or IRC, and I will try to update the walkabout
+		with some more information).
+		
+	1.3	DOCK SCREENS DECONSTRUCTED
+	
+		What allows us to build a framework around DS's is that there are
+		patterns being repeated all over. So, what is a DS in Transcendence?
+		Simplistically I would say: Information and actions which can act upon
+		that information. This is divided into 3 categories of screens, with a
+		few variations each. A screen can also be seen as built from two
+		different elements. If you cut a screen in half vertically, you would
+		have the "ScreenType" on the left and the "PaneType" on the right. I
+		will explain the different types below.
+		
+	1.3.1 SCREEN TYPES
+	
+		There is the "Standard" screen, which has either an empty area to the
+		left, or an image. Other than that it can contain a screen title, a pane
+		description and a series of actions. For the Standard screen the
+		variation comes in the shape of the image on it's left side. This is the
+		only point of this screen type which cannot be changed dynamically.
+		
+		There is the "Custom/Item Picker" screen. This screen shows a list on
+		the left side and allows the user to use the cursors to navigate through
+		them. Like the Standard screen, it can have a title, description and
+		actions. It's variations come in the form of the "ItemPicker" and the
+		"CustomPicker". The ItemPicker is designed for showing a spaceObjects
+		inventory, either the players ships, or the station the ship is docked
+		at. The CustomPicker screen is probably the most usefull screen type,
+		and allows us to build any list we like.
+		
+		The last screen is the "Display" screen. It can be used to draw images
+		on the left part, or show larger amounts of text. It is quite complex
+		screen type, and a bit hard to use dynamically. To use this screen type
+		to it's fullest extent in your mods, you would have to build some custom
+		screen specifications.
+	
+	1.3.2 PANE TYPES
+	
+		The "Default" pane you are probably familiar with. It is just a "blank"
+		background, with an optional description printed at the top, and
+		probably a series of actions.
+		
+		The "TextInput" pane adds a box into which you can type text to the
+		Default pane.
+		
+		The "Counter" uses a input box that can only accept numbers, but is
+		otherwise like the TextInput box.
+
+	1.3.3 ACTIONS
+	
+		Actions are essential parts of a DS. Without them you are actually stuck
+		when you enter a DS and would have to force quit the game to get out.
+		The most basic action is "Exit", which obviously exits the screen.
+		Another common action is the one that navigates to another screen. A
+		handy action is the "Back" action, which goes to the previous screen.
+		Then there is the action which runs some code in the background and
+		changes the current screens state. Maybe it gives you an item, subtracts
+		an amount from your account and shows you a success message. In DSF the
+		"Exit" and "Back" actions are built in, and the two others are very
+		simple to build.
+		
+		A "Default" pane DS can support up to 7 actions. More than that, and you
+		won't be able to see them all.
+		
+		** NOTE: how many can a TextInput one show?
+		
+	1.3.4 SCREEN NAME AND DESCRIPTION
+		
+		The screen name is seen in the top left part of the DS. It is set the
+		first time the screen is shown, and cannot be changed without reshowing
+		the screen. The description is the one that appears at the top of the
+		pane, and is a very dynamic element. At any time you can set a new
+		description. The only thing you cannot, is get the current one.
+		
+	1.3.5 OK, THIS IS BORING. WHAT CAN IT DO
+	
+		Enough with the descriptions, let's try some examples.
+		
+	1.4 SHOWING THE SCREEN
+	
+		To be able to do the examples we need some way of showing the screens.
+		To help us with this we will build a usable item, and add some global
+		functions. 
+		
+		There are many ways we could show the screen. You could have a function
+		do it, you could override a station and have an action there do it or
+		override the ShipInterior. Further on, we will be doing this, but for
+		now we will use this method.
+		
+	1.4.1 SOME GLOBAL FUNCTIONS
+
+		Add the following to the <Globals> of the mod.
+		
+		;; a function shows the DS using a "hack" of sorts
+		(setq show (lambda Nil
+			
+			;; if we have not had a screen shown yet, gScreen won't
+			;; be set, and the code below would crash the game.
+			;; If we test for it first, it's ok.
+			
+			(if (isError gScreen)
+			
+				;; The ugliest hack in the world.
+				;; Remind us to enter a screen first.
+				
+				(plyMessage gPlayer "Enter your ShipInterior first.")
+				
+				;; OK, we have gScreen set, so we can go ahead and
+				;; show the screen. For this purpose we use a DSF built in
+				;; function called (dsf_ShowDockScreen)
+				;; This is what this function is all about.
+				
+				(dsf_ShowDockScreen MyScreenData)
+			)
+		))
+		
+		;; use this function for quickly adding the item to your ship.
+		(setq gimme (lambda Nil
+			(objAddItem gPlayership (itmCreate &itDSFWA_ScreenShower; 1))
+		))
+		
+	1.4.2 A SCREEN SHOWER
+		
+		Add the following ENTITY to the very top
+		
+		<!ENTITY itDSFWA_ScreenShower			"0xDCBA006B">
+		
+		And add the following item to the mod
+			
+		<ItemType UNID="&itDSFWA_ScreenShower;"
+			name=				"Screen Shower"
+			level=				"1"
+			value=				"1"
+			mass=				"1"
+			frequency=			"common"
+			numberAppearing=	"1"
+			modifiers=			"MinorItem; NotForSale;"
+			showReference=		"true"
+			description=     	"Assists us in showing a screen"
+			sortName=        	"signature memoizer"
+			>
+			
+			<Image 
+				imageID=		"&rsItems1;" 
+				imageX=			"0" 
+				imageY=			"192" 
+				imageWidth=		"96" 
+				imageHeight=	"96"
+				/>
+	
+			<Invoke key="M">
+				(block Nil
+					(show)
+				)
+			</Invoke>
+		</ItemType>
+		
+	1.4.3 BUT NOTHING HAPPENS
+	
+		If you test the above item or function, nothing will happen. If you look
+		at the (show) function, you will see that if gScreen is set, it will run
+		the function (dsf_ShowDockScreen MyScreenData)
+		
+		This function is so relevant that i will actually dedicate a section to
+		it's signature, right now.
+	
+	1.4.4 "dsf_ShowDockScreen"
+	
+		(dsf_ShowDockScreen screenData [originScreen] [originPane])
+		
+		This function requires screenData argument, and takes two optional
+		arguments.
+		screenData will be discussed in depth, because it is the meat of this
+		framework, and is basically what it is all about.
+		originScreen is the name of the screen to which we wish to return when
+		leaving a DSF controlled screen, and originPane is the Pane on that
+		screen to show.
+		As a last order of buisness the functions actually shows a DS
+		
+	1.4.5 BUT HEY, THERE IS STILL NOTHING HAPPENING
+	
+		OK, so, why is nothing showing. If you look at the line where we call
+		(dsf_ShowDockScreen) you will notice that we are just passing it a
+		variable we havent defined. So it's about time to put some data in
+		there.
+	
+	1.4.6 ScreenData
+		
+		The kind of data to pass to dsf_ShowDockScreen we will call screenData.
+		ScreenData is data that defines the DS that we are about to show with
+		(dsf_ShowDockScreen). The structure of screenData can be quite complex
+		at it's fullest, but to show the basest of screens it is extremely
+		simple. It uses the hash functions to define its fields, making it quite
+		readable. OK, lets add a very simple DS to our mod. Read and copy the
+		following code into the <Globals>
+		
+		(setq MyScreenData (list
+			'screeName		"My First Screen"
+			'paneDesc		"Lo and behold, it has been written."
+		))
+		
+		Now, start the game, use the (gimme) function or another way to aquire
+		the ScreenShower item, and use it. It will probably tell you to access
+		your ShipInterior, so do that, and try again. Bingo! There is your
+		screen. Very basic, but very much working. As you can see you get some
+		things for free. DSF provides the Back and Exit actions and it selects a
+		default screenType and paneType because we did not specify any. The Back
+		action is disabled because we have no history and we did not specify any
+		originScreen.
+		
+	1.4.7 SPICING IT UP
+	
+		All is good, but that screen is a little boring. Lets make it more
+		interesting by adding an action that links to another screen. Replace
+		the MyScreenData section with the one below. That should make things
+		more interesting. Try and run it, and see what happens.
+		
+		(setq MyScreenData (list
+			'screenName		"Screening the Actions"
+			'paneDesc		(cat "Imagine the posibilities, now that you will" 
+								 " soon be able to go somewhere")
+			'actions		(list
+				(list
+					'name		'("Change Screen" 'C)
+					'runFunc	'(MyNextScreen)
+				)
+			)
+		))
+		
+		The action showed up just fine, but nothing happens when it's activated?
+		Let's look at what is going on. We added a key called 'actions, which
+		contains a list of lists. lets call that inner list an action. We set
+		the 'name of the action, which must be a list consisting of 2 strings,
+		one being the actual name, the other being the activation key. This key
+		must be present in the first string. The next key in the action is the
+		'runFunc. The runFunc is one of the most powerfull parts of the DSF.
+		When the action is triggered the runFunc will be eval'ed. The return
+		value of the eval'ed function must be either a new set of screenData, or
+		Nil. In the case above, we return MyNextScreen, which, since it isn't
+		defined, is Nil. When DSF recieve Nil back, it will in most cases simply
+		do nothing, letting the 'runFunc decide what to do. But, in our case, we
+		actually want to return some more screenData, so lets define
+		MyNextScreen. Add the following to the mod, and run it again.
+		
+			(setq MyNextScreen (lambda Nil
+				(list
+					'screenName			"I'm the Lambda screen"
+					'paneDesc			(cat "My mother told me: \"Never be a "
+										 "Lambda!\", but I can't help myself.")
+					'hideExit			True
+				)
+			))
+		
+		See, that was easy. 20 lines, and you have 2, allbeit simple, 
+		dockscreens. If you look at MyNextScreen you might notice that it's
+		actually a lambda. What this illustrates, is that screenData can be
+		contained in anything, as long as it returns a valid screenData list in
+		the end. Also you might notice the 'hideExit key that tells DSF that we 
+		don't want the exit action shown.
+		
+		When you run this little example you might also notice that you are
+		forced to use the "Back" action to return to a screen where the "Exit"
+		action is present. But if you think about it, you never specified any
+		behaviour for the back action. This is another thing DSF takes care of
+		for you. It can be disabled on a screen or action basis.
+		
+	1.4.8 FLEXING THE MUSCLES
+	
+		Now lets do something which is not trivial to do in a normal DS.
+		Replace MyScreenData with the following. Then run the example again.
+		
+		(setq MyScreenData (list
+			'screenName		"Dynamic is my Pane"
+			'runFunc		'(MyNextScreen)
+			'actions		(list
+				(list
+					'name		'("TextPlease\n\n" 'T)
+					'message	"My goodness, a textbox!"
+					'nextPane	'TextInput
+				)
+				(list
+					'name		'("I Counter That\n\n" 'I)
+					'message	"You can count on that."
+					'nextPane	'Counter
+				)
+			)
+		))
+	
+		What this shows us is a powerfull aspect of using DSF. The screenData
+		you specify, is not tied to any specific DS type. You can change it as
+		you want, or you can lock it using 'screenType and 'paneType. One big
+		limitation of this techinque is that it doesn't work well with
+		CustomPicker/ItemPicker screens, since the TextField or Counter will
+		dissapear when navigating the list (this is an inherent aspect of
+		Transcendence, not of this framework).
+		
+		Another thing you can see from the example above is a central aspect of
+		DSF, inheritance. As an example look at the 'runFunc. In the example
+		above, it's not defined in the actions, but in the root. The actions
+		when looking for what to do will fall back to the root element
+		definition if they don't provide one themselves.
+		
+		Also 'message is shown, which is a simple way of passing a message to
+		the description of the next screen. 
+		
+	1.4.9 CUSTOM IS GOOD
+	
+		As the last part of the basic section lets have a look at the
+		CustomPicker screenType. We will do it by example. Again, replace
+		MyScreenData with the following, and run it.
+		
+		(setq MyScreenData (list
+			'screenName		"A Custom List"
+			'paneDesc		"No point in describing a list, is there?"
+			'screenType		'CustomPicker
+			'actions		(list
+				(list
+					'name		'("Select" 'S)
+				)
+			)
+			'customPicker	(list
+				(list
+					'title		"Pick me, pick me"
+					'subtitle	"If you pick me you will live forever!"
+					'runFunc	'MyScreenData
+					'noSave		True
+					'actions	(list
+						(list
+							'name		'("I don't believe that" 'I)
+							'message	"So... you don't believe me!!\n\n"
+						)
+						(list
+							'name		'("How cool is that?" 'H)
+							'message	"Gotcha! I was just kidding\n\n"
+						)
+					)
+				)
+				(list
+					'title		"Ok, my deal ain't that good"
+					'subtitle	"I mean eternal life, heh, that's a good deal!!"
+					'paneDesc	(cat "Not really you know. That list element "
+									 "is pulling your leg")
+					'runFunc	'(MyNextScreen)
+				)
+			)
+		))
+		
+		That is a bit of a mouthfull compared to earlier, so lets pick it
+		apart. The large element we have added here is the 'customPicker key.
+		The 'customPicker must contain a list of lists, each inner list
+		containig at least a 'title attribute. The 'title will be used for
+		the display of that list item. Additionally a 'subtitle and 'image key
+		can be set. The 'image must be a image resource. Any other key that is
+		set here will either be used as custom data, or be used to override
+		other key set for the DS. This is the part that makes the 'customPicker
+		the most powerfull screen type. We can change the display quite a bit
+		just by moving our cursor to the next list item.
+		
+		-----
+		
+		That is basically all there is to it. Now you can begin building your
+		DS's and exploring the framework. Have a look at the REFERENCE section
+		down below, where the data structure of screenData is defined.
+		Also there will be a section on some of the usefull helper functions the
+		framework defines.
+
+	2. ADVANCED USE
+		
+		This section is still under construction. The fancy captains log will
+		have to wait, I'm afraid. This does not mean that advanced constructions
+		are not possible, just that documentation takes a long time to write.
+		Have a Look at the G.O.D mod for examples of more advanced use, or the
+		upcoming AdvancedTargeting mod. I promise, that if people need it and
+		actually use the framework, I will do the capatains log :D
+		
+		-- state
+		-- late eval funcs
+		-- screenHooks
+		
+		
+	REFERENCE
+		
+		The reference section will mention functions and variables without their
+		dsf_ namespace, unless otherwise confusing.
+	
+		HELPERFUNCTIONS
+		
+			--	ShowDockScreen
+				-- 	screenData (list)
+						The data defining the screen to show
+				-- 	[originScreen] (UNID)
+						A screen UNID representing the screen to return to.
+				-- 	[originPane] (String)
+						A pane name representing the pane to return to.
+				
+				This function has already been covered. It is the entry point
+				into DSF. It's last order of buisness is displaying a screen.
+				
+			--	BuildPaneDesc
+				--	msg (mixed, string or list)
+						Can be either a plain string or a two item list
+						formatted like this: '("String" '+) or '("String" '-)
+				
+				This function is mostly used internally by the 'message key, but
+				it show's the expected structure of messages. If given a plain
+				string, the current paneDescription state will be overridden. If
+				given a list, the last element will define the action. If it's a
+				'+ the string will be appended onto the paneDescription, if it's
+				a '- it will be prepended.
+		
+			--	SetPaneDesc
+				-- 	[msg] (mixed, string or list)
+						Can be either a plain string or a two item list
+						formatted like this: '("String" '+) or '("String" '-)
+
+				This is very similar to BuildPaneDesc. It's argument is
+				optional, but if given, it is passed on to BuildPaneDesc. The
+				major difference is that this function actually updates the
+				on-screen paneDescription.
+			
+			--	GetPaneDesc
+				->	String or Nil
+			
+				Returns the currently set paneDescription state. Please be
+				aware. This is not necessarily the currently showing
+				description, but the one contained in the state, and the one
+				that will be shown next time SetPaneDesc is called.
+				
+			--	ClearPaneDesc
+			
+				Does what it says.
+				
+			--	ScreenTypeToUNID
+				--	screenType (String)
+					A string representing the name of a type of DS.
+				->	screenType UNID or "Standard" screenTypes UNID 
+				
+				This function converts the string "CustomPicker" into the
+				UNID of that screen. It is only usefull for built in
+				screenTypes, and it's reason for existance is so the basic
+				screenTypes can be used in third party mods, without them
+				having to specify the screenTypes UNID's.
+					
+			-- 	GetListEntryData
+				--	key (String)
+					A string representing the name of the data key you want to
+					retrieve
+				->	Key's data or Nil
+									
+				This function is used for accessing the custom data of
+				customPicker list items. It is used alot internally, but is also
+				very usefull for DSF mods. Let's say i have a list with the data
+				'price set. Instead of having to get the currently selected
+				item, and finding the data (which is nested inside anothe
+				element) I can just pass 'price to this function. If 'price has
+				never been set, it will return Nil.
+				
+			--	IsCustomPickerScreen
+				-- 	[content] (Boolean)
+					Whether to check for content or not
+				->	Boolean
+					
+				This function is checks if the currently displayed screen is a
+				customPicker screen type. It only works with the built in types,
+				so be carefull if you are making your own screen specs. It is
+				required since using (scrGetListEntry) in a non customPicker
+				screen type, will crash Transcendence.
+				If content is True, we will check if there is any data set in
+				the screen as well.
+			
+			--	IsItemPickerScreen
+				->	Boolean
+				
+				Like above, this checks if the current screen is an itemPicker
+				screen. Also, like above, it only works with the built in types.
+			
+			-- 	GetScreenType
+				->	UNID of the current screen type
+				
+				Returns the data set in the current screen's 'screenType
+				
+			-- 	SetScreenData
+				--	key (String)
+					The keys name
+				--	value (Mixed)
+					The data to set for that key
+					
+				This sets a key in the current screens dataset. It is used alot
+				internally, but is also usefull for overriding settings
+				programatically.
+				
+			--	GetScreenData
+				--	key (String)
+					The name of the key you want to get the value of
+				->	Mixed
+					Whatever that key had set or Nil
+					
+				Get the current value of a key in the screenData.
+				
+			--	SetScreenState
+				--	key (String)
+					The keys name
+				--	value (Mixed)
+					The data set for that key
+					
+				Used for setting a value in the current DS state. The state is
+				stored in between screen refreshes, so it is usefull for passing
+				data along. It does not persist over several DSF invokations, so
+				when you exit the screen, the state is cleared.
+				
+			--	GetScreenState
+				--	key (String)
+					The name of the key you want to get the value of
+				->	Mixed
+					Whatever the key had set, or Nil
+					
+				Used for accessing the current state.
+				
+			--	RemoveScreenState
+				--	key (String)
+					The name of the key you want to get the value of
+				->	Mixed
+					Whatever the key had set, or Nil
+					
+				This function is useful for getting and removing data at the
+				same time.
+				
+		INTERNAL FUNCTIONS
+			
+			For the moment I will only reference one function here, because it
+			is usefull when building mods with DSF. The other internal functions
+			are only relevant when building your own screen specifications.
+			
+			--	ExitAction
+				
+				This function is very usefull when exiting a DS programatically.
+				You should always use this, or a similar approach if an action
+				you have defined should exit the DS. It makes sure that
+				everything is cleaned up after us, and then actually exits the
+				screen.
+			
+		DATASTRUCTURE
+	
+			--	screenData 			list
+					'screenName				String
+					'paneDesc				String
+					'screenType				screenType or UNID
+					'paneType				Default/TextInput/Counter
+					'nextScreen				screenType or UNID
+					'nextPane				String or Default/TextInput/Counter
+					'onInitFunc				late eval function
+					'preInitFunc			late eval function
+					'initFunc				late eval function
+					'hideBack				Boolean or late eval function
+					'hideExit				Boolean or late eval function
+					'backFunc				late eval function
+					'exitFunc				late eval function
+					'noSave					Boolean or late eval func
+					'itemFilter				String
+					'runFunc				late eval function
+					
+					'actions				list
+						'name				'("String" 'S)
+						'runFunc			late eval function
+						'hideFunc			Boolean or late eval function
+						'disableFunc		Boolean late eval function
+						'nextScreen			screenType or UNID
+						'nextPane			String or Default/TextInput/Counter
+						'message			String
+						'noSave				Boolean or late eval function
+						
+					'customPicker			list
+						'title				String
+						'image				imageResource
+						'subtitle			String
+						'hideList			Boolean or late eval function
+						'paneDesc			String
+						'actions			list (like actions)
+						'hideBack			Boolean or late eval function
+						'hideExit			Boolean or late eval function
+						'initFunc			late eval function
+						'noSave				Boolean or late eval func
+					
+-->

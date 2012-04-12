@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+	
+	<!-- Agricultural Station -->
+
+	<StationType UNID="&stAgriculturalStation;"
+			name=				"(agricultural station)"
+			sovereign=			"&svCommonwealth;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+			noBlacklist=		"true"
+
+			multiHull=			"true"
+			armorID=			"&itPlasteelPlate;"
+			maxHitPoints=		"100"
+			repairRate=			"1"
+			explosionType=		"&vtBlastExplosion3;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"commonwealth,friendly,populated,primary"
+			levelFrequency=		"rrr-- ----- ----- ----- -----"
+			locationCriteria=	"+LifeZone,-OuterSystem,-asteroids"
+
+			noArticle=			"true"
+			>
+
+		<Names>Archer Colony; Buran Station; Chekov Colony; Dante Station;
+				Ent Arbor Station; Farmstar Station; Georg Station IV;
+				Horticult Colony; Ivanov Station VII; Jol Station;
+				Kiev Colony; Luhansk Station; Mykolayiv Prime; New Reni;
+				Odesa Agricultural; Petersburg Colony; Rancher Fields Colony;
+				Stasohrad Combine; Tree Defenders Station; Ukraine Collective;
+				Vostok Station; West Arbor Colony; Yern Station; Zimaril %1;
+				%s Collective; %s Colony; %s Alpha; %s Beta; %s Gamma</Names>
+
+		<Image			imageID="&rsStations1;" imageX="0" imageY="256" imageWidth="128" imageHeight="128"/>
+
+		<Ships>
+			<Table count="1d4+2">
+				<Ship chance="50" count="1" class="&scEI100;" orders="gateOnThreat"/>
+				<Ship chance="25" count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="25" count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Items>
+			<RandomItem count="10" 
+					criteria=		"* -Illegal; -Military; -Alien; -Specialty; -NotForSale;"
+					level=			"2"
+					levelCurve=		"1"
+					/>
+
+			<Lookup count="1d12" table="&trStationSupplies;"/>
+			<Item	count="3d12" item="&itGradeBGrains;"/>
+			<Item	count="3d12" item="&itGradeAGrains;"/>
+			<Item	count="2d12" item="&itWhiteRice;"/>
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="10000" replenish="500">
+			<Sell	criteria="*NU +Food; -Illegal; -Lux; -NotForSale;"		priceAdj="75"/>
+			
+			<Buy	criteria="*NU +Lux; -Illegal; -NotForSale; &lt;=$250;"	priceAdj="125"/>
+			<Buy	criteria="*NU" item="&itHydrocarbons;"		priceAdj="150"/>
+			<Buy	criteria="*NU" item="&itHelium3FuelRod;"	priceAdj="150"/>
+			<Buy	criteria="*NU" item="&itOrganicAcid;"		priceAdj="150"/>
+			<Buy	criteria="*NU" item="&itMedicalSupplies;"	priceAdj="150"/>
+			<Buy	criteria="*NU" item="&itHyperfiberRoll;"	priceAdj="150"/>
+			<Buy	criteria="*NU" item="&itBiofactorPaste;"	priceAdj="150"/>
+		</Trade>
+
+		<InitialData>
+			<State>		"start"		</State>
+			<Declined>	0			</Declined>
+			<Wave>		0			</Wave>
+		</InitialData>
+
+		<StaticData>
+			<Reward>	5000		</Reward>
+
+			<WaveData>
+				(
+					("wave 1"
+						"\"The first wave will be mostly composed of light gunships, although there is a small chance that they'll include the more powerful Viking-class ships. Don't worry, you'll have no trouble.\""
+					
+						(lambda (station)
+							(block Nil
+								(sysAddEncounterEventAtDist 0 station &etPirateAmbush1; 300)
+								(sysAddEncounterEventAtDist 30 station &etPirateAmbush2; 300)
+								)
+							)
+						)
+
+					("wave 2"
+						"\"If the pirates are following their usual strategy, the next wave should be a little larger, but will again be mostly gunships. Watch out for the leaders, though, they'll be using the heavy Viking gunships.\""
+
+						(lambda (station)
+							(block Nil
+								(sysAddEncounterEventAtDist 0 station &etPirateAmbush2; 300)
+								(sysAddEncounterEventAtDist 90 station &etPirateAmbush2; 300)
+								)
+							)
+						)
+
+					("wave 3"
+						"\"OK, this is it. If we can hold out through this last wave, they'll likely give up. Plan on heavy gunships with missiles.\""
+
+						(lambda (station)
+							(block Nil
+								(sysAddEncounterEventAtDist 0 station &etPirateAmbush3; 300)
+								(sysAddEncounterEventAtDist 300 station &etPirateAmbush3; 300)
+								)
+							)
+						)
+					)
+			</WaveData>
+		</StaticData>
+
+		<Events>
+			<OnTimer>
+				(block Nil
+					; Create the encounter
+					(apply 
+						(eval 
+							(item 
+								(item (objGetStaticData gSource "WaveData") (objGetData gSource "Wave"))
+								2
+								)
+							)
+						gSource 
+						Nil
+						)
+
+					; Mark WaveReady so that we know that we've already created the encounter
+					(objSetData gSource "WaveReady" True)
+					)
+			</OnTimer>
+
+			<OnDestroy>
+				(block (looter pirate)
+					(intCommonwealthOnDestroy)
+
+					(if (eq (objGetData gSource "State") "in-progress")
+						(block Nil
+							; Create a transport to come and loot the remains
+							(setq looter 
+								(sysCreateShip 
+									&scEI100M;
+									(sysVectorPolarOffset gSource (random 0 359) 25)
+									&svPirates;
+									)
+								)
+
+							(shpOrderLoot looter gSource)
+							(shpOrderGate looter)
+
+							; Assign some of the pirates to defend the transports and the
+							; rest to attack the player
+							
+							(enum (sysFindObject gSource "sAE N:300;") pirate
+								(block (class)
+									(setq class (shpGetClass pirate))
+									(if (or (eq class &scCorsair;)
+											(eq class &scViking;)
+											(eq class &scCorsair-II;))
+										(block Nil
+											(shpCancelOrders pirate)
+											(if (eq (random 1 4) 1)
+												(shpOrderEscort pirate looter)
+												(shpOrderAttack pirate gPlayerShip)
+												)
+											)
+										)
+									)
+								)
+
+							; Send out more pirates to attack the player
+							(sysAddEncounterEventAtDist 0 gPlayerShip &etPirateAmbush4; 50)
+							)
+						)
+					)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(block Nil
+						(setq gPrevScreen "Main")
+
+						(switch
+							; If the ship is radioactive then we need to decontaminate
+							(shpIsRadioactive gPlayerShip)
+								(scrShowScreen gScreen "&dsCommonwealthDecon;")
+							)
+						)
+				</OnInit>
+				
+				<InitialPane>
+					(if (eq (objGetData gSource "State") "in-progress")
+						"MissionStatus"
+						"Default"
+						)
+				</InitialPane>
+
+				<Panes>
+					<Default
+							desc=	"You are inside a C9-class prefabricated agricultural station.">
+
+						<Actions>
+							<Action name="Meeting Hall" key="M" default="1">
+								(if (eq (objGetData gSource "State") "done")
+									(scrShowPane gScreen "MissionDone")
+									(scrShowPane gScreen "MeetingHall")
+									)
+							</Action>
+
+							<Action name="Commodities Exchange" key="C">
+								<ShowPane pane="CommoditiesExchange"/>
+							</Action>
+
+							<Action name="Dock Services" key="D">
+								<ShowPane pane="DockServices"/>
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+
+					<MissionDone
+							desc=	"The hall is empty, but in the corner you can see a small Duralloy plaque commemorating a battle against pirates.">
+
+						<Actions>
+							<Action name="Done" default="1" cancel="1" key="D">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</MissionDone>
+
+					<MeetingHall>
+						<Initialize>
+							(switch
+								; If the player hasn't accepted the mission yet...
+								(eq (objGetData gSource "State") "start")
+									(block Nil
+										(if (eq (objGetData gSource "Declined") 0)
+
+											; If this is the first time the player is here...
+											(scrSetDesc gScreen (cat 
+												"As you enter the meeting hall, you see about a dozen people talking excitedly. "
+												"One of them approaches you: \"Welcome to " (objGetName gSource) ", "
+												"Captain. I hope you don't mind if we skip the tour of the "
+												"station and instead get right to the point: the truth is that we've received "
+												"good information that a small raiding party is heading for this station. "
+												"We saw your ship come in, and frankly, we thought that you might be able to help us...\""
+												))
+
+											; Else, if the player has declined before...
+											(scrSetDesc gScreen "\"You're back! Look, we're desperate. No one else has a powerful ship or the skills to fly it. Please reconsider our offer...\"")
+											)
+										)
+
+								; Else (if the mission is complete)...
+								(scrSetDesc gScreen "The hall is empty.")
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="Continue" default="1" key="C">
+								<ShowPane pane="Proposal"/>
+							</Action>
+						</Actions>
+
+					</MeetingHall>
+
+					<Proposal>
+						<Initialize>
+							(scrSetDesc gScreen (cat
+								"\"If you can defend our station, we're prepared to offer you " (objGetStaticData gSource "Reward")
+								" credits in compensation (which is frankly all we've been able to collect on short notice). What do you say?\""
+								))
+						</Initialize>
+
+						<Actions>
+							<Action name="Accept" default="1" key="A">
+								(block Nil
+									(objSetData gSource "State" "in-progress")
+									(scrShowPane gScreen "AcceptProposal")
+									)
+							</Action>
+
+							<Action name="Decline" cancel="1" key="D">
+								(block Nil
+									(objSetData gSource "Declined" 1)
+									(scrShowPane gScreen "DeclineProposal")
+									)
+							</Action>
+						</Actions>
+
+					</Proposal>
+
+					<AcceptProposal>
+						<Initialize>
+							(scrSetDesc gScreen (cat
+								"\"Thank you, you won't regret it! We believe that the first wave is composed "
+								"mostly of gunships; the heavier ships won't show up til the end. You should "
+								"have no problem at all! Well, we better get to the shelters. Thanks again!\""
+								))
+						</Initialize>
+
+						<Actions>
+							<Action name="Undock" default="1" cancel="1" key="U">
+								(block Nil
+									(objSetData gSource "WaveReady" Nil)
+									(sysAddObjTimerEvent (random 30 150) gSource "OnTimer")
+									(scrExitDock gScreen)
+									)
+							</Action>
+						</Actions>
+
+					</AcceptProposal>
+
+					<DeclineProposal>
+						<Initialize>
+							(scrSetDesc gScreen (cat
+								"\"Well, I suppose I shouldn't have expected you to risk your life for us.\" He offers you his hand, "
+								"\"Thanks, anyways. And wish us luck.\""
+								))
+						</Initialize>
+
+						<Actions>
+							<Action name="Undock" default="1" cancel="1" key="U">
+								<Exit/>
+							</Action>
+						</Actions>
+
+					</DeclineProposal>
+
+					<MissionStatus>
+						<Initialize>
+							(switch
+								; If the station is actively under attack...
+								(objIsUnderAttack gSource)
+									(block Nil
+										(scrSetDesc gScreen "\"Whoa, what are you doing here!? The station is still under attack! Just get out there are finish the job, you've got them on the run now.\"")
+										(setq gState "under-attack")
+										)
+
+								; If the wave hasn't arrived yet...
+								(not (objGetData gSource "WaveReady"))
+									(block Nil
+										(scrSetDesc gScreen
+											(item (item (objGetStaticData gSource "WaveData") (objGetData gSource "Wave")) 1)
+											)
+										(setq gState "waiting")
+										)
+
+								; If we have more waves to go...
+								(gr (count (objGetStaticData gSource "WaveData")) (add (objGetData gSource "Wave") 1))
+									(block Nil
+										(scrSetDesc gScreen
+											(item (item (objGetStaticData gSource "WaveData") (add (objGetData gSource "Wave") 1)) 1)
+											)
+										(setq gState "next")
+										)
+
+								; Otherwise, we are done...
+								(block Nil
+									(scrSetDesc gScreen (cat
+										"\"You've done it! I haven't seen fighting like that since the videos of the Marineris War! "
+										" As promised, we've deposited " (objGetStaticData gSource "Reward") " credits into your account.\"")
+										)
+
+									(if (not (eq gState "done"))
+										(block Nil
+											(plyCredit gPlayer (objGetStaticData gSource "Reward"))
+											(setq gState "done")
+											)
+										)
+									)
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="Undock" cancel="1" default="1" key="U">
+								(block Nil
+									(switch
+										(eq gState "next")
+											(block Nil
+												(objSetData gSource "Wave" (add (objGetData gSource "Wave") 1))
+												(objSetData gSource "WaveReady" Nil)
+												(sysAddObjTimerEvent (random 30 150) gSource "OnTimer")
+												)
+										(eq gState "done")
+											(objSetData gSource "State" "done")
+										)
+
+									(scrExitDock gScreen)
+									)
+							</Action>
+
+						</Actions>
+
+					</MissionStatus>
+
+					<CommoditiesExchange>
+
+						<Initialize>
+							(scrSetDesc gScreen (cat "Welcome to the " (objGetName gSource) " Commodities Exchange Market."))
+						</Initialize>
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gInstallCriteria Nil)
+									(scrShowScreen gScreen "&dsExchangeBuy;")
+									)
+							</Action>
+
+							<Action name="Sell items" key="S">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+
+							<Action name="Done" cancel="1" key="D">
+								<ShowPane pane="Default"/>
+							</Action>
+
+						</Actions>
+
+					</CommoditiesExchange>
+
+					<DockServices
+							desc=	"You are at the docking services terminal.">
+
+						<Actions>
+							<Action name="Refuel" key="R">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(intSetCompatibleFuel '((&itHeliumAssembly; 70) (&itHelium3FuelRod; 22)))
+									(scrShowScreen gScreen "&dsRefuel;")
+									)
+							</Action>
+
+							<Action name="Repair or replace armor" key="A" >
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(setq gTechLevel 5)
+									(setq gArmorSegment 0)
+									(setq gMargin 100)
+									(scrShowScreen gScreen "&dsRepairArmor;")
+									)
+							</Action>
+
+							<Action name="Done" cancel="1" key="D">
+								<ShowPane pane="Default"/>
+							</Action>
+
+						</Actions>
+
+					</DockServices>
+
+				</Panes>
+
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="90" />
+			<Port x="0"		y="-90" />
+			<Port x="60"	y="60" />
+			<Port x="60"	y="-60" />
+			<Port x="90"	y="0" />
+			<Port x="-90"	y="0" />
+			<Port x="-60"	y="60" />
+			<Port x="-60"	y="-60" />
+		</DockingPorts>
+
+	</StationType>
+
+</TranscendenceModule>

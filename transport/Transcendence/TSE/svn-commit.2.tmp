@@ -1,0 +1,4 @@
+Properly ignore alpha when rotating an image into a temporary buffer (display ship on map).
+--This line, and those below, will be ignored--
+
+M    CObjectImageArray.cpp

@@ -1,0 +1,200 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "CodeChain"="..\Alchemy\CodeChain\CodeChain.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "DirectXBench"="..\DirectXBench\DirectXBench.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "DirectXUtil"="..\DirectXUtil\DirectXUtil.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Graphics"="..\Alchemy\Graphics\Graphics.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "IntelJPEGUtil"="..\IntelJPEGUtil\IntelJPEGUtil.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "Kernel"="..\Alchemy\Kernel\Kernel.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TSE"=".\TSE\TSE.DSP" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TransCompiler"=".\TransCompiler\TransCompiler.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name CodeChain
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Kernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name XMLUtil
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "TransData"=".\TransData\TransData.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name CodeChain
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Kernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TSE
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name XMLUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DirectXUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Graphics
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name IntelJPEGUtil
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Transcendence"=".\Transcendence.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name DirectXUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TSE
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name XMLUtil
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name CodeChain
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Graphics
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Kernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name IntelJPEGUtil
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "XMLUtil"="..\XMLUtil\XMLUtil.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

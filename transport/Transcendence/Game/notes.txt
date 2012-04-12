@@ -1,0 +1,1 @@
+Only the gui stuff seems right wrong, so let's take a look at the algorithms.

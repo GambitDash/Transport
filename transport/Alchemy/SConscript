@@ -1,0 +1,8 @@
+import os
+
+### Include subdirectories
+Import('env')
+
+env.SConscript(dirs = ['Kernel', 'CodeChain' ])
+
+

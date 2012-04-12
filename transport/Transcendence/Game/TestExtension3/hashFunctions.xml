@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceExtension
+	[
+	<!ENTITY modHashFunctions			"0xDCBA0030">
+]>
+
+<TranscendenceExtension UNID="&modHashFunctions;" version="0.99c">
+
+<!--
+	Purpose:
+		Provide access to lists by key name instead of by integer
+	Usage:
+		http://neurohack.com/transcendence/forums/viewtopic.php?t=2100
+-->
+
+	<Globals>
+		<!-- TRAP START -->
+		(block Nil
+
+			(setq hshFind (lambda (hsh key)
+				(block (tmp notFound pos cnt)
+					;; we need to make a copy of the original
+					(setq tmp (append hsh '()))
+					(setq notFound True)
+					(setq pos Nil)
+					(setq cnt 0)
+					(if (not (isAtom hsh))
+						(loop notFound
+							(block Nil
+								(setq pos (find tmp key))
+								;; if pos is even, we found a key.
+								;; Good, pos is valid
+								(if (or (eq (modulo pos 2) 0) (not pos))
+									(setq notFound Nil)
+									;; else we found a value,
+									;; not what we were looking for
+									;; delete the value and its key from tmp
+									;; and let loop run again
+									(block Nil
+										(lnkRemove tmp pos Nil)
+										(lnkRemove tmp (subtract pos 1) Nil)
+										(setq cnt (add cnt 2))
+									)
+								)
+							)
+						)
+					)
+					(add pos cnt)
+				)
+			))
+			
+			(setq hshGet (lambda (hsh key)
+				(block (pos)	
+					(setq pos (hshFind hsh key))
+					(if pos
+						(setq pos (item hsh (add pos 1)))
+					)
+					pos
+				)
+			))
+
+			(setq hshSet (lambda (hsh key data)
+				(block (pos)
+					(setq pos (hshFind hsh key))
+					(if pos
+						(lnkReplace hsh (add pos 1) data)
+						(block Nil
+							(lnkAppend hsh key)
+							(lnkAppend hsh data)
+						)
+					)
+				)
+			))
+			
+			(setq hshRemove (lambda (hsh key)
+				(block (pos val)
+					(setq pos (hshFind hsh key))
+					(if pos
+						(block Nil
+							(lnkRemove hsh pos Nil)
+							(setq val (item hsh pos))
+							(lnkRemove hsh pos Nil)
+						)
+					)
+					val
+				)
+			))
+			
+			(setq hshMerge (lambda (hsh1 hsh2)
+				(block (cnt)
+					(setq cnt 0)
+					(loop (ls cnt (count hsh2))
+						(block (key val)
+							(setq key (item hsh2 cnt))
+							(setq cnt (add cnt 1))
+							(setq val (item hsh2 cnt))
+							(setq cnt (add cnt 1))
+							(hshSet hsh1 key val)
+						)
+					)
+					hsh1
+				)
+			))
+			
+			;; convert the hash into a list without keys
+			(setq hshToList (lambda (hsh)
+				(block (ret i cnt)
+					(setq ret (list))
+					(setq i 1)
+					(setq cnt (count hsh))
+					(loop (leq i cnt)
+						(block Nil
+							(lnkAppend ret (item hsh i))
+							(setq i (add i 2))
+						)
+					)
+					ret	 
+				)
+			))
+			
+		)
+		<!-- TRAP END -->
+	</Globals>
+</TranscendenceExtension>

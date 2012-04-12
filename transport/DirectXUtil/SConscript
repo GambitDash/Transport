@@ -1,0 +1,11 @@
+Import('env')
+
+#sources = [ '16bitDrawCircle.cpp', '16bitImageDrawing.cpp', 'AGArea.cpp', 'AGScreen.cpp', 'CG16bitFont.cpp', 'CG16bitImage.cpp', 'CG16bitRegion.cpp', 'CG16bitSprite.cpp', 'CGButtonArea.cpp', 'CGFrameArea.cpp', 'CGImageArea.cpp', 'CGTextArea.cpp', 'Polygon.cpp', 'PolygonSimple.cpp', 'Sound.cpp']
+sources = [ 'AGArea.cpp', 'AGScreen.cpp', 'CG16bitFont.cpp', 'CGImage.cpp', 'CG16bitRegion.cpp', 'CGButtonArea.cpp', 'CGFrameArea.cpp', 'CGImageArea.cpp', 'CGTextArea.cpp', 'Polygon.cpp', 'PolygonSimple.cpp', 'Sound.cpp']
+#sources = [ 'CGImage.cpp', 'CG16bitFont.cpp' ];
+env.StaticLibrary('libdxutil', sources, CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'] )
+
+env.Append(LIBPATH='.')
+Export('env')
+
+env.SConscript(dirs = ['test'])

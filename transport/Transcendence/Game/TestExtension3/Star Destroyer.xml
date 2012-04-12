@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceExtension
+	[
+                <!ENTITY scStarDest			"0xD1024023">
+                <!ENTITY rsStarDest                                        "0xD1024024">
+                <!ENTITY rsSDSH		                  "0xD1024025">
+                <!ENTITY rsWolfenArmor		"0x0000F00B">
+]>
+
+<TranscendenceExtension UNID="0xD1024023" version="0.98d">
+
+<Image UNID="&rsStarDest;" bitmap="SDI.bmp" bitmask="SDM.bmp" backColor="0x00000000"/>
+<Image UNID="&rsSDSH;" bitmap="SDSH.bmp" backColor="0x00000000"/>
+
+<ShipClass UNID="&scStarDest;"
+manufacturer=		                "Kuat Driveyards"
+class=			                "Imperial"
+type=			                "Star Destroyer"
+score=			                "200"
+techOrder=			                "mech"
+mass=			                "200"
+reactorPower=		                "50000"
+fuelCapacity=		                "500000"
+cargoSpace=		                "60000"
+thrust=			                "300"
+maneuver=			                "6"
+maxSpeed=		                "30"
+maxDevices=		                "30"
+maxCargoSpace=	                                  "100000"
+cyberDefenseLevel=	                                  "20"
+leavesWreck=		                "50"
+>
+
+                               <Armor>
+			<ArmorSection start="315" span="90" armorID="&itSolarArmor;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itSolarArmor;" areaSet="3,4" />
+			<ArmorSection start="135" span="90" armorID="&itSolarArmor;" areaSet="1,6" />
+			<ArmorSection start="45"  span="90" armorID="&itSolarArmor;" areaSet="7,13" />
+		</Armor>
+
+                               <Devices>
+			<Device deviceID="&itXRayLaserCannon;"/>
+			<Device deviceID="&itSmugglersCargoHold;"/>
+                                                      <Device deviceID="&itClass3Deflector;"/>
+                                                     
+	              </Devices>
+
+   <Image imageID="&rsStarDest;" imageX="0" imageY="0" imageWidth="251" imageHeight="251" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+                                                      <Item count="1" item="&itTargetingComputerROM;"/>
+			<Item count="1" item="&itWeaponSpeedROM;"/>
+			<Item count="1" item="&itEnhanceSRSROM;"/>
+			<Item count="9d2" item="&itSystemMapROM;"/>			
+                                                      <Item count="77d20" item="&itHelium3FuelRod;"/>
+                                                      <Item count="1" item="&itMilitaryID;"/>
+			<Item count="1" item="&itPatchSpider;"/>
+			<Item count="1" item="&itLaserEnhancer;"/>
+			<Item count="10" item="&itDeconGel;"/>
+		</Items>
+<AISettings
+			fireRateAdj=		"3"
+			fireAccuracy=		"100"
+			perception=		"20"
+/>
+
+
+		<PlayerSettings
+	                    	 desc=	"The Imperial Star Destroyer strikes fear into the hearts of every pilot in the galaxy." 
+			 startingCredits=	"90000000"
+                                                 initialClass=	"true">
+
+<ArmorDisplay>
+	<ArmorSection name="forward" imageID="&rsWolfenArmor;" imageX="0" imageY="0" imageWidth="90" imageHeight="9" destX="23" destY="32" hpX="55" hpY="27" nameY="8" nameBreakWidth="360" nameDestX="12" nameDestY="0"/>
+	<ArmorSection name="starboard" imageID="&rsWolfenArmor;" imageX="90" imageY="0" imageWidth="9" imageHeight="56" destX="104" destY="41" hpX="98" hpY="60" nameY="30" nameBreakWidth="275" nameDestX="0" nameDestY="8"/>
+	<ArmorSection name="aft" imageID="&rsWolfenArmor;" imageX="99" imageY="0" imageWidth="90" imageHeight="9" destX="23" destY="97" hpX="55" hpY="97" nameY="74" nameBreakWidth="200" nameDestX="0" nameDestY="8"/>
+	<ArmorSection name="port" imageID="&rsWolfenArmor;" imageX="189" imageY="0" imageWidth="9" imageHeight="56" destX="23" destY="41" hpX="12" hpY="60" nameY="52" nameBreakWidth="200" nameDestX="0" nameDestY="8"/>
+</ArmorDisplay>
+
+<ShieldDisplay>
+     <Image imageID="&rsSDSH;" imageX="0" imageY="0" imageWidth="90" imageHeight="90"/>
+</ShieldDisplay>
+
+<ReactorDisplay>
+<Image imageID="&rsZubrinReactor;" imageX="0" imageY="0" imageWidth="256" imageHeight="60"/>
+<PowerLevelImage imageID="&rsZubrinReactor;" imageX="0" imageY="60" imageWidth="202" imageHeight="14" destX="54" destY="9"/>
+<FuelLevelImage imageID="&rsZubrinReactor;" imageX="0" imageY="74" imageWidth="194" imageHeight="14" destX="54" destY="37"/>
+<FuelLowLevelImage imageID="&rsZubrinReactor;" imageX="0" imageY="88" imageWidth="194" imageHeight="14"/>
+<ReactorText x="62" y="22" width="154" height="14"/>
+<PowerLevelText x="62" y="0" width="154" height="9"/>
+<FuelLevelText x="62" y="51" width="154" height="9"/>
+</ReactorDisplay>
+			
+</PlayerSettings>
+
+</ShipClass>
+	
+</TranscendenceExtension>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+
+	<!-- Heretic Stargate -->
+
+	<StationType UNID="&stHereticGate;"
+			name=				"Heretic Gate"
+			sovereign=			"&svIndependent;"
+			dockScreen=			"Main"
+			dockingPorts=		"4"
+
+			multiHull=			"true"
+			immutable=			"true"
+			inactive=			"true"
+
+			definiteArticle=	"true"
+			>
+		<Image imageID="&rsStargate;" imageX="0" imageY="0" imageWidth="128" imageHeight="128" imageFrameCount="12" imageTicksPerFrame="3"/>
+
+		<DockScreens>
+
+			<Main
+				name=			"Heretic Gate"
+				>
+
+				<InitialPane>
+					(if (objGetData gSource "Active")
+						"Default"
+						"Activate"
+						)
+				</InitialPane>
+
+				<Panes>
+					<Activate
+							desc=	"You are docked at the Heretic Gate. This gate has been deactivated ever since the Ancient Races of the Galaxy quarantined Human Space. The Heretic Gate is the only barrier that stands between humanity and the rest of the Galaxy. It is also the only way to get to the Galactic Core.">
+
+						<Actions>
+							<Action name="Activate stargate" default="1" key="A">
+								<Navigate screen="PickItem"/>
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Activate>
+
+					<Default
+							desc=	"You are docked at the Heretic Gate. This gate leads out of the Human Quarantine Zone and into the rest of the Galaxy. Your journey to the Galactic Core begins here...">
+
+						<Actions>
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+				</Panes>
+			</Main>
+
+			<PickItem
+					name=				"Heretic Gate"
+					type=				"itemPicker"
+					backgroundID=		"&rsItemListScreen;"
+					>
+
+				<ListOptions
+					dataFrom=	"player"
+					list=		"*U"
+					/>
+
+				<Panes>
+					<Default
+							desc=	"You are in the alien control room of the Heretic Gate. Pick an item to use to attempt to activate the stargate.">
+
+						<Actions>
+							<Action name="Use this item" default="1" key="U">
+								(block Nil
+									(setq gItem (scrGetItem gScreen))
+									(switch
+										(eq gItem Nil)
+											Nil
+
+										(eq (itmGetUNID gItem) &itStargateControlRod;)
+											(block Nil
+												(objSetData gSource "Active" True)
+												(staSetActive gSource)
+												(scrRemoveItem gScreen 1)
+												(scrShowPane gScreen "Success")
+												)
+
+										(scrShowPane gScreen "Failure")
+										)
+									)
+							</Action>
+
+							<Action name="Leave" cancel="1" key="L">
+								<Navigate screen="Main"/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+
+					<Failure>
+						<Initialize>
+							(scrSetDesc gScreen (cat "Using " (itmGetName gItem 4) " has no discernible effect on the stargate."))
+						</Initialize>
+
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+
+					</Failure>
+
+					<Success
+							desc=	"As you install the alien hyperglyph rod the machines in the control room hum with energy. The stargate spins slowly to life.">
+
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								<Navigate screen="Main"/>
+							</Action>
+						</Actions>
+
+					</Success>
+				</Panes>
+
+			</PickItem>
+
+		</DockScreens>
+
+	</StationType>
+
+	<!-- Heretic System -->
+
+	<SystemType UNID="&ssHeretic;">
+
+		<SystemGroup>
+
+			<!-- Star -->
+
+			<Station type="&stA-TypeStar;" name="1766 Zhang"/>
+
+			<!-- Heretic Prime -->
+
+			<Orbitals distance="4" scale="light-minute" angle="random">
+				<Group>
+					<Station type="&stMediumAsteroid;"
+							showOrbit="true"
+							/>
+
+					<Orbitals count="4d8+4" distance="4d8+4" angle="random">
+						<Lookup table="AsteroidSmall"/>
+					</Orbitals>
+
+					<Orbitals count="3d6" distance="3d8+8" angle="random">
+						<Lookup table="AsteroidMedium"/>
+					</Orbitals>
+
+					<Orbitals distance="2d8+8" angle="random">
+						<Group>
+							<Lookup table="StargateInbound"/>
+
+							<Particles 
+									name=		"radiation field"
+									count=		"300"
+									radius=		"8"
+									dampening=	"996"
+									minRadius=	"4"
+									damage=		"plasma:1d8; radiation1"
+									>
+
+								<Image imageID="&rsDebris1;" imageX="0" imageY="32" imageWidth="4" imageHeight="4" imageFrameCount="8" imageTicksPerFrame="4"/>
+							</Particles>
+						</Group>
+					</Orbitals>
+				</Group>
+			</Orbitals>
+
+			<!-- Heretic II -->
+
+			<Orbitals distance="8" scale="light-minute" angle="random">
+				<Group>
+					<Station type="&stMediumAsteroid;"
+							showOrbit="true"
+							/>
+
+					<Siblings count="4d4+8" distribution="4d40-82">
+						<Lookup table="AsteroidSmall"/>
+					</Siblings>
+				</Group>
+			</Orbitals>
+
+			<!-- Heretic III -->
+
+			<Orbitals distance="15" scale="light-minute" angle="random">
+				<Group>
+					<Station type="&stCrateredPlanet;" 
+							name="Heretic III" 
+							showOrbit="true"
+							/>
+
+					<Orbitals distance="2d12" angle="random">
+						<Stargate objName="EndGame" type="&stHereticGate;">
+							<Ships>
+								<Ship	class="&scIocrymCommandShip;" count="1" sovereign="&svDestructiveOrder;" orders="patrol" patrolDist="20"/>
+							</Ships>
+						</Stargate>
+					</Orbitals>
+				</Group>
+			</Orbitals>
+
+		</SystemGroup>
+
+	</SystemType>
+		
+</TranscendenceModule>

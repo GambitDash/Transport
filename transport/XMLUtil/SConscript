@@ -1,0 +1,3 @@
+Import('env')
+sources = [ 'CExternalEntityTable.cpp', 'CXMLElement.cpp', 'Misc.cpp', 'Parser.cpp' ]
+env.StaticLibrary('libxmlutil', sources, CPPPATH = ['/usr/local/include/SDL', '../Includes', '/usr/local/boost/include' ])

@@ -1,0 +1,2926 @@
+
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Unable to load music file TranscendenceMarch.mp3: Couldn't read from 'TranscendenceMarch.mp3'
+Blt with Lock: 44 ms
+Blt without Lock: 50 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Sound Attribute: f203
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: f203
+Sound Attribute: f208
+Sound Attribute: f208
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f208 at 7
+Loaded sound UNID f208 at 7
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f206 at 5
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 5/8 at -6[0]
+Played sound 5/8 on 1 at 0[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -5[0]
+Played sound 2/8 on 1 at 0[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -21[0]
+Played sound 2/8 on 0 at 0[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -15[0]
+Played sound 2/8 on 1 at 0[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -12[0]
+Played sound 2/8 on 2 at 0[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -12[0]
+Played sound 2/8 on 1 at 0[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Frames: 18   Paint: 6  Blt: 47  Update: 0
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -800[0]
+Played sound 2/8 on 1 at 0[127:127]
+Playing channel 2/8 at -785[0]
+Played sound 2/8 on 0 at 0[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 2 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -1206[0]
+Played sound 2/8 on 0 at 0[127:127]
+Playing channel 2/8 at -1148[0]
+Played sound 2/8 on 1 at 0[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -132[0]
+Played sound 2/8 on 0 at 0[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 1 at 128[127:127]
+Playing channel 2/8 at -106[0]
+Played sound 2/8 on 0 at 0[127:127]
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Unable to load music file TranscendenceMarch.mp3: Couldn't read from 'TranscendenceMarch.mp3'
+Blt with Lock: 50 ms
+Blt without Lock: 46 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Sound Attribute: f203
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: f203
+Sound Attribute: f208
+Sound Attribute: f208
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f208 at 7
+Loaded sound UNID f208 at 7
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f206 at 5
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -12[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -12[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 5/8 at -13[0]
+Played sound 5/8 on 0 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 5/8 at -13[0]
+Played sound 5/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -11[0]
+Played sound 2/8 on 1 at 127[127:127]
+Frames: 18   Paint: 6  Blt: 47  Update: 0
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -11[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -6[0]
+Played sound 2/8 on 2 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -3[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -2[0]
+Played sound 2/8 on 2 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -2[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -31[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -59[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 1 at 128[127:127]
+Playing channel 2/8 at -69[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 5/8 at -249[0]
+Played sound 5/8 on 0 at 124[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 1 at 128[127:127]
+Playing channel 2/8 at -104[0]
+Played sound 2/8 on 2 at 126[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -87[0]
+Played sound 2/8 on 1 at 126[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -81[0]
+Played sound 2/8 on 2 at 126[127:127]
+Playing channel 2/8 at -77[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 1 at 128[127:127]
+Playing channel 2/8 at -75[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 1 at 128[127:127]
+Playing channel 2/8 at -74[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -74[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 1 at 128[127:127]
+Playing channel 2/8 at -76[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -78[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 1 at 128[127:127]
+Playing channel 2/8 at -81[0]
+Played sound 2/8 on 0 at 126[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -88[0]
+Played sound 2/8 on 0 at 126[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Frames: 17   Paint: 6  Blt: 50  Update: 0
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -89[0]
+Played sound 2/8 on 0 at 126[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Unable to load music file TranscendenceMarch.mp3: Couldn't read from 'TranscendenceMarch.mp3'
+Blt with Lock: 47 ms
+Blt without Lock: 48 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Sound Attribute: f203
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: f203
+Sound Attribute: f208
+Sound Attribute: f208
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f208 at 7
+Loaded sound UNID f208 at 7
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f206 at 5
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -50[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 2/8 at -48[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -35[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 2/8 at -46[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -23[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 2/8 at -21[0]
+Played sound 2/8 on 1 at 127[127:127]
+Frames: 17   Paint: 6  Blt: 48  Update: 0
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -15[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 2/8 at -16[0]
+Played sound 2/8 on 2 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -15[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 2/8 at -17[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -19[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 2/8 at -22[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -20[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 2/8 at -21[0]
+Played sound 2/8 on 1 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 2 at 128[127:127]
+Playing channel 2/8 at -15[0]
+Played sound 2/8 on 3 at 127[127:127]
+Playing channel 2/8 at -14[0]
+Played sound 2/8 on 4 at 127[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 2 at 128[127:127]
+Playing channel 2/8 at -10[0]
+Played sound 2/8 on 0 at 127[127:127]
+Playing channel 2/8 at -8[0]
+Played sound 2/8 on 1 at 127[127:127]
+Frames: 17   Paint: 6  Blt: 48  Update: 0
+Unable to load music file TranscendenceMarch.mp3: Couldn't read from 'TranscendenceMarch.mp3'
+Unable to load music file TranscendenceMarch.mp3: Couldn't read from 'TranscendenceMarch.mp3'
+Frames: 17   Paint: 6  Blt: 49  Update: 0
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Unable to load music file TranscendenceMarch.mp3: Couldn't read from 'TranscendenceMarch.mp3'
+Blt with Lock: 50 ms
+Blt without Lock: 47 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Sound Attribute: f203
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: f203
+Sound Attribute: f208
+Sound Attribute: f208
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f208 at 7
+Loaded sound UNID f208 at 7
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f206 at 5
+Frames: 19   Paint: 6  Blt: 45  Update: 0
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 2/8 at -12[0]
+Played sound 2/8 on 1 at 127[127:127]
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Blt with Lock: 47 ms
+Blt without Lock: 50 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Sound Attribute: f203
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: f203
+Sound Attribute: f208
+Sound Attribute: f208
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f208 at 7
+Loaded sound UNID f208 at 7
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f206 at 5
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+Playing channel 0/8 at 0[0]
+Played sound 0/8 on 0 at 128[127:127]
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Blt with Lock: 45 ms
+Blt without Lock: 51 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Sound Attribute: f203
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: f203
+Sound Attribute: f208
+Sound Attribute: f208
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f206
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: f203
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Sound Attribute: 0
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f208 at 7
+Loaded sound UNID f208 at 7
+Loaded sound UNID f203 at 2
+Loaded sound UNID f203 at 2
+Loaded sound UNID f206 at 5
+Loaded sound UNID f206 at 5
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Unable to load music file TranscendenceMarch.mp3: Couldn't read from 'TranscendenceMarch.mp3'
+Blt with Lock: 41 ms
+Blt without Lock: 52 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Blt with Lock: 48 ms
+Blt without Lock: 50 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 17   Paint: 6  Blt: 51  Update: 0
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Blt with Lock: 50 ms
+Blt without Lock: 54 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Blt with Lock: 76 ms
+Blt without Lock: 54 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 54 ms
+Blt without Lock: 59 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 54 ms
+Blt without Lock: 52 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Using external Transcendence.xml
+Using external resource files
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Blt with Lock: 49 ms
+Blt without Lock: 55 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Unable to load bitmap image 'test.jpg': Couldn't open test.jpg
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Blt with Lock: 43 ms
+Blt without Lock: 60 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Unable to load bitmask image 'test.jpg': Couldn't open test.jpg
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Blt with Lock: 43 ms
+Blt without Lock: 58 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 21   Paint: 11  Blt: 35  Update: 0
+Frames: 13   Paint: 15  Blt: 55  Update: 0
+Frames: 15   Paint: 13  Blt: 50  Update: 0
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 57 ms
+Blt without Lock: 54 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 45 ms
+Blt without Lock: 45 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 43 ms
+Blt without Lock: 43 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 18   Paint: 7  Blt: 46  Update: 0
+Frames: 17   Paint: 6  Blt: 50  Update: 1
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 45 ms
+Blt without Lock: 44 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 18   Paint: 6  Blt: 47  Update: 0
+Frames: 18   Paint: 7  Blt: 45  Update: 0
+Frames: 18   Paint: 6  Blt: 45  Update: 0
+Frames: 18   Paint: 6  Blt: 46  Update: 0
+Frames: 19   Paint: 5  Blt: 45  Update: 0
+Frames: 18   Paint: 6  Blt: 45  Update: 0
+Frames: 19   Paint: 6  Blt: 43  Update: 0
+Frames: 19   Paint: 6  Blt: 44  Update: 0
+Frames: 19   Paint: 6  Blt: 43  Update: 0
+Frames: 20   Paint: 5  Blt: 43  Update: 0
+Frames: 20   Paint: 5  Blt: 43  Update: 0
+Frames: 17   Paint: 6  Blt: 50  Update: 0
+Frames: 19   Paint: 5  Blt: 44  Update: 0
+Frames: 20   Paint: 5  Blt: 43  Update: 1
+Frames: 19   Paint: 5  Blt: 45  Update: 0
+Frames: 19   Paint: 5  Blt: 43  Update: 0
+Frames: 19   Paint: 5  Blt: 45  Update: 0
+Frames: 18   Paint: 5  Blt: 49  Update: 0
+Frames: 18   Paint: 5  Blt: 47  Update: 0
+Frames: 19   Paint: 5  Blt: 44  Update: 0
+Frames: 20   Paint: 5  Blt: 42  Update: 0
+Frames: 21   Paint: 5  Blt: 41  Update: 0
+Frames: 21   Paint: 4  Blt: 41  Update: 0
+Frames: 20   Paint: 5  Blt: 43  Update: 0
+Frames: 21   Paint: 4  Blt: 42  Update: 0
+Frames: 18   Paint: 5  Blt: 48  Update: 0
+Frames: 20   Paint: 4  Blt: 43  Update: 0
+Frames: 19   Paint: 6  Blt: 43  Update: 0
+Frames: 20   Paint: 5  Blt: 41  Update: 0
+Frames: 18   Paint: 7  Blt: 46  Update: 0
+Frames: 17   Paint: 8  Blt: 47  Update: 0
+Frames: 19   Paint: 6  Blt: 44  Update: 0
+Frames: 18   Paint: 5  Blt: 46  Update: 0
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 48 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 47 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 18   Paint: 6  Blt: 46  Update: 0
+Frames: 18   Paint: 7  Blt: 44  Update: 1
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 51 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 19   Paint: 6  Blt: 45  Update: 0
+Frames: 18   Paint: 8  Blt: 46  Update: 0
+Frames: 17   Paint: 7  Blt: 48  Update: 0
+Frames: 17   Paint: 7  Blt: 48  Update: 0
+Frames: 19   Paint: 6  Blt: 44  Update: 0
+Frames: 17   Paint: 7  Blt: 48  Update: 0
+Frames: 17   Paint: 6  Blt: 50  Update: 0
+Frames: 19   Paint: 5  Blt: 44  Update: 0
+Frames: 18   Paint: 6  Blt: 49  Update: 0
+Frames: 20   Paint: 5  Blt: 42  Update: 0
+Frames: 18   Paint: 7  Blt: 47  Update: 0
+Frames: 18   Paint: 6  Blt: 45  Update: 1
+Frames: 18   Paint: 6  Blt: 45  Update: 0
+Frames: 18   Paint: 6  Blt: 45  Update: 1
+Frames: 18   Paint: 6  Blt: 45  Update: 0
+Frames: 18   Paint: 6  Blt: 46  Update: 0
+Frames: 18   Paint: 7  Blt: 45  Update: 0
+Frames: 19   Paint: 6  Blt: 44  Update: 1
+Frames: 18   Paint: 6  Blt: 45  Update: 1
+Frames: 18   Paint: 6  Blt: 47  Update: 0
+Frames: 19   Paint: 6  Blt: 44  Update: 1
+Frames: 16   Paint: 7  Blt: 51  Update: 0
+Frames: 19   Paint: 6  Blt: 45  Update: 0
+Frames: 19   Paint: 7  Blt: 44  Update: 0
+Frames: 19   Paint: 6  Blt: 45  Update: 0
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 46 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 19   Paint: 6  Blt: 45  Update: 0
+Frames: 18   Paint: 6  Blt: 46  Update: 0
+Frames: 19   Paint: 6  Blt: 45  Update: 0
+Frames: 18   Paint: 6  Blt: 46  Update: 1
+Frames: 17   Paint: 8  Blt: 46  Update: 0
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 45 ms
+Blt without Lock: 50 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 20   Paint: 5  Blt: 41  Update: 0
+Frames: 21   Paint: 5  Blt: 41  Update: 0
+Frames: 21   Paint: 5  Blt: 41  Update: 0
+Frames: 21   Paint: 5  Blt: 41  Update: 0
+Frames: 21   Paint: 5  Blt: 41  Update: 0
+Frames: 21   Paint: 5  Blt: 41  Update: 0
+Frames: 21   Paint: 4  Blt: 41  Update: 0
+Frames: 21   Paint: 5  Blt: 40  Update: 0
+Frames: 21   Paint: 5  Blt: 40  Update: 0
+Frames: 21   Paint: 5  Blt: 41  Update: 0
+Frames: 20   Paint: 5  Blt: 42  Update: 0
+Frames: 19   Paint: 8  Blt: 41  Update: 0
+Frames: 20   Paint: 5  Blt: 42  Update: 0
+Frames: 20   Paint: 5  Blt: 42  Update: 0
+Frames: 20   Paint: 6  Blt: 42  Update: 0
+Frames: 21   Paint: 5  Blt: 41  Update: 0
+Frames: 20   Paint: 5  Blt: 43  Update: 0
+Frames: 7   Paint: 14  Blt: 44  Update: 0
+Frames: 18   Paint: 8  Blt: 45  Update: 0
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 46 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 47 ms
+Blt without Lock: 46 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 18   Paint: 6  Blt: 46  Update: 0
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 48 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 42 ms
+Blt without Lock: 41 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 20   Paint: 5  Blt: 42  Update: 0
+Frames: 20   Paint: 5  Blt: 43  Update: 0
+Frames: 20   Paint: 5  Blt: 43  Update: 0
+Frames: 19   Paint: 6  Blt: 44  Update: 0
+Frames: 19   Paint: 5  Blt: 46  Update: 0
+Frames: 19   Paint: 5  Blt: 45  Update: 0
+Frames: 21   Paint: 5  Blt: 41  Update: 0
+Frames: 21   Paint: 5  Blt: 40  Update: 0
+Frames: 13   Paint: 9  Blt: 44  Update: 1
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 64 ms
+Blt without Lock: 76 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 18   Paint: 6  Blt: 47  Update: 0
+Frames: 19   Paint: 5  Blt: 44  Update: 0
+Frames: 18   Paint: 9  Blt: 43  Update: 0
+Frames: 18   Paint: 10  Blt: 42  Update: 0
+Frames: 18   Paint: 10  Blt: 43  Update: 0
+Frames: 18   Paint: 9  Blt: 43  Update: 1
+Frames: 18   Paint: 9  Blt: 42  Update: 0
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 47 ms
+Blt without Lock: 49 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 17   Paint: 8  Blt: 47  Update: 1
+Frames: 3   Paint: 8  Blt: 46  Update: 1
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 46 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 16   Paint: 7  Blt: 54  Update: 0
+0: 0  1: 0  2: 0  3: 0  4: 0  5:  0  6:  0
+
+Frames: 18   Paint: 9  Blt: 44  Update: 0
+0: 0  1: 0  2: 0  3: 0  4: 0  5:  0  6:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 45 ms
+Blt without Lock: 47 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 19   Paint: 8  Blt: 42  Update: 0
+0: 3  1: 1722337  2: 77  3: 1722413  4: 100  5:  1721921  6:  0
+
+Frames: 19   Paint: 8  Blt: 43  Update: 0
+0: 2  1: 2516861  2: 67  3: 2516940  4: 73  5:  2516468  6:  0
+
+Frames: 19   Paint: 6  Blt: 43  Update: 0
+0: 4  1: 3305710  2: 55  3: 3305769  4: 64  5:  3305381  6:  0
+
+Frames: 19   Paint: 7  Blt: 43  Update: 0
+0: 3  1: 4092182  2: 44  3: 4092265  4: 50  5:  4091851  6:  0
+
+Frames: 19   Paint: 7  Blt: 42  Update: 0
+0: 3  1: 4869338  2: 64  3: 4869391  4: 84  5:  4868958  6:  0
+
+Frames: 20   Paint: 5  Blt: 42  Update: 1
+0: 7  1: 5645858  2: 50  3: 5645907  4: 59  5:  5645526  6:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 44 ms
+Blt without Lock: 42 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 17   Paint: 6  Blt: 50  Update: 0
+0: 0  1: 0  2: 0  3: 0  4: 0  5:  0  6:  0
+
+Frames: 20   Paint: 6  Blt: 42  Update: 0
+0: 0  1: 0  2: 0  3: 0  4: 0  5:  0  6:  0
+
+Frames: 20   Paint: 6  Blt: 42  Update: 0
+0: 0  1: 0  2: 0  3: 0  4: 0  5:  0  6:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 47 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 20   Paint: 6  Blt: 42  Update: 1
+0: 9  1: 187  2: 42  3: 69  4: 19  5:  2141  6:  0
+
+Frames: 20   Paint: 5  Blt: 42  Update: 0
+0: 3  1: 148  2: 61  3: 70  4: 22  5:  2136  6:  0
+
+Frames: 20   Paint: 5  Blt: 42  Update: 0
+0: 3  1: 169  2: 54  3: 75  4: 18  5:  2136  6:  0
+
+Frames: 18   Paint: 7  Blt: 45  Update: 0
+0: 2  1: 243  2: 61  3: 75  4: 30  5:  2305  6:  0
+
+Frames: 18   Paint: 7  Blt: 44  Update: 0
+0: 2  1: 270  2: 56  3: 54  4: 14  5:  2279  6:  0
+
+Frames: 18   Paint: 7  Blt: 44  Update: 1
+0: 7  1: 242  2: 63  3: 73  4: 25  5:  2269  6:  0
+
+Frames: 18   Paint: 7  Blt: 45  Update: 0
+0: 2  1: 248  2: 46  3: 78  4: 8  5:  2299  6:  0
+
+Frames: 18   Paint: 7  Blt: 45  Update: 0
+0: 4  1: 286  2: 35  3: 57  4: 19  5:  2299  6:  0
+
+Frames: 17   Paint: 8  Blt: 46  Update: 0
+0: 5  1: 315  2: 55  3: 69  4: 11  5:  2379  6:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 48 ms
+Blt without Lock: 49 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 19   Paint: 6  Blt: 45  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 19   Paint: 7  Blt: 42  Update: 0
+0: 0  SRS: 5  LRS: 0  HUD: 1  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 19   Paint: 6  Blt: 43  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 1  DBG: 0  BLT:  43  DONE:  0
+
+Frames: 19   Paint: 7  Blt: 43  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 1  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 19   Paint: 7  Blt: 43  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 1  DBG: 0  BLT:  43  DONE:  0
+
+Frames: 19   Paint: 7  Blt: 42  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 1  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 18   Paint: 8  Blt: 43  Update: 0
+0: 0  SRS: 6  LRS: 1  HUD: 1  DBG: 0  BLT:  43  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 46 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 18   Paint: 6  Blt: 46  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 19   Paint: 7  Blt: 44  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 18   Paint: 7  Blt: 45  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 18   Paint: 7  Blt: 47  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 18   Paint: 7  Blt: 44  Update: 0
+0: 0  SRS: 5  LRS: 1  HUD: 1  DBG: 0  BLT:  44  DONE:  0
+
+Frames: 18   Paint: 7  Blt: 45  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 1  DBG: 0  BLT:  45  DONE:  0
+
+Frames: 17   Paint: 10  Blt: 44  Update: 0
+0: 0  SRS: 7  LRS: 1  HUD: 1  DBG: 0  BLT:  44  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 0 ms
+Blt without Lock: 0 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 1 ms
+Blt without Lock: 1 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 1 ms
+Blt without Lock: 1 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 1 ms
+Blt without Lock: 1 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 1 ms
+Blt without Lock: 1 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 30   Paint: 21  Blt: 1  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 29   Paint: 21  Blt: 1  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 30   Paint: 21  Blt: 1  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 30   Paint: 22  Blt: 1  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 30   Paint: 21  Blt: 1  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 30   Paint: 22  Blt: 1  Update: 1
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 30   Paint: 22  Blt: 2  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 29   Paint: 23  Blt: 1  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 2 ms
+Blt without Lock: 2 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Frames: 28   Paint: 30  Blt: 2  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 2 ms
+Blt without Lock: 2 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+No alpha mask available on target image (8-bit)
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 2 ms
+Blt without Lock: 2 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+No alpha mask available on target image (8-bit)
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 13   Paint: 67  Blt: 5  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 28   Paint: 30  Blt: 2  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 16   Paint: 52  Blt: 6  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 22   Paint: 39  Blt: 3  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 20   Paint: 42  Blt: 5  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 45 ms
+Blt without Lock: 46 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+No alpha mask available on target image (8-bit)
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 12   Paint: 37  Blt: 42  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 67 ms
+Blt without Lock: 68 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+No alpha mask available on target image (8-bit)
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 9   Paint: 31  Blt: 69  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 65 ms
+Blt without Lock: 56 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+No alpha mask available on target image (8-bit)
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 11   Paint: 37  Blt: 52  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 8   Paint: 63  Blt: 54  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 51 ms
+Blt without Lock: 51 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+No alpha mask available on target image (8-bit)
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 56 ms
+Blt without Lock: 52 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 11   Paint: 34  Blt: 50  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 12   Paint: 30  Blt: 46  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 12   Paint: 31  Blt: 49  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 12   Paint: 30  Blt: 46  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 12   Paint: 31  Blt: 48  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 11   Paint: 35  Blt: 50  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 12   Paint: 31  Blt: 46  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 11   Paint: 34  Blt: 50  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 10   Paint: 36  Blt: 55  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 12   Paint: 32  Blt: 46  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 12   Paint: 31  Blt: 46  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 10   Paint: 39  Blt: 58  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 12   Paint: 33  Blt: 49  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 10   Paint: 37  Blt: 55  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 51 ms
+Blt without Lock: 55 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 11   Paint: 35  Blt: 51  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 11   Paint: 38  Blt: 51  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 11   Paint: 39  Blt: 50  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 8   Paint: 62  Blt: 52  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 11   Paint: 39  Blt: 49  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 13   Paint: 35  Blt: 40  Update: 1
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 11   Paint: 35  Blt: 47  Update: 1
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 8   Paint: 54  Blt: 65  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 8   Paint: 51  Blt: 63  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 13   Paint: 34  Blt: 41  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 11   Paint: 37  Blt: 49  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 52 ms
+Blt without Lock: 55 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 11   Paint: 33  Blt: 50  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 12   Paint: 34  Blt: 47  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Frames: 10   Paint: 39  Blt: 57  Update: 1
+0: 0  SRS: 29  LRS: 3  HUD: 5  DBG: 0  BLT:  56  DONE:  1
+
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 48 ms
+Blt without Lock: 46 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 12   Paint: 37  Blt: 45  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Frames: 12   Paint: 38  Blt: 41  Update: 0
+0: 0  SRS: 29  LRS: 3  HUD: 5  DBG: 0  BLT:  41  DONE:  0
+
+Frames: 12   Paint: 37  Blt: 43  Update: 0
+0: 0  SRS: 28  LRS: 3  HUD: 5  DBG: 1  BLT:  42  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 47 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 11   Paint: 34  Blt: 50  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 14   Paint: 30  Blt: 40  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 11   Paint: 36  Blt: 47  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 45 ms
+Blt without Lock: 47 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Frames: 11   Paint: 42  Blt: 41  Update: 1
+0: 0  SRS: 30  LRS: 5  HUD: 6  DBG: 0  BLT:  40  DONE:  1
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 44 ms
+Blt without Lock: 44 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 47 ms
+Blt without Lock: 46 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 11   Paint: 43  Blt: 41  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 49 ms
+Blt without Lock: 47 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 55 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 47 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Frames: 14   Paint: 26  Blt: 41  Update: 0
+0: 0  SRS: 12  LRS: 4  HUD: 9  DBG: 0  BLT:  41  DONE:  0
+
+Frames: 13   Paint: 28  Blt: 42  Update: 1
+0: 0  SRS: 13  LRS: 4  HUD: 9  DBG: 0  BLT:  42  DONE:  1
+
+Frames: 13   Paint: 28  Blt: 42  Update: 1
+0: 0  SRS: 13  LRS: 4  HUD: 9  DBG: 0  BLT:  41  DONE:  1
+
+Frames: 14   Paint: 27  Blt: 42  Update: 1
+0: 0  SRS: 13  LRS: 4  HUD: 9  DBG: 0  BLT:  41  DONE:  1
+
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 42 ms
+Blt without Lock: 42 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Frames: 14   Paint: 27  Blt: 40  Update: 0
+0: 0  SRS: 13  LRS: 5  HUD: 9  DBG: 0  BLT:  40  DONE:  0
+
+Frames: 13   Paint: 26  Blt: 45  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 9  DBG: 1  BLT:  45  DONE:  0
+
+Frames: 10   Paint: 34  Blt: 61  Update: 1
+0: 0  SRS: 15  LRS: 4  HUD: 13  DBG: 0  BLT:  60  DONE:  1
+
+Frames: 10   Paint: 34  Blt: 54  Update: 2
+0: 0  SRS: 17  LRS: 4  HUD: 11  DBG: 1  BLT:  54  DONE:  2
+
+Frames: 11   Paint: 31  Blt: 51  Update: 1
+0: 0  SRS: 15  LRS: 4  HUD: 10  DBG: 0  BLT:  50  DONE:  1
+
+Frames: 14   Paint: 25  Blt: 42  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 1  BLT:  42  DONE:  0
+
+Frames: 13   Paint: 25  Blt: 45  Update: 0
+0: 0  SRS: 12  LRS: 4  HUD: 9  DBG: 0  BLT:  44  DONE:  0
+
+Frames: 14   Paint: 24  Blt: 43  Update: 0
+0: 0  SRS: 11  LRS: 3  HUD: 8  DBG: 0  BLT:  43  DONE:  0
+
+Frames: 11   Paint: 25  Blt: 57  Update: 0
+0: 0  SRS: 12  LRS: 4  HUD: 9  DBG: 1  BLT:  56  DONE:  0
+
+Frames: 14   Paint: 24  Blt: 42  Update: 0
+0: 0  SRS: 11  LRS: 3  HUD: 8  DBG: 1  BLT:  42  DONE:  0
+
+Frames: 14   Paint: 24  Blt: 42  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 42  Update: 0
+0: 0  SRS: 11  LRS: 3  HUD: 9  DBG: 0  BLT:  42  DONE:  1
+
+Frames: 14   Paint: 25  Blt: 44  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 9  DBG: 0  BLT:  43  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 42  Update: 1
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 0  BLT:  42  DONE:  1
+
+Frames: 14   Paint: 25  Blt: 43  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 12   Paint: 26  Blt: 51  Update: 0
+0: 0  SRS: 13  LRS: 3  HUD: 8  DBG: 0  BLT:  50  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 42  Update: 0
+0: 0  SRS: 11  LRS: 3  HUD: 9  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 13   Paint: 28  Blt: 44  Update: 1
+0: 0  SRS: 14  LRS: 4  HUD: 9  DBG: 0  BLT:  44  DONE:  1
+
+Frames: 14   Paint: 24  Blt: 43  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 1  BLT:  42  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 43  Update: 1
+0: 0  SRS: 11  LRS: 4  HUD: 9  DBG: 0  BLT:  42  DONE:  1
+
+Frames: 12   Paint: 26  Blt: 49  Update: 1
+0: 0  SRS: 12  LRS: 4  HUD: 9  DBG: 1  BLT:  48  DONE:  1
+
+Frames: 14   Paint: 24  Blt: 42  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 14   Paint: 24  Blt: 42  Update: 0
+0: 0  SRS: 11  LRS: 3  HUD: 8  DBG: 1  BLT:  42  DONE:  0
+
+Frames: 14   Paint: 24  Blt: 42  Update: 1
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 0  BLT:  42  DONE:  1
+
+Frames: 13   Paint: 28  Blt: 46  Update: 1
+0: 0  SRS: 13  LRS: 4  HUD: 10  DBG: 0  BLT:  46  DONE:  1
+
+Frames: 13   Paint: 25  Blt: 47  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 1  BLT:  46  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 43  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 44  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 0  BLT:  43  DONE:  0
+
+Frames: 14   Paint: 24  Blt: 44  Update: 1
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 0  BLT:  43  DONE:  1
+
+Frames: 14   Paint: 24  Blt: 42  Update: 0
+0: 0  SRS: 11  LRS: 3  HUD: 8  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 43  Update: 1
+0: 0  SRS: 12  LRS: 4  HUD: 8  DBG: 1  BLT:  43  DONE:  1
+
+Frames: 13   Paint: 29  Blt: 44  Update: 0
+0: 0  SRS: 13  LRS: 4  HUD: 10  DBG: 1  BLT:  43  DONE:  0
+
+Frames: 11   Paint: 31  Blt: 52  Update: 0
+0: 0  SRS: 16  LRS: 4  HUD: 10  DBG: 0  BLT:  51  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 43  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 1  BLT:  42  DONE:  0
+
+Frames: 13   Paint: 26  Blt: 48  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 9  DBG: 0  BLT:  47  DONE:  1
+
+Frames: 14   Paint: 25  Blt: 44  Update: 1
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 0  BLT:  43  DONE:  1
+
+Frames: 11   Paint: 33  Blt: 53  Update: 0
+0: 0  SRS: 18  LRS: 3  HUD: 10  DBG: 0  BLT:  53  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 0 ms
+Blt without Lock: 0 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 8   Paint: 110  Blt: 0  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 6   Paint: 148  Blt: 1  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 62 ms
+Blt without Lock: 50 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 11   Paint: 43  Blt: 42  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 47 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Frames: 13   Paint: 27  Blt: 43  Update: 0
+0: 0  SRS: 12  LRS: 4  HUD: 9  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 10   Paint: 37  Blt: 58  Update: 0
+0: 0  SRS: 16  LRS: 7  HUD: 12  DBG: 0  BLT:  58  DONE:  0
+
+Frames: 12   Paint: 30  Blt: 51  Update: 0
+0: 0  SRS: 14  LRS: 5  HUD: 10  DBG: 0  BLT:  51  DONE:  0
+
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 61 ms
+Blt without Lock: 107 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Frames: 14   Paint: 26  Blt: 42  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 9  DBG: 0  BLT:  41  DONE:  0
+
+Frames: 14   Paint: 24  Blt: 42  Update: 0
+0: 0  SRS: 10  LRS: 4  HUD: 9  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 42  Update: 0
+0: 0  SRS: 12  LRS: 4  HUD: 8  DBG: 0  BLT:  41  DONE:  0
+
+Frames: 15   Paint: 23  Blt: 41  Update: 0
+0: 0  SRS: 10  LRS: 3  HUD: 8  DBG: 1  BLT:  40  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 43  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 9  DBG: 0  BLT:  43  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 43  Update: 0
+0: 0  SRS: 12  LRS: 4  HUD: 9  DBG: 0  BLT:  42  DONE:  0
+
+Frames: 14   Paint: 25  Blt: 44  Update: 0
+0: 0  SRS: 11  LRS: 4  HUD: 8  DBG: 0  BLT:  43  DONE:  0
+
+Frames: 15   Paint: 23  Blt: 40  Update: 0
+0: 0  SRS: 10  LRS: 3  HUD: 9  DBG: 0  BLT:  40  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 45 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 56 ms
+Blt without Lock: 48 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Failed to open audio: No available audio device
+Blt with Lock: 46 ms
+Blt without Lock: 47 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loading extension: Extensions/image_path
+Loading adventure desc: Extensions/simpleempty
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+End logging session

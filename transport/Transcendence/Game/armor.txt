@@ -1,0 +1,69 @@
+level	category	frequency	shortName	balance	mass	hp	hpBonus
+1	Armor	C	light titanium armor	-8	750	4	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+1	Armor	UC	titanium armor	-5	1500	8	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+2	Armor	C	heavy titanium armor	-4	2500	15	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+2	Armor	UC	ceramic armor	1	2500	15	100, -25,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+2	Armor	UC	reactive armor	-1	3000	15	-25, 100,   0,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+2	Armor	UC	titanium barricade	3	7500	40	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+2	Armor	R	light Urak armor	14	2500	15	220, 220,   0,   0, -32, -32,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+2	Armor	R	XMH armor	39	2000	30	100, 100,  50,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+3	Armor	C	light plasteel armor	-4	2800	20	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+3	Armor	UC	double titanium barricade	2	15000	80	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+3	Armor	UC	heavy ceramic armor	2	2500	20	100, -25,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+3	Armor	UC	heavy reactive armor	-2	3500	20	-25, 100,   0,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+3	Armor	R	Dwarg chiton armor	4	2500	20	  0,   0,  67,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+3	Armor	R	hardened reactive armor	1	4000	20	-25, 100,   0,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+3	Armor	R	photo-organic armor	20	2500	30	 50, -25,  50, -25,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+3	Armor	R	polymesh armor	10	2000	30	-50, 100, -25,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+4	Armor	C	plasteel armor	-3	3000	30	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+4	Armor	C	polyceramic armor	2	3000	30	100, -25,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+4	Armor	UC	quad titanium barricade	-19	30000	160	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+4	Armor	UC	advanced reactive armor	-2	4000	30	-25, 100,   0,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+4	Armor	UC	Tevlar-composite armor	1	2000	25	 48,   0,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+4	Armor	R	heavy Urak armor	22	4000	35	233, 233, 100, 100, -32, -32,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+4	Armor	R	light meteorsteel	1	2500	30	 48,  48, 100, 100,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+4	Armor	R	solar armor	2	3500	30	100, -50,  25, -25,  25,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+4	Armor	R	V10 powered armor	-4	3500	30	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+5	Armor	C	ceralloy armor	3	3500	45	  0,   0, 100, -25,  50,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+5	Armor	C	heavy plasteel armor	-3	4000	45	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+5	Armor	UC	light blast plate	-1	4500	45	  0,   0, -19, 100,   0,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+5	Armor	R	Dwarg catoptric armor	5	4000	45	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+5	Armor	R	hardened plasteel armor	-6	6000	45	-37, -37,   0,   0,  25,  25,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+5	Armor	R	heavy meteorsteel	22	5000	60	***, ***, 220, 220,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+6	Armor	C	blast plate	-2	5000	60	  0,   0, -32, 100,   0,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+6	Armor	UC	advanced plasteel armor	-5	4500	60	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+6	Armor	UC	heavy ceralloy armor	-1	4500	60	  0,   0, 100, -32,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+6	Armor	UC	light Tharsis plate	-7	4500	60	  0, -43,  50, -39,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+6	Armor	R	Duralloy armor	-3	5000	45	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+6	Armor	R	Luminous armature	9	3000	40	  0,   0,   0,   0, 100,   0,   0,   0,   0,   0,  25,  25,  60,  60,  50,  50
+6	Armor	R	stealth armor	-3	4000	45	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+6	Armor	R	worldship armor plate	58	15000	200	***, ***, ***, ***, 400, 400, 100, 100,   0,   0,   0,   0,   0,   0,   0,   0
+7	Armor	C	advanced ceralloy armor	4	4500	90	  0,   0, 100, -32,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+7	Armor	UC	Gusoku armor	3	3500	75	-42, -42, 100, 100,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+7	Armor	UC	heavy blast plate	4	7500	125	  0,   0, -32, 100,   0,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+7	Armor	UC	light orthosteel armor	-2	5000	90	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+7	Armor	R	Dwarg holochroal armor	23	12000	200	  0,   0,   0,   0,  25,  25,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+7	Armor	R	P100 Hexphase armor	-7	6000	100	-67, -67,   0,   0,  25,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+7	Armor	NR	Dvalin armor	15	4500	120	  0,   0, 100,   0,  67,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+8	Armor	C	orthosteel armor	1	5500	130	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+8	Armor	UC	light ithalium armor	4	8000	160	  0,   0,   0,   0, -19, 100,   0,  33,   0,   0,   0,   0,   0,   0,   0,   0
+8	Armor	UC	quadrocarbide armor	2	4000	95	  0,   0,   0,   0, 100, -19,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0
+8	Armor	UC	Tharsis plate	1	6500	140	  0,   0,  79, -50, -19,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+8	Armor	R	carbide carapace	-2	5000	90	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+8	Armor	R	P250 Hexphase armor	-7	12000	200	-70, -70,   0,   0,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+8	Armor	R	transuranic armor	2	20000	350	  0,   0,   0,  79,   0,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+8	Armor	R	V300 powered armor	-5	5000	90	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+9	Armor	C	heavy orthosteel armor	-1	8000	200	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+9	Armor	UC	hexacarbide armor	2	5500	150	  0,   0,   0,   0, 100, -32,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0
+9	Armor	UC	ithalium armor	0	12000	250	  0,   0,   0,   0, -32, 100,   0,  33,   0,   0,   0,   0,   0,   0,   0,   0
+9	Armor	R	heavy Tharsis plate	-5	13000	280	  0,   0,   0, -43, -39,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+9	Armor	VR	P1000 Hexphase armor	-30	50000	800	-75, -75,   0,   0,   0, -25,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+10	Armor	C	diamond lattice armor	-5	5000	160	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+10	Armor	UC	heavy ithalium armor	-2	16000	400	  0,   0,   0,   0, -32, 100,   0,  33,   0,   0,   0,   0,   0,   0,   0,   0
+10	Armor	UC	octocarbide armor	1	6000	200	  0,   0,   0,   0, 100, -32,  33,   0,   0,   0,   0,   0,   0,   0,   0,   0
+10	Armor	VR	massive Tharsis plate	-4	25000	600	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+11	Armor	UC	neutronium armor	34	30000	1000	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+12	Armor	UC	Iocrym armor	14	25000	1200	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+15	Armor	UC	dark matter armor	-8	5000	400	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+21	Armor	UC	hierosteel armor	-15	5000	600	  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+

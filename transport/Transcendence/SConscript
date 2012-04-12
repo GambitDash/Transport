@@ -1,0 +1,52 @@
+Import('env')
+
+env.SConscript(dirs = ['TSE'])
+
+sources = ['Background.cpp', 'CAdventureDescDisplay.cpp', 'CArmorDisplay.cpp', 'CButtonBarData.cpp', 'CButtonBarDisplay.cpp', 'CCommandLineDisplay.cpp', 'CDeviceCounterDisplay.cpp', 'CDockScreen.cpp', 'CGameFile.cpp', 'CGItemListArea.cpp', 'CHighScoreDisplay.cpp', 'CHighScoreList.cpp', 'CIntroShipController.cpp', 'CMenuData.cpp', 'CMenuDisplay.cpp', 'CMessageDisplay.cpp', 'CodeChainExtensions.cpp', 'CPickerDisplay.cpp', 'CPlayerDisplay.cpp', 'CReactorDisplay.cpp', 'CShipClassDisplay.cpp', 'CTargetDisplay.cpp', 'CTextCrawlDisplay.cpp', 'CTranscendenceWnd.cpp', 'GameOutput.cpp', 'GameScreen.cpp', 'Help.cpp', 'IntroScreen.cpp', 'LoadingScreen.cpp', 'MainWndProcSDL.cpp', 'PlayerController.cpp', 'PrologEpilog.cpp', 'SelectAdventureScreen.cpp', 'SelectShipScreen.cpp', 'Utilities.cpp']
+
+libtrans = env.StaticLibrary('libtrans', sources, CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'] )
+
+env.Program('transcendence', ['MainSDL.cpp'], CPPPATH =
+		['/usr/local/include/SDL', '../Includes', '.'], LIBS=['libtrans',
+		'libtse', 'libkernel', 'libcc', 'libdxutil', 'libcc', 'libxmlutil',
+		'SDL', 'SDL_ttf', 'SDL_image', 'SDL_mixer', 'SDL_gfx',
+		'boost_system-mt', 'boost_filesystem-mt', 'libconfig'])
+
+env.Program('transcendence.static', ['MainSDL.cpp'], CPPPATH =
+		['/usr/local/include/SDL', '../Includes', '.'], LIBS=['libtrans',
+		'libtse', 'libkernel', 'libcc', 'libdxutil', 'libcc', 'libxmlutil',
+		'dl', File("/usr/local/lib/libSDL_ttf.a"),
+		File("/usr/local/lib/libSDL_image.a"),
+		File("/usr/local/lib/libSDL_mixer.a"),
+		File("/usr/local/lib/libSDL.a"),
+		File("/usr/local/lib/libSDL_gfx.a"),
+		File("/usr/lib/libdirectfb.a"),
+		File("/usr/lib/libfusion.a"),
+		File("/usr/lib/libdirect.a"),
+		File("/usr/lib/libpng12.a"),
+		File("/usr/local/lib/libconfig.a"),
+		File("/usr/lib/libz.a"),
+		File("/usr/lib/libfreetype.a"),
+		File("/usr/local/lib/libsmpeg.a"),
+		File("/usr/lib/libXau.a"),
+		File("/usr/local/lib/libboost_system-mt.a"),
+		File("/usr/local/lib/libboost_filesystem-mt.a"),
+		'audio'],
+		LINKFLAGS=['-pthread'])
+
+env.Program('transcendence.dynamic', ['MainSDL.cpp'], CPPPATH =
+		['/usr/local/include/SDL', '../Includes', '.'], LIBS=['libtrans',
+		'libtse', 'libkernel', 'libcc', 'libdxutil', 'libcc', 'libxmlutil',
+		'dl',
+		File("/usr/local/lib/libSDL_ttf.a"),
+		File("/usr/local/lib/libSDL_image.a"),
+		File("/usr/lib/libpng12.a"),
+		File("/usr/local/lib/libconfig.a"), File("/usr/lib/libz.a"),
+		File("/usr/lib/libfreetype.a"),
+		File("/usr/local/lib/libboost_system-mt.a"),
+		File("/usr/local/lib/libboost_filesystem-mt.a"), 'SDL_mixer', 'SDL',
+		File("/usr/local/lib/libSDL_gfx.a"),
+		File("/usr/local/lib/libsmpeg.a")], LINKFLAGS=['-pthread'])
+
+#env.Program('mixer_test', ['mixer_test.c'], CPPPATH = ['/usr/local/include/SDL', '../Includes', '.'], LIBS=[File('/usr/local/lib/libsmpeg.a'), 'SDL_mixer', 'SDL'], LINKFLAGS=['-pthread'])
+

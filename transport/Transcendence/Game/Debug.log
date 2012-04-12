@@ -1,0 +1,275 @@
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: -1078972320 Hz -1078972372 bit 1Ì^â·É‰PTRhpŒhÄŒQVhÈËÎ˘ˇˇÙêêêêêêêêêêêêêêUâÂSÉÏÄ=h⁄, 1768191297 bytes audio buffer
+
+Blt with Lock: 0 ms
+Blt without Lock: 0 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loaded sample (null) into channel 0
+Loaded sample (null) into channel 0
+Loaded sample (null) into channel 0
+Loaded sample (null) into channel 0
+Loaded sample (null) into channel 0
+Loaded sample (null) into channel 0
+Loaded sample (null) into channel 0
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Blt with Lock: 6 ms
+Blt without Lock: 6 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Loading adventure desc: Extensions/simpleempty
+Loading extension: Extensions/image_path
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 7151  LRS: 0  HUD: 7155  DBG: 0  BLT:  7160  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 7  Update: 0
+0: 0  SRS: 7151  LRS: 0  HUD: 7155  DBG: 0  BLT:  7160  DONE:  0
+
+Frames: 30   Paint: 6  Blt: 10  Update: 0
+0: 0  SRS: 7151  LRS: 0  HUD: 7155  DBG: 0  BLT:  7160  DONE:  0
+
+Loading 'Resources/GameButtonIcons.jpg'
+Loading adventure: Extensions/simpleempty
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Frames: 30   Paint: 6  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 1  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 6  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 0  DBG: 0  BLT:  8  DONE:  0
+
+Frames: 30   Paint: 8  Blt: 10  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 1  DBG: 1  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 8  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 0  DBG: 1  BLT:  8  DONE:  0
+
+Frames: 30   Paint: 8  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 0  DBG: 1  BLT:  8  DONE:  0
+
+Frames: 30   Paint: 7  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 0  DBG: 1  BLT:  8  DONE:  0
+
+Frames: 30   Paint: 8  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 1  DBG: 1  BLT:  8  DONE:  0
+
+Frames: 30   Paint: 8  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 1  HUD: 1  DBG: 0  BLT:  8  DONE:  0
+
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 30   Paint: 5  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 6  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 6  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 6  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 6  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 7  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 6  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 6  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 29   Paint: 6  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 7  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 6  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 7  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 9  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 1
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 2
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+Frames: 30   Paint: 5  Blt: 8  Update: 0
+0: 0  SRS: 4  LRS: 0  HUD: 0  DBG: 0  BLT:  9  DONE:  0
+
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Blt with Lock: 5 ms
+Blt without Lock: 5 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Loading adventure desc: Extensions/simpleempty
+Loading extension: Extensions/image_path
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 25   Paint: 7  Blt: 16  Update: 0
+0: 0  SRS: 7151  LRS: 0  HUD: 7155  DBG: 0  BLT:  7160  DONE:  0
+
+Loading 'Resources/GameButtonIcons.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Blit failure: SDL_UpperBlit: passed a NULL surface
+Frames: 25   Paint: 9  Blt: 14  Update: 2
+0: 0  SRS: 6  LRS: 0  HUD: 1  DBG: 0  BLT:  13  DONE:  1
+
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+End logging session
+--------------------------------------------------------------------------------
+Start logging session
+transport 1.1
+Opening audio device...
+Audio: 22050 Hz 16 bit stereo, 512 bytes audio buffer
+
+Blt with Lock: 3 ms
+Blt without Lock: 2 ms
+Blt with Lock enabled
+Using external Transcendence.xml
+Using external resource files
+Loaded sample Resources/LaserFire1.wav into channel 0
+Loaded sample Resources/CannonFire1.wav into channel 1
+Loaded sample Resources/ArmorHit1.wav into channel 2
+Loaded sample Resources/ShipExplosion1.wav into channel 3
+Loaded sample Resources/StationExplosion1.wav into channel 4
+Loaded sample Resources/ShieldHit1.wav into channel 5
+Loaded sample Resources/MissileLaunch1.wav into channel 6
+Loaded sample Resources/Stargate.wav into channel 7
+Loading adventure desc: Extensions/simpleempty
+Loading extension: Extensions/image_path
+Loading 'Resources/IconDisplay.jpg'
+Loading 'Resources/GameButtonIcons.jpg'
+Frames: 30   Paint: 2  Blt: 3  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 30   Paint: 2  Blt: 5  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 30   Paint: 2  Blt: 4  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 30   Paint: 2  Blt: 3  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+Frames: 30   Paint: 1  Blt: 2  Update: 0
+0: 0  SRS: 0  LRS: 0  HUD: 0  DBG: 0  BLT:  0  DONE:  0
+
+End logging session

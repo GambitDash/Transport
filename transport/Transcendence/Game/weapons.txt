@@ -1,0 +1,79 @@
+TransData v1.0
+Copyright (c) 2001-2006 by Neurohack, Inc. All Rights Reserved.
+
+Loading...done.
+level	category	frequency	shortName	fireDelay	averageDamage
+1	Weapon	C	laser cannon	5	2500
+1	Launcher	UC	DM600 missile rack	15	14000
+1	Weapon	UC	recoilless cannon	8	4500
+1	Weapon	R	light recoilless cannon	5	2000
+2	Weapon	C	Bolide laser blaster	5	3500
+2	Weapon	C	heavy recoilless cannon	8	6000
+2	Weapon	UC	dual laser cannon	5	5000
+2	Weapon	UC	fast-fire laser cannon	3	2500
+2	Weapon	UC	TK10 Trident cannon	8	6000
+2	Weapon	R	mining laser	15	10000
+3	Weapon	C	DK10 Arbalest cannon	15	10500
+3	Launcher	C	NAMI missile launcher	15	5500
+3	Weapon	C	turbolaser cannon	8	6000
+3	Weapon	UC	AK15 Partisan cannon	8	7500
+3	Weapon	UC	dual recoilless cannon	10	9000
+3	Weapon	UC	Rasiermesser SmartCannon	8	7000
+3	Weapon	R	blinder cannon	8	11000
+3	Weapon	R	laser cannon array	8	7500
+3	Weapon	R	omnidirectional laser cannon	8	2500
+4	Weapon	C	particle beam weapon	5	5500
+4	Weapon	C	slam cannon	10	10500
+4	Weapon	UC	dual turbolaser cannon	8	12000
+4	Launcher	UC	MAG launcher	10	14000
+4	Weapon	UC	omnidirectional turbolaser cannon	8	6000
+4	Weapon	UC	PK25 Morning Star cannon	8	25000
+4	Weapon	R	actinide waste cannon	15	13500
+4	Weapon	R	Flenser relativistic cannon	8	13500
+4	Weapon	R	Penitent cannon	23	4500
+4	Weapon	R	x-ray laser cannon	8	40000
+5	Weapon	C	Akan 30 cannon	5	19500
+5	Launcher	C	Makayev launcher	3	10500
+5	Weapon	C	Shuriken neutron blaster	3	5000
+5	Weapon	UC	heavy slam cannon	10	14000
+5	Weapon	UC	lancer cannon	8	14000
+5	Weapon	UC	mark I howitzer	18	26000
+5	Weapon	R	EMP cannon	10	14000
+5	Weapon	R	omnidirectional particle cannon	8	5500
+5	Weapon	R	sunflare cannon	15	27000
+6	Weapon	C	dual particle beam weapon	5	11000
+6	Weapon	C	mark III howitzer	18	32500
+6	Weapon	C	TeV 9 blaster	8	15500
+6	Weapon	UC	Dragonfly missile system	15	42000
+6	Weapon	UC	Nandao bolt cannon	8	30000
+6	Weapon	R	Akan 600 turret	8	19500
+6	Weapon	R	dual Flenser cannon	8	27000
+6	Weapon	R	plasma torch	15	22000
+7	Weapon	C	Katana star cannon	6	13000
+7	Weapon	C	thermo cannon	5	26000
+7	Weapon	C	tritium cannon	10	30000
+7	Weapon	UC	Ares lightning cannon	8	16000
+7	Weapon	UC	dual TeV 9 blaster	8	31000
+7	Weapon	UC	kiloton cannon	10	132000
+7	Launcher	UC	NAMI mine launcher	13	19500
+7	Weapon	R	Hanzo blaster	3	13500
+7	Weapon	R	ion disruptor	10	17500
+7	Weapon	R	omnidirectional TeV 9 blaster	8	15500
+8	Weapon	C	Ares micronuke cannon	20	6500
+8	Weapon	C	Fusionfire howitzer	20	52000
+8	Weapon	C	ion blaster	5	17500
+8	Launcher	UC	Ares launcher	20	13000
+8	Weapon	UC	ion flame cannon	8	24500
+8	Launcher	UC	Rasiermesser launcher	8	26000
+8	Weapon	R	omnidirectional thermo cannon	8	26000
+9	Weapon	UC	advanced tritium cannon	3	30000
+9	Weapon	UC	Ares archcannon	8	18000
+9	Weapon	UC	heavy ion blaster	5	24500
+9	Weapon	R	omnidirectional ion blaster	8	17500
+9	Weapon	VR	Gaian demolition cannon	30	78000
+9	Weapon	NR	Qianlong archcannon	8	19500
+10	Weapon	C	plasma cannon	10	39000
+10	Launcher	UC	Kytryn launcher	20	351000
+12	Weapon	R	Kytryn Plasma Thrower	10	97500
+13	Weapon	VR	Quantumsphere disintegrator	15	27000
+

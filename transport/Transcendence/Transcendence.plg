@@ -1,0 +1,172 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: TSE - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\GPM\LOCALS~1\Temp\RSP509.tmp" with contents
+[
+/nologo /MTd /W3 /GR /GX /Z7 /Od /Ob2 /I "..\..\Includes" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "DEBUG" /Fp"Debug/TSE.pch" /YX"PreComp.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\Documents and Settings\GPM\My Documents\Dev\Transcendence\TSE\CItemTable.cpp"
+"C:\Documents and Settings\GPM\My Documents\Dev\Transcendence\TSE\SFXParticleExplosion.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\GPM\LOCALS~1\Temp\RSP509.tmp" 
+Creating temporary file "C:\DOCUME~1\GPM\LOCALS~1\Temp\RSP50A.tmp" with contents
+[
+/nologo /out:"Debug\TSE.lib" 
+".\Debug\CAreaDamage.obj"
+".\Debug\CArmorClass.obj"
+".\Debug\CAttributeDataBlock.obj"
+".\Debug\CAutoDefenseClass.obj"
+".\Debug\CAutonAI.obj"
+".\Debug\CBaseShipAI.obj"
+".\Debug\CBeam.obj"
+".\Debug\CCargoSpaceClass.obj"
+".\Debug\CCExtensions.obj"
+".\Debug\CCommunicationsHandler.obj"
+".\Debug\CCyberDeckClass.obj"
+".\Debug\CDisintegrationEffect.obj"
+".\Debug\CDockingPorts.obj"
+".\Debug\CDriveClass.obj"
+".\Debug\CEffect.obj"
+".\Debug\CEffectCreator.obj"
+".\Debug\CEnhancerClass.obj"
+".\Debug\CEventHandler.obj"
+".\Debug\CFerianShipAI.obj"
+".\Debug\CFleetCommandAI.obj"
+".\Debug\CFleetShipAI.obj"
+".\Debug\CFractureEffect.obj"
+".\Debug\CGaianProcessor.obj"
+".\Debug\CGladiatorAI.obj"
+".\Debug\CItem.obj"
+".\Debug\CItemEnhancement.obj"
+".\Debug\CItemList.obj"
+".\Debug\CItemListManipulator.obj"
+".\Debug\CItemType.obj"
+".\Debug\CMiscellaneousClass.obj"
+".\Debug\CMissile.obj"
+".\Debug\CObjectImageArray.obj"
+".\Debug\CParticleDamage.obj"
+".\Debug\CParticleEffect.obj"
+".\Debug\CPower.obj"
+".\Debug\CRandomEntryGenerator.obj"
+".\Debug\CReactorClass.obj"
+".\Debug\CreateSystem.obj"
+".\Debug\CRepairerClass.obj"
+".\Debug\CResourceDb.obj"
+".\Debug\CShieldClass.obj"
+".\Debug\CShip.obj"
+".\Debug\CShipClass.obj"
+".\Debug\CShipEnergyFieldType.obj"
+".\Debug\CSolarDeviceClass.obj"
+".\Debug\CSovereign.obj"
+".\Debug\CSpaceEnvironmentType.obj"
+".\Debug\CSpaceObject.obj"
+".\Debug\CSpaceObjectList.obj"
+".\Debug\CSpaceObjectTable.obj"
+".\Debug\CStandardShipAI.obj"
+".\Debug\CStaticEffect.obj"
+".\Debug\CStation.obj"
+".\Debug\CStationType.obj"
+".\Debug\CSystem.obj"
+".\Debug\CTileMap.obj"
+".\Debug\CUniverse.obj"
+".\Debug\CWeaponClass.obj"
+".\Debug\CWeaponFireDesc.obj"
+".\Debug\Damage.obj"
+".\Debug\Devices.obj"
+".\Debug\Events.obj"
+".\Debug\Extensions.obj"
+".\Debug\Markers.obj"
+".\Debug\Orbits.obj"
+".\Debug\PaintUtilities.obj"
+".\Debug\RandomItemTable.obj"
+".\Debug\SFXMoltenBolt.obj"
+".\Debug\SFXPlasmaSphere.obj"
+".\Debug\SFXPolyflash.obj"
+".\Debug\SFXShockwave.obj"
+".\Debug\SFXStarbust.obj"
+".\Debug\Topology.obj"
+".\Debug\Utilities.obj"
+".\Debug\XMLLoader.obj"
+".\Debug\CItemTable.obj"
+".\Debug\SFXParticleExplosion.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\GPM\LOCALS~1\Temp\RSP50A.tmp"
+<h3>Output Window</h3>
+Compiling...
+CItemTable.cpp
+SFXParticleExplosion.cpp
+Creating library...
+<h3>
+--------------------Configuration: XMLUtil - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\GPM\LOCALS~1\Temp\RSP50B.tmp" with contents
+[
+/nologo /MTd /W3 /GX /Z7 /Od /I "..\Includes" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /Fp"Debug/XMLUtil.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\Documents and Settings\GPM\My Documents\Dev\XMLUtil\CExternalEntityTable.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\GPM\LOCALS~1\Temp\RSP50B.tmp" 
+Creating command line "link.exe -lib /nologo /out:"..\Libraries\XMLUtil.lib"  ".\Debug\CXMLElement.obj" ".\Debug\Misc.obj" ".\Debug\Parser.obj" ".\Debug\CExternalEntityTable.obj" "
+<h3>Output Window</h3>
+Compiling...
+CExternalEntityTable.cpp
+Creating library...
+<h3>
+--------------------Configuration: Transcendence - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\GPM\LOCALS~1\Temp\RSP50C.tmp" with contents
+[
+dxguid.lib version.lib vfw32.lib winmm.lib dsound.lib ddraw.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /profile /map:"Debug/Transcendence.map" /debug /machine:I386 /out:"Game/Transcendence.exe" 
+".\Debug\CArmorDisplay.obj"
+".\Debug\CButtonBarData.obj"
+".\Debug\CButtonBarDisplay.obj"
+".\Debug\CDeviceCounterDisplay.obj"
+".\Debug\CDockScreen.obj"
+".\Debug\CGameFile.obj"
+".\Debug\CGItemListArea.obj"
+".\Debug\CHighScoreDisplay.obj"
+".\Debug\CHighScoreList.obj"
+".\Debug\CIntroShipController.obj"
+".\Debug\CInvokeDisplay.obj"
+".\Debug\CMenuData.obj"
+".\Debug\CMenuDisplay.obj"
+".\Debug\CMessageDisplay.obj"
+".\Debug\CodeChainExtensions.obj"
+".\Debug\CPickerDisplay.obj"
+".\Debug\CPlayerDisplay.obj"
+".\Debug\CReactorDisplay.obj"
+".\Debug\CTargetDisplay.obj"
+".\Debug\CTextCrawlDisplay.obj"
+".\Debug\CTranscendenceWnd.obj"
+".\Debug\Deities.obj"
+".\Debug\Help.obj"
+".\Debug\IntroScreen.obj"
+".\Debug\LoadingScreen.obj"
+".\Debug\Main.obj"
+".\Debug\MainWndProc.obj"
+".\Debug\PlayerController.obj"
+".\Debug\Transcendence.res"
+"\Documents and Settings\GPM\My Documents\Dev\Libraries\DirectXUtil.lib"
+".\TSE\Debug\TSE.lib"
+"\Documents and Settings\GPM\My Documents\Dev\Libraries\XMLUtil.lib"
+"\Documents and Settings\GPM\My Documents\Dev\Libraries\CodeChain.lib"
+"\Documents and Settings\GPM\My Documents\Dev\Libraries\Graphics.lib"
+"\Documents and Settings\GPM\My Documents\Dev\Libraries\Kernel.lib"
+"\Documents and Settings\GPM\My Documents\Dev\IntelJPEGUtil\Debug\IntelJPEGUtil.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\GPM\LOCALS~1\Temp\RSP50C.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+Transcendence.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

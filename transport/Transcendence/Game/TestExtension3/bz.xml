@@ -1,0 +1,3308 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceAdventure
+	[
+	<!ENTITY modBattleZone					"0xDCBA0100">
+	<!ENTITY adBattleZone					"0xDCBA0101">
+	<!ENTITY itBattleZoneConfig				"0xDCBA0102">
+
+	<!ENTITY ssBattleZoneAlpha				"0xDCBA0110">
+
+	<!ENTITY rsOnePix						"0xDCBA0120">
+	
+	<!ENTITY rsZoneMarker					"0xDCBA0121">
+	<!ENTITY rsZoneBarrier					"0xDCBA0122">
+	<!ENTITY rsZoneBarrierFill				"0xDCBA0123">
+	<!ENTITY rsZoneManager					"0xDCBA0124">
+	<!ENTITY rsZoneService					"0xDCBA0125">
+	<!ENTITY rsZoneTrader					"0xDCBA0126">
+	<!ENTITY rsWingmanSpawnPoint			"0xDCBA0127">
+	
+	<!ENTITY rsZoneCover					"0xDCBA0128">
+	<!ENTITY rsZoneProlog					"0xDCBA0129">
+	<!ENTITY rsZoneCoward					"0xDCBA012A">
+	<!ENTITY rsZoneDestroyed				"0xDCBA012B">
+	<!ENTITY rsZoneServiceInterior			"0xDCBA012C">
+	<!ENTITY rsZoneTraderInterior			"0xDCBA012D">
+	<!ENTITY rsZoneInfoPost					"0xDCBA012E">
+
+	<!ENTITY stZoneStar						"0xDCBA0130">
+	<!ENTITY stZoneLabel					"0xDCBA0131">
+	<!ENTITY stZoneMarker					"0xDCBA0132">
+	<!ENTITY stZoneBarrier					"0xDCBA0133">
+	<!ENTITY stZoneGate						"0xDCBA0134">
+	<!ENTITY stZoneSpawnPoint				"0xDCBA0135">
+	<!ENTITY stWingmanSpawnPoint			"0xDCBA0136">
+	<!ENTITY stZoneBarrierFill				"0xDCBA0137">
+	
+	<!ENTITY stZoneManager					"0xDCBA0138">
+	<!ENTITY stZoneService					"0xDCBA0139">
+	<!ENTITY stZoneTrader					"0xDCBA013A">
+	<!ENTITY stZoneInfoPost					"0xDCBA013B">
+	
+	<!ENTITY trItemLow						"0xDCBA0140">
+	<!ENTITY trItemMid						"0xDCBA0141">
+	<!ENTITY trItemHigh						"0xDCBA0142">
+	<!ENTITY trItemUltra					"0xDCBA0143">
+
+	<!ENTITY dsZoneService					"0xDCBA0144">
+	<!ENTITY dsZoneTrader					"0xDCBA0145">
+]>
+
+<TranscendenceAdventure UNID="&modBattleZone;" version="0.99c">
+
+<!--
+
+	BATTLE ZONE V2
+	
+-->
+
+
+	<ItemType UNID="&itBattleZoneConfig;"
+		name=				"BattleZoneConfigurator"
+		virtual=			"true"
+		description=		"This device is simply for storing static values."
+		>
+		<StaticData>
+			<!--
+				ArenaType defines the layout of the arena. At the moment
+				the possible layouts are
+				random - spawn points are distributed at random around the player fort.
+				fan - spawn points are distributed in a 150 degree arc "north" of the player fort
+				single - a single spawn point will be placed randomly
+			-->
+			<ArenaType>random</ArenaType>
+			<!-- Duh, this one is self explanatory. The current max level is 12. -->
+			<StartLevel>1</StartLevel>
+			<!-- The interval in seconds between spawns -->
+			<SpawnInterval>10</SpawnInterval>
+			<!-- This determines the credit reward for every kill -->
+			<Inflation>25</Inflation>
+			<!-- This determines how many kills are needed to get to the next level -->
+			<LevelCurve>100</LevelCurve>
+			<!-- 
+				This multiplier will be applied to the count of ships that will be spawned as enemies
+				Be carefull with setting this too high, unless your machine can handle it.
+			-->
+			<SpawnMultiplier>1</SpawnMultiplier>
+			<!-- The amount in seconds between marker toggles -->
+			<MarkerToggleInterval>2</MarkerToggleInterval>
+			<!-- 
+				Controls whether enemy ships should leave wrecks or not. 
+				Can be either 1 or 0. 1 then they leave wrecks, 0 then they don't
+			--> 
+			<LeaveWrecks>1</LeaveWrecks>
+			<!-- 
+				Controls whether we spawn different kinds of ships on the same round. 
+				Can be either 1 or 0. 1 then we do, 0 then we don't
+			-->
+			<MixedShips>1</MixedShips>
+			<!-- 
+				Controls whether we spawn ships from different levels on the same round. 
+				Can be either 1 or 0. 1 then we do, 0 then we don't
+			-->
+			<MixedLevels>1</MixedLevels>
+			<!--
+				This multiplier is applied to all pricing in the BattleZone.
+				The higher the number, the more expensive items are to buy,
+				and the less you get for items you sell
+			-->
+			<MarginMultiplier>2</MarginMultiplier>
+			<!--
+				Controls whether all ships spawn at the same spawn point.
+				Can be either 1 or 0. 0 then they do, 1 then they don't
+			-->
+			<MixedSpawnPoint>0</MixedSpawnPoint>
+			<!--
+				This is the heart of BattleZone. The shiplist is a unordered list
+				of ships. It is sorted programatically by battle zone, so feel free
+				to add ships you want to fight agains to the list. The ship classes
+				will be spawned at their appropriate level.
+			-->
+			<ShipList>
+				( 	
+					&scCentauriRaider; &scBorer; &scCorsair;
+					&scTenhoveSentinel; &scHammerhead; &scHornet; &scZulu;
+					&scHimalInterceptor; &scRoninA; &scEarthzone; &scZulu-II;
+					&scBorer-II; &scUrakSentinel; &scEI100; &scEI200;
+					&scEI7000; &scSapphireYacht; &scViking; &scEI500; &scOromo;
+					&scT31ArmedTransport; &scCorsair-II; &scAutoSentinel;
+					&scArcoVaughnHeavyRaider; &scCentauriCommandShip;
+					&scCentauriHeavyRaider; &scRoninB; &scHammerhead-II; &scSotho;
+					&scPlague; &scHeliotropeGunship; &scRevelations; &scWolfen;
+					&sc300DDefenderAuton; &scDwargRaider; &scViking-II; &scEI100M;
+					&scSalvagerNomad; &sc310AAegisAuton; &scRoninC; &scRoninCharonBuster;
+					&scMarauderRaidPlatform; &scMethEnforcer; &scWindSlaver;
+					&scHeliotropeDestroyer; &scFerianMiner; &scRepentant;
+					&scCharonFrigateKronosaurus; &scCharonFrigateRaider;
+					&scDrake; &sc1MBattleAuton; &sc1MiBattleAuton; &scXenophobeFighter;
+					&scAntaresI; &scAntaresII; &scAntaresV; &scScarabFreighter;
+					&scSungTransport; &scSteelSlaver; &scBarbary; &scRanxGunship;
+					&scAtonement; &scTripoli; &scCenturion; &scMolotok;
+					&scUrakDestroyer; &scMikeno; &scDwargMaster; &scAresCannon;
+					&scKobolGunshipDualTeV9; &scKobolGunshipOmniTeV9; &scSandstorm;
+					&scCarrierEarthSlaver; &scDragonSlaver; &scEarthSlaver;
+					&scDwargBehemoth; &scRogueMineLayer; &scXenophobeDefender;
+					&scKobolGunshipMissiles; &scWolfenVolkov; &scHurinDestroyer;
+					&scAurochs; &scPolar; &scCenturionX; &scRanxDreadnought;
+					&scLuminousDrone; &scEI500JuanCarlos; &scTundra; &scCenturionRama;
+					&scVentariCruiser; &scPolar2; &scXenophobeWorldship;
+					&scCometfall; &scChasm; &scDeimos; &scCorporateCruiser;
+					&scCSCHospital; &scCSCTaskForce; &scGaianProcessor;
+					&scAquilaCruiser; &scCSCAntarctica; &scPhobos;
+					&scCSCTerra; &scIocrymCommandShip;
+				)
+			</ShipList>
+			<!--
+				Controls whether Items will be identified by default.
+				0 is Nil, 1 is True
+			-->
+			<KnownItems>0</KnownItems>
+			<!--
+				Controls whether items from the BlackList will be removed
+				from the station.
+				0 is Nil, 1 is True
+			-->
+			<UseItemBlackList>1</UseItemBlackList>
+			<!--
+				This is a list of items that are blacklisted.
+			-->
+			<ItemBlackList>
+				(
+					&itDamageWeaponROM; &itTargetingComputerROM; 
+					&itMilitaryMapROM; &itSystemMapROM; &itRowenaVol1; &itRowenaVol2;
+					&itRowenaVol3; &itRowenaVol4; &itRowenaVol5; &itSRSDamageROM;
+					&itEnhanceSRSROM; &itDataROM;  &itRadioactiveWaste; &itOrganicAcid; 
+					&itShieldInterfereCoating; &itAmmoBoxParalysis; &itAmmoBoxRadioactive;
+					&itAmmoBoxContraband; &itDefectiveAuton; &itBlackMarketID; &itMilitaryID;
+					&itDefectiveShieldOptimizer; &itStargateControlRod; &itUnknownID; 
+					&itDegeneratingNanos; &itMinersCargoHold; &itSmugglersCargoHold;
+				)
+			</ItemBlackList>
+			
+			<WingmanMultiplier>10</WingmanMultiplier>
+<!-- Not yet		<FloatingInfo>Nil</FloatingInfo> -->
+		</StaticData>
+	</ItemType>
+	
+	
+<!--
+	Purpose:
+		CARNAGE!!!
+
+	CHANGELOG V2.1
+		--	Changed key for accessing RepairItems DocksScreen from I to P, since
+			it was conflicting with Install Device
+			RepairItems Screen disabled since it does not work properly
+		--	Removed copyrighted images. Sob, search for new ones will proceed slowly.
+		--	Updated DockServices to work with the marginMultiplier
+		--	Fixed Decontamination.
+		--	The Trader will now buy when margin is 1.
+		--	Items can now be set to a known state, depending on a configuration variable
+		--	Default inflation set to 25
+		--	Targeting Computer installed by default (is applicable)
+		--	EndGame Flavour texts removed temporarily, due to them not
+			matching the images (since they were removed too)
+		--	Updated descriptions for Configuration items to be more coherent.
+		--	Some items can now be blacklisted.	
+		--	Added config options for KnownItems, and UseItemBlackList
+		--	Added an option to change the layout of the spawn points on the fly
+		
+	FIXED?
+		-- 	maybe slow down the spawn speed a little - make it random interval?
+		--	Fix the spawn count. It's still too high for a low lvl ship
+	TODO:
+		-- 	add the floating level indicator as a toggle option
+		-- 	have multiple layouts/systems, and a screen to jump between them
+		--	Go through the set funtions and find out which ones we actually use.
+		--	study if we can use (objAddSubordinate) for better wingmen.
+		--	study (objGetDestiny) and if it is usefull for us
+		--	automate more of the process of selecting an item table
+		--	be carefull with (setData) and empty lists, since they eq nil
+		--	use a "cooler" effect than shield hit, for the barrier port
+		--	Implement the Order screen.
+		--	Hide the wingmen option for now. Make them jump to the player if he is to far away
+			make them automatically attack closest target. All in all, implement some new
+			logic for them, running on a reasonable interval timer.
+		-- 	Add the ability to hire multiple wingmen (in one go), and filter the list
+		--	At the moment there is no extra cost for installing weapons
+		--	Add a function to decode the strength of an enhacenment, and increase the price
+		--	Add a function to analyze the player ship, and come up with a good value for it's strength.
+		--	Branch out sale of fuel to its own screen - ie we always want to be able to provide fuel
+		--	Branch out sale of ammo to it's own screen - ie we always want to be able to provide ammo
+		--	Branch out sale of autons to it's own screen - ie we always want to be able to provide autons
+		--	RepairItems screen goese to install device?
+
+		--	Build the ItemTables properly.
+		-- 	items too expensive at lvl 4
+		--	Find out why multiple items of the same kind don't always stack.
+		--	Always sell Decon barrels? &itDeconGel;
+		--	Always sell cargo hold upgrades (not smuggler holds)  &itCargoHoldExpansion;
+		--	More reactors in store.
+		--	Give credit bonus at each level.
+		--	Make sure we have fuel generated at each level &itHadronVacuumFuelCell;
+
+			DOH - they sucks!
+		--	Really build the buy/sell screens in DSF - maybe as a 3rd party mod/addition to DSF
+		--	make the buy DS real good ;) - sort by item type, etc...
+		
+-->
+	
+<!--  ################################################################### -->
+				<!--           GLOBALS             -->
+<!--  ################################################################### -->
+
+	<Globals>
+		<!-- TRAP START -->
+		(block Nil
+		
+		
+		(setq test (lambda Nil
+			(randomlyEnhance (itmCreate &itMAGLauncher; 1))
+		))
+		(setq itm (lambda Nil
+			(itmCreate &itDualLaserCannon; 1)
+		))
+		
+;<!--  ################################################################### -->
+;		     <!--           ON CREATE FUNCTIONS             -->
+;<!--  ################################################################### -->
+
+			;; this is a sneaky function!! For reals!
+			;; it will look for a name= which is really a lambda,
+			;; and eval it, or an OnCreate InitialData and eval that.
+			(setq runOnCreate (lambda Nil
+				(block (name run)
+					(setq run True)
+					;; first we check if the name is interresting
+					(setq name (objGetName gSource))
+					(if (or (not (isError (eval name)) (eq name ""))) (block (expr)
+						(setq expr (eval name))
+						(if (and (isFunction expr) run) (block Nil
+							;; if it is, we apply it.
+							(setq run Nil)
+							(apply expr (list ))
+						))
+					))
+					;; if we are still running here, we should check for 
+					;; OnCreate data
+					(if run (block Nil
+						;; do we have OnCreate Data?
+						(setq expr (objGetData gSource "OnCreate"))
+						;; if it is not Nil, prepend the source onto the second
+						;; item, and apply it to the first item
+						(if (not (eq expr Nil)) (block (func arg)
+							(setq func (item expr 0))
+							(setq arg (append (list ) (item expr 1)))
+							(apply (eval func) arg)
+						))
+					))
+				)
+			))
+
+			;; Run when a ResetMarker is created
+			(setq createResetMarker (lambda Nil
+				(block Nil
+					;; set a common name so we can find them again
+					(objSetData gSource "ResetMarker" True)
+					;; set the dataname, that we will know this object by
+					(objSetData gSource "DataName" "ResetMarker")
+					(objSetName gSource "Reset Marker")
+					(staSetImageVariant gSource 2)
+				)
+			))
+			
+			;; Run when a GateKeeper is created
+			(setq createGateKeeper (lambda Nil
+				(block Nil
+					;; set a common name so we can find them again
+					(objSetData gSource "GateKeeper" True)
+					;; set the dataname, that we will know this object by
+					(objSetData gSource "DataName" "GateKeeper")
+					
+					(objSetName gSource "Gate Keeper")
+					(staSetImageVariant gSource 1)
+				)
+			))
+			
+			(setq gateTR (lambda Nil (createGate 3)  ))
+			(setq gateTL (lambda Nil (createGate 2)  ))
+			(setq gateBR (lambda Nil (createGate 4)  ))
+			(setq gateBL (lambda Nil (createGate 5)  ))
+			(setq gateNO (lambda Nil (createGate 26) ))
+
+			(setq createGate (lambda (variant)
+				(block Nil
+					(objSetData gSource "gate" true)
+					(objSetData gSource "variant0" (staGetImageVariant gSource))
+					(objSetData gSource "variant1" variant)
+					(objSetData gSource "state" 0)
+				)
+			))
+			
+			;; Run when a SpawnPoint is created
+			(setq createSpawnPoint (lambda Nil
+				(block Nil
+					(objSetData gSource "spawnpoint" True)
+					(objSetName gSource "Spawn Point")
+					(objSetKnown gSource)
+				)
+			))
+			
+			(setq createSpawnMaster (lambda Nil
+				(block Nil
+					(objSetData gSource "spawnmaster" True)
+					(objSetData gSource "spawnpoint" True)
+					(objSetName gSource "Spawn Point")
+					(objSetKnown gSource)
+					(sysAddObjTimerEvent 15 gSource "PostCreate")
+				)
+			))
+
+			
+;<!--  ################################################################### -->
+;				<!--       GAME MECHANICS       -->
+;<!--  ################################################################### -->
+
+	;;<!--  ################################################################### -->
+	;;		     <!--           ON SPAWN FUNCTION           -->
+	;;<!--  ################################################################### -->
+			
+			(setq runPostCreate (lambda Nil
+				(block Nil
+					;; clear global values
+					(resetData)
+					;; clear some standard messages
+					(plyClearShowHelpRefuel gPlayer)
+					;; set all barriers to a known state
+					(enum (sysFindObject gPlayerShip "tB:barrier;") bar
+						(objSetKnown bar)
+					)
+					;; place all the spawnpoints, based on the ArenaType
+					(setupArena (getArenaType))
+					;; add an event that clears the barriers from stuck ships
+					(sysAddObjRecurringTimerEvent 30 (getSpawnMaster) "SpawnCleanEvent")
+					;; give the player some money, based on the combat power
+					(plyCredit gPlayer (divide 70000 (getCombatPower)))
+					;; build the ship list
+					(getSortedShipList)
+					;; add some items to the trade station
+					(generateTradeItems)
+					;; update the level label
+					(objSetName (getLevelLabel) (cat "Current Level: " (getSpawnLevel)))
+					;; update the killscore label
+					(objSetName (getKillScoreLabel) (cat "KillScore: " (getKillScore) "/" (getLevelCurve) "  Total: " (getTotalKillScore)))
+					;; install a targeting computer, and let the player know
+					(if (not (shpIsTargetingComputerInstalled gPlayerShip))
+						(block Nil
+							(shpInstallTargetingComputer gPlayerShip)
+							(plyMessage gPlayer "Targeting Computer Installed.")
+						)
+					)
+					(plyMessage gPlayer "Welcome to BattleZone.")
+				)
+			))
+	
+			(setq runSpawnEvent (lambda Nil
+				(block Nil
+					;; if ActiveSpawnList is not empty, cancel timer, and exit
+					(if (getActiveSpawnList)
+						(stopSpawnTimer)
+						;; else do the check
+						(block (check)
+							;; check if the interval has been passed
+							(setq check (gr (subtract (unvGetTick) (getSpawnTimer)) (getSpawnInterval)))
+							(if check
+								;; if it has passed, do the whole spawn shebang.
+								(block (baseLvl baseShp baseOrigin cnt)
+									;; start by stopping the timer
+									(stopSpawnTimer)
+									;; check if we should only be spawning from one level
+									(if (eq (getMixedLevels) 1)
+										(setq baseLvl (random 1 (getSpawnLevel)))
+										(setq baseLvl (getSpawnLevel))
+									)
+									;; baseLvl must not be higher than MaxLevel
+									(setq baseLvl (min baseLvl (getMaxLevel)))
+									;; if we dont want mixed ship levels, we select one now	
+									(if (eq (getMixedShips) 0)
+										(setq baseShp (random (getShipLevelList baseLvl)))
+									)
+									;; how many ships from this level should we spawn?
+									(setq cnt (probability 
+										(add (getSpawnLevel) (getCombatPower))
+										75
+										;(random (getCombatPower) 100) 
+										1
+									))
+									;(setq cnt (random 1 (add gMaxLevel (divide (getCombatPower) baseLvl))))
+									;; apply the spawn multiplier
+									(setq cnt (multiply cnt (getSpawnMultiplier)))
+									;; select a random point to spawn from
+									(if (eq (getMixedSpawnPoint) 0)
+										(block Nil
+											;; set the base origin
+											(setq baseOrigin (random (getSpawnPoints)))
+											;; point the players target at the base
+											(shpOrderAttack gPlayerShip baseOrigin)
+										)
+									)
+									(for i 1 cnt
+										(block (lvl shp origin loc)
+											;; we need to check again for the mixed levels
+											(if (eq (getMixedLevels) 1)
+												(setq lvl (min (random 1 (getSpawnLevel)) gMaxLevel))
+												(setq lvl baseLvl)
+											)
+											;; check is baseShp is set, or select a random ship
+											(if baseShp
+												(setq shp baseShp)
+												(setq shp (random (getShipLevelList lvl)))
+											)
+											;; check if we switch origins
+											(if baseOrigin
+												(setq origin baseOrigin)
+												(setq origin (random (getSpawnPoints)))
+											)
+											;; choose a spawn location at an arbitrary angle and distance from spawn point
+											(setq loc (sysVectorPolarOffset origin (random 0 360) (random 5 20)))
+											;; create the ship
+											(setq shp (sysCreateShip shp loc &svDestructiveOrder;))
+											;; register the ship with spawnmaster
+											(objRegisterForEvents (getSpawnMaster) shp)
+											;; store the ship in the active spawn list
+											(setActiveSpawnList (append (getActiveSpawnList) shp))
+											;; order the attack
+											(shpOrderAttack shp gPlayerShip)
+										)
+									)
+									;; tell the player about what is coming for hime
+									(dbgLog "Before player messages")
+									(if (eq (getSpawnLevel) 1)
+										(plyMessage gPlayer (cat "Spawning : " cnt " level 1 ships."))
+										(if (eq (getMixedLevels) 1)
+											(plyMessage gPlayer (cat "Spawning : " cnt " ships between level 1 and " (getSpawnLevel) "."))
+											(plyMessage gPlayer (cat "Spawning : " cnt " level " (getSpawnLevel) " ships."))
+										)
+									)
+									(dbgLog "After player messages.")
+								)
+								;; if it has not arrived yet, tell the player how long time till the spawn comes
+								(block (remain msg)
+									(setq msg Nil)
+									;; get the remainder in seconds
+									(setq remain (divide (subtract (getSpawnInterval) (subtract (unvGetTick) (getSpawnTimer)) ) 30))
+									;; add one
+									(setq remain (add remain 1))
+									;; if we have already notified for this one, then skip
+									(if (not (eq remain (getLastTimerNotify)))
+										(block Nil
+											;; if we are below 5
+											(if (leq remain 5)
+												(setq msg True)
+											)
+											;;or 5 seconds have passed
+											(if (eq (modulo remain 5) 0)	
+												(setq msg True)
+											)
+											(if (eq remain 0)
+												(setq msg Nil)
+											)
+										)
+									)
+									(if (eq (getLastTimerNotify) 0)
+										(setq msg True)
+									)
+									(if msg (block Nil
+										(setLastTimerNotify remain)
+										(plyMessage gPlayer (cat "Spawn in: " remain " seconds"))
+									))
+								)
+							)
+						)
+					)
+					(dbgLog "End Spawn Event.")
+				)
+			))
+			
+			;; clear objects away from the barriers, when the are too close
+			;; we need to clear all ships, since not all are in our spawn list
+			(setq runSpawnCleanEvent (lambda (source)
+				(block Nil
+					(enum (getEnemyShips) shp (block (dist)
+						(setq dist (objGetDistance shp (sysFindObject shp "TB:barrier; N;")))
+						(if (leq dist 2) (block Nil
+							;; maybe do a fancy effect
+							(sysCreateEffect &efShieldHit1; shp (objGetPos shp))
+							(objMoveTo shp (objGetPos (sysFindObject gPlayerShip "t D:spawnpoint; N;")))
+						))
+					))
+				)
+			))
+			
+			(setq runActivateWingmen (lambda Nil
+				(block (scan run)
+					(setq run Nil)
+					;; scan the area for the playership
+					;; when it is close enough, activate the 
+					;; pending wingmen
+					(setq scan (sysFindObject gSource "sF N:15"))
+					(enum scan el (block Nil
+						(if (eq el gPlayerShip) (setq run True))
+					))
+					(if run (block (pos)
+						(setq pos (objGetPos gSource))
+						(enum (getWingmanSpawnList) spawn
+							(block (shp data)
+								;; spawn and assign the wingman as escort
+								(setq shp (sysCreateShip spawn
+									(sysVectorPolarOffset pos (random 0 360) 5)
+									&svCommonwealth; "auton"
+								))
+								(shpOrderEscort shp gPlayerShip)
+								;; register the wingman for events with the station
+								(objRegisterForEvents gSource shp) 
+								;; add the wingman to the list
+								(setPlayerWingmen (lnkAppend (getPlayerWingmen) shp))
+								;; increament the wingmenLevel counter
+								(setq data (hshGet (getShipData) spawn))
+								(setWingmenLevel (add (getWingmenLevel) (hshGet data 'level)))
+							)
+						)
+						;; clear the spawn list
+						(setWingmanSpawnList (list))
+						;; stop the wingman timer
+						(sysCancelTimerEvent gSource "ActivateWingmen")
+					))
+					
+				)
+			))
+			
+	;;<!--  ################################################################### -->
+	;		     <!--           ON DAMAGE FUNCTIONS             -->
+	;;<!--  ################################################################### -->
+
+			;; run when an object recieves damage
+			;; get the DataName run it through the switch
+			(setq runOnDamage (lambda (ext)
+				(block (damage)
+					(setq damage 0)
+					(if (not ext)
+						(setq ext (objGetData gSource "DataName"))
+					)
+					;; if ext is Nil, we don't run
+					(switch
+					
+					;; the reset marker closes the gates and removes any spawn on the lvl
+						(eq ext "ResetMarker")
+							;; close the gates if they are open, and clear all active spawn
+							(block (check)
+								;; check that a certain amount of time has passed, and that it is the player shooting
+								(setq check (or 
+									(eq (getLevelResetTime) 0) 
+									(gr (subtract (unvGetTick) (getLevelResetTime)) (getMarkerToggleInterval))
+								))
+								(if (and check (eq aAttacker gPlayerShip))
+									(block Nil
+										;; level should be reset
+										;; close the gates if they are open
+										(if (eq (getGateState) 1) (toggleGates))
+										;; detroy all enemy ships, if any
+										(enum (getEnemyShips) shp
+											(objDestroy shp)
+										)
+										;; reset the spawn list
+										(setActiveSpawnList (list))
+										;; store the time
+										(setLevelResetTime (unvGetTick))
+										;; try to stop the timer
+										(stopSpawnTimer)
+										;; tell the player what happened
+										(plyMessage gPlayer "All Enemies cleared.")
+									)
+								)
+							)
+							
+					;; Gatekeepers open and close gates. They also start the spawn
+						(eq ext "GateKeeper")
+							(block (check dist)
+								;; check that a certain amount of time has passed, and that it is the player shooting,
+								;; also check that the player is not too far away
+								(setq check (or
+									(eq (getGateToggleTime) 0)
+									(gr (subtract (unvGetTick) (getGateToggleTime)) (getMarkerToggleInterval))
+								))
+								(setq dist (objGetDistance gSource gPlayerShip))
+								(if (and check (eq aAttacker gPlayerShip) (leq dist 15))
+									(toggleGates)
+								)
+							)
+						
+					) ;; Switch	
+					damage ;; we always return the damage
+				)                                                                                  
+			))
+
+			(setq runOnSpawnDestroyed (lambda Nil
+				(block (id found)
+					;; get the id of the object destroyed
+					(setq id (objGetID aObjDestroyed))
+					;; remove that id from the active spawn list
+					;; we operate directly on the list, because we want
+					;; to use the objID's not the spaceobjects
+					(setq found (find gActiveSpawnList id))
+					(if found
+						(lnkRemove gActiveSpawnList found Nil)
+					)
+					;; update the hardlist on the player ship
+					(objSetData gPlayerShip "gActiveSpawnList" gActiveSpawnList)
+					
+					;; if it was the player doing the killing, reward him
+					(if (eq aDestroyer gPlayerShip) (block (cls)
+						(setq cls (shpGetClass aObjDestroyed))
+						;; increment players killpower by the score of destroyed target
+						(setKillScore (add (getKillScore) (shpGetDataField cls "score")))
+						(setTotalKillScore (add (getTotalKillScore) (shpGetDataField cls "score")))
+						;; Player gained a level
+						(if (gr (getKillScore) (getLevelCurve)) (block Nil
+							;; increment players level
+							(setSpawnLevel (add (getSpawnLevel) 1))
+							;; check if that bring us over the max level,
+							(if (gr (getSpawnLevel) (getMaxLevel))
+								(block Nil
+									;; if yes, then double the spawnmultiplier, and reset the spawnLevel 
+									(setSpawnLevel 1)
+									(setSpawnMultiplier (multiply (getSpawnMultiplier) (getSpawnMultiplier)))
+									;; tell the player what has happened
+									(plyMessage gPlayer "Incredible. You passed the last wave. Now you start from the beginning, but the spawn count has doubled. Good luck.")
+									;; set a flag that we can use to check how many times the zone has been completed.
+									(setZoneCompleted (add (getZoneCompleted) 1))
+								)
+								;; else we just inform the player of his progress
+								(plyMessage gPlayer (cat "Very good, you made it to level: " gSpawnLevel))
+							)
+							;; set the level curve. 
+							(setLevelCurve (multiply (getLevelCurveBase) (getSpawnLevel) (getSpawnMultiplier) (getCombatPower)))
+							;; reset the counter
+							(setKillScore 0)
+							;; spawn new items
+							(generateTradeItems)
+							;; update the level label
+							(objSetName (getLevelLabel) (cat "Current Level: " (getSpawnLevel)))
+						))
+						;; reward the player with some credits
+						(plyCredit gPlayer (multiply (shpGetDataField cls "score") (getInflation)))
+						;; update the killscore label
+						(objSetName (getKillScoreLabel) (cat "KillScore: " (getKillScore) "/" (getLevelCurve) "  Total: " (getTotalKillScore)))
+						
+					))
+					;; if the ship left a wreck
+					(if aWreckObj 
+						(if (eq (getLeaveWrecks) 1)
+							;;  mark it so it's easy to clear later
+							(objSetData aWreckObj "wreck" True)
+							;; don't bother, remove it.
+							(objDestroy aWreckObj)
+						)
+					)
+					;; if the ActiveSpawnList is nil and gates are open, start the spawn timer
+					(if (not (getActiveSpawnList))
+						(if  (eq (getGateState) 0)
+							(plyMessage gPlayer "Open the gates to start a new spawn.")
+							(startSpawnTimer)
+						)
+					)
+				)
+			))
+
+			(setq runOnWingmanDestroyed (lambda Nil
+				(block (id lvl)
+					;; get the id of the wingman
+					(setq id (objGetID aObjDestroyed))
+					;; get the lvl of the shiptype
+					(setq lvl (objGetLevel aObjDestroyed))
+					(setPlayerWingmen (lnkRemove (getPlayerWingmen)
+						(find (getPlayerWingmen) id) Nil)
+					)
+					;; decrement players wingman level
+					(setWingmenLevel (subtract (getWingmenLevel) lvl))
+					;; let the player know
+					(plyMessage gPlayer "Wingman destroyed")
+				)
+			))			
+
+	;;<!--  ################################################################### -->
+	;		     <!--           GENERAL FUNCTIONS             -->
+	;;<!--  ################################################################### -->
+	
+	
+			(setq setupArena (lambda (type)
+				(block Nil
+					;; check if we have fewer than 5 spawn points
+					(loop (ls (count (getSpawnPoints)) 5)
+						;; generate a new point and run it through the create func
+						(block (sta)
+							(setq sta (sysCreateStation &stZoneSpawnPoint; (sysVectorPolarOffset Nil 90 5000)))
+							;; emulate that we are being called in an on-create
+							(setq gSource sta)
+							(createSpawnPoint)
+							;; clear the spawn point list, so we start from fresh
+							(setData "gSpawnPoints" Nil)
+						)
+					)
+					;; define the different arena types
+					(switch
+						(eq type 'random)
+							(enum (getSpawnPoints) point
+								(objMoveTo point (sysVectorRandom Nil (random 100 140) 60 "t D:spawnpoint"))
+							)
+						(eq type 'fan)
+							(block (ang dist)
+								;; set the angle of the first point
+								(setq ang 30)
+								(setq dist 120)
+								(enum (getSpawnPoints) point (block Nil
+									(objMoveTo point (sysVectorPolarOffset Nil ang dist))
+									(setq ang (add ang 30))
+								))
+							)
+						(eq type 'single)
+							(block Nil
+								;; remove all spawn points that are not the master
+								(enum (getSpawnPoints) point
+									(if (not (objGetData point "spawnmaster"))
+										(objDestroy point)
+									)
+								)
+								;; reset the spawnpoint list
+								(setData "gSpawnPoints" Nil)
+								;; randomize the master
+								(objMoveTo (getSpawnMaster) (sysVectorRandom Nil (random 100 140) 0 Nil))
+							)
+					)
+				)
+			))
+	
+			(setq toggleGates (lambda Nil
+				(block (newState)
+					(enum (getSystemGates) g (block (state)
+						(setq state (objGetData g "state"))
+						(if (eq state 0) (block Nil
+							;; gates are set to open
+							;; change the image variant, and update the state
+							(objSetData g "state" 1)
+							(staSetImageVariant g (objGetData g "variant1"))
+							;; let the player know that he opened the gates
+							(plyMessage gPlayer "Gates Opened")
+							;; start the spawn timer
+							(startSpawnTimer)
+						))
+						(if (eq state 1) (block Nil
+							;; gates are set to be closed
+							;; change image variant and state
+							(objSetData g "state" 0)
+							(staSetImageVariant g (objGetData g "variant0"))
+							;; let the player know
+							(plyMessage gPlayer "Gates Closed")
+						))
+					))
+					;; toggle all the gateKeepers as well
+					(enum (getSystemGateKeepers) keeper
+						(if (eq (staGetImageVariant keeper) 0)
+							(staSetImageVariant keeper 1)
+							(staSetImageVariant keeper 0)
+						)
+					)
+					;; set the gate toggle time
+					(setGateToggleTime (unvGetTick))
+					(if (eq (getGateState) 0) (setGateState 1) (setGateState 0))
+				)
+			))
+			
+			(setq startSpawnTimer (lambda Nil
+				(block (remain)
+					;; start the timer at a 1 sec interval, so we can do a countdown.	
+					(sysAddObjRecurringTimerEvent 30 (getSpawnMaster) "SpawnEvent")
+					;; set a variable so we can know when the timer was started
+					(setSpawnTimer (unvGetTick))
+				)
+			))
+			
+			(setq stopSpawnTimer (lambda Nil
+				(block Nil
+					(sysCancelTimerEvent (getSpawnMaster) "SpawnEvent")
+					(setLastTimerNotify 0)
+				)
+			))
+
+
+			(setq generateTradeItems (lambda Nil
+				(block (sta table lvl)
+					(setq sta (getTradeStation))
+					;; clean up station
+					(enum (objGetItems sta "*U") itm
+						(objRemoveItem sta itm)
+					)
+					(setq lvl (getSpawnLevel))
+					;; select the table to generate from
+					(setq table (switch
+						(leq lvl 3)
+							&trItemLow;
+						(and (gr lvl 3) (leq lvl 6))
+							&trItemMid;
+						(and (gr lvl 6) (leq lvl 9))
+							&trItemHigh;
+						(and (gr lvl 9))
+							&trItemUltra;
+					))
+					;; if zone has been completed once, override
+					;; and only supply ultra weapons
+					(if (gr (getZoneCompleted) 0)
+						(setq table &trItemUltra;)
+					)
+					;; add the items. If you have been through more than
+					;; once, you get more items
+					(objAddRandomItems sta table (add (getZoneCompleted) 1))
+					;; loop through the items, and set them as known
+					(if (eq (getKnownItems) 1) (block Nil
+						(enum (objGetItems sta "*U") itm (block Nil
+							(itmSetKnown itm)
+							(itmHasReference itm)
+						))
+					))
+					;; check if we should remove blacklisted items
+					(if (eq (getUseItemBlackList) 1)
+						(enum (objGetItems sta "*U") itm
+							(if (find (getItemBlackList) (itmGetUNID itm))
+								(objRemoveItem sta itm)
+							)
+						)
+					)
+				)
+			))
+			
+			;; contrary to the name, this controls the price of
+			;; items the station sells
+			(setq traderBuyMargin (lambda (itm)
+				(block (price enh)
+					(setq price (multiply (itmGetPrice itm) (getMarginMultiplier)))
+					(setq enh (modulo (itmIsEnhanced itm) 16))
+					;; if item is fully enhanced, we double the price
+					(if (gr enh 0)
+						(block (inc)
+							(setq inc (divide price (subtract 16 enh)))
+							(setq price (add price inc))
+						)
+					)
+					;(dbgLog "Get enhancement for item: " (itmGetName itm 1) " : " (itmIsEnhanced itm) " modulo 16: " (modulo (itmIsEnhanced itm) 16))
+					(dbgLog "Reference: " (itmHasReference itm) " Actual Price: " (itmGetActualPrice itm) " price: " (itmGetPrice itm))
+					price
+				)
+			))
+			
+					;; generate a number that will give an indication
+					;; of playerships combat strength
+					;(setq gaugePlayerStrength (lambda Nil
+					;(block (score)
+					;; the following are not relevant, since they only provide info on base ships makeup
+					;(dbgOutput "primaryArmor: " (shpGetDataField (shpGetClass gPlayerShip) "primaryArmorUNID"))
+					;(dbgOutput "sheilds: " (shpGetDataField (shpGetClass gPlayerShip) "shieldsUNID"))
+					;(dbgOutput "pri weapon:" (shpGetDataField (shpGetClass gPlayerShip) "primaryWeaponUNID"))
+					;(dbgOutput "launcher: " (shpGetDataField (shpGetClass gPlayerShip) "launcherUNID"))
+					;;(shpGetDataField class field) - data
+					;; Max power tells us how big a reactor is installed.
+					;(dbgOutput "Max Power: " (objGetMaxPower gPlayerShip))
+					;; maneuver helps us understand how quick a ship can react
+					;; returns a max of 30000 == 0, 15000 == 1, 7500 == 2, 3750 == 4
+					;(dbgOutput "maneuver: " (shpGetDataField (shpGetClass gPlayerShip) "maneuver"))
+					;; max speed is in %of lightspeed, and can be increased by items
+					;; it tells us about some base properties of the ship class
+					;(dbgOutput "Max Speed: " (shpGetMaxSpeed gPlayerShip))
+					;(dbgOutput "Ship class Max Speed: " (shpGetDataField (shpGetClass gPlayerShip) "maxSpeed"))
+					;(dbgOutput "thrust: " (shpGetDataField (shpGetClass gPlayerShip) "thrust"))
+					;(dbgOutput "Mass: " (objGetMass gPlayerShip))
+					;(dbgOutput "Sheild UNID: " (shpGetShieldItemUNID gPlayerShip))
+					;(dbgOutput "Sheild Max HP: " (shpGetShieldMaxHitPoints gPlayerShip))
+					;(dbgOutput "Armor Count: " (shpGetArmorCount gPlayerShip))
+					;(enum (objGetItems gPlayerShip "*I") itm
+					;	(dbgOutput "Item Installed: " (itmGetName itm 1))
+					;)
+					;;(objGetArmorType obj armorSegment)
+					;;(objGetDamageType obj)
+					;;(objGetItems obj criteria)
+					;;(objGetMaxPower obj)
+					;;(objGetMass obj)
+					;;(objGetShieldLevel obj)
+					;;(shpGetArmor ship armorSegment) - item struct
+					;;(shpGetArmorCount ship) - number of armor segments
+					;;(shpGetArmorMaxHitPoints obj armorSegment) - damage to armor segment
+					;;(shpGetMaxSpeed ship) - max speed in of lightspeed
+					;;(shpGetShieldItemUNID ship) - UNID (or Nil)
+					;;(shpGetShieldMaxHitPoints ship) - max hp of shields
+					;;(shpIsRadiationImmune ship [item])
+					;;(itmGetCategory item) - item category
+					;;(itmGetFrequency item) - frequency
+					;;(itmGetLevel item) - level
+					;;(itmIsEnhanced item) - Nil or mods
+					;;(armGetHitPoints type) - Hit points of armor
+					;;(armIsRadiationImmune type) - True/Nil
+					
+			;; generate a number that will give an indication
+			;; of playerships combat strength
+			(setq gaugePlayerStrength (lambda Nil
+				(block (score counter arm armHP)
+					(setq score 0)
+					;; base stats
+					;; best == 30000
+					(shpGetDataField gPlayerShip "maneuver")
+					(shpGetMaxSpeed gPlayerShip)
+					(shpGetDataField gPlayerShip "thrustToWeight")
+					(shpGetDataField gPlayerShip "fireAccuracy")
+					(shpGetDataField gPlayerShip "fireRangeAdj")
+					(shpGetDataField gPlayerShip "fireRateAdj")
+					
+					;; use shpCanInstallDevice and shpInstallDevice
+					;; to calculate how many devices and weapon 
+					;; devices a ship can support
+					
+					
+					(setq counter 0)
+					(setq arm 0)
+					(setq armHP 0)
+					;; enum the armor
+					;; sum the levels of the armor,
+					;; and add to that the sum of enhancement strength
+					;; radiation adds one per segment.
+					;; sum the HP value of the armor segments together
+					;; and divide by count, to get a mean value 
+					;; (which must be treated futher)
+					(objEnumItems gPlayerShip "aI" arm
+						(block Nil
+							(setq arm (itmGetLevel item))
+							;(itmIsEnhanced item)
+							;(itmGetArmorType item)
+							;(armGetHitPoints type)
+							;(armIsRadiationImmune type)
+							(setq counter (add counter 1))
+						)
+					)
+					
+					(setq counter 0)
+					;; enum the weapons
+					;; sum the levels of the weapons
+					;; and add to that the sum of enhancement strength
+					;; and damage types
+					(objEnumItems gPlayerShip "wI" arm
+						;; not sure if there is a way we can extract some static data from weapons
+						;(itmGetLevel item)
+						;(itmIsEnhanced item)
+						;(itmGetDamageType item)
+					)
+					;; enum the shield
+					(objEnumItems gPlayerShip "sI" arm
+						;(itmGetLevel item)
+						;(itmIsEnhanced item)
+						;(shpGetShieldMaxHitPoints ship)
+					)
+					;; enum the reactor
+					(objEnumItems gPlayerShip "aI" arm
+						;(itmGetLevel item)
+						;(itmIsEnhanced item)
+						;(objGetMaxPower gPlayerShip)
+					)
+				)
+			))
+			
+
+
+
+			(setq itm (itmCreate &itDisposableLauncher; 1))
+			
+			(setq debugShip (lambda (shp)
+				(block (devCnt tItem)
+					(dbgLog "####################################################")
+					
+					(dbgLog " ")
+					(dbgLog "       ------ (shpGetDataField) -----")
+					(dbgLog "| Name | " (shpGetDataField shp "name") " |")
+					(dbgLog "| Manufacturer | " (shpGetDataField shp "manufacturer") " |")
+					(dbgLog "| Level | " (shpGetDataField shp "level") " |")
+					(dbgLog "| Score | " (shpGetDataField shp "score") " |")
+					(dbgLog "| Max Speed | " (shpGetDataField shp "maxSpeed") " |")
+					(dbgLog "| Maneuver | " (shpGetDataField shp "maneuver") " |")
+					(dbgLog "| Thrust To Weight | " (shpGetDataField shp "thrustToWeight") " |")
+					(dbgLog "| Cargo Space | " (shpGetDataField shp "cargoSpace") " |")
+					(dbgLog "| Fire Accuracy | " (shpGetDataField shp "fireAccuracy") " |")
+					(dbgLog "| Fire Range Adj | " (shpGetDataField shp "fireRangeAdj") " |")
+					(dbgLog "| Fire Rate Adj | " (shpGetDataField shp "fireRateAdj") " |")
+					(dbgLog "| Explosion | " (shpGetDataField shp "explosion") " |")
+					(dbgLog "| Primary Armor | " (shpGetDataField shp "primaryArmor") " |")
+					(dbgLog "| Primary Armor UNID | " (shpGetDataField shp "primaryArmorUNID") " |")
+					(dbgLog "| Primary Weapon | " (shpGetDataField shp "primaryWeapon") " |")
+					(dbgLog "| Primary Weapon UNID | " (shpGetDataField shp "primaryWeaponUNID") " |")
+					(dbgLog "| Primary Weapon Range | " (shpGetDataField shp "primaryWeaponRange") " |")
+					(dbgLog "| Primary Weapon Range Adj | " (shpGetDataField shp "primaryWeaponRangeAdj") " |")
+					(dbgLog "| Launcher | " (shpGetDataField shp "launcher") " |")
+					(dbgLog "| Launcher UNID | " (shpGetDataField shp "launcherUNID") " |")
+					(dbgLog "| Shield | " (shpGetDataField shp "shield") " |")
+					(dbgLog "| Shield UNID | " (shpGetDataField shp "shieldsUNID") " |")
+					
+					(dbgLog " ")
+					(dbgLog "       ------ (built-in shp functions) -----")
+					(dbgLog "| Class | " (shpGetClass shp) " |")
+					(dbgLog "| Class Name | " (shpGetClassName (shpGetClass shp) 0) " |")
+					(dbgLog "| Max Speed | " (shpGetMaxSpeed shp) " |")
+					(dbgLog "| Shield | " (itmGetName (itmCreate (shpGetShieldItemUNID shp) 1) 0) " |")
+					(dbgLog "| Shield UNID | " (shpGetShieldItemUNID shp) " |")
+					(dbgLog "| Shield Max HP | " (shpGetShieldMaxHitPoints shp) " |")
+					(dbgLog "| Autopilot | " (shpIsAutopilotInstalled shp) " |")
+					(dbgLog "| Radiation Immune | " (shpIsRadiationImmune shp) " |")
+					(dbgLog "| SRS | " (shpIsSRSEnhanced shp) " |")
+					(dbgLog "| Targeting Computer | " (shpIsTargetingComputerInstalled shp) " |")
+					
+					(dbgLog " ")
+					(dbgLog "       ------ (built-in obj functions) -----")
+					(dbgLog "| Can Attack | " (objCanAttack shp) " |")
+					(dbgLog "| Balance | " (objGetBalance shp) " |")
+					(dbgLog "| Cargo Space Left | " (objGetCargoSpaceLeft shp) " |")
+					(dbgLog "| Combat Power | " (objGetCombatPower shp) " |")
+					(dbgLog "| Damage Type | " (objGetDamageType shp) " |")
+					(dbgLog "| Level | " (objGetLevel shp) " |")
+					(dbgLog "| Mass | " (objGetMass shp) " |")
+					(dbgLog "| Max Power | " (objGetMaxPower shp) " |")
+					(dbgLog "| Name | " (objGetName shp 0) " |")
+					
+					(dbgLog " ")
+					(dbgLog "       ------ (installed items) -----")
+					(objEnumItems shp "*I" itm
+						(block Nil
+							(dbgLog "| Item Name | " (itmGetName itm 0) " |")
+							(switch
+								(eq (itmGetCategory itm) 0x2)
+									(block Nil
+										(dbgLog "| Item Category | " "Armor" " |")
+										(dbgLog "| Armor HP | " (armGetHitPoints (itmGetArmorType itm)) " |")
+										(dbgLog "| Armor Repair Tech | " (armGetRepairTech (itmGetArmorType itm)) " |")
+										(dbgLog "| Armor Repair Cost | " (armGetRepairCost (itmGetArmorType itm)) " |")
+										(dbgLog "| Armor Install Location | " (objGetArmorName shp (itmGetArmorInstalledLocation itm)) " |")
+									)
+									
+								(eq (itmGetCategory itm) 0x10)
+									(block Nil
+										(dbgLog "| Item Category | " "Launcher" " |")
+										(dbgLog "| Launcher Damage Type | " (itmGetDamageType itm) " |")
+									)
+							
+								(eq (itmGetCategory itm) 0x4)
+									(block Nil
+										(dbgLog "| Item Category | " "Weapon" " |")
+										(dbgLog "| Weapon Damage Type | " (itmGetDamageType itm) " |")
+									)
+							
+								(eq (itmGetCategory itm) 0x80)
+									(dbgLog "| Item Category | " "Shield" " |")
+							
+								(eq (itmGetCategory itm) 0x40)
+									(dbgLog "| Item Category | " "Reactor" " |")
+								
+								(eq (itmGetCategory itm) 0x800)
+									(dbgLog "| Item Category | " "Drive" " |")
+								
+								(eq (itmGetCategory itm) 0x1)
+									(dbgLog "| Item Category | " "Miscellaneous" " |")
+								
+								(eq (itmGetCategory itm) 0x1000)
+									(dbgLog "| Item Category | " "Useable" " |")
+							)
+							(dbgLog "| Item Price | " (itmGetPrice itm) " |")
+							(dbgLog "| Item Mass | " (itmGetMass itm) " |")
+							(dbgLog "| Item Level | " (itmGetLevel itm) " |")
+							(dbgLog "| Item Frequency | " (itmGetFrequency itm) " |")
+							(dbgLog "| Item UNID | " (itmGetUNID itm) " |")
+							(dbgLog "| Item Enhanced | " (itmIsEnhanced itm) " |")
+							(dbgLog "  -----")
+							;; remove the item so we can test how many we can install
+							(objRemoveItem shp itm)
+						)
+					)
+					(dbgLog " ")
+					(dbgLog "       ------ (misc info) -----")
+					;; weapons
+					(setq devCnt 0)
+					(setq tItem (itmCreate &itLaserCannon; 1))
+					;; loop while we can still install the weapon
+					(loop (eq (shpCanInstallDevice shp tItem) 0) (block Nil
+						(objAddItem shp tItem)
+						(shpInstallDevice shp tItem)
+						(setq devCnt (add devCnt 1))
+					))
+					(dbgLog "| Weapon Slots | " devCnt " |")
+					;; reset the ship and count
+					(objEnumItems shp "*I" itm
+						(shpRemoveDevice shp itm)
+					)
+					(setq devCnt 0)
+					; devices
+					(setq tItem (itmCreate &itSolarPanelArray; 1))
+					;; loop while we can still install the device
+					(loop (eq (shpCanInstallDevice shp tItem) 0) (block Nil
+						(objAddItem shp tItem)
+						(shpInstallDevice shp tItem)
+						(setq devCnt (add devCnt 1))
+					))
+					(dbgLog "| Device Slots | " devCnt " |")
+					(dbgLog "####################################################")
+				)
+			))
+			
+			(setq g gaugePlayerStrength)
+
+			(setq t generateTradeItems)
+			
+;<!--  ################################################################### -->
+;				<!--       GETTERS / SETTERS       -->
+;<!--  ################################################################### -->
+
+			
+			(setq getArenaType (lambda Nil
+				(getData "gArenaType" '(getConfigData "ArenaType"))
+			))
+
+			(setq setArenaType (lambda (value)
+				(setData "gArenaType" value)
+			))
+			
+			(setq getUseItemBlackList (lambda Nil
+				(getData "gUseItemBlackList" '(getConfigData "UseItemBlackList"))
+			))
+
+			(setq setUseItemBlackList (lambda (value)
+				(setData "gUseItemBlackList" value)
+			))
+
+			(setq getKnownItems (lambda Nil
+				(getData "gKnownItems" '(getConfigData "KnownItems"))
+			))
+
+			(setq setKnownItems (lambda (value)
+				(setData "gKnownItems" value)
+			))
+
+			(setq getItemBlackList (lambda Nil
+				(getData "gItemBlackList" '(getConfigData "ItemBlackList"))
+			))
+
+			(setq getMixedSpawnPoint (lambda Nil
+				(getData "gMixedSpawnPoint" '(getConfigData "MixedSpawnPoint"))
+			))
+			
+			(setq setMixedSpawnPoint (lambda (value)
+				(setData "gMixedSpawnPoint" value)
+			))
+
+			(setq getLevelLabel (lambda Nil
+				(sysGetObjectByName gPlayerShip "levelLabel")
+			))
+			
+			(setq getKillScoreLabel (lambda Nil
+				(sysGetObjectByName gPlayerShip "killScoreLabel")
+			))
+
+			(setq getCombatPower (lambda Nil
+				(objGetCombatPower gPlayerShip)
+			))
+			
+			(setq getZoneCompleted (lambda Nil
+				(getData "gZoneCompleted" 0)
+			))
+
+			(setq setZoneCompleted (lambda (value)
+				(setData "gZoneCompleted" value)
+			))
+			
+			(setq getMixedLevels (lambda Nil
+				(getData "gMixedLevels" '(getConfigData "MixedLevels"))
+			))
+			
+			(setq setMixedLevels (lambda (value)
+				(setData "gMixedLevels" value)
+			))
+
+			(setq getMixedShips (lambda Nil
+				(getData "gMixedShips" '(getConfigData "MixedShips"))
+			))
+			
+			(setq setMixedShips (lambda (value)
+				(setData "gMixedShips" value)
+			))
+
+			(setq getMarginMultiplier (lambda Nil
+				(getData "gMarginMultiplier" '(getConfigData "MarginMultiplier"))
+			))
+			
+			(setq setMarginMultiplier (lambda (value)
+				(setData "gMarginMultiplier" value)
+			))
+
+			(setq getLevelResetTime (lambda Nil
+				(getData "gLevelResetTime" 0)
+			))
+			
+			(setq setLevelResetTime (lambda (value)
+				(setData "gLevelResetTime" value)
+			))
+			
+			(setq setLastTimerNotify (lambda (value)
+				(setData "gLastTimerNotify" value)
+			))
+			
+			(setq getLastTimerNotify (lambda Nil
+				(getData "gLastTimerNotify" 0)
+			))
+
+			(setq setSpawnTimer (lambda (value)
+				(setData "gSpawnTimer" value)
+			))
+			
+			(setq getSpawnTimer (lambda Nil
+				(getData "gSpawnTimer" 0)
+			))
+			
+			(setq getLeaveWrecks (lambda Nil
+				(getData "gLeaveWrecks" '(getConfigData "LeaveWrecks"))
+			))
+			
+			(setq getLevelCurveBase (lambda Nil
+				(getData "gLevelCurveBase" '(getConfigData "LevelCurve"))
+			))
+
+			(setq getInflation (lambda Nil
+				(getData "gInflation" '(getConfigData "Inflation"))
+			))
+			
+			(setq getSpawnMultiplier (lambda Nil
+				(getData "gSpawnMultiplier" '(getConfigData "SpawnMultiplier"))
+			))
+			
+			(setq setSpawnMultiplier (lambda (value)
+				(setData "gSpawnMultiplier" value)
+			))
+			
+			(setq getKillScore (lambda Nil
+				(getData "gKillScore" 0)
+			))
+			
+			(setq setKillScore (lambda (value)
+				(setData "gKillScore" value)	
+			))
+			
+			(setq getLevelCurve (lambda Nil
+				(getData "gLevelCurve" '(multiply (getLevelCurveBase) (getCombatPower)))
+			))
+			
+			(setq setLevelCurve (lambda (value)
+				(setData "gLevelCurve" value)
+			))
+			
+			(setq getTotalKillScore (lambda Nil
+				(getData "gTotalKillScore" 0)
+			))
+			
+			(setq setTotalKillScore (lambda (value)
+				(setData "gTotalKillScore" value)
+			))
+
+			;; return a list of ships at a specific level
+			(setq getShipLevelList (lambda (level)
+				(item (getSortedShipList) level)
+			))
+
+			(setq getSpawnLevel (lambda Nil
+				(getData "gSpawnLevel" '(getConfigData "StartLevel"))
+			))
+			
+			(setq setSpawnLevel (lambda (value)
+				(setData "gSpawnLevel" value)
+			))
+			
+			(setq getSpawnMaster (lambda Nil
+				(item (lstFromID (getData "gSpawnMaster" '(lstToID (sysFindObject gPlayerShip "t D:spawnmaster")))) 0)
+			))
+			
+			(setq getSpawnInterval (lambda Nil
+				(multiply (getData "gSpawnInterval" '(getConfigData "SpawnInterval")) 30)
+			))
+
+			(setq getTradeStation (lambda Nil
+				(item (lstFromID (getData "gTradeStation" '(lstToID (sysFindObject gPlayerShip "t B:tradestation")))) 0)
+			))
+
+			(setq getMarkerToggleInterval (lambda Nil
+				(multiply (getData "gMarkerToggleInterval" '(getConfigData "MarkerToggleInterval")) 30)
+			))
+			
+			(setq getGateToggleTime (lambda Nil
+				(getData "gGateToggleTime" 0)
+			))
+			
+			(setq setGateToggleTime (lambda (value)
+				(setData "gGateToggleTime" value)
+			))
+			
+			(setq getGateState (lambda Nil
+				(getData "gGateState" 0)
+			))
+			
+			(setq setGateState (lambda (value)
+				(setData "gGateState" value)	
+			))
+			
+			(setq getActiveSpawnList (lambda Nil
+				(lstFromID (getData "gActiveSpawnList" '(list)))
+			))
+
+			(setq setActiveSpawnList (lambda (value)
+				(setData "gActiveSpawnList" (lstToID value))
+			))
+
+			(setq getSpawnPoints (lambda Nil
+				(lstFromID (getData "gSpawnPoints" '(lstToID (sysFindObject gPlayerShip "t D:spawnpoint"))))
+			))
+			
+			(setq getSystemGates (lambda Nil
+				(lstFromID (getData "gSystemGates" '(lstToID (sysFindObject gPlayerShip "t D:Gate;"))))
+			))
+			
+			(setq getSystemGateKeepers (lambda Nil
+				(lstFromID (getData "gSystemGateKeepers" '(lstToID (sysFindObject gPlayerShip "t D:GateKeeper;"))))
+			))
+			
+			(setq getShipList (lambda Nil
+				(getData "gShipList" '(getConfigData "ShipList"))
+			))
+			
+			(setq getSortedShipList (lambda Nil
+				(getData "gSortedShipList" '(buildShipList))
+			))
+			
+			(setq setSortedShipList (lambda (value)
+				(setData "gSortedShipList" value)
+			))
+			
+			(setq getStarGateOut (lambda Nil
+				(sysGetObjectByName gPlayerShip "EndGame")
+			))
+			
+			(setq getMaxLevel (lambda Nil
+				(getData "gMaxLevel")
+			))
+			
+			(setq setMaxLevel (lambda (value)
+				(setData "gMaxLevel" value)
+			))
+			
+			(setq getEnemyShips (lambda Nil
+				(sysFindObject gPlayerShip "sE")
+			))
+			
+			(setq getShipData (lambda Nil
+				(getData "gShipData" '(list))
+			))
+			
+			(setq setShipData (lambda (value)
+				(setData "gShipData" value)
+			))
+			
+			(setq getPlayerWingmen (lambda Nil
+				(lstFromID (getData "gPlayerWingmen" '(lstToID (sysFindObject gPlayerShip "s D:playerwingman;"))))
+			))
+			
+			(setq setPlayerWingmen (lambda (value)
+				(setData "gPlayerWingmen" (lstToID value))
+			))
+			
+			(setq getWingmenLevel (lambda Nil
+				(getData "gWingmenLevel" 0)
+			))
+			
+			(setq setWingmenLevel (lambda (value)
+				(setData "gWingmenLevel" value)
+			))
+			
+			(setq getWingmanSpawnList (lambda Nil
+				(getData "gWingmanSpawnList" '(list))
+			))
+			
+			(setq setWingmanSpawnList (lambda (value)
+				(setData "gWingmanSpawnList" value)
+			))
+			
+			(setq getWingmanMultiplier (lambda Nil
+				(getData "gWingmanMultiplier" '(getConfigData "WingmanMultiplier"))
+			))
+
+			(setq getWingmanSpawnPoint (lambda Nil
+				(sysGetObjectByName gPlayerShip "wingmanSpawnPoint")
+			))
+			
+;<!--  ################################################################### -->
+;				<!--       HELPER FUNCTIONS       -->
+;<!--  ################################################################### -->
+
+			;; build a ship list sorted by level
+			;; actually, build a hash, by ship UNID, with
+			;; miscellaneous information
+			(setq buildShipList (lambda Nil
+				(block (tmpLvl tmpInfo loc maxLvl stragglers)
+					(setq tmpLvl (list))
+					(setq tmpInfo (list))
+					;; save the location to test on
+					(setq loc (sysVectorPolarOffset (getStarGateOut) 0 10))
+					;; start the loop
+					;; shut up the weird messages from ships
+					(plyRedirectMessage gPlayer True)
+					(enum (getShipList) ent
+						(block (shp lvl lst pos)
+							(setq shp (sysCreateShip ent loc &svIndependent;))
+							(setq lvl (objGetLevel shp))
+							;; build the ship info
+							(lnkAppend tmpInfo ent)
+							(lnkAppend tmpInfo (list
+								'combat     (objGetCombatPower shp)
+								'maxSpeed   (shpGetMaxSpeed shp)
+								'maxShield  (shpGetShieldMaxHitPoints shp)
+								'damageType (objGetDamageType shp)
+								'level      (objGetLevel shp)
+								'mass       (objGetMass shp)
+								'maxPower   (objGetMaxPower shp)
+								'name       (objGetName shp 1)
+								'score      (shpGetDataField shp "score")
+							))
+							;; destroy the ship
+							(objDestroy shp)
+							;; get the position of the list at this level
+							(setq pos (find tmpLvl lvl))
+							(if (eq pos Nil)
+								(block Nil
+									;; if its nil, we make a new list, 
+									;; and append it to the end
+									(setq lst (list ent))
+									(lnkAppend tmpLvl lvl)
+									(lnkAppend tmpLvl lst)
+								)
+								(block Nil
+									;; else we get the current list for this level
+									;; and append the entity onto it. Then
+									;; we replace the list
+									(setq lst (item tmpLvl (add pos 1)))
+									(lnkAppend lst ent)
+									(lnkReplace tmpLvl (add pos 1) lst)
+								)
+							)
+						)
+					)
+					;; we don't want the list with keys, just the ships lists,
+					;; as we can avoid any holes in the list that way. We prepend
+					;; and empty list, so we can count the list from 1
+					(setq tmpLvl (append '('()) (hshToList tmpLvl)))
+					;; some of the ships that we spawn, spawn other ships.
+					;; these get left behind, so run a system scan, and 
+					;; destroy all that is not playership
+					(enum (sysFindObject gPlayerShip "sF") shp
+						(if (not (eq shp gPlayerShip)) (objDestroy shp))
+					)
+					;; set maxLvl globally
+					(setMaxLevel (subtract (count tmpLvl) 1))
+					;; clear messages and turn them back on
+					(plyGetRedirectMessage gPlayer)
+					(plyRedirectMessage gPlayer Nil)
+					;; set the ship data
+					(setShipData tmpInfo)
+					;; return the level list
+					tmpLvl
+				)
+			))
+			
+			;; transform a list of spaceobjects to a list of unique ID's
+			(setq lstToID (lambda (lst)
+				(block (tmp)
+					(setq tmp (list))
+					(enum lst el (lnkAppend tmp (objGetID el)))
+					tmp
+				)
+			))
+			
+			;; transform a list of id's back to space o's
+			(setq lstFromID (lambda (lst)
+				(block (tmp)
+					(setq tmp (list))
+					(enum lst el (lnkAppend tmp (objGetObjByID el)))
+					tmp
+				)
+			))
+
+			;; like getData this function makes sure that we 
+			;; are in sync with the data we have in globals for
+			;; easy access, and the data set on the ship for storage
+			(setq setData (lambda (key value)
+				(block Nil
+					(objSetData gPlayerShip key value)
+					(set key value)
+				)
+			))
+			
+			;; this function returns data, either grabbed from a global 
+			;; from playership or from a default value provided. If none
+			;; of the above exists, we return Nil.
+			;; when setting a global key, store it in a list, so we can
+			;; mass reset them later
+			;; pretty nifty for persisting values
+			(setq getData (lambda (key default)
+				(block Nil
+					;; if evalling the key throws an error, or returns Nil
+					(if (or (isError (eval key)) (not (eval key)))
+						(block (data)
+							;; look if the data exists on the ship
+							(setq data (objGetData gPlayerShip key))
+							(if data
+								;; it did, set the key
+								(set key data)
+								;; it didn't, check if we have a default
+								(if default
+									(block Nil
+										;; set the key, and update data on ship
+										(set key (eval default))
+										(objSetData gPlayerShip key (eval key))
+									)
+									;; we didn't have a default, return Nil
+									(set key Nil)
+								)
+							)
+							;; add the key to a list of global vars (if the key isn't
+							;; the list itself and it's not already there
+							(if (and 
+									(not (eq key "gGlobalVariables")) 
+									(not (find (getData "gGlobalVariables" '(list)) key)))  
+								(block Nil
+									(setData "gGlobalVariables"
+										(lnkAppend (getData "gGlobalVariables" '(list)) key)
+									)
+								)
+							)
+						)
+					)
+					(eval key)
+				)
+			))
+			
+			(setq resetData (lambda Nil
+				(block Nil
+					(enum (getData "gGlobalVariables" '(list)) var
+						(set var Nil)
+					)
+					(setData "gGlobalVariables" Nil)
+				)
+			))
+			
+			(setq getConfigData (lambda (key)
+				(itmGetStaticData (itmCreate &itBattleZoneConfig; 1) key)
+			))
+			
+			
+			;; return an enhancement code appropriate
+			;; for this type of item
+			(setq randomlyEnhance (lambda (itm)
+				(block (type e)
+					(setq type (itmGetCategory itm))
+					;; randomly select an enhancement, based on item type
+					;; negative enhancements have been weeded out 
+					(setq e (random (switch
+						(eq type 0x0002) ;; armor
+							'(	0x0200 0x0B00 0x0B10 0x0B20 0x0B30 0x0B40 0x0C00
+								0x0D00 0x0E00 0x0100 0x0600 0x0700 0x0800 0x0900
+							)
+						(eq type 0x0080) ;; shields
+							'(0x0300 0x0600 0x0700 0x0800 0x0900 0x0F00)
+						(or (eq type 0x0004) (eq type 0x0010)) ;; weapons
+							'(0x0100 0x1000 0x0F00)
+					)))
+					;; enhancements where 0 to 15 can be added to increase effect
+					;; eg. power variable enhancements
+					(if (find '(0x0100 0x8100 0x1000 0x9000 0x0600 0x0700 0x8600 0x8700 0x0F00 0x8F00) e)
+						(block (num)
+							;; select a number between 0-15 with decreasing probability of 15
+							(setq num (probability 15 75 1))
+							(setq e (add e num))
+						)
+					)
+					;; enhancements where 0 to 255 can be added to alter damage type and increase effect
+					;; eg. power and type variable enhancements
+					;; goes in steps from 0-15 16-31 etc...
+					(if (find '(0x0300 0x8300 0x0800 0x0900 0x0A00 0x8800 0x8900 0x8A00) e)
+						(block (num1 num2)
+							(setq num1 (probability 15 75 1))
+							(setq num2 (multiply (probability 15 75)  16))
+							(setq e (add e num1 num2))
+						)
+					)
+					e
+				)
+			))
+			
+			; THX Oddbob
+			; select a number between start or 0 and target,
+			; with a decreasing probability of selecting the 
+			; target number. Curve determines the spread.
+			(setq probability (lambda (target curve start)
+				(block (run result)
+					(setq run True)
+					(if (not start)	(setq start 0))
+					(setq result start)
+					(loop (and run (ls result target))
+						(if (leq (random 0 100) curve)
+							(setq result (add result 1))
+							(setq run Nil)
+						)
+					)
+					result
+				)
+			))
+			
+;<!--  ################################################################### -->
+;				<!--       DOCK SCREENS       -->
+;<!--  ################################################################### -->
+
+
+			(setq scrZoneInfo (lambda (screen)
+				(switch
+					(list
+						'screenName		"Zone Info"
+						'screenType		"CustomPicker"
+						'hideBack		True
+						'customPicker	(list
+							(list
+								'title		"A warm Welcome."
+								'subtitle	"Ok. Next!"
+								'paneDesc	(cat
+									"Ho, Traveller. Here you will find information on how to play BattleZone."  
+								)
+							)
+							(list
+								'title		"General Info"
+								'subtitle	"The quick and dirty introduction to Battle Zone."
+								'paneDesc	(cat
+									"Shoot \"Green Markers\" to open \"Gates\". \"Spawn Countdown\" will start. Markers will \"Toggle\" to Red. "
+									"Shoot \"Red Markers\" to close gates. No Spawn Countdown will start when gates are closed. "
+									"Shoot \"Blue Marker\" to \"Clear Spawn\" and close Gates. When all of the Spawn are destroyed, a new "
+									"Spawn Countdown will start. Lather, rinse, repeat..."
+								)
+							)
+							(list
+								'title		"The Service Station"
+								'subtitle	"All you want to know about the Service Station."
+								'hideList	True
+								'paneDesc	(cat
+								)
+							)
+							(list
+								'title		"The Trader Station"
+								'subtitle	"All you want to know about the Trader Station."
+								'hideList	True
+								'paneDesc	(cat
+								)
+							)
+							(list
+								'title		"The Barrier"
+								'subtitle	"All you want to know about the Barrier."
+								'hideList	True
+								'paneDesc	(cat
+								)
+							)
+							(list
+								'title		"The Spawn"
+								'subtitle	"All you want to know about the spawn."
+								'hideList	True
+								'paneDesc	(cat
+								)
+							)
+							(list
+								'title		"I'm a wreck"
+								'subtitle	"I know how you feel..."
+								'hideList	True
+								'paneDesc	(cat
+								)
+							)
+							(list
+								'title		"Wingmen"
+								'subtitle	"Nops, not yet buddy."
+								'hideList	True
+								'paneDesc	(cat
+								)
+							)
+							(list
+								'title		"Customizing"
+								'subtitle	"Make it your own."
+								'hideList	True
+								'paneDesc	(cat
+								)
+							)
+							(list
+								'title		"Marker my words!"
+								'subtitle	"The intricacies of markers"
+								'hideList	True
+								'paneDesc	(cat
+									"You must be close to Toggle a Marker. A Marker will require time before it can be Toggled again. "
+								)
+							)
+						)
+					)
+				)
+			))
+		
+			(setq scrZoneService (lambda (screen)
+				(switch
+					(eq screen "Wingmen")
+						(list
+							'screenName		"Hire Wingmen"
+							'screenType		"CustomPicker"
+							'actions		(list
+								(list
+									'name			'("Hire" 'H)
+									'runFunc		'(block (lst)
+										;; add the wingman to the spawn list
+										(setq lst (getWingmanSpawnList))
+										(lnkAppend lst (dsf_GetListEntryData 'unid))
+										(setWingmanSpawnList lst)
+										;; increment the wingmen level
+										(setWingmenLevel (add (getWingmenLevel) (dsf_GetListEntryData 'level)))
+										;; start the activation timer
+										(sysAddObjRecurringTimerEvent 60 (getWingmanSpawnPoint) "ActivateWingmen")
+										;; charge the player
+										(plyCharge gPlayer (dsf_GetListEntryData 'price))
+										;; inform the player of his new purchase
+										(dsf_BuildPaneDesc '("On arrival at the Wingman Spawn Point, your new wingman will activate.\n\n" '+))
+										;; re-display this screen 
+										(scrZoneService "Wingmen")
+									)
+									'disableFunc	'(block (return)
+										(setq return Nil)
+										;; if we cant afford it or would exeed our current
+										;; max in wingman level, then hide
+										(if (gr 
+												(add (dsf_GetListEntryData 'level) (getWingmenLevel))
+												(multiply (getSpawnLevel) (getWingmanMultiplier))
+											) (block Nil
+												(dsf_BuildPaneDesc '("This wingman would exceed your control limit.\n\n" '-))
+												(setq return True)
+											)
+										)
+										(if (gr (dsf_GetListEntryData 'price) (plyGetCredits gPlayer))
+											(block Nil
+												(dsf_BuildPaneDesc '("You cannot afford this wingman.\n\n" '-))
+												(setq return True)
+											)
+										)
+										(dsf_SetPaneDesc '("Choose the wingman you want to hire" '+))
+										return
+									)
+								)
+							)
+							'customPicker	(block (customList)
+								(setq customList (list))
+								;; build a list of all ships up to the
+								;; players current level
+								(for i 1 (getSpawnLevel)
+									(block (ships)
+										(setq ships (getShipLevelList i))
+										(enum ships shp (block (price data)
+											(setq data (hshGet (getShipData) shp))
+											(setq price (multiply (hshGet data "score") (hshGet data "combat") 100))
+											(lnkAppend customList (list
+												'title 		(shpGetClassName shp 1)
+												'subtitle	(cat "Level: " (hshGet data "level") " Price: " price)
+												'price		price
+												'level		(hshGet data "level")
+												'unid		shp
+											))
+										))
+									)
+								)
+							)
+						)
+					(eq screen "CustomizeList")
+						(list
+							'screenName		"Customize BattleZone"
+							'paneDesc		"Choose the variable you want to modify."
+							'screenType		"CustomPicker"
+							'actions		(list
+								(list
+									'name		'("Modify" 'M)
+									'runFunc	'(block Nil
+										(dsf_SetScreenState 'key (dsf_GetListEntryData 'key))
+										(dsf_SetScreenState 'max (dsf_GetListEntryData 'max))
+										(dsf_SetScreenState 'min (dsf_GetListEntryData 'min))
+										(dsf_SetScreenState 'current (dsf_GetListEntryData 'current))
+										(dsf_SetScreenState 'name (dsf_GetListEntryData 'name))
+										(dsf_BuildPaneDesc (dsf_GetListEntryData 'desc))
+										(scrZoneService "CustomizeData")
+									)
+								)
+							)
+							'customPicker	(list
+								(list
+									'title		(cat "Inflation: " (getInflation))
+									'subtitle	"Controls the credit reward received for every kill. The actual calculation is the score of the ship times this variable."
+									'desc		"Inflation controls the credit reward received for every kill."
+									'key		"gInflation"
+									'name		"Inflation"
+									'current	(getInflation)
+									'min		1
+									'max		100
+								)
+								(list
+									'title		(cat "LevelCurve: " (getLevelCurveBase))
+									'subtitle	"Controls the amount of points needed to get to next level. Every kill increments the KillScore by the destroyed ships score. When your KillScore is above the actual LevelCurve, you move up. The actual LevelCurve is this number times the level times your ships combat power."
+									'desc		"LevelCurve controls the amount of points needed to get to next level."
+									'key		"gLevelCurveBase"
+									'name		"LevelCurveBase"
+									'current	(getLevelCurveBase)
+									'min		10
+									'max		10000
+								)
+								(list
+									'title		(cat "SpawnMultiplier: " (getSpawnMultiplier))
+									'subtitle	"A multiplier that will be applied to the amount of ships that will be spawned against you."
+									'desc		"SpawnMultiplier controls the amount of ships spawned against you."
+									'key		"gSpawnMultiplier"
+									'name		"SpawnMultiplier"
+									'current	(getSpawnMultiplier)
+									'min		1
+									'max		20
+								)
+								(list
+									'title		(cat "SpawnLevel: " (getSpawnLevel))
+									'subtitle	"Determines the maximum level of the ships that can be spawned against you. A level will be chosen as a random number between 1 and this value."
+									'desc		"SpawnLevel determines the maximum level of the ships that can be spawned against you."
+									'key		"gSpawnLevel"
+									'name		"SpawnLevel"
+									'current	(getSpawnLevel)
+									'min		1
+									'max		(getMaxLevel)
+								)
+								(list
+									'title		(cat "SpawnInterval: " (divide (getSpawnInterval) 30))
+									'subtitle	"Sets the interval in seconds that passes between you clear the zone, till a new spawn is generated."
+									'desc		"SpawnInterval sets the interval in seconds that passes between you clear the zone, till a new spawn is generated."
+									'key		"gSpawnInterval"
+									'name		"SpawnInterval"
+									'current	(divide (getSpawnInterval) 30)
+									'min		1
+									'max		120
+								)
+								(list
+									'title		(cat "MarkerToggleInterval: " (divide (getMarkerToggleInterval) 30))
+									'subtitle	"Sets the interval in seconds that must pass before you can toggle a marker again."
+									'desc		"MarkerToggleInterval sets the interval in seconds that must pass before you can toggle a marker again."
+									'key		"gMarkerToggleInterval"
+									'name		"MarkerToggleInterval"
+									'current	(divide (getMarkerToggleInterval) 30)
+									'min		1
+									'max		10
+								)
+								(list
+									'hideList	True
+									'title		(cat "WingmanMultiplier: " (getWingmanMultiplier))
+									'subtitle	"Controls how many wingmen you can have, compared to your current level. If you are at lvl 5 and this modifier is 2 you can have up to 10 points of wingmen. Eg. one lvl 3 wingman and one lvl 7."
+									'desc		"WingmanMultiplier controls how many wingmen you can have, compared to your current level."
+									'key		"gWingmanMultiplier"
+									'name		"WingmanMultiplier"
+									'current	(getWingmanMultiplier)
+									'min		1
+									'max		20
+								)
+								(list
+									'title		(cat "LeaveWrecks: " (getLeaveWrecks))
+									'subtitle	"Controls whether ships leave wrecks at all. 0 is Nil, 1 is True."
+									'desc		"LeaveWrecks controls whether ships leave wrecks at all. 0 is Nil, 1 is True."
+									'key		"gLeaveWrecks"
+									'name		"LeaveWrecks"
+									'current	(getLeaveWrecks)
+									'min		0
+									'max		1
+								)
+								(list
+									'title		(cat "MixedLevels: " (getMixedLevels))
+									'subtitle	"Controls whether all ships spawned will be of different levels. 0 is Nil, 1 is True."
+									'desc		"MixedLevels controls whether all spawned ships will be of different levels. 0 is Nil, 1 is True."
+									'key		"gMixedLevels"
+									'name		"MixedLevels"
+									'current	(getMixedLevels)
+									'min		0
+									'max		1
+								)
+								(list
+									'title		(cat "MixedShips: " (getMixedShips))
+									'subtitle	"Controls whether all ships spawned will be of different classes. 0 is Nil, 1 is True."
+									'desc		"MixedShips controls whether all spawned ships will be of different classes. 0 is Nil, 1 is True."
+									'key		"gMixedShips"
+									'name		"MixedShips"
+									'current	(getMixedShips)
+									'min		0
+									'max		1
+								)
+								(list
+									'title		(cat "MarginMultiplier: " (getMarginMultiplier))
+									'subtitle	"A multiplier that will be applied to all trade goods. The higher the number the more expensive items will be, and the less the station will pay for items. Default value is 2"
+									'desc		"MarginMultiplier controls the price of items in Battle Zone."
+									'key		"gMarginMultiplier"
+									'name		"MarginMultiplier"
+									'current	(getMarginMultiplier)
+									'min		1
+									'max		10
+								)
+								(list
+									'title		(cat "MixedSpawnPoint: " (getMixedSpawnPoint))
+									'subtitle	"Controls whether ships will be spawned at different Spawn Points. 0 is Nil, 1 is True."
+									'desc		"MixedShips controls whether ships will be spawned at different Spawn Points. 0 is Nil, 1 is True."
+									'key		"gMixedSpawnPoint"
+									'name		"MixedSpawnPoint"
+									'current	(getMixedSpawnPoint)
+									'min		0
+									'max		1
+								)
+								(list
+									'title		(cat "UseItemBlackList: " (getUseItemBlackList))
+									'subtitle	"Controls whether some items will be blacklisted from being generated. It can result i fewer items, but no items will have negative results. 0 is Nil, 1 is True"
+									'desc		"MixedShips controls whether some items will be blacklisted from being generated. 0 is Nil, 1 is True"
+									'key		"gUseItemBlackList"
+									'name		"UseItemBlackList"
+									'current	(getUseItemBlackList)
+									'min		0
+									'max		1
+								)
+								(list
+									'title		(cat "KnownItems: " (getKnownItems))
+									'subtitle	"Controls whether items will be set to a known state by default. 0 is Nil, 1 is True."
+									'desc		"KnownItems controls whether items will be set to a known state by default. 0 is Nil, 1 is True."
+									'key		"gKnownItems"
+									'name		"KnownItems"
+									'current	(getKnownItems)
+									'min		0
+									'max		1
+								)
+							)
+						)
+					(eq screen "CustomizeData")
+						(list
+							'screenName		"Customize BattleZone"
+							'paneDesc		(cat "\n\nMin: " (dsf_GetScreenState 'min) ", Max: " (dsf_GetScreenState 'max))
+							'paneType		"Counter"
+							'initFunc		'(scrSetCounter gScreen (dsf_GetScreenState 'current))
+							'noSave			True
+							'actions 		(list
+								(list
+									'name		'("Save" 'S)
+									'runFunc	'(block (key val high low curr )
+										(setq key (dsf_RemoveScreenState 'key))
+										(setq low (dsf_RemoveScreenState 'min))
+										(setq high (dsf_RemoveScreenState 'max))
+										(setq curr (dsf_RemoveScreenState 'current))
+										(setq val (scrGetCounter gScreen))
+										(if (and (leq val high) (geq val low))
+											(block Nil
+												(setData key val)
+												(dsf_BuildPaneDesc "Updated " (dsf_RemoveScreenState 'name) ".\n\n")
+												(scrZoneService "CustomizeList")
+											)
+										)
+									)
+								)
+							)
+						)
+					(eq screen "ConfirmQuit")
+						(list
+							'screenName		"Confirm Quit"
+							'paneDesc		(random '(
+								"You're trying to say you like DOS better than me, right?"
+								"If I were your boss, I'd deathmatch ya in a second!"
+								"Go ahead and leave. See if I care."
+								"Just leave. When you come back, I'll be waiting with a bat!"
+								;"You quit, and i'll jizz"
+								"Studs, press N. Wimps, press Y."
+								"Please don't go, the drones need you, they look up to you"
+								;"just... one... more... turn..."
+								;"COWARDS DIE IN SHAME"
+								
+							))
+							'screenType		"&dsZoneService;"
+							'hideBack		True
+							'noSave			True
+							'actions	(list
+								(list
+									'name		'("Yes" 'Y)
+									'runFunc	'(block Nil
+										(setq aEndGameReason "coward")	
+										(objGateTo gPlayerShip "EndGame" "EndGame" &efStargateOut;)
+									)
+								)
+								(list
+									'name		'("No, I made a mistake" 'N)
+									'runFunc	'(scrZoneService)
+								)
+							)
+						)
+					(eq screen "ClearWrecks")
+						(list
+							'screenName		"Confirm Clear Wrecks"
+							'paneDesc		"Are you sure you want to clear all wrecks in the system? Think of all the loot!"
+							'screenType		"&dsZoneService;"
+							'hideBack		True
+							'noSave			True
+							'actions	(list
+								(list
+									'name		'("Yes" 'Y)
+									'runFunc	'(block Nil
+										(enum (sysFindObject gPlayerShip "t D:wreck;") wreck
+											(objDestroy wreck)
+										)
+										(dsf_BuildPaneDesc "Wrecks Cleared.\n\n")
+										(scrZoneService)
+									)
+								)
+								(list
+									'name		'("No" 'N)
+									'runFunc	'(scrZoneService)
+								)
+							)
+						)
+						
+					(eq screen "ChooseArena")
+						(list
+							'screenName		"Choose Arena"
+							'paneDesc		"Select which type of arena you want to play in."
+							'screenType		"CustomPicker"
+							'actions		(list
+								(list
+									'name		'("Change Arena" 'C)
+									'runFunc	'(block (type)
+										(setq type (dsf_GetListEntryData 'arenaType))
+										(setArenaType type)
+										(setupArena type)
+										(dsf_BuildPaneDesc (cat "Arena type changed to: " (dsf_GetListEntryData 'title) ".\n\n"))
+										(scrZoneService "ChooseArena")
+									)
+								)
+							)
+							'customPicker	(list
+								(list
+									'title		"Random"
+									'subtitle	"The Random arena distributes the spawn points randomly around the players fort."
+									'arenaType	'random
+								)
+								(list
+									'title		"Fan"
+									'subtitle	"The Fan Arena has the spawn points located in a 150 degree arc \"north\" of the players fort."
+									'arenaType	'fan
+								)
+								(list
+									'title		"Single"
+									'subtitle	"The Single Arena has only one spawn point, located at a random position."
+									'arenaType	'single
+								)
+							)
+						)
+						
+					;; default
+					(list
+						'screenName		"Zone Service"
+						'paneDesc		"Modify base zone variables, hire wingmen, clear system of wrecks."
+						'screenType		"CustomPicker"
+						'actions		(list
+							(list
+								'name		'("Select" 'S)
+								'runFunc	'(block Nil
+									(scrZoneService (dsf_GetListEntryData 'dataset))
+								)
+							)
+						)
+						'customPicker	(list
+							(list
+								'title		"Customize BattleZone"
+								'subtitle	"Customize your version of BattleZone."
+								'dataset	"CustomizeList"
+							)
+							(list
+								'title		"Choose Arena"
+								'subtitle	"Change the BattleZone layout between a few different arena types."
+								'dataset	"ChooseArena"
+							)
+							(list
+								'title		"Clear Wrecks"
+								'subtitle	"Remove all wrecks in the zone."
+								'dataset	"ClearWrecks"
+								'actions	(list
+									(list
+										'name		'("Clear" 'C)
+									)
+								)
+							)
+							(list
+								'hideList	True
+								'title		"Wingmen"
+								'subtitle	"Browse our selection of available wingmen"
+								'dataset	"Wingmen"
+							)
+							(list
+								'title		"End Game"
+								'subtitle	"Take the easy way out."
+								'dataset	"ConfirmQuit"
+							)
+						)
+					)
+				)
+			))
+
+			
+;			One for buying/selling/ordering items. One for recruiting wingmen.
+;			One for repairing, refueling, installing, uninstalling 
+			(setq scrZoneTrader (lambda (screen)
+				(switch
+					(eq screen "DockServices")
+						(list
+							'screenName		"Dock Services"
+							'paneDesc		"You wont find as complete a selection of services rendered anywhere else in this zone."
+							'screenType		"&dsZoneTrader;"
+							'actions		(list
+								(list
+									'name		'("Install Device" 'I)
+									'nextScreen	"&dsInstallDevice;"
+									'noSave		True
+									'runFunc	'(block (margin)
+										(setq margin (multiply 100 (getMarginMultiplier)))
+										(setq gPrevScreen (dsf_ScreenTypeToUNID 'Standard))
+										(setq dsf_ReturnData (scrZoneTrader "DockServices"))
+										(setq gTechLevel 15)
+										(setq gTechModifier Nil)
+										(setq gCheckMilitaryID Nil)
+										(setq gMargin margin)
+										True
+									)
+								)
+								(list
+									'name		'("Remove Device" 'R)
+									'nextScreen "&dsRemoveDevice;"
+									'noSave		True
+									'runFunc	'(block (margin)
+										(setq margin (multiply 100 (getMarginMultiplier)))
+										(setq gPrevScreen (dsf_ScreenTypeToUNID 'Standard))
+										(setq dsf_ReturnData (scrZoneTrader "DockServices"))
+										(setq gMargin margin) 
+										True
+									)
+								)
+								(list
+									'name		'("Armor Repair/Replace" 'A)
+									'nextScreen "&dsRepairArmor;"
+									'noSave		True
+									'runFunc	'(block (margin)
+										(setq margin (multiply 100 (getMarginMultiplier)))
+										(setq gPrevScreen (dsf_ScreenTypeToUNID 'Standard))
+										(setq dsf_ReturnData (scrZoneTrader "DockServices"))
+										(setq gTechLevel 15)
+										(setq gArmorSegment 0)
+										(setq gMargin margin)
+										True
+									)
+								)
+								(list
+									'name		'("Repair Item" 'I)
+									'nextScreen "&dsRepairItem;"
+									'noSave		True
+									'hideFunc	True
+									'runFunc	'(block (margin)
+										(setq margin (multiply 100 (getMarginMultiplier)))
+										(setq gPrevScreen (dsf_ScreenTypeToUNID 'Standard))
+										(setq dsf_ReturnData (scrZoneTrader "DockServices"))
+										(setq gShowCriteria "*D")
+										(setq gMargin margin)
+										True
+									)
+								)
+							)
+						)
+					(eq screen "Commodities")
+						(list
+							'screenName		"Commodities"
+							'paneDesc		"Yeah, sure we're expensive. But where else will you go?"
+							'screenType		"&dsZoneTrader;"
+							'hideBack		True
+							'actions		(list
+								(list
+									'name		'("Buy" 'B)
+									'nextScreen	"&dsExchangeBuy;"
+									'noSave		True
+									'runFunc	'(block (margin)
+;REMOVE?										(setq margin (multiply 100 (getMarginMultiplier)))
+										(setq gPrevScreen (dsf_ScreenTypeToUNID 'Standard))
+										(setq dsf_ReturnData (scrZoneTrader "Commodities"))
+										(setq gMargin traderBuyMargin)
+										(setq gShowCriteria "*")
+										(setq gInstallCriteria "*")
+										(setq gTechLevel Nil)
+										(setq gTechModifier Nil)
+										(setq gCheckMilitaryID Nil)
+										(setq gInstallMargin margin)
+										True
+									)
+								)
+								(list
+									'name		'("Sell" 'S)
+									'nextScreen	"&dsExchangeSell;"
+									'noSave		True
+									'runFunc	'(block Nil
+										(setq gPrevScreen (dsf_ScreenTypeToUNID 'Standard))
+										(setq dsf_ReturnData (scrZoneTrader "Commodities"))
+										(setq gMargin (divide 99 (getMarginMultiplier)))
+										(setq gTitle Nil)
+										(setq gMaxPrice 100000)
+										(setq gBuyCriteria "*U")
+										True
+									)
+								)
+								(list
+									'name		'("Order" 'O)
+									'hideFunc	True
+									'runFunc	'(block Nil
+									)
+								)
+								(list
+									'name		'("Done" 'D)
+									'runFunc	'(dsf_BackAction)
+								)
+							)
+						)
+					;; default
+					(list
+						'screenName		"Zone Trader"
+						'paneDesc		"Trading."
+						'screenType		"&dsZoneTrader;"
+						'hideBack		True
+						'actions		(list
+							(list
+								'name		'("Commodities" 'C)
+								'runFunc	'(scrZoneTrader "Commodities")
+							)
+							(list
+								'name		'("Dock Services" 'D)
+								'runFunc	'(scrZoneTrader "DockServices")
+							)
+							;(list
+							;	'name		'("Test" 'T)
+							;	'runFunc	'(block Nil
+							;		(dsf_SetScreenState 'screenName "Some Name")
+							;		(dsf_SetScreenState 'itemFilter "w")
+							;		(dsf_SetScreenState 'margin 100)
+							;		(dsf_SetScreenState 'installCriteria "*")
+							;		(dsf_SetScreenState 'installMargin 100)
+							;		(dsf_ExchangeBuy)
+							;	)
+							;)
+							(list
+								'name		'("Refuel" 'R)
+								'nextScreen	"&dsRefuel;"
+								'runFunc	'(block Nil
+									(setq gPrevScreen (dsf_ScreenTypeToUNID 'Standard))
+									(setq dsf_ReturnData (scrZoneTrader))
+									(intSetCompatibleFuel '(
+										(&itHeliotropeFuel; 460)
+										(&itXenotiteFuelRod; 320)
+										(&itPteracniumFuelRod; 150)
+										(&itHeliumAssembly; 150) 
+										(&itHelium3FuelRod; 50)
+									))
+									True
+								)
+							)
+							(list
+								'name		'("Decontaminate" 'T)
+								'hideFunc	'(not (shpIsRadioactive gPlayerShip))
+								'runFunc	'(block Nil
+									(if (gr 1000 (plyGetCredits gPlayer))
+										(dsf_BuildPaneDesc "You cannot afford decontamination services.\n\n")
+										(block Nil
+											(plyCharge gPlayer 1000)
+											(shpDecontaminate gPlayerShip)
+											(dsf_BuildPaneDesc "Ship Decontaminated. 1000 Credits withdrawn from your account.\n\n")
+										)
+									)
+									(scrZoneTrader)
+								)
+							)
+						)
+					)
+				)
+			))
+			
+		)
+		<!-- TRAP END -->
+	</Globals>
+		
+<!--  ################################################################### -->
+				<!--       ITEM TABLES       -->
+<!--  ################################################################### -->
+	
+	<ItemTable UNID="&trItemLow;">
+		<Group>
+			<!-- Weapons -->
+			<RandomItem 
+				count="8d4" 
+				criteria="w" 
+				levelFrequency="cccc-" 
+				enhanced="50" 
+				enhancement="=(randomlyEnhance gItem)" 
+			/>
+			<!-- Reactors/Drives -->
+			<Table>
+				<Group chance="50">
+					<RandomItem 
+						count="5d2" 
+						criteria="r" 
+						levelFrequency="cccc-" 
+					/>
+					<RandomItem 
+						count="2d2" 
+						criteria="v" 
+						levelFrequency="cccc-" 
+					/>
+				</Group>
+				<Group chance="50">
+					<RandomItem 
+						count="5d2" 
+						criteria="r" 
+						levelFrequency="cccc-" 
+					/>
+				</Group>
+			</Table>
+			<!-- Shields -->
+			<RandomItem 
+				count="4d6" 
+				criteria="s" 
+				levelFrequency="cccc-" 
+				enhanced="50" 
+				enhancement="=(randomlyEnhance gItem)" 
+			/>
+			<!-- Armor -->
+			<RandomItem 
+				count="5d5" 
+				criteria="a -Barricade;" 
+				levelFrequency="cccc-" 
+				enhanced="50" 
+				enhancement="=(randomlyEnhance gItem)" 
+			/>
+			<!-- Usables -->
+			<RandomItem 
+				count="5d5" 
+				criteria="u -ID; -MinersHold; -SmugglersHold; -Barricade;" 
+				levelFrequency="cccc-" 
+			/>
+			<!-- Ammo -->
+			<RandomItem 
+				count="8d4" 
+				criteria="m" 
+				levelFrequency="cccc-" 
+			/>
+			<!-- Fixed Items -->
+			
+			<!-- Fuel -->
+			<Table count="1d4	">
+				<Item chance="33" count="4d12"	item="&itHelium3FuelRod;" />
+				<Item chance="33" count="4d12"	item="&itHeliumAssembly;" />
+				<Item chance="34" count="4d12"	item="&itXenotiteFuelRod;" />
+			</Table>
+		</Group>
+	</ItemTable>
+	
+	<ItemTable UNID="&trItemMid;">
+		<Group>
+			<RandomItem count="10d2" criteria="w -Specialty; -NotForSale;" levelFrequency="---cc cc-" enhanced="50" enhancement="=(randomlyEnhance gItem)" />
+			<RandomItem count="12d2" criteria="d~w -Specialty; -NotForSale;" levelFrequency="---cc cc-" enhanced="50" enhancement="=(randomlyEnhance gItem)" />
+			<RandomItem count="12d2" criteria="a -Specialty; -NotForSale;" levelFrequency="---cc cc-" enhanced="50" enhancement="=(randomlyEnhance gItem)" />
+			<RandomItem count="10d2" criteria="u -Specialty; -NotForSale;" levelFrequency="---cc cc-" />
+			<RandomItem count="10d2" criteria="m -Specialty; -NotForSale;" levelFrequency="---cc cc-" />
+			<Item count="4d12"	item="&itHelium3FuelRod;" />
+			<Item count="4d12"	item="&itHeliumAssembly;" />
+			<Item count="4d12"	item="&itXenotiteFuelRod;" />
+			<Item count="4d12"	item="&itPteracniumFuelRod;" />
+		</Group>
+	</ItemTable>
+	
+	<ItemTable UNID="&trItemHigh;">
+		<Group>
+			<RandomItem count="10d2" criteria="w -Specialty; -NotForSale;" levelFrequency="----- -cccc-" enhanced="50" enhancement="=(randomlyEnhance gItem)" />
+			<RandomItem count="12d2" criteria="d~w -Specialty; -NotForSale;" levelFrequency="----- -cccc-" enhanced="50" enhancement="=(randomlyEnhance gItem)" />
+			<RandomItem count="12d2" criteria="a -Specialty; -NotForSale;" levelFrequency="----- -cccc-" enhanced="50" enhancement="=(randomlyEnhance gItem)" />
+			<RandomItem count="10d2" criteria="u -Specialty; -NotForSale;" levelFrequency="----- -cccc-" />
+			<RandomItem count="10d2" criteria="m -Specialty; -NotForSale;" levelFrequency="----- -cccc-" />
+			<Item count="4d12"	item="&itHelium3FuelRod;" />
+			<Item count="4d12"	item="&itHeliumAssembly;" />
+			<Item count="4d12"	item="&itXenotiteFuelRod;" />
+			<Item count="4d12"	item="&itPteracniumFuelRod;" />
+			<Item count="4d12"	item="&itHadronVacuumFuelCell;" />
+			<Item count="4d12"	item="&itHeliotropeFuel;" />
+		</Group>
+	</ItemTable>
+	
+	<ItemTable UNID="&trItemUltra;">
+		<Group>
+			<RandomItem count="10d2" criteria="w -Specialty; -NotForSale;" levelFrequency="----- ---ccc" enhanced="70" enhancement="=(randomlyEnhance gItem)" />
+			<RandomItem count="12d2" criteria="d~w -Specialty; -NotForSale;" levelFrequency="----- ---ccc" enhanced="70" enhancement="=(randomlyEnhance gItem)" />
+			<RandomItem count="12d2" criteria="a -Specialty; -NotForSale;" levelFrequency="----- ---ccc" enhanced="70" enhancement="=(randomlyEnhance gItem)" />
+			<RandomItem count="10d2" criteria="u -Specialty; -NotForSale;" levelFrequency="----- ---ccc" />
+			<RandomItem count="10d2" criteria="m -Specialty; -NotForSale;" levelFrequency="----- ---ccc" />
+			<Item count="4d12"	item="&itHelium3FuelRod;" />
+			<Item count="4d12"	item="&itHeliumAssembly;" />
+			<Item count="4d12"	item="&itXenotiteFuelRod;" />
+			<Item count="4d12"	item="&itPteracniumFuelRod;" />
+			<Item count="4d12"	item="&itHadronVacuumFuelCell;" />
+			<Item count="4d12"	item="&itHeliotropeFuel;" />
+		</Group>
+	</ItemTable>
+	
+<!--  ################################################################### -->
+				<!--       ADVENTURE OBJECTS       -->
+<!--  ################################################################### -->
+	
+	<!-- ZONE BARRIER -->
+	<StationType UNID="&stZoneBarrier;"
+		name=				"(zone barrier)"
+		sovereign=			"&svIndependent;"
+		barrier=			"true"
+		multiHull=			"true"
+		mass=				"5000"
+		noMapLabel=			"true"
+		noMapIcon=			"false"
+		attributes=			"barrier"
+		>
+		<ImageVariants>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="0"     imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="100"   imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="200"   imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="300"   imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="400"   imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="500"   imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="600"   imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="700"   imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="800"   imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="900"   imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="1000"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="1100"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="1200"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="1300"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="1400"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="1500"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="1600"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="1700"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="1800"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="1900"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="2000"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="2100"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="2200"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="2300"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="2400"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsZoneBarrier;" imageX="0" imageY="2500"  imageWidth="100" imageHeight="100"/>
+			<Image			imageID="&rsOnePix;"      imageX="0" imageY="0"     imageWidth="1"   imageHeight="1"/>
+		</ImageVariants>
+		<Events>
+			<OnCreate>
+				(runOnCreate)	
+			</OnCreate>
+		</Events>
+	</StationType>
+
+	<!-- ZONE BARRIER FILL -->
+	<!--
+		sovereign=			"&svIndependent;"
+		barrier=			"true"
+		multiHull=			"true"
+		mass=				"5000"
+		attributes=			"barrier"
+	-->
+	<StationType UNID="&stZoneBarrierFill;"
+		name=				"(zone barrier fill)"
+		noMapLabel=			"true"
+		noMapIcon=			"true"
+		backgroundObject=	"true"
+		>
+		<ImageVariants>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="0" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="100" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="200" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="300" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="400" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="500" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="600" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="700" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="800" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="900" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="1000" 	imageWidth="100" imageHeight="100"/>
+			<Image imageID="&rsZoneBarrierFill;" imageX="0" imageY="1100" 	imageWidth="100" imageHeight="100"/>
+		</ImageVariants>
+	</StationType>
+
+	<!-- ZONE MARKER -->
+	<StationType UNID="&stZoneMarker;"
+		name=			"ZoneMarker"
+		>
+		<ImageVariants>
+			<Image imageID="&rsZoneMarker;" imageX="0" imageY="0"  imageWidth="64" imageHeight="64"/>
+			<Image imageID="&rsZoneMarker;" imageX="0" imageY="64" imageWidth="64" imageHeight="64"/>
+			<Image imageID="&rsZoneMarker;" imageX="0" imageY="128"  imageWidth="64" imageHeight="64"/>
+		</ImageVariants>
+		<Events>
+			<OnCreate>
+				(runOnCreate)
+			</OnCreate>
+			<OnDamage>
+				(runOnDamage)
+			</OnDamage>
+		</Events>
+	</StationType>
+
+	<!-- TRADER STATION -->
+	<StationType UNID="&stZoneTrader;"
+		name=				"Zone Trader"
+		sovereign=			"&svIndependent;"
+		dockScreen=			"Main"
+		dockingPorts=		"8"
+		multiHull=			"true"
+		immutable=			"true"
+		noArticle=			"true"
+		attributes=			"tradestation"
+		noMapLabel=			"true"
+		>
+		<Image imageID="&rsZoneTrader;" imageX="0" imageY="0" imageWidth="290" imageHeight="290"/>
+		<Trade currency="credit" creditConversion="100" max="500000" replenish="50000">
+			<Sell criteria="*NU -ID; -NotForSale;" priceAdj="200"/>
+			<Buy criteria="*NU -ID; -NotForSale;" priceAdj="50" />
+		</Trade>
+		<DockScreens>
+			<Main>
+				<OnInit>(dsf_ShowDockScreen (scrZoneTrader))</OnInit>
+			</Main>
+		</DockScreens>
+		<DockingPorts>
+			<Port x="45"	y="140" />
+			<Port x="135"	y="70" />
+			<Port x="140"	y="-50" />
+			<Port x="50"	y="-140" />
+			<Port x="-50"	y="-140" />
+			<Port x="-140"	y="-60" />
+			<Port x="-140"	y="60" />
+			<Port x="-40"	y="140" />
+		</DockingPorts>
+	</StationType>
+
+	<!-- SERVICE STATION -->
+	<StationType UNID="&stZoneService;"
+		name=				"Zone Service"
+		sovereign=			"&svIndependent;"
+		dockScreen=			"Main"
+		dockingPorts=		"4"
+		multiHull=			"true"
+		immutable=			"true"
+		noArticle=			"true"
+		attributes=			"bzservice"
+		noMapLabel=			"true"
+		>
+		<Image imageID="&rsZoneService;" imageX="0" imageY="0" imageWidth="256" imageHeight="256"/>
+		<DockScreens>
+			<Main>
+				<OnInit>(dsf_ShowDockScreen (scrZoneService))</OnInit>
+			</Main>
+		</DockScreens>
+		<DockingPorts>
+			<Port x="90"	y="80" />
+			<Port x="84"	y="-72" />
+			<Port x="-90"	y="-80" />
+			<Port x="-83"	y="75" />
+		</DockingPorts>
+	</StationType>
+
+	<!-- INFO POST -->
+	<StationType UNID="&stZoneInfoPost;"
+		name=				"Zone Information"
+		sovereign=			"&svIndependent;"
+		dockScreen=			"Main"
+		dockingPorts=		"2"
+		immutable=			"true"
+		noArticle=			"true"
+		noMapLabel=			"true"
+		>
+		<Image imageID="&rsZoneInfoPost;" imageX="0" imageY="0" imageWidth="200" imageHeight="200"/>
+		<DockScreens>
+			<Main>
+				<OnInit>(dsf_ShowDockScreen (scrZoneInfo))</OnInit>
+			</Main>
+		</DockScreens>
+		<DockingPorts>
+			<Port x="0"	y="-100" />
+			<Port x="100"	y="0" />
+		</DockingPorts>
+	</StationType>
+
+	<!-- WINGMAN SPAWN POINT -->
+	<StationType UNID="&stWingmanSpawnPoint;"
+		name=				"WingmanSpawnPoint"
+		scale=				"world"
+		backgroundObject=	"true"
+		>
+		<Image imageID="&rsWingmanSpawnPoint;" imageX="0" imageY="0" imageWidth="32" imageHeight="32"/>
+		<Events>
+			<ActivateWingmen>
+				(runActivateWingmen)
+			</ActivateWingmen>
+			<OnObjDestroyed>
+				(runOnWingmanDestroyed)
+			</OnObjDestroyed>
+		</Events>
+	</StationType>
+
+	<!-- STARGATE -->
+	<StationType UNID="&stZoneGate;"
+		name=				"(zone gate)"
+		sovereign=			"&svIndependent;"
+		dockScreen=			"Main"
+		dockingPorts=		"4"
+		multiHull=			"true"
+		immutable=			"true"
+		gateEffect=			"&efStargateOut;"
+		definiteArticle=	"true"
+		>
+		<Image imageID="&rsStargate;" imageX="0" imageY="0" imageWidth="128" imageHeight="128" imageFrameCount="12" imageTicksPerFrame="3"/>
+		<DockScreens>
+			<Main name="=(objGetName gSource)">
+				<Panes>
+					<Default desc="You are docked at an alien stargate. You get the distinct feeling that this gate will lead to your doom.">
+						<Actions> <Action name="Undock" cancel="1" key="U"> <Exit/> </Action> </Actions>
+					</Default>
+				</Panes>
+			</Main>
+		</DockScreens>
+	</StationType>
+
+	<!-- STAR - INVISIBLE -->
+	<StationType UNID="&stZoneStar;"
+		name=				"(star)"
+		scale=				"star"
+		backgroundObject=	"true"
+		spaceColor=			"0x00, 0x00, 0x00"
+		>
+		<Image imageID="&rsOnePix;" imageX="0" imageY="0" imageWidth="1" imageHeight="1"/>
+	</StationType>
+
+	<!-- LABEL - INVISIBLE -->
+	<!--
+			backgroundObject=	"true"
+	-->
+	<StationType UNID="&stZoneLabel;"
+		name=				"ZoneLabel"
+		noMapLabel=			"true"
+		maxHitPoints=		"100000"
+		sign=				"true"
+		>
+		<Image imageID="&rsOnePix;" imageX="0" imageY="0" imageWidth="1" imageHeight="1"/>
+	</StationType>
+
+	<!-- NME SPAWN POINT -->
+	<StationType UNID="&stZoneSpawnPoint;"
+		name=				"ZoneSpawnPoint"
+		sovereign=			"&svDestructiveOrder;"
+		noFriendlyFire=		"true"
+		immutable=			"true"
+		noMapLabel=			"true"
+		>
+		<Image imageID="&rsTeratonDefender;" imageX="0" imageY="0" imageWidth="64" imageHeight="64" imageFrameCount="12" imageTicksPerFrame="2"/>
+		<Events>
+			<OnCreate>
+				(runOnCreate)
+			</OnCreate>
+			<PostCreate>
+				(runPostCreate)
+			</PostCreate>
+			<OnObjDestroyed>
+				(runOnSpawnDestroyed)
+			</OnObjDestroyed>
+			<SpawnEvent>
+				(runSpawnEvent)
+			</SpawnEvent>
+			<SpawnCleanEvent>
+				(runSpawnCleanEvent)
+			</SpawnCleanEvent>
+		</Events>
+	</StationType>
+
+<!--  ################################################################### -->
+				<!--        SYSTEM TOPOLOGY        -->
+<!--  ################################################################### -->
+
+	<SystemTopology>
+		
+		<!-- Battle Zone - Alpha -->
+		<!-- The node with ID=SE is the start node for most playerships -->
+		<Node ID="SE" rootNode="true">
+			<System UNID="&ssBattleZoneAlpha;" name="BattleZone - Alpha" level="1" />
+			<StarGates>
+				<StarGate Name="EndGame" DestID="EndGame"/>
+			</StarGates>
+		</Node>
+		
+		<!-- EndGame Node - Required -->
+		<Node ID="EndGame" endGame=	"true" endGameReason="coward" epitaph="quit because Battle Zone was too much.." />
+		
+	</SystemTopology>	
+
+	
+<!--  ################################################################### -->
+				<!--        BATTLE ZONE ALPHA        -->
+<!--  ################################################################### -->
+1
+	<SystemType UNID="&ssBattleZoneAlpha;">
+		<SystemGroup>
+
+			<!-- Dark Star -->
+			<Station type="&stZoneStar;" name="Zone Star"/>
+
+			<!-- Start Marker -->
+			<Orbitals distance="0">
+				<Marker objName="Start" />
+			</Orbitals>
+
+			<!-- Stargate (especially ships with no orders) -->
+			<Stargate objName="EndGame" type="&stZoneGate;" yOffset="10000" xOffset="0" />
+			
+			<!-- Barrier Fills -->
+			<Station type="&stZoneBarrierFill;" yOffset="800"    xOffset="200"    imageVariant="4" 	/>
+			<Station type="&stZoneBarrierFill;" yOffset="700"    xOffset="200"    imageVariant="7" 	/>
+			<Station type="&stZoneBarrierFill;" yOffset="800"    xOffset="300"    imageVariant="2" 	/>
+			<Station type="&stZoneBarrierFill;" yOffset="700"    xOffset="300"    imageVariant="0" 	/>
+			<Station type="&stZoneBarrierFill;" yOffset="800"    xOffset="400"    imageVariant="2" 	/>
+			<Station type="&stZoneBarrierFill;" yOffset="700"    xOffset="400"    imageVariant="0" 	/>
+			<Station type="&stZoneBarrierFill;" yOffset="800"    xOffset="500"    imageVariant="5" 	/>
+			<Station type="&stZoneBarrierFill;" yOffset="700"    xOffset="500"    imageVariant="6" 	/>
+
+			<!-- Labels -->
+			<Station type="&stZoneLabel;" yOffset="750" xOffset="300" objName="levelLabel" />
+			<Station type="&stZoneLabel;" yOffset="750" xOffset="400" objName="killScoreLabel" />
+			
+			<!-- Stations -->
+			<!--<Station type="&stZoneManager;" yOffset="-400" xOffset="400" />-->
+			<Station type="&stZoneService;" yOffset="380" xOffset="380" />
+			<Station type="&stZoneTrader;" yOffset="-350" xOffset="-420" />
+			<Station type="&stZoneInfoPost;" yOffset="590" xOffset="-590" />
+
+			<!-- Wingman spawn point -->
+			<!--<Station type="&stWingmanSpawnPoint;" yOffset="1300" xOffset="0" objName="wingmanSpawnPoint" />-->
+
+			<!-- Reset Markers -->
+			<Station type="&stZoneMarker;" yOffset="150"  xOffset="150"  name="createResetMarker" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="150"  xOffset="-150" name="createResetMarker" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="-150" xOffset="150"  name="createResetMarker" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="-150" xOffset="-150" name="createResetMarker" noMapLabel="true" noMapIcon="true"/>
+
+			<!-- Gate Keepers -->
+			<Station type="&stZoneMarker;" yOffset="630"   xOffset="0"    name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="750"   xOffset="0"    name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="870"   xOffset="0"    name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="-530"  xOffset="0"    name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="-650"  xOffset="0"    name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="-770"  xOffset="0"    name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="0"     xOffset="530"  name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="0"     xOffset="650"  name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="0"     xOffset="770"  name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="0"     xOffset="-630" name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="0"     xOffset="-750" name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+			<Station type="&stZoneMarker;" yOffset="0"     xOffset="-870" name="createGateKeeper" noMapLabel="true" noMapIcon="true"/>
+
+			<!-- Spawn Points -->
+			<Station type="&stZoneSpawnPoint;" yOffset="5000" xOffset="0" name="createSpawnMaster" />
+			<Station type="&stZoneSpawnPoint;" yOffset="5000" xOffset="0" name="createSpawnPoint" />
+			<Station type="&stZoneSpawnPoint;" yOffset="5000" xOffset="0" name="createSpawnPoint" />
+			<Station type="&stZoneSpawnPoint;" yOffset="5000" xOffset="0" name="createSpawnPoint" />
+			<Station type="&stZoneSpawnPoint;" yOffset="5000" xOffset="0" name="createSpawnPoint" />
+	
+			<!-- Player Fortress -->
+			<Orbitals distance="0">
+					<!--
+					
+						-700,700           -200    100            600,700
+							 ----------------------------------------
+							/ 1            2 | GATE | 3            4 \
+							|                                        |
+							|                                        |
+							|                                        |
+							|            13             14           |
+							|            /-----    -----\            |
+						200 |- 12        |              |         5 -| 200
+							|G           |              |           G|
+							|A                                      A|
+							|T                  00                  T|
+							|E           |              |           E|
+					   -100 |- 11        |              |         6 -| -100
+							|            \-----    -----/            |
+							|           16              15           |
+							|                                        |
+							|                                        |
+							|                                        |
+							\ 10           9 | GATE | 8            7 /
+							  ---------------------------------------
+						-700,-700          -200    100              600,-600
+				
+					-->         
+				<Trojan>
+					<!-- 1 Outer Shell -->
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="-800"   imageVariant="2" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="-700"   imageVariant="0" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="-600"   imageVariant="0" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="-500"   imageVariant="0" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="-400"   imageVariant="0" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="-300"   imageVariant="0" 	/>
+					<!-- 1 Inner Shell -->                                                             	
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="-700"   imageVariant="2" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="-600"   imageVariant="0" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="-500"   imageVariant="10" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="-400"   imageVariant="0" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="-300"   imageVariant="0" 	/>
+					<!-- 2 Gate Outer -->                                                              	
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="-200"   imageVariant="0" 	name="gateTR"	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="-100"   imageVariant="0" 	name="gateNO" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="0"      imageVariant="0" 	name="gateNO" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="100"    imageVariant="0" 	name="gateNO" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="200"    imageVariant="16" 	name="gateTL" 	/>
+					<!-- 2 Gate Inner -->                                                              	
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="-200"   imageVariant="0" 	name="gateBR" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="-100"   imageVariant="0" 	name="gateNO" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="0"      imageVariant="0" 	name="gateNO" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="100"    imageVariant="0" 	name="gateNO" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="200"    imageVariant="12" 	name="gateBL" 	/>
+					<!-- 3 Outer Shell -->
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="300"    imageVariant="0" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="400"    imageVariant="0" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="500"    imageVariant="10" 	/>
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="600"    imageVariant="0" 	/>
+					<!-- 3 Inner Shell -->                                                             	
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="300"    imageVariant="0" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="400"    imageVariant="0" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="500"    imageVariant="14" 	/>
+					<!-- 4 Outer Shell -->                                                             	
+					<Station type="&stZoneBarrier;" yOffset="800"    xOffset="700"    imageVariant="3" 	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="700"    imageVariant="1" 	/>
+					<Station type="&stZoneBarrier;" yOffset="600"    xOffset="700"    imageVariant="1" 	/>
+					<Station type="&stZoneBarrier;" yOffset="500"    xOffset="700"    imageVariant="1" 	/>
+					<Station type="&stZoneBarrier;" yOffset="400"    xOffset="700"    imageVariant="1" 	/>
+					<Station type="&stZoneBarrier;" yOffset="300"    xOffset="700"    imageVariant="1" 	/>
+					<!-- 4 Inner Shell -->                                                             	
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="600"    imageVariant="3" 	/>
+					<Station type="&stZoneBarrier;" yOffset="600"    xOffset="600"    imageVariant="1" 	/>
+					<Station type="&stZoneBarrier;" yOffset="500"    xOffset="600"    imageVariant="1" 	/>
+					<Station type="&stZoneBarrier;" yOffset="400"    xOffset="600"    imageVariant="1" 	/>
+					<Station type="&stZoneBarrier;" yOffset="300"    xOffset="600"    imageVariant="1" 	/>
+					<!-- 5 Gate Outer -->                                                              	
+					<Station type="&stZoneBarrier;" yOffset="200"    xOffset="700"    imageVariant="1" 	name="gateBR"	/>
+					<Station type="&stZoneBarrier;" yOffset="100"    xOffset="700"    imageVariant="1" 	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="0"      xOffset="700"    imageVariant="1" 	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="-100"   xOffset="700"    imageVariant="1" 	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="-200"   xOffset="700"    imageVariant="1" 	name="gateTR"	/>
+					<!-- 5 Gate Inner -->                                                              	
+					<Station type="&stZoneBarrier;" yOffset="200"    xOffset="600"    imageVariant="1" 	name="gateBL"	/>
+					<Station type="&stZoneBarrier;" yOffset="100"    xOffset="600"    imageVariant="1" 	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="0"      xOffset="600"    imageVariant="1" 	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="-100"   xOffset="600"    imageVariant="1" 	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="-200"   xOffset="600"    imageVariant="1"	name="gateTL"	/>
+					<!-- 6 Outer Shell -->
+					<Station type="&stZoneBarrier;" yOffset="-300"   xOffset="700"    imageVariant="1" 	/>
+					<Station type="&stZoneBarrier;" yOffset="-400"   xOffset="700"    imageVariant="1" 	/>
+					<Station type="&stZoneBarrier;" yOffset="-500"   xOffset="700"    imageVariant="1" 	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="700"    imageVariant="1" 	/>
+					<!-- 6 Inner Shell -->
+					<Station type="&stZoneBarrier;" yOffset="-300"   xOffset="600"    imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="-400"   xOffset="600"    imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="-500"   xOffset="600"    imageVariant="1"	/>
+					<!-- 7 Outer Shell -->
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="700"    imageVariant="4"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="600"    imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="500"    imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="400"    imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="300"    imageVariant="0"	/>
+					<!-- 7 Inner Shell -->
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="600"    imageVariant="4"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="500"    imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="400"    imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="300"    imageVariant="0"	/>
+					<!-- 8 Gate Outer -->
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="200"    imageVariant="0"	name="gateBL"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="100"    imageVariant="0"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="0"      imageVariant="0"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="-100"   imageVariant="0"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="-200"   imageVariant="0"	name="gateBR"	/>
+					<!-- 8 Gate Inner -->
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="200"    imageVariant="0"	name="gateTL"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="100"    imageVariant="0"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="0"      imageVariant="0"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="-100"   imageVariant="0"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="-200"   imageVariant="0"	name="gateTR"	/>
+					<!-- 9 Outer Shell -->
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="-300"   imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="-400"   imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="-500"   imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="-600"   imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="-700"   imageVariant="0"	/>
+					<!-- 9 Inner Shell -->
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="-300"   imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="-400"   imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="-500"   imageVariant="0"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="-600"   imageVariant="0"	/>
+					<!-- 10 Outer Shell -->
+					<Station type="&stZoneBarrier;" yOffset="-700"   xOffset="-800"   imageVariant="5"	/>
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="-800"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="-500"   xOffset="-800"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="-400"   xOffset="-800"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="-300"   xOffset="-800"   imageVariant="1"	/>
+					<!-- 10 Inner Shell -->
+					<Station type="&stZoneBarrier;" yOffset="-600"   xOffset="-700"   imageVariant="5"	/>
+					<Station type="&stZoneBarrier;" yOffset="-500"   xOffset="-700"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="-400"   xOffset="-700"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="-300"   xOffset="-700"   imageVariant="1"	/>
+					<!-- 11 Outer Gate -->
+					<Station type="&stZoneBarrier;" yOffset="-200"   xOffset="-800"   imageVariant="1"	name="gateTL"	/>
+					<Station type="&stZoneBarrier;" yOffset="-100"   xOffset="-800"   imageVariant="1"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="0"      xOffset="-800"   imageVariant="1"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="100"    xOffset="-800"   imageVariant="1"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="200"    xOffset="-800"   imageVariant="1"	name="gateBL"	/>
+					<!-- 11 Inner Gate -->
+					<Station type="&stZoneBarrier;" yOffset="-200"   xOffset="-700"   imageVariant="1"	name="gateTR"	/>
+					<Station type="&stZoneBarrier;" yOffset="-100"   xOffset="-700"   imageVariant="1"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="0"      xOffset="-700"   imageVariant="1"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="100"    xOffset="-700"   imageVariant="1"	name="gateNO"	/>
+					<Station type="&stZoneBarrier;" yOffset="200"    xOffset="-700"   imageVariant="1"	name="gateBR"	/>
+					<!-- 12 Outer Shell -->
+					<Station type="&stZoneBarrier;" yOffset="300"    xOffset="-800"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="400"    xOffset="-800"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="500"    xOffset="-800"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="600"    xOffset="-800"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="700"    xOffset="-800"   imageVariant="1"	/>
+					<!-- 12 Inner Shell -->
+					<Station type="&stZoneBarrier;" yOffset="300"    xOffset="-700"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="400"    xOffset="-700"   imageVariant="1"	/>
+					<Station type="&stZoneBarrier;" yOffset="500"    xOffset="-700"   imageVariant="15"	/>
+					<Station type="&stZoneBarrier;" yOffset="600"    xOffset="-700"   imageVariant="1"	/>
+					<!-- 13 -->
+					<Station type="&stZoneBarrier;" yOffset="200"    xOffset="-200"   imageVariant="2"	/>
+					<Station type="&stZoneBarrier;" yOffset="200"    xOffset="-100"   imageVariant="8"	/>
+					<Station type="&stZoneBarrier;" yOffset="100"    xOffset="-200"   imageVariant="9"	/>
+					<!-- 14 -->
+					<Station type="&stZoneBarrier;" yOffset="200"    xOffset="200"    imageVariant="3"	/>
+					<Station type="&stZoneBarrier;" yOffset="200"    xOffset="100"    imageVariant="6"	/>
+					<Station type="&stZoneBarrier;" yOffset="100"    xOffset="200"    imageVariant="9"	/>
+					<!-- 15 -->
+					<Station type="&stZoneBarrier;" yOffset="-200"    xOffset="200"   imageVariant="4"	/>
+					<Station type="&stZoneBarrier;" yOffset="-200"    xOffset="100"   imageVariant="6"	/>
+					<Station type="&stZoneBarrier;" yOffset="-100"    xOffset="200"   imageVariant="7"	/>
+					<!-- 16 -->
+					<Station type="&stZoneBarrier;" yOffset="-200"    xOffset="-200"  imageVariant="5" 	/>
+					<Station type="&stZoneBarrier;" yOffset="-200"    xOffset="-100"  imageVariant="8" 	/>
+					<Station type="&stZoneBarrier;" yOffset="-100"    xOffset="-200"  imageVariant="7" 	/>
+				</Trojan>
+			</Orbitals>
+		</SystemGroup>
+	</SystemType>		
+
+<!--  ################################################################### -->
+				<!--       IMAGE RESOURCES         -->
+<!--  ################################################################### -->
+	
+	<!-- IMAGE RESOURCES -->
+	<Image UNID="&rsOnePix;" bitmap="BattleZone/onepix.jpg" backColor="0x00000000"/>
+	<Image UNID="&rsZoneMarker;" bitmap="BattleZone/zoneMarker.jpg" bitmask="BattleZone/zoneMarkerMask.bmp" backColor="0x00000000"/>
+	<Image UNID="&rsZoneBarrier;" bitmap="BattleZone/zoneBarrier.jpg" bitmask="BattleZone/zoneBarrierMask.bmp" backColor="0x00000000"/>
+	<Image UNID="&rsZoneManager;" bitmap="BattleZone/zoneManager.jpg" bitmask="BattleZone/zoneManagerMask.bmp" backColor="0x00000000"/>
+	<Image UNID="&rsZoneTrader;" bitmap="BattleZone/zoneService.jpg" bitmask="BattleZone/zoneServiceMask.bmp" backColor="0x00000000"/>
+	<Image UNID="&rsZoneService;" bitmap="BattleZone/zoneTrader.jpg" bitmask="BattleZone/zoneTraderMask.bmp" backColor="0x00000000"/>
+	<Image UNID="&rsWingmanSpawnPoint;" bitmap="BattleZone/smallZoneMarker.jpg" bitmask="BattleZone/smallZoneMarkerMask.bmp" backColor="0x00000000"/>
+
+	<Image UNID="&rsZoneBarrierFill;" bitmap="BattleZone/zoneBarrierFill.jpg" bitmask="BattleZone/zoneBarrierFillMask.bmp" backColor="0x00000000"/>
+	<Image UNID="&rsZoneInfoPost;" bitmap="BattleZone/zoneInfoPost.jpg" bitmask="BattleZone/zoneInfoPostMask.bmp" backColor="0x00000000"/>
+
+	<!-- Credits: http://surbaale.deviantart.com/art/Space-15255133 -->
+	<!--
+	<Image UNID="&rsZoneCoward;" bitmap="BattleZone/zoneCoward.jpg" loadOnUse="true"/>
+	-->
+	<!-- Credits: http://avater.deviantart.com/art/Space-48693191 -->
+	<!--
+	<Image UNID="&rsZoneDestroyed;" bitmap="BattleZone/zoneDestroyed.jpg" loadOnUse="true"/>
+	-->
+	<!-- Credits: Found on Google Images: space battles -->
+	<Image UNID="&rsZoneCover;" bitmap="BattleZone/zoneCover.jpg" loadOnUse="true"/>
+	<Image UNID="&rsZoneProlog;" bitmap="BattleZone/zoneProlog.jpg" loadOnUse="true"/>
+	<!-- Credits: http://philipmatthews.deviantart.com/art/Close-encounters-BW-V2-0-59381010 -->
+	<!--
+	<Image UNID="&rsZoneServiceInterior;" bitmap="BattleZone/zoneServiceInterior.jpg" loadOnUse="true"/>
+	-->
+	<!-- Credits: http://awol1966.deviantart.com/art/The-train-station-revisited-32901240 -->
+	<!--
+	<Image UNID="&rsZoneTraderInterior;" bitmap="BattleZone/zoneTraderInterior.jpg" loadOnUse="true"/>
+	-->
+	
+<!--  ################################################################### -->
+		     <!--        DOCKS SCREEN SPECIFICATIONS          -->
+<!--  ################################################################### -->
+
+		<DockScreen UNID="&dsZoneTrader;"
+		name=			"=(dsf_GetScreenName)"
+		backgroundID=	"none"
+		>
+		<OnInit>(dsf_ScreenOnInit 7)</OnInit>
+		<Panes>
+			<Default>
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Default>
+			<Counter showCounter="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Counter>
+			<TextInput showTextInput="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</TextInput>
+		</Panes>
+	</DockScreen>
+
+	<DockScreen UNID="&dsZoneService;"
+		name=			"=(dsf_GetScreenName)"
+		backgroundID=	"none"
+		>
+		<OnInit>(dsf_ScreenOnInit 7)</OnInit>
+		<Panes>
+			<Default>
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Default>
+			<Counter showCounter="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Counter>
+			<TextInput showTextInput="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</TextInput>
+		</Panes>
+	</DockScreen>
+	
+<!--  ################################################################### -->
+				<!--        ADVENTURE SETUP          -->
+<!--  ################################################################### -->
+
+	<AdventureDesc
+		unid=			"&adBattleZone;"
+		name=			"Battle Zone Transcendence"
+		backgroundID=	"&rsZoneCover;"
+		>
+		<Events>
+			<OnGameStart>
+				<!-- TRAP START -->
+				(block Nil
+					;; no image for now
+					(gamSetCrawlImage &rsZoneProlog;)
+					(gamSetCrawlText 
+						(cat 
+							"Welcome Traveler!. You have happened onto the most heartless part of this universe. "
+							"Your enemies will grow in strength and numbers as you do, and wave upon wave of them "
+							"will crash upon you. As they fall, you will rise, and maybe find the strength "
+							"to defeat the next wave."
+						)
+					)
+				)
+				<!-- TRAP END -->
+			</OnGameStart>
+			<OnGameEnd>
+				<!-- TRAP START -->
+				(block Nil
+					(gamSetCrawlImage
+						(if (eq aEndGameReason 'coward)
+							&rsEndGameDestroyed;
+							&rsEndGameEscaped;
+						)
+					)
+					(gamSetCrawlText 
+						(plyComposeString gPlayer
+							(cat 
+								;(if (eq aEndGameReason 'coward)
+								;	(cat
+								;		"You realize, with a sudden panic, that you forgot to turn off, the"
+								;		" automated Gate Defense System. The last thing you see before your death"
+								;		" is the Gate Disintegrator powering up.\n\n"
+								;	)
+								;	(cat
+								;		"As you float in space, your ship destroyed, you watch a nearby star rise. "
+								;		"You realize that you have died well. There is glory in death!\n\n"
+								;	)
+								;)
+								(cat
+									"%name% " aEpitaph ".\n"
+									"You reached level " (getSpawnLevel) "\n"
+									"Your Kill Score is: " (getTotalKillScore) "\n"
+									"Your Combat Power was: " (getCombatPower) "\n"
+									"%name% destroyed "
+									(switch
+										(or (eq aEnemiesDestroyed 0) (not aBestEnemyClass))
+											"no enemy ships"
+		
+										(eq aEnemiesDestroyed aBestEnemiesDestroyed)
+											(if (eq aEnemiesDestroyed 1)
+												(shpGetClassName aBestEnemyClass 0x04)
+												(cat aEnemiesDestroyed " " (shpGetClassName aBestEnemyClass 0x02))
+											)
+		
+										(eq aBestEnemiesDestroyed 1)
+											(cat aEnemiesDestroyed " enemy ships, including " (shpGetClassName aBestEnemyClass 0x04))
+		
+										(cat aEnemiesDestroyed " enemy ships, including " aBestEnemiesDestroyed " " (shpGetClassName aBestEnemyClass 0x02))
+									)
+								". "
+								)
+							)
+						)
+					)
+				)
+				<!-- TRAP END -->
+			</OnGameEnd>
+		</Events>
+	</AdventureDesc>
+	
+</TranscendenceAdventure>
+	
+
+<!-- 
+
+-- PURE ENHANCEMENT LISTS
+	(eq type 0x0002) ;; armor
+		'(	0x0200 0x8200 0x0B00 0x0B10 0x0B20 0x0B30 0x0B40 0x0C00
+			0x8C00 0x0D00 0x0E00 0x0100 0x8100 0x0600 0x0700 0x0800 
+			0x0900 0x0A00 0x8600 0x8700 0x8800 0x8900 0x8A00
+		)
+	(eq type 0x0080) ;; shields
+		'(	0x0300 0x8300 0x0100 0x8100 0x0600 0x0700 0x0800 0x0900
+			0x0A00 0x8600 0x8700 0x8800 0x8900 0x8A00 0x0F00 0x8F00
+		)
+	(or (eq type 0x0004) (eq type 0x0010)) ;; weapons
+		'(0x0100 0x8100 0x1000 0x9000 0x0F00 0x8F00)
+
+	;; power variable enhancements
+	'(0x0100 0x8100 0x1000 0x9000 0x0600 0x0700 0x8600 0x8700 0x0F00 0x8F00)
+	;; power and type variable enhancements
+	'(0x0300 0x8300 0x0800 0x0900 0x0A00 0x8800 0x8900 0x8A00)
+		
+	
+<!-- MASTER STATION -->
+<!--
+<StationType UNID="&stZoneManager;"
+	name=				"Zone Manager"
+	noMapLabel=			"true"
+	maxHitPoints=		"100000"
+	backgroundObject=	"true"
+	sign=				"true"
+	>
+	<Image imageID="&rsOnePix;" imageX="0" imageY="0" imageWidth="1" imageHeight="1"/>
+</StationType>
+-->
+
+	

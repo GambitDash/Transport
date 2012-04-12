@@ -1,0 +1,7 @@
+#!/bin/sh
+valgrind --leak-resolution=high --num-callers=50 --suppressions=valgrind.sup --time-stamp=yes --track-fds=yes --log-file=mem.log --show-reachable=yes --leak-check=full ./kernel-test
+
+MEMLOG=`ls --reverse mem.log.* | head -1`
+cat ${MEMLOG} | grep "ERROR SUMMARY"
+tail -5 ${MEMLOG}
+

@@ -1,0 +1,28 @@
+import os
+env = Environment()
+Export('env')
+
+### Unittest Scons target
+def builder_unit_test(target, source, env):
+	app = str(source[0].abspath)
+	validate = app + ".validate"
+	old_cwd = os.getcwd()
+	os.chdir(str(source[0].get_dir()))
+	if (os.spawnl(os.P_WAIT, app, app)==0) and ((not os.path.isfile(validate)) or (os.spawnl(os.P_WAIT, validate, validate)==0)):
+		print " : PASSED"
+		os.chdir(old_cwd)
+		open(str(target[0]),'w').write("PASSED\n")
+	else:
+		os.chdir(old_cwd)
+		print " : FAILED"
+		return 1
+bld = Builder(action = builder_unit_test)
+env.Append(BUILDERS = {'Test' :  bld})
+
+### General configuration elements.
+env.ParseConfig('pkg-config --cflags --libs sdl')
+env.Append(LIBPATH = ['#Alchemy/Kernel', '#Alchemy/CodeChain', '#Transcendence', '#DirectXUtil', '#Transcendence/TSE', '#Alchemy/Graphics', '#JPEGUtil', '#XMLUtil', '/usr/local/boost/lib'])
+env.Append(CPPFLAGS = ['-ggdb', '-O3', '-Wall', '-Wextra', '-Wno-unused-parameter'])
+### Include subdirectories
+env.SConscript(dirs = ['Alchemy', 'XMLUtil', 'Transcendence', 'DirectXUtil'])
+

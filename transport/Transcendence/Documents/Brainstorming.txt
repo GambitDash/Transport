@@ -1,0 +1,1883 @@
+IDEAS FOR TRANSCENDENCE
+-----------------------
+
+ALIEN PETS
+
+[ ] It would be cool to have an alien or mechanical ship that follows the player
+	around much as a pet did in Nethack. It could fight for the player, but it
+	would also needs fuel (or better yet, some food stuff that it eats).
+[ ] If the pet runs low on food, it can start attacking the player.
+
+ARMOR IDEAS
+
+[ ] Armor that shoots out damage when hit
+[ ] Optical displacement armor
+
+ARTIFACTS
+
+[ ] Aura of Domina: Immune to all damage except dark energy/matter damage;
+	cannot use certain weapons
+
+AUTONS
+
+[ ] Mine: Explodes as fragmentation missile when enemy approaches; doesn't move.
+[ ] Tracker: Like KM500 Stiletto; attacks nearest target.
+[ ] Defective Auton: Attacks player with blaster
+[ ] Laser Auton: Protects player with blaster
+[ ] Cannon Auton: Protects player with Partisan cannon
+[ ] Beam Auton: Protects player with particle beam
+[ ] Ion Auton: Protects player with ion cannon
+
+BLACK MARKET
+
+[ ] Ability to sell illegal items at Commonwealth station
+[ ] Black market needs to have stuff that player needs
+
+COMMONWEALTH
+
+[ ] Station that sells drugs if player has black market ID.
+
+COMMONWEALTH HOSPITAL
+
+This is a commonwealth station that provides high-tech care for wealthy
+patients. The hospital has the following wings:
+
+[ ] Reception: The hospital buys medical supplies, etc. at a good
+	price.
+[ ] Emergency Room: Once in a while the player will be asked to transport
+	human organs to another station in the system. If the player can get the
+	organs to the station in time, he will be paid 500 credits. If the player
+	doesn't deliver the organs, he is blacklisted by the hospital.
+[ ] Recovery: This wing is filled with various patients in various stages
+	of recovery.
+[ ] Hospice: This wing is filled with terminal patients, generally very
+	old and wealthy. If the player has a black market ID, the attending
+	physician will purchase death drugs.
+[ ] Sarcophagi: This wing contains the virtual imprints of various
+	body-dead patients. The player can talk to a random patient and
+	maybe get some information.
+[ ] If the hospital is destroyed and looted the player will find:
+	medical supplies, biofactor paste, and possibly, human death cubes.
+	(Note: destroying a hospital has the same penalty as destroying
+	any other Commonwealth station).
+
+COMMONWEALTH PIRATES
+
+Commonwealth, corporate, and independent stations are plagued by unorganized
+pirates in addition to the various larger pirate and outlaw groups. (These should
+replace the use of Ronin-class ships, which should always be friendly.)
+
+[ ] Level I: Imp-class gunship
+[ ] Level II: pirate freighter (fast, but not very maneuverable and lightly armed)
+[ ] Level III: Raptor-class gunship
+[ ] Level IV: Raptor II-class gunship
+[ ] Level V: Manticore-class missileship
+[ ] Level VI: Werewolf-class heavy gunship
+[ ] Level VII: Werewolf/advanced-class heavy gunship
+
+DEVICE IDEAS
+
+HELIOTROPES
+
+Heliotropes are nomads that orbit close to a bright star and collect helium3
+and other fusion isotopes for conversion into fuel. Although human, they are
+a closed society that allows few outsiders and often attacks anyone getting too close.
+
+[ ] Heliotrope Gunship: These small ships protect the main Heliotrope processor.
+[ ] Heliotrope Processor: This is a large ship that collects solar particles and
+	generates fuel rods.
+[ ] Heliotrope Swarm: This is a group of Heliotrope gunships orbiting around
+	a Processor.
+[ ] Heliotrope Colony: This is a station, often orbiting a planet close to the
+	main star. Heliotrope fuel rods have five times the capacity of a normal
+	fuel rod (at the same weight).
+
+HINTS AND RUMORS
+
+The game needs more features that entice the player into exploring the system:
+
+[ ]	Rumors: At stations there should be some rumors of stuff in the system.
+[ ]	Breadcrumbs: Indicators that lead places (perhaps only between commonwealth
+	stations?)
+[ ]	Partial maps: Perhaps the player can find partial maps of the system.
+[ ]	Regular traffic between friendly stations. Some key stations (commonwealth
+	station, colony, etc.) should send out transports to other friendly (not
+	independent) stations in the system. They should try to send a few first, and
+	only if they survive should they send out regular traffic.
+[ ]	Perimeter markers: Major stations should have patrolled and marked perimeters.
+	(Especially in ungoverened areas).
+[ ] Advertisements: Independent merchants (arms and armor dealers) should advertise
+	at gates and near commonwealth stations (have some kind of bitmap image that
+	incorporates the name of the station).
+[ ] Warnings: Commonwealth stations should place warnings depending on what else
+	is in the system. For example, signs warning against pirates.
+[ ]	Minefields: Larger enemy stations might have minefields at the perimeter.
+[ ]	Maybe commonwealth stations can have markers pointing to other commonwealth
+	stations in the system.
+[ ]	Corporate enclaves may have a live news ticker that shows stuff going on
+	(possibly news of other stations?)
+[ ] Rumors about the kinds of items that Tinkers can create
+[ ] Crazy idea: The player should be able to talk to CDM entities (or maybe 
+	digital ghosts?) to get some hints and rumors. In exchange, the entities ask
+	the player to enter some free-form text. Later, fragments of the text can
+	appear in other parts of the game (as graffitti, maybe?). Also, perhaps there
+	are certain keywords that trigger certain events.
+
+ITEM IDEAS
+
+[ ]	We need to have more items that can only be obtained from wrecks. This should
+	give players an incentive to attack and destroy those enemies.
+[ ]	Enhance a worthless item to get something good.
+[ ] More stuff that the tinkers can convert.
+[ ] Stuff that is valuable to a research lab.
+[ ]	Stuff that is valuable to Sisters of Domina.
+[ ] Exotic stuff from space monsters?
+[ ] Convert rare gems and crystals to powerful lasers, etc.
+[ ] Allow applying armor paste to uninstalled (as well as installed)
+	armor.
+[ ] Some types of armor should gain special benefit from paste.
+	(e.g., nano-repair on XMH should yield something equivalent
+	to Duralloy).
+[ ] Anarchist manifesto ROM (probably worthless).
+[ ] Heavy items that are either valuable or worthless (as in Nethack gems).
+
+MISCELLANEOUS
+
+[ ] Shield auton: Project a shield around player if close enough.
+[ ] All friendly stations should have re-inforcements
+[ ] Utopian ships should use blinding cannnons
+[ ] Utopians are heliotropes (everything is solar powered)
+[x] Rarely, black market IDs at outlaws
+[ ] Rescue crime boss at sealed cargo container (to get black market ID?).
+[ ] Hardened sensor rig is immune to blinding attacks
+[ ] Different sensor rigs can provide benefits: see through nebulae, etc.
+[x] Anarchists should have ROMs and other digital media.
+[x] Terrorists should have nuclear detonators (convert to missiles at Tinkers); nuclear
+	waste; decon gel.
+[ ] Perhaps player can escort fast passenger ships out of Korolov.
+[ ] Ruins or other loci of power (like pagan megaliths)
+[ ] Ships/stations that use the powers of Oracus/Domina.
+[ ] Artifacts: The powers and attributes of these alien artifacts are randomized
+	for each game so that the player has to discover them.
+[ ] Perhaps the halo gods have not completely disappeared. Perhaps they exists
+	as "ghosts" of some sort.
+[ ] Banners, etc. representing sovereigns
+[ ] Hierodules are like wizards (immortal beings)
+[ ] Pirate ships that force player to stop and be boarded.
+
+NEBULAE AND STORMS
+
+[x] Nebula: velocity decay; LRS interference
+[ ] Dark Nebula: velocity decay; LRS interference; SRS interference
+[ ] Radiation Field: LRS interference; chance of contamination
+[ ] Ion Storm: LRS interference; chance of disabling (as per ion cannon)
+[ ] Plasma Storm: LRS interference; plasma discharge (plasma damage)
+
+NEW ENCOUNTERS
+
+[ ] An alien ship that steals stuff out of the player's cargo hold (maybe with
+	a transporter beam?) and then runs-off to some secret location (perhaps a
+	wandering mothership). If the player can find the mothership, he can kill it
+	to get back his stuff.
+[ ] Perhaps a hacker ship can crack your bank account and steal all your credits
+	(or something).
+[ ] An alien station that shoots an ion cannon and then drains fuel.
+[ ] Enemy ship that controls a swarm of remote-controlled ships. When the main
+	ship is destroyed, the robots de-activate (perhaps that player can control them?)
+[ ] Salvager-like ship that uses ion cannon to freeze you. Otherwise, it just scavenges.
+[ ] Other large ships that do lots of damage if attacked, but otherwise leave you alone.
+[ ] Some adventurer ships should also pick-up enhancements (armor coatings, new weapons,
+	etc.)
+[ ] Some kind of alien ship that splits in two when hit.
+
+PLAYER SHIP
+
+[ ] Main computer system should keep track of running programs (e.g., Autopilot)
+[ ] Allow player to remove programs running on main computer system
+[ ] Allow player to access programs running on main computer system (for extra features)
+[ ] Some kinds of damage should cause LRS blindness
+[ ] Defective ROM causes computer to reboot (ship is disabled for period of time)
+[ ] Some kinds of damage should cause fuel drain (fuel rod degeneration)
+[ ] Damage to engine degrades acceleration
+[ ] Damage to engine degrades maximum speed
+[ ] Damage to devices
+[ ] Damage that causes shields to drain
+[ ] Damage that causes armor degeneration
+[ ] Contagion: random disease has a chance of killing player (unless specific disease cured)
+[ ] Infestation: alien parasite has a chance of killing player
+[ ] When the player runs out of fuel, check to see if there are any fuel rods in
+	cargo hold. If so, don't end game, just disable ship until the player refuels.
+[ ] When SRS is repaired, show message ("Short-range scanner Repaired" or whatever)
+[ ] Show armor coatings on armor display (or show in docking-mode).
+[ ] Defective ROM (or something) that causes player to spin and fire randomly for a period
+	of time.
+[ ] Using certain kinds of fuel should increase engine efficiency for a while. But some
+	kinds of fuel could screw-up the engines.
+
+ROM IDEAS
+
+
+SAPIENS
+
+[ ] Need more interesting stuff on Sapiens wrecks (since they are always radioactive).
+
+SHIELD IDEAS
+
+[ ] Stasis Shields: Ship encased in stasis field when hit by weapons
+[ ] Stasis suppressors
+[ ] Graviton deflectors: immune to gravity
+[ ] Shield that only works if ship has light armor
+[x] Shield whose strength is proportional to armor
+[ ] Shield that is stronger with a particular kind of armor
+[x] Shield that must be regenerated manually
+
+SHIP IDEAS
+
+[ ] Thrust from large ships should cause plasma damage.
+
+SISTERS OF DOMINA
+
+[x] Oracle at Sisters of Domina should give the player some hints about the game
+	(like fortune cookies in nethack) and some clue as to where to find things. For example,
+	the Oracle might tell the player where the next stargate is or where a particularly
+	powerful weapon in the system is or may just give the player a map of the whole system.
+
+STATION IDEAS
+
+[ ] Commonwealth Customs: Near stargates. Player must dock with station upon
+	first arrival or she will be blacklisted by all commonwealth stations in
+	the systems. Docking is just like at station (i.e., illegal items taken).
+[ ] Locked stations (or locked sections of a station). Need key or blaster.
+[ ] Fortune teller of some sort that makes obscure (and broad) predictions based
+	on what really exists in the system.
+[ ] Walled city-states that do not let you enter unless you disable weapons and
+	lower shields.
+[ ] Enemy shipyards that create enemy ships and send them as reinforcements
+[ ] Automated defenses that fire on any ship with shields up or any ship exceeding
+	speed limit.
+[x] Licensed mining colony. Player can purchase raw good (duralloy ore) or sell
+	manufactured goods (detonators). Player can be hired to defend mine from pirates.
+[ ] Station (maybe Tinkers) that sells custom weapons. Based on normal weapons, but
+	some (sometimes significant) improvements.
+[ ] Need some place where the player can install illegal/military weapons.
+
+WEAPON IDEAS
+
+[ ] Weapon that turns wrecks into scrap pieces that can be sold.
+
+RANDOM ENCOUNTER GENERATION
+---------------------------
+
+LEVEL AND TECH
+
+ 1.	I-III	Human Lowtech
+ 2.	IV-VII	Human Mech
+ 3.	IV-VII	Human Biotech
+ 4.	VIII-X	Neo-Human Mech
+ 5.	VIII-X	Neo-Human Biotech
+ 6.	VIII-X	Neo-Human Quantum
+ 7.	XI-XV	High Races Mech
+ 8.	XI-XV	High Races Biotech
+ 9.	XI-XV	High Races Quantum
+10.	XI-XV	High Races Nanotech
+11.	XI-XV	High Races Megascale
+12.	XVI-XX	Halo Races Nanotech
+13.	XVI-XX	Halo Races Graviton
+14.	XVI-XX	Halo Races Dark Matter
+15.	XXI-XXV	Hierodules Graviton
+16.	XXI-XXV	Hierodules Dark Matter
+
+ROLE
+
+ 1.	Military/Mercenary										00	military
+ 2.	Religious/Rituals/Ceremony								08	religious
+ 3.	Diplomat												10	diplomat
+ 4.	Law Enforcer/Punisher									18	punisher
+ 5.	Philosopher/Scientist/Teacher							20	philosopher
+ 6.	Engineer												28	engineer
+ 7.	Trader/Business/Financial								30	trader
+ 8.	Farmer/Food												38	farmer
+ 9.	Medical/Healer											40	medical
+10.	Miner/Materials											48	miner
+11.	Energy Producer											50	energy
+12.	Entertainer/Luxuries									58	luxuries
+13.	Transportation/Communications							60	transport
+14.	Construction/Shipbuilding								68	construction
+15.	Computation/Librarian/Information						70	librarian
+16.	Scavenger/Garbage/Recycling								78	scavenger
+17.	Isolationist/Xenophobe									80	xenophobe
+18.	Pirate/Raider/Marauder									88	pirate
+19.	Crime Syndicate/Drug Dealer/Smuggler					90	criminal
+20.	Slaver/Torturer											98	slaver
+21.	Settler/Squatter										A0	settler
+22.	Expansionist/Replicator									A8	expansionist
+23.	Conqueror/Imperialist									B0	imperial
+24.	Nomad/Wanderer											B8	nomad
+25.	Anarchist/Terrorist										C0	anarchist
+26.	Explorer/Pioneer										C8	explorer
+27.	Refugee/Diaspora										D0	refugee
+28.	Warlord													D8	warlord
+29.	Commonwealth/Democracy/Republic							E0	republic
+30.	Coalition/Alliance										E8	alliance
+31.	Rebels/Resistance Movement/Revolutionaries				F0	rebel
+32.	Destroyer/Annihilator									F8	destroyer
+
+ORGANIZATION
+
+1. Cyclical/Phased (changes over time)						0/8	cyclical
+2. Decentralized											1/9	decentralized
+3. Hierarchical/Caste										2/a	hierarchical
+4. Homogenous/Clone											3/b	homogenous
+5. Regional													4/c	regional
+6. Solitary/Independent										5/d	solitary
+7. Strength in Individuals									6/e	individuals
+8. Strength in Numbers										7/f	populous
+
+ENVIRONMENT
+
+ 1. Air/Clouds/Gas Giant/Nebula								0	nebulae
+ 2. Asteroids/Mountains										1	asteroids
+ 3. Biohazard												2	biohazard
+ 4. Biosphere/Earthlike										3	earthlike
+ 5. Crystalline												4	crystalline
+ 6. Desert													5	desert
+ 7. Earth/Iron/Underground									6	underground
+ 8. Fire/Volcanic/Solar										7	volcanic
+ 9. Lightning/Ion											8	ion
+10. Ice/Comet												9	ice
+11. Mechanic												A	mechanic
+12. Metropolis/City											B	metropolis
+13. Organic/Living											C	organic
+14. Plasma/Glowing											D	plasma
+15. Space/Void												E	space
+16.	Water													F	ocean
+
+[ 9. was hyperspace]
+[14. was ruins/ancient]
+
+ENCOUNTER CLASSIFICATIONS
+
+Ice Farmer:			01-399	Human Mech/farmer-decentralized/ice
+Miners:				01-4D1	Human Mech/miner-solitary/asteroids
+Salvagers:			01-7DE	Human Mech/scavenger-solitary/space
+Marauders:			01-8AE	Human Mech/pirate-hierarchical/space
+Charon Pirates:		01-8CE	Human Mech/pirate-regional/space
+Drug Cartel:		01-92B	Human Mech/criminal-hierarchical/metropolis
+Outlaws:			01-94B	Human Mech/criminal-regional/metropolis
+Anarchists:			01-C1B	Human Mech/anarchist-decentralized/metropolis
+Bioterrorist:		01-C4B	Human Mech/anarchist-regional/metropolis
+
+Penitents:			02-0A1	Human Mech/religious-hierarchical/asteroids
+Xenophobes:			02-849	Human Mech/xenophobe-regional/ice
+Crime Lords:		02-92B	Human Mech/criminal-hierarchical/metropolis
+Slavers:			02-9CE	Human Mech/slaver-regional/space
+Survivalists:		02-A59	Human Mech/settler-solitary/ice
+
+Hive Cult:			03-AA1	Human Biotech/expansionist-hierarchical/asteroids
+Utopians:			03-A13	Human Biotech/settler-decentralized/earthlike
+
+SOVEREIGNS OF HUMAN SPACE
+-------------------------
+
+MAJOR POWERS
+
+	05-b35	Ares Orthodoxy
+
+REGIONAL POWERS
+
+	01-8ce	Charon Pirates
+	01-92b	Death Drugs Cartel
+
+NEUTRAL POWERS
+
+	01-7de	Salvagers
+
+SOVEREIGNS INFLUENCED BY DOMINA
+
+	CONSTRUCTIVE CHAOS
+
+		North Atlantic Commonwealth
+
+	CONSTRUCTIVE ORDER
+
+SOVEREIGNS INFLUENCED BY ORACUS
+
+	DESTRUCTIVE ORDER
+
+	DESTRUCTIVE CHAOS
+
+UNINFLUENCED SOVEREIGNS
+
+	CONSTRUCTIVE NEUTRAL
+
+	DESTRUCTIVE NEUTRAL
+
+	NEUTRAL CHAOS
+
+		Corporate Hierarchy
+
+	NEUTRAL ORDER
+
+SHIPS
+-----
+
+LEVEL I								50 points
+-----------------------------------------------------------
+	weapons:						laser cannon
+	armor:							titanium plate (x2)
+	shields:						class 1 deflector
+	devices:						none
+	maneuver:						4
+	speed:							20
+	thrust-to-mass:					4
+	fire rate:						60
+	fire accuracy:					80
+
+Options
+
+	w1	recoilless cannon			+50
+	w2	level II weapon				+25
+
+	a1	level II armor (x4)			+45
+	a2	level II armor (x2)			+25
+	a3	level II armor (x1)			+15
+	a4	titanium plate (x4)			+10
+	ax1	titanium plate (x1)			-10
+
+	ns	no shields					-20
+
+	m1	maneuver = 1				+25
+	m2	maneuver = 2				+10
+	m3	maneuver = 3				+5
+	t6	thrust-to-mass = 6			+10
+	t2	thrust-to-mass = 2			-10
+	s5	max speed = 5				-25
+
+	f30 fire rate = 30				+50
+	f45	fire rate = 45				+20
+	a90	fire accuracy = 90			+20
+	a70	fire accuracy = 70			-10
+	a60	fire accuracy = 60			-20
+
+Ships
+
+	Hammerhead (w1,ns,a60)			60 points
+	Mweri (ns,m2,t6)				50 points
+	Ronin A (a4,ns,t2,f45,a90)		70 points
+	Tenhove (ax1,ns,m1,t2,s5,f30)	60 points
+
+LEVEL II							100 points
+-----------------------------------------------------------
+	weapons:						particle beam weapon
+	armor:							carbon fiber shell (x2)
+	shields:						class 1 deflector
+	devices:						none
+	maneuver:						4
+	speed:							20
+	thrust-to-mass:					4
+	fire rate:						60
+	fire accuracy:					80
+
+Options
+
+	w1	mining laser				+100
+	w2	dual laser cannon			+50
+	w3	omni laser cannon			+100
+	w4	dual recoilless cannon		+100
+
+	a1	reactive armor (x2)			+0
+	a2	carbon fiber shell (x4)		+20
+	ax1	titanium plate (x2)			-50
+
+	ns	no shields					-40
+
+	m1	maneuver = 1				+50
+	m2	maneuver = 2				+20
+	m3	maneuver = 3				+10
+	m6	maneuver = 6				-10
+	m8	maneuver = 8				-20
+	m12	maneuver = 12				-35
+	t8	thrust-to-mass = 8			+25
+	t6	thrust-to-mass = 6			+20
+	t2	thrust-to-mass = 2			-20
+	t1	thrust-to-mass = 1			-50
+	s5	max speed = 5				-50
+	s12	max speed = 12				-25
+	s15	max speed = 15				-15
+
+	f30 fire rate = 30				+100
+	f45	fire rate = 45				+40
+	a100 fire accuracy = 100		+50
+	a90	fire accuracy = 90			+40
+	a70	fire accuracy = 70			-20
+	a60	fire accuracy = 60			-40
+
+Ships
+
+	Borer (w1,a1,ns,m12,s15,a70)	90
+	Borer II (w1,a1,ns,m6,s15,a90)	175
+	EI100 (w3,a2,m6,t1,s12,a100)	185
+	Hammerhead II (w4,ax1,t6)		170
+	Mweri II (w2,ax2,ns,m2,t8,f30,a90)	145
+	Ronin B (a2,t2,f45,a90)			180
+
+
+LEVEL III							250 points
+LEVEL IV							500 points
+LEVEL V								1,000 points
+LEVEL VI							2,500 points
+LEVEL VII							5,000 points
+LEVEL VIII							10,000 points
+LEVEL IX							25,000 points
+LEVEL X								50,000 points
+
+--------------------------------------------------
+
+Maneuver: high (1-2), medium (3-6), low (7+)
+Thrust-to-Mass: high (7+), medium (3-6), low (<3)
+Max Speed: high (21+), medium (15-20), low (<15)
+Fire rate: 60, 60, 30, 45
+
+Weapons: laser cannon, recoilless cannon
+Armor: titanium plate
+Shields: class 1 deflector
+
+LOW THRUST SHIPS
+
+		     Maneuver
+		 Low	Med    High
+	   +--------------------+
+S High |  .      .      .   |
+p      |                    |
+e Med  | L-M    M-M     .   |
+e      |                    |
+d Low  |  .     M-L    H-L  |
+       |                    |
+       +--------------------+
+
+	L-M: Borer
+	M-L: EI100
+	M-M: Borer II, Ronin-*
+	H-L: Tenhove
+
+
+MEDIUM THRUST SHIPS
+
+		     Maneuver
+		 Low	Med    High
+	   +--------------------+
+S High |  .      .      .   |
+p      |                    |
+e Med  |  .     M-M    H-M  |
+e      |                    |
+d Low  |  .      .      .   |
+       |                    |
+       +--------------------+
+
+	M-M: Hammerhead, Hammerhead II, Sapphire
+	H-M: Mweri
+
+HIGH THRUST SHIPS
+
+		     Maneuver
+		 Low	Med    High
+	   +--------------------+
+S High |  .      .      .   |
+p      |                    |
+e Med  |  .      .     H-M  |
+e      |                    |
+d Low  |  .      .      .   |
+       |                    |
+       +--------------------+
+
+	H-M: Mweri II
+
+PLAYER SHIP CHARACTERISTICS
+---------------------------
+
+CARGO SPACE
+
+	The amount of cargo that the ship can carry.
+
+	Enhancements: Cargo Expansion; Jurian Cargo Container.
+	Damages: None.
+
+FIRE RATE
+
+	The maximum fire rate of the weapons. The actual rate is the
+	smaller of this and the weapon's fire rate.
+
+	Enhancements: None.
+	Damages: None.
+
+FUEL USE
+
+	The amount of fuel used is proportional to what the ship
+	is doing. There are some effects that may drain fuel faster.
+
+	Enhancements: None.
+	Damages: None.
+
+MANEUVERABILITY
+
+	The ship's turn rate.
+
+	Enhancements: None.
+	Damages: None.
+
+MASS
+
+	This represents the total mass of the ship plus cargo. The greater
+	the mass, the less effective the engines are.
+
+	Enhancements: None.
+	Damages: None.
+
+MAX SPEED
+
+	This is the max speed of the ship.
+
+	Enhancements: None.
+	Damages: None.
+
+REACTOR OUTPUT
+
+	The reactor output controls how much energy the main reactor can
+	generate at any one time.
+
+	Enhancements: Nova Reactor Upgrade; Pteracnium Reactor; Vaccuum3 Reactor
+	Damages: None.
+
+THRUST
+
+	The ship's forward thrust.
+
+	Enhancements: Hylatt Stardrive; Inferno Drive; Inertialess Drive
+	Damages: None.
+
+TECHNOLOGY ORDERS II
+--------------------
+
+Mech
+Organic
+Nano
+Energy
+Exotics
+
+ROGUE/NETHACK COMPARISONS
+-------------------------
+
+Transcendence					Rogue
+
+Weapons							Weapons
+Missiles						Missiles
+
+Armor							Armor
+Shields							Gauntlets
+Armor paste						Boots
+								Helmet
+								Cloak
+								Shield
+
+ROM Biosofts					Potions
+Devices							Rings
+Autons							Scrolls
+Equipment						Wands
+Shield crystals
+Drive modification
+
+								Spells
+
+STAR TREK INSPIRATION
+---------------------
+
+Where No Man Has Gone Before
+	Lithium-cracking station
+	Delta Vega
+	USS Valiant
+	Energy Field
+	Edge of the Galaxy
+
+The Corbomite Maneuver
+	Corbomite
+	Fesarius
+	Balok
+	Retributive strike
+
+Mudd's Women
+	Venus drug
+	Miners
+	Ben Childress
+
+The Enemy Within
+	Split identity
+
+The Man Trap
+	Archeologists
+	Robert and Nancy Crater
+	Salt vampire
+	Impersonation
+
+The Naked Time
+	Implosion
+	Orbital decay
+	Psychoactive disease
+	Kevin Riley
+
+Charlie X
+	Cargo ship Antares
+	Non-corporeal beings
+
+Balance of Terror
+	Cloaking device
+	Comet
+
+What Are Little Girls Made Of?
+	Planet Exo III
+	Dr. Roger Korby
+	Ruk
+	Androids
+	Old Ones
+
+Dagger of the Mind
+	Tantalus Penal Colony
+	Neural neutralizer
+	Dr. Simon van Gelder
+	Dr. Tristan Adams
+
+Miri
+	Parallel Earth
+	Children
+	Grups
+	Onlies
+	Immortality
+
+The Conscience of the King
+	Anton Karidian
+	Lenore Karidian
+	Kodos, the Executioner
+	Famine
+	Tarsus IV
+	Phaser overload
+
+The Galileo Seven
+	Shuttlecraft
+	Taurus II
+	Murasaki 312
+	Hostile, primitive natives
+
+Court-Martial
+	Ion storm
+	Starbase 12
+
+The Menagerie
+	Illusion
+	Talos IV
+	Radiation poisoning
+
+Shore Leave
+	Vacation world
+
+The Squire of Gothos
+	General Trelane
+
+Arena
+	Cestus III
+	Ambush
+	False distress call
+	Gorn
+	Metrons
+
+The Alternative Factor
+
+Tomorrow is Yesterday
+	Time travel
+	Gravity well
+	Tractor beam
+
+The Return of the Archons
+	USS Archon
+	Red Hour
+	Lawgivers
+	Landru
+	Computer ruler
+	Light panel
+
+A Taste of Armageddon
+	Eminiar VII
+	Vendikar
+	Disintegration booth
+	Sonic disruptor
+
+Space Seed
+	Suspended animation
+	Genetic supermen
+	Conquerors
+	Sleeper ships
+	Botany Bay
+
+This Side of Paradise
+	Omicron Ceti III
+	Berthold rays
+	Elias Sandoval
+	Spores
+
+The Devil in the Dark
+	Pergium
+	Chief Engineer Vanderberg
+	Horta
+	Mining colony
+	Silicon nodules
+
+Errand of Mercy
+	Organia
+	Commander Kor
+	Military governor
+
+The City on the Edge of Forever
+	Cordrazine
+	Guardian of Forever
+	Time travel
+	Ripples in time
+
+Operation: Annihilate
+	Deneva
+	Photophobia
+	Flying nerve cells
+
+Catspaw
+	Pyris VII
+	Transmuter
+
+Metamorphosis
+	Commissioner Nancy Hedford
+	Cloud creature
+	Companion
+	Universal translator
+
+Friday's Child
+	Capella IV
+	High Teer Akaar
+	Warlike but honorable race
+
+Who Mourns for Adonis?
+	Anthropomorphic energy
+	Ancient astronauts
+	Power generator
+
+Amok Time
+	Pon farr
+	T'Pring
+	T'Pau
+
+The Doomsday Machine
+	Planet killer
+	USS Constellation
+	Commodore Matthew Decker
+	Berserker
+	Neutronium
+
+Wolf in the Fold
+	Murder
+	Redjac
+
+The Changeling
+	Self-repairing robots
+	Tan-Ru
+	Sterilize imperfections
+	Nomad
+	Upgrade machinery
+
+The Apple
+	Paradise world
+	Vaal
+
+Mirror, Mirror
+	Parallel universe
+	ISS Enterprise
+	Agonizer
+	Tantalus Field
+	Assassination
+
+The Deadly Years
+	Gamma Hydra IV
+	Code 2
+	Neutral Zone
+	Commodore George Stocker
+
+I, Mudd
+	Android planet
+
+The Trouble With Tribbles
+	Quadrotriticale
+	Vermin
+
+Bread and Circuses
+	Gladiators
+	SS Beagle
+	First Citizen Merikus
+
+Journey to Babel
+	Ambassadors
+	Suicide missions
+	Infiltrator
+
+A Private Little War
+	Mugatu
+	Hostile life
+
+The Gamesters of Triskelion
+	The Providers
+	Gladiators
+
+Obsession
+	USS Farragut
+	Argus X
+	Vampire cloud
+
+The Immunity Syndrome
+	USS Intrepid
+	Giant amoeba
+
+A Piece of the Action
+	USS Horizon
+	Iotia
+
+By Any Other Name
+	Kelva
+	Andromeda Galaxy
+
+Return to Tomorrow
+	Mind receptacles
+	Sargon
+	Thalassa
+	Henoch
+
+Patterns of Force
+	Melakon
+
+The Ultimate Computer
+	Computer captain
+	USS Excalibur
+	Dr. Richard Daystrom
+
+The Omega Glory
+	USS Exeter
+	Ronald Tracey
+	Fountain of youth
+
+Assignment: Earth
+	Interstellar transporter beam
+	Time travel
+	Roberta Lincoln
+	Nuclear missiles
+
+Spectre of the Gun
+	Melkots
+
+Elaan of Troyius
+	Arranged marriage
+	Dilithium crystals
+
+The Paradise Syndrome
+	Asteroid deflectors
+	Obelisk
+	Kirok
+
+The Enterprise Incident
+	Subcommander Tal
+
+And the Children Shall Lead
+	Triacus
+
+Spock's Brain
+	Teacher
+	Computer knowledge banks
+
+Is There in Truth No Beauty?
+	Dr. Miranda Jones
+	Medusans
+
+The Empath
+	Supernova
+	Empath
+
+The Tholian Web
+	USS Defiant
+	Interphase
+	Energy web
+
+For the World Is Hollow and I Have Touched the Sky
+	Asteroid ship
+	Yonada
+	Oracle
+
+The Day of the Dove
+	Induced conflict
+
+Plato's Stepchildren
+	Psychic powers
+	Dwarves
+	Lack of immunities
+
+Wink of an Eye
+	Scalos
+	Deela, Queen of Scalos
+
+That Which Survives
+	Losira
+	Defender
+
+Let That Be Your Last Battlefield
+	Lokai
+	Bele
+
+Whom Gods Destroy
+	Shapeshifter
+	Elba II
+	Insane asylum
+
+The Mark of Gideon
+	Disease-free planet
+	Overpopulation
+
+The Lights of Zetar
+	Possession
+	Exorcism
+	Memory Alpha
+
+The Cloudminders
+	Zienite
+	Troglytes
+	Stratos
+	Droxine
+
+The Way to Eden
+	Paradise world
+
+Requiem for Methuselah
+	Rigellian fever
+	Ryetalyn
+	Rayna
+	Robot guardians
+
+The Savage Curtain
+	Excalbia
+
+All Our Yesterdays
+	Sarpeidon
+	Mr. Atoz
+	Librarian
+
+Turnabout Intruder
+	Alien ruins
+	Camus II
+	Dr. Janice Lester
+
+MORGUE
+------
+
+SHIPS & STATIONS BY LEVEL (OLD)
+-------------------------------
+
+LEVEL I-II
+
+	Mech Order
+	EarthSpace Quarantine
+	Pirates
+
+	[x]	Borer-class gunship
+	[x] Borer II-class gunship
+	[x] Earthzone armed shuttle
+	[x] Hammerhead-class gunship (heavy gunship, outdated)
+	[x] Hornet-class battlepod
+	[x]	Mweri-class gunship (light gunship, outdated)
+	[x]	Mweri II-class gunship
+	[x] Ronin/A-class gunship
+	[x] Tenhove sentinel
+
+	[x] Anarchist Cell: Earthzone, Hornet
+	[x] Asteroid Mine, Titanium: Borer, Hammerhead
+	[x]	Outlaw Base: Hammerhead, Mweri
+	[x]	Outlaw Base 2: Hammerhead, Mweri, Ronin/A
+	[x]	Pirate Outpost: Mweri, Mweri II, Tenhove
+	[x]	Pirate Cache: Mweri
+
+	[x] Armor Dealer
+	[x] Arms Dealer
+	[x]	Commonwealth Dry Dock
+	[x]	Commonwealth Station
+	[x] Fuel Depot
+	[x] Korolov Shipping
+
+LEVEL III-IV
+
+	Mech Order
+	Asteroid Miners
+
+	[x]	EI100 (freighter, small)
+	[x]	EI100/M-class missileship (missileship, outdated)
+	[x] Hammerhead II-class gunship
+	[x] Ronin/B-class gunship
+	[x] Ronin/C-class gunship
+	[x]	Sandstorm-class gunship (light gunship, standard)
+
+	[x] Ares Redoubt: Sandstorm
+	[x] Duralloy Mine: Borer, Hammerhead
+	[x]	Outlaw Haven: Various
+	[x] Pirate Stronghold: Mweri, Mweri II, EI100/M
+	[x] Pteracnium Mine: Borer, Borer II, Hammerhead II
+
+LEVEL V-VI
+
+	Biomech Order
+	Ares Sect
+
+	[ ]	Olympus-class cruiser (capital ship, outdated)
+	[ ]	Cometfall-class gunship (heavy gunship, standard)
+	[ ]	Tundra-class gunship (stun/paralyse)
+
+	[ ]	Ares Outpost: Sandstorm, Tundra
+	[ ]	Ares Clone Vault: Olympus, Sandstorm, Tundra
+	[ ]	Ares Stronghold: Olympus
+	[ ]	Neutronium Mine: Borer II, EI100/M
+	[ ]	Remora Traders (black market weapons)
+
+LEVEL VII-VIII
+
+	Nuclear Order
+	Triton Alliance
+
+	[ ]	Light gunship (advanced)
+	[ ]	Freighter (medium)
+	[ ] Elysium-class missileship (missileship, standard)
+	[ ] Unspecified (radiation)
+
+LEVEL IX-X
+
+	Megascale Order
+	Breaking the Quarantine
+	Maximus Battle Arena
+
+	[ ] Asteroid ship
+	[ ] Freighter (large)
+	[ ] Heavy gunship (advanced)
+	[x] Iocrym Command Ship
+
+LEVEL XI-XII
+
+	Biotech Order
+	Galactics
+
+	Unspecified (organic)
+	Unspecified (retributive strike)
+	Unspecified (illusion)
+
+LEVEL XIII-XIV
+
+	Replicator Order
+
+	Unspecified (invisible)
+	Unspecified (replicator)
+
+LEVEL XV-XVI
+
+	Nano Order
+
+	Missile ship (advanced)
+	Capital ship (standard)
+
+LEVEL XVII-XVIII
+
+	Nanotok Order
+
+	Carrier
+	Unspecified (parasite)
+
+LEVEL XIX-XX
+
+	Demonology Order
+
+	The Halo Races
+
+	Capital ship (advanced)
+	Unspecified (inertialess)
+
+LEVEL XXI-XXII
+
+	Demonology Order
+
+	Inside the inner Core
+
+LEVEL XXIII-XXIV
+
+	Demonology Order
+
+LEVEL XXV
+
+	Demonology Order
+
+	Oracus & Domina
+
+ENCOUNTERS BY LEVEL
+-------------------
+
+LEVEL I
+
+	[x] Anarchists: Anti-corporate and anti-commonwealth
+	[x] Charon Pirates: Prey on deep space freighers; Weapons and supply caches
+	[x] Outlaws: Smuggling and other illegal activities; outpost
+	[ ] Wireheads: Zoned out punks
+
+LEVEL II
+
+	[ ] Berzerkers
+	[ ] Bioterrorists: Anti-technologists
+	[x] Charon Pirates: Outposts
+	[x] Outlaws: Smuggling and other illegal activities; haven
+
+LEVEL III
+
+	[x] Asteroid Miners: Illegal squatters defend their asteroid
+	[ ] Bounty Hunters: Hired guns
+	[x] Charon Pirates: Strongholds
+	[ ] Drug Cartels: Drug distribution
+	[ ] Organleggers: Human organ smuggling
+
+LEVEL IV
+
+	[ ]	Crime Lords: Various violent crimes to cover up various
+				econonic crimes
+	[ ] Order of Penitence: Religious fanatics bent on destruction
+	[ ] Weapon Smugglers: Smuggle nuclear weapons
+
+LEVEL V
+
+	[ ]	Ares Sect: Seek to spread to all life-sustaining worlds (Clone Armies)
+	[ ] Marauders: Attack small outposts and stations
+
+LEVEL VI
+
+	[ ] Slavers: Traffic in humans
+	[ ] Survivalists: Nuclear-armed settlers
+
+LEVEL VII
+
+	[ ] Rogue Fleets: Rogue military fleets
+	[ ] Utopians: Forced collective conformance
+
+LEVEL VIII
+
+	[ ] Cyborgs: Human-machine combinations
+	[ ] Hive Cults: Drones and warriors
+
+LEVEL IX
+
+	[ ] Genetic Supermen: Genetically improved humans
+	[ ] Xenophobes: Anti-alien and anti-alien-friendly
+
+LEVEL X
+
+	[ ] Spacers: Genetically adapted to living in space
+	[ ] Terraformers: Fanatical about spreading human life
+
+SPECIAL STATIONS FROM FRONTIER
+
+[x]	Agricultural Colony
+	
+	Services: Trading Post
+	Special: Player is asked to help defend the station. If player accepts,
+			the station is attacked by three waves of enemy ships. If the
+			player defeats them all then he gets a reward of 5000 credits.
+
+[ ] Arakrin Trap
+
+	Special: Station sucks fuel from ships in range.
+
+[x] Arms Dealer
+
+	Services: Trading Post
+
+[x] Black Market Outpost
+
+	Special: Sells/buys illegal items; Sells regular items at a discount;
+			Requires black market ID to get in.
+
+[ ] Cyber Corporation HQ
+
+	Special: Weapon is a hacker device that shuts down the player's main
+			computer (thus player is immobilized).
+
+[x] Deep Space Freighters Association
+
+	Services: Shipyard; Captain's Bar
+	Special: Player can go on missions of increasing difficulty to defend
+			freighters. Seven missions available.
+
+[x] Djrin-Kor Gate Station
+
+	Special: Player can use Mohadjrin memory coils to repair the AI at
+			the station. If the AI is repaired, a gate to the Mohadjrin
+			Homeworld is activated in the system. This ends the game.
+
+[ ] EarthRise Spaceport
+
+	Special: Purchase ticket to Earth. This ends the game.
+
+[ ] Engineer Lab
+
+	Special: Repairs weapons and shields; enhances missiles and pods.
+
+[x] Hans-Comm Insurance Company
+
+	Special: Player can buy insurance (price increases the more that he
+			has been killed before). If the player dies, insurance ship
+			comes in and resurrects the player.
+
+[x] Illegal Mining Outpost
+
+	Special: Mining ships are not docked with mine (they are a certain distance
+			away and defend the mine)
+
+[ ] Ion Storm
+
+	Special: Ships near it are disabled.
+
+[ ] Juno Cartel Drug Lab
+
+	Special: Sends out distress signal so other Juno stations send
+			ships to defend it.
+
+[ ] Juno Outpost
+
+	Special: Sends out distress signal so other Juno stations send
+			ships to defend it.
+
+[ ] Juno Training Base
+
+[ ] Luminous Mine
+
+	Special: Sends load of ore to Luminous Shipyard
+
+[ ] Luminous Shipyard
+
+	Special: Sends patrols to attack the player; Creates ships according to
+			adaptive distribution such that ships that are resistant to
+			weapons that the player is using are favored.
+
+[x] Merchant Prince Hotel
+
+	Special: Player can sell illegal items to get a black market ID.
+			Chance of getting busted.
+
+[ ] Mining Outpost
+
+	Services: Trading Post; Captain's Bar
+
+[ ] Mohadjrin Ruins
+
+	Special: Looks like an icy asteroid. If hit with missiles, reveals
+			Mohadjrin ruins.
+
+[-] Muro Metropolis
+
+	Services: Introduction to Frontier; Shipyard; Trading Post; Restaurant (with
+			random informations)
+
+[-] Neutral Colony
+
+	Services: Trading Post; Captain's Bar
+
+[x] Nuclear Station
+
+	Services: Takes an Anvil missile and a fusion trigger and creates
+			a fusion missile.
+
+[x] Nuclear Smuggler Base
+
+	Special: Transport with fusion triggers jumps out as soon as player attacks.
+
+[ ] Pell Station
+
+	Services: Trading Post; Captain's Bar
+	Special: Station is fearful of pirates in the system. If all pirate stations
+			in the system are destroyed before a certain time, then the player
+			is rewarded with a gift. Otherwise, pirates send a fleet to destroy
+			the station.
+
+[ ] Royal Museum of Humanity
+
+	Special: Player can sell items to the curator. The curator's esteem for the
+			player varies depending on the kinds of objects he sells. If the
+			esteem is high enough, player gets a gift or some information.
+
+[ ] Secret Mining Base
+
+	Special: Base cannot be detected without probes.
+
+[ ] Secret Refinery
+
+	Special: Base cannot be detected without probes.
+
+[x] Shipyard
+
+	Services: Shipyard
+
+[x] Spartacus Battle Arena
+
+	Special: Player may fight against progressively more powerful ships,
+			gaining a reward each time he wins. There are nine rounds. If the
+			player completes all nine rounds, he gets a special medal.
+
+[ ] Stasis Sphere:
+
+	Special: Sphere opens when hit with sufficient energy. Contents are random:
+			Mohadjrin gunship; Arakrin Trap; Wreck; etc.
+
+[ ] Trading Company
+
+	Services: Trading Post (has exotic items)
+
+[x] Trillum Refinery
+
+	Services: Trading Post; Refuel
+
+[ ] Wormhole
+
+	Special: Acts like a gate (if found with probe). Take player to either a) another
+			system in the line; b) a brand-new random system; c) a new Grome system
+
+OTHER STATIONS FROM FRONTIER
+
+[ ] Djrin-Kor Hive
+
+	Special: Sends patrols to attack the player.
+
+[ ] Grome Outpost
+
+	Special: Sends patrols to attack the player.
+
+[ ] Leveller Outpost
+
+	Special: Sends patrols to attack the player
+
+[ ] NeoChristian Mission
+
+	Special: Sends patrols to attack the player
+
+[ ] Pirate Outpost
+
+[ ] Slaver Outpost
+
+	Special: Sends patrols to attack the player
+
+[ ] Sweets 'n' Boosters Franchise
+
+	Special: Sends patrols to attack the player; transports with drugs
+			on board jump out as soon as player attacks.
+
+--------------------
+
+titanium 
+
+
+4		04 cm			titanium hull plate
+8		08 cm			heavy titanium hull plate
+
+25		25 cm			titanium battle plate
+50		50 cm			double titanium battle plate
+100		100 cm			quad titanium battle plate
+
+segment of heavy titanium plate -> heavy titanium hull plate
+segment of titanium plate -> titanium hull plate
+segment of ceramic armor -> ceramic hull plate
+
+segment of light-plasteel plate -> plasteel hull plate
+segment of plasteel plate -> plasteel armor
+segment of heavy plasteel plate -> heavy plasteel armor
+
+COMMONWEALTH I
+
+	Anarchist Gathering (I)				100
+	Anarchist Settlement (II)			 10
+	Outlaw Camp (I)						100
+	Outlaw Base (II)					 10
+	Pirate Cache (I)					100
+	Pirate Outpost (II)					 10
+
+COMMONWEALTH II
+
+	Anarchist Gathering (I)				 50
+	Anarchist Settlement (II)			100
+	Bioterrorist Camp (III)				 10
+	Titanium Mine (II)					100
+	Duralloy Mine (III)					 10
+	Outlaw Camp (I)						 50
+	Outlaw Base (II)					100
+	Outlaw Haven (III)					 10
+	Pirate Cache (I)					 50
+	Pirate Outpost (II)					100
+	Pirate Stronghold (III)				 10
+
+COMMONWEALTH III
+
+	Anarchist Settlement (II)			 50
+	Bioterrorist Camp (III)				100
+	Bioterrorist Compound (IV)			 10
+	Titanium Mine (II)					 50
+	Duralloy Mine (III)					100
+	Pteracnium Mine (IV)				 10
+	Outlaw Base (II)					 50
+	Outlaw Haven (III)					100
+	Drug Distribution Outpost (IV)		 10
+	Pirate Outpost (II)					 50
+	Pirate Stronghold (III)				100
+	Marauder Outpost (IV)				 10
+
+COMMONWEALTH IV
+
+	Bioterrorist Camp (III)				 50
+	Bioterrorist Compound (IV)			100
+	Drug Distribution Outpost (IV)		100
+	Drug Lab (V)						 10
+	Marauder Outpost (IV)				100
+	Marauder Compound (V)				 10
+	Miners, Duralloy (III)				 50
+	Miners, Pteracnium (IV)				100
+	Outlaw Haven (III)					 50
+	Pirate Stronghold (III)				 50
+	Penitent Shrine (IV)				100
+	Penitent Sanctum (V)				 10
+	Utopian Commune (V)					 10
+	Xenophobe Compound (V)				 10
+
+COMMONWEALTH V
+
+	Bioterrorist Compound (IV)			 50
+	Drug Distribution Outpost (IV)		 50
+	Drug Lab (V)						100
+	Drug Cartel Stronghold (VI)			 10
+	Marauder Outpost (IV)				 50
+	Marauder Compound (V)				100
+	Marauder Stronghold (VI)			 10
+	Miners, Pteracnium (IV)				 50
+	Utopian Commune (V)					100
+	Utopian Citadel (VI)				 10
+	Penitent Shrine (IV)				 50
+	Penitent Sanctum (V)				100
+	Penitent Monastery (VI)				 10
+	Xenophobe Compound (V)				100
+	Xenophobe Stronghold (VI)			 10
+
+SOVEREIGNS BY CATEGORY
+----------------------
+
+ANARCHISTS
+
+sovereigns			Anarchists; Bioterrorists; Xenophobes
+
+ship designs		This category uses modified versions of various
+					Freeworld designs. Anarchists have many different
+					variations of ships and rely on numbers rather than
+					on a few powerful ships.
+
+					Armor: standard armor (titanium; ceramic; plasteel)
+					Devices: none
+					Missiles: none
+					Shields: standard (class I-III deflectors)
+					Weapons: lasers and biohazard weapons
+
+					Anarchists
+
+					[x] Hornet-class battlepod (I)
+					[x] EarthZone-class armed shuttle (II)
+
+					Bioterrorists
+
+					[x] Plague-class gunship (III)
+					[x] Revelations-class missileship (IV)
+
+					Xenophobes
+
+					[ ] Sterilizer-class gunship (V)
+					[ ] Inflexible-class transport (VI)
+
+changes				Suggest the following ship design changes to
+					conform to the category:
+
+					[ ] Anarchists should have more variants:
+						Hornet variant with recoilless
+						Hornet variant with lower fire rate but higher accuracy
+						Hornet variant with heavy titanium
+						EarthZone variant with blaster
+						EarthZone variant with heavier armor and no shields
+
+
+PIRATES
+
+sovereigns			Charon Pirates; Marauders; Slavers
+
+ship designs		Pirates use modified versions of various corporate
+					ship designs. Pirate ships are generally
+					fast (to catch their prey) and maneuverable. Pirates
+					generally use fast gunships backed-up by heavier
+					missileships.
+
+					Armor: impact-resistant (reactive; advanced reactive)
+					Devices: none
+					Missiles: NAMI launcher
+					Shields: standard (class I-III deflectors)
+					Weapons: lasers and ion weapons
+
+					Charon Pirates
+
+					[x] Tenhove-class sentinel (I)
+					[x] Corsair-class gunship (I)
+					[x] Viking-class gunship (II)
+					[x] Corsair II-class gunship (III)
+					[ ] Drake-class missileship (IV)
+
+					Marauders
+
+					[x] Viking II-class gunship (IV)
+					[x] Barbary-class gunship (V)
+					[ ] Tripoli-class destroyer (VI)
+
+					Slavers
+
+					[ ] ???
+					[ ] ???
+
+changes				Suggest the following ship design changes to
+					conform to the category:
+
+					[ ] Maurauders should have mobile base
+					[ ] Viking ships may want to be faster(?)
+
+
+OUTLAWS
+
+sovereigns			Crime Lords; Drug Cartel; Outlaws
+
+ship designs		Outlaws use modified UAS designs. Their ships are
+					generally slow and tough, using Arbalest cannons
+					and heavy armor. Most outlaw ships are heavy gunships.
+
+					Armor: heavier than average, laser-resistant
+					Devices: none
+					Missiles: MAG launcher
+					Shields: generally weaker than average
+					Weapons: kinetic weapons
+
+					Outlaws
+
+					[x] Zulu-class gunship (I)
+					[x] Zulu II-class gunship (II)
+					[x] Oromo-class gunship (III)
+					[1] Sotho-class gunship (III)
+
+					Drug Cartel
+
+					[ ] Meth Enforcer-class gunship (IV)
+					[ ] Meth Punisher-class gunship (V)
+					[ ] Endor-class freighter (IV)
+
+					Crime Lords
+
+					[ ] ???
+					[ ] ???
+
+changes				Suggest the following ship design changes to
+					conform to the category:
+
+					[ ] Zulu and Zulu II should have 18 max speed
+					[x] Need level II kinetic weapon
+
+
+RELIGIOUS
+
+sovereigns			Hive Cult; Order of Penitents
+
+ship designs		These sovereigns use heavily modified ship designs
+					from various sources.
+
+					Armor: heavier than average
+					Devices: none
+					Missiles: MAG launcher
+					Shields: standard
+					Weapons: heavier than average
+
+					Penitents
+
+					[x] Repentent-class gunship (IV)
+					[x] Atonement-class gunship (V)
+
+
+SETTLERS
+
+sovereigns			Miners; Survivalists; Utopians
+
+ship designs		Settlers generally use modified Earth Industry designs.
+					Settler ships are slow but maneuverable. Settlers also
+					rely more on sophisticated defense satellites and sentinels
+					than on ships.
+
+					Armor: standard armor (titanium; plasteel)
+					Devices: none
+					Missiles: NAMI launcher
+					Shields: generally stronger than average
+					Weapons: various
+
+					Miners
+
+					[x] Borer-class gunship (I)
+					[x] Hammerhead-class gunship (I)
+					[x] Borer II-class gunship (II)
+					[x] Hammerhead II-class gunship (III)
+
+					Utopians
+
+					[ ] Netizen-class gunship (V)
+					[ ] Bazaar-class missileship (VI)
+
+					Survivalists
+
+					[ ] ???
+					[ ] ???
+
+changes				Suggest the following ship design changes to
+					conform to the category:
+
+					[ ] Need more defense satellites and sentinels
+
+
+GREAT POWERS
+
+00	military
+A8	expansionist
+B0	imperial
+E0	commonwealth
+E8	alliance
+
+MINOR POWERS
+
+30	trader
+38	farmer
+48	miner
+50	energy
+78	scavenger
+80	xenophobe
+A0	settler
+B8	nomad
+D0	refugee
+D8	warlord
+F8	destroyer
+
+NICHE POWERS
+
+08	religious
+10	diplomat
+18	punisher
+20	philosopher
+28	engineer
+40	medical
+58	luxuries
+60	transport
+68	construction
+70	librarian
+C8	explorer
+
+OUTLAW POWERS
+
+88	pirate
+90	criminal
+98	slaver
+C0	anarchist
+F0	rebel
+
+CIVILIZATIONS
+-------------
+
+LOCATIONS
+
+Sol System
+	Earth
+	NEOs
+	Luna
+	Mars
+	Belt
+	Jovian system
+	Saturn
+	Kuiper cloud
+Centauri
+Sirius
+Kibo
+St. Katharine's Star (Incandescence)
+Rigel Aurelius
+Edo (Temple of Domina)
+Eridani
+Jiang's Star
+[Altair]
+[Procyon]
+
+CIVILIZATIONS
+
+North Atlantic Union
+Asian Pacific Directorate
+United African States
+Ares Orthodoxy
+Corporate Hierarchy
+	NAMI
+	Earth Industries
+	Pacific Defense Corporation
+Concatenated Digital Metropolis
+Ringers Collective
+Freeworlds
+Sung Slavers
+Commonwealth
+	Commonwealth Fleet
+[Triton Alliance]
+
+SISTERS OF DOMINA
+
+Initial conversation:
+
+A
+
+"Welcome, pilgrim! You are far from home, and yet your journey has just begun. Your path to 
+
+the Core will not be easy."
+
+["What makes you think I'm going to the Galactic Core?"] => B
+["Can you tell me how to get there?"] => C
+["Do you happen to sell any weapons or armor?"] => D
+
+B
+
+"Your eyes are on me, but your mind sees the eternal beauty of Domina. You are called to 
+
+Domina--though you do not know why. Perhaps if you reach her you will understand."
+
+["Tell me about Domina"] => E
+["What do you mean, 'if you reach her'?"] => F
+["Will she reimburse me for this ship I had to buy?"] => G
+
+C
+
+"The stargates will take you. Seek them out and enter. But be prepared for many obstacles. 
+
+You must grow stronger to reach the Core."
+
+["Why is it so hard to reach the Core?"] => H
+["How can I overcome these obstacles?"] => I
+["In that case I need weapons. Lots of weapons."] => J
+
+D
+
+"If blood is what you seek, the Universe will provide what you need. It always does. But if 
+
+you find an omnidirectional TeV9, that would be particularly lucky."
+
+["Have you been to the Core?"] => K
+["What else will I need on my journey?"] => L
+["This better be worth it."] => M

@@ -1,0 +1,1567 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceExtension
+	[
+	<!ENTITY modDockScreenFramework			"0xDCBA0060">
+	<!ENTITY dsDSFStandardNone				"0xDCBA0061">
+	<!ENTITY dsDSFStandardShip				"0xDCBA0062">
+	<!ENTITY dsDSFStandardOre				"0xDCBA0063">
+	<!ENTITY dsDSFCustomPicker				"0xDCBA0064">
+	<!ENTITY dsDSFItemPickerPlayer			"0xDCBA0065">
+	<!ENTITY dsDSFItemPickerStation			"0xDCBA0066">
+	<!ENTITY dsDSFDisplay					"0xDCBA0067">
+]>
+
+<TranscendenceExtension UNID="&modDockScreenFramework;" version="0.99c">
+
+<!--
+	Requires:
+		HashFunctions
+
+	Purpose:
+		1. 	Provide a framework for building DocksScreens. This framework will enable
+			xml free DockScreens, and take away much of the hassle, of having very
+			dynamic user interaction.
+		2. 	Provide a mechanism for building DockScreen Hooks, enabling one dockscreen to
+			act as an entry point for many mods.
+
+	Conventions:
+		DS: 	DockScreen
+		DSF:	DockScreen Framework
+		
+	TODO:
+		--	Study (scrSetInputText gScreen text) and implement it if usefull
+		--	Snazzy <Display> setup
+			<Image> takes a list : (imgRes x y width height)
+			<Text>can be set by (scrSetDisplayText gSreen "id" text)
+		--	Add the 'quickAccess key for building a list of screen that
+			can be accessed directly
+		--	Is it possible to force an action to be displayed as the last in
+			a list.
+		--	Have an action be non-overridable.
+		--	Build in a "Filter" ability?
+		
+-->
+
+	<Globals>
+		<!-- TRAP START -->
+		(block Nil
+			;; This variable controls if we are running in debug or not.
+			(setq dsf_Debug Nil)
+			;; this is a convinient way to force all debug calls from 
+			;; log to screen
+			(setq dsf_DebugToScreen Nil)
+			
+		;; --------------------------------------------------------
+		;; DataStructures
+		;; --------------------------------------------------------
+
+			;; ResetScreen is called when exiting a DS, or
+			;; when a complete new screen setup is needed.
+			;; It defines the global data structures that
+			;; DSF uses, and is run on game startup.
+			(setq dsf_ResetScreen (lambda Nil
+				(block Nil
+					;; ScreenState is used for storing information 
+					;; between screen changes
+					(setq dsf_ScreenState (list))
+					;; ScreenHistory is used to store 'back button' state.
+					(setq dsf_ScreenHistory (list))
+					;; ReturnData is used for storing the data to show
+					;; upon return from a non DSF Screen
+					(setq dsf_ReturnData Nil)
+				)
+			))
+			;; actually run the ResetScreen
+			(dsf_ResetScreen)
+
+			;; ClearScreen is used to set a clean slate between 
+			;; screen displays. It is also called when exiting 
+			;; a DS and assigns the datastucture that holds
+			;; the current ScreenData.
+			(setq dsf_ClearScreen (lambda Nil
+				(setq dsf_ScreenData Nil)
+			))
+			;; actually run the ClearScreen now
+			(dsf_ClearScreen)
+
+		;; --------------------------------------------------------
+		;; ExternalFunctions
+		;; --------------------------------------------------------
+			
+			;; ShowDockScreen is the entry point into the DSF universe.
+			;; It takes a ScreenData argument which it makes sure becomes 
+			;; the ScreenData used for this screen. It figures out which 
+			;; screen and pane to show, sets the 'currentScreen reference,
+			;; and actually displays the screen.
+			;; It takes two optional arguments, originScreen and originPane
+			;; which are used to set the screen and pane to return to
+			;; when we leave a DSF controlled screen. This is usefull for
+			;; returning to a regular DS after having used DSF.
+			(setq dsf_ShowDockScreen (lambda (screenData originScreen originPane)
+				(block Nil
+
+					; TODO: Do some minimal checking that the data we recieve can actually support a DS
+					
+					;; set the ScreenData
+					(setq dsf_ScreenData screenData)
+					;; store a copy of the unmodified data,
+					;; for use in our History Navigation.
+					(dsf_SetScreenData 'unmodified screenData)
+					;; save the origin screen and pane on our state
+					(dsf_SetScreenState 'originScreen originScreen)
+					(dsf_SetScreenState 'originPane originPane)
+					;; set the 'screenType to show. If the current ScreenData
+					;; doesn't specify it, set a default.
+					(setq screenType (dsf_DoUntil (list
+						(dsf_GetScreenData 'screenType)
+						'"&dsDSFStandardNone;"
+					)))
+					;; we do the same with the 'paneType
+					(setq paneType (dsf_DoUntil (list
+						(dsf_GetScreenData 'paneType)
+						'"Default"
+					)))
+					;; if the 'screenType is not a hexadecimal string
+					;; then it must be a string that uses the internal
+					;; ScreenTypeToUNID function. Apply that to the string
+					(if (not (eq (strFind screenType "0x") 0))
+						(setq screenType (dsf_ScreenTypeToUNID screenType))
+					)
+					;; now we should have a safe screenType and paneType.
+					;; set them back into the ScreenData, so we can use
+					;; them further on.
+					(dsf_SetScreenData 'screenType screenType)
+					(dsf_SetScreenData 'paneType paneType)
+					;; print some debug info about our current state
+					(dsf_DoDebug (cat
+						"ShowDockScreen. "
+						"screenName: " (dsf_GetScreenName) 
+						" screenType: " screenType
+						" paneType: " paneType
+					))
+					;; do the actual showing
+					(scrShowScreen gScreen screenType paneType)
+				)
+			))
+		
+		
+		;; --------------------------------------------------------
+		;; InternalFunctions
+		;; --------------------------------------------------------
+			
+		
+			;; ScreenOnInit must be run in every ScreenSpecification
+			;; OnInit element. It takes an integer argument which
+			;; must be the amount of actions specified
+			;; (starting from zero) in the DS, not counting 
+			;; Back and Exit. It also looks for the 'onInitFunc in
+			;; the ScreenData, and runs that.
+			;; Also, it handles the case where a screen is being shown,
+			;; but no ScreenData is set. This is a quite common case
+			;; related to the back action. When we call out to a standard,
+			;; DS from within DSF, we need to tell the framework how to get
+			;; back. This is done by defining a global dsf_ReturnData variable
+			;; that contains the ScreenData. This function checks if there is
+			;; no ScreenData, checks if there is ReturnData and bootstraps it
+			;; or exits
+			(setq dsf_ScreenOnInit (lambda (actionCount)
+				(block Nil
+					;; if we have no ScreenData check for the existence
+					;; of ReturnData and bootstrap it
+					(if (eq dsf_ScreenData Nil)
+						(if dsf_ReturnData
+							(dsf_ShowDockScreen dsf_ReturnData)
+							;; if we have none, exit
+							(dsf_ExitAction)
+						)
+						(block Nil
+							;; otherwise we continue with the current ScreenData 
+							(dsf_SetScreenData 'actionCount actionCount)
+							(dsf_DoFunc (dsf_GetScreenData 'onInitFunc))
+						)
+					)
+				)
+			))
+		
+			;; PaneInitialize must be run in every ScreenSpecification
+			;; Pane Initialize element. It is probably the most active
+			;; function in DSF. It takes care of showing/hiding actions,
+			;; setting action names and quick-keys and setting the pane 
+			;; description. 
+			(setq dsf_PaneInitialize (lambda Nil
+				(block (actionCount actions paneDesc hideBack hideExit 
+						initFunc stateDesc)
+				
+					(dsf_DoDebug (cat "Starting PaneInitialize: " (dsf_GetScreenData 'paneType)))
+					
+					;TODO: work out if this function should be able to break execution
+					(dsf_DoFunc (dsf_GetScreenData 'preInitFunc))
+
+					;; Get and set some of the default values
+					;; We do this here so they can be overridden later.
+					(setq actionCount (dsf_GetScreenData 'actionCount))
+					(setq actions (dsf_GetScreenData 'actions))
+					(setq paneDesc (dsf_GetScreenData 'paneDesc))
+					(setq hideBack (dsf_GetScreenData 'hideBack))
+					(setq hideExit (dsf_GetScreenData 'hideExit))
+					(setq initFunc (dsf_GetScreenData 'initFunc))
+					
+					;; Get the current contents of 'dsf_PaneDescription,
+					;; so we can use it later
+					(setq stateDesc (dsf_GetPaneDesc))
+					;; clear the paneDesc so it doesn't interfere
+					(dsf_ClearPaneDesc)
+					;; start building the paneDesc
+					(dsf_BuildPaneDesc paneDesc)
+
+					;; if we are in a CustomPicker Screen, and an entry
+					;; is selected, then get it's data, and override
+					;; the current data if required.
+					(if (dsf_IsCustomPickerScreen True) (block (entryData)
+						;; first we merge the actions.
+						;; if the list entry has an 'action key
+						;; loop over the actions, and merge into
+						;; our currently defined actions.
+						;; This is a very powefull mechanism, which allows us to
+						;; only override a single key of an already defined action.
+						(setq entryData (dsf_GetListEntryData 'actions))
+						(if entryData (block (entryActions)
+							;; we define an empty list to contain
+							;; our modified actions
+							(setq entryActions (list))
+							;; we loop once for every possible action in this 'screenType
+							(for i 0 actionCount (block (a ea)
+								;; we have to use this cludgy syntax to make a copy
+								;; of the hash, so we don't modify the original.
+								;; Basically we are appending an empty list onto
+								;; the list we want to copy.
+								(setq a (append (item actions i) '()))
+								;; get the current entries action
+								(setq ea (item entryData i))
+								;; if we have an entryAction, merge it with the
+								;; base action, and append the new hash to entryActions
+								(if ea (lnkAppend entryActions (hshMerge a ea)))
+							))
+							;; we now have updated actions. Override the base.
+							(setq actions entryActions)
+						))
+						;; check if the entry wants to set the paneDesc.
+						(setq entryData (dsf_GetListEntryData 'paneDesc))
+						;; if set, this will either prepend append or replace
+						;; the current description
+						(if entryData
+							(dsf_BuildPaneDesc entryData)
+						)
+						;; if we have hideBack set, override
+						(setq hideBack (dsf_DoUntil (list
+							(dsf_GetListEntryData 'hideBack)
+							hideBack
+						)))
+						;; if we have hideExit set, override
+						(setq hideExit (dsf_DoUntil (list
+							(dsf_GetListEntryData 'hideExit)
+							hideExit
+						)))
+						;; if we have initFunc set, override
+						(setq initFunc (dsf_DoUntil (list
+							(dsf_GetListEntryData 'initFunc)
+							initFunc
+						)))
+					))
+					;; Finish building the paneDesc.
+					;; Prepend the stateDesc if it is not nil.
+					;; This allows messages set in the runFunc of an action
+					;; in the previous screen, to carry over once. Good for
+					;; "updated" style messages.
+					(if stateDesc
+						(dsf_BuildPaneDesc (list stateDesc '-))
+					)
+					;; actually set the paneDesc
+					(dsf_SetPaneDesc)
+					
+					;; now we must loop through and hide/name actions
+					(for i 0 actionCount (block (action hideFunc)
+						(setq action (item actions i))
+						(setq hideFunc (hshGet action 'hideFunc))
+						(if (and action (not (dsf_DoFunc hideFunc)))
+							;; we have an action. Set it up
+							(block (disableFunc name)
+								(setq name (hshGet action 'name))
+								;; set the label
+								(scrSetActionLabel gScreen i (item name 0) (item name 1))
+								(setq disableFunc (hshGet action 'disableFunc))
+								;; should we disable it?
+								(scrEnableAction gScreen i (not (dsf_DoFunc disableFunc)))
+							)
+							;; i guess we should hide the function
+							(scrShowAction gScreen i Nil)
+						)
+					))
+					;; should we hide the back action?
+					(if (dsf_DoFunc hideBack)
+						;; if hideBack evals to True, hide the back action
+						(scrShowAction gScreen (add actionCount 1) Nil)
+						(block (histCount)
+							;; if we shouldn't hide it, maybe we should disable it.
+							;; The reasoning here is: If we have no history, the 
+							;; back action should take us to the origin screen.
+							;; if we have no origin screen, we disable the action.
+							(setq histCount (count dsf_ScreenHistory))
+							(if (or (eq histCount 0) (eq histCount Nil))
+								(if (not (dsf_GetScreenState 'originScreen))
+									(scrEnableAction gScreen (add actionCount 1) Nil)
+								)
+							)
+						)
+					)
+					;; should we hide the exit action?
+					(if (dsf_DoFunc hideExit)
+						(scrShowAction gScreen (add cnt 2) Nil)
+					)
+					;; as the last thing we eval our initFunc
+					(dsf_DoFunc initFunc)
+					(dsf_DoDebug "Finished PaneInitialize")
+				)
+			))
+			
+			;; ListInitialize is called when the CustomPicker list
+			;; is built. It must return a list that can be used to 
+			;; display a CustomPicker list.
+			(setq dsf_ListInitialize (lambda Nil
+				(block (displayList)
+					(dsf_DoDebug "Starting ListInitialize")
+					;; set displayList to an empty list so
+					;; we can use lnkAppend
+					(setq displayList (list))
+					;; loop over the ScreenData's 'customPicker entry
+					(enum (dsf_GetScreenData 'customPicker) entry
+						(block (hide)
+							;; check if we should hide this entry
+							(setq hide (dsf_DoFunc (hshGet entry 'hideList)))
+							;; if we shouldn't hide then build the list
+							(if (not hide)
+								;; first element is the title, second element
+								;; is an image, third element is a subtitle,
+								;; fourth element is the entire entry repeated.
+								;; this allows us to access all the data later.
+								(lnkAppend displayList (list
+									(dsf_DoUntil (list
+										(hshGet entry 'title)
+										""
+									))
+									(hshGet entry 'image)
+									(dsf_DoUntil (list
+										(hshGet entry 'subtitle)
+										""
+									))
+									entry
+								))
+							)
+						)
+					)
+					(dsf_DoDebug "Finished ListInitialize")
+					displayList
+				)
+			))
+			
+			;; ItemListFilter is run in ItemList screens
+			;; it checks if there is a filter to set, and sets it!
+			(setq dsf_ItemListFilter (lambda Nil
+				(block Nil
+					;; if we are in an ItemPicker screen, check
+					;; if an 'itemFilter is specified, and apply it
+					(if (dsf_IsItemPickerScreen)
+						(block (itemFilter)
+							(setq itemFilter (dsf_GetScreenData 'itemFilter))
+							(if itemFilter
+								(scrSetListFilter gScreen itemFilter)
+							)
+						)
+					)
+				)
+			))
+			
+			;; RunAction is the function that is called when we trigger
+			;; an action. It takes one argument which is the position of
+			;; the action (zero based). It's most important task is to
+			;; eval the 'runFunc. It lets us override alot of values
+			;; from the currently selected ListEntry.
+			(setq dsf_RunAction (lambda (pos)
+				(block (action entryAction runFunc screenData
+						nextScreen nextPane noSave message)
+					
+					(dsf_DoDebug "Starting RunAction")
+					;; if we are in a CustomPicker screen
+					;; see if we have data that we must use to 
+					;; override with
+					(if (dsf_IsCustomPickerScreen)
+						;; pick out the action matching this position
+						(setq entryAction (item (dsf_GetListEntryData 'actions) pos))
+					)
+					;; set entryAction to be an empty list if it is Nil
+					(setq entryAction (dsf_DoUntil (list 
+						entryAction 
+						(list)
+					)))
+					;; set the base action data
+					(setq action (item (dsf_GetScreenData 'actions) pos))
+					;; if we have a message, get it and use it to
+					;; build the next panes description
+					(setq message (dsf_DoUntil (list
+						(hshGet entryAction 'message)
+						(hshGet action 'message)
+					)))
+					(if message
+						(dsf_BuildPaneDesc message)
+					)
+					;; find and set the runFunc
+					(setq runFunc (dsf_DoUntil (list
+						;; first we try the current list entries action
+						(hshGet entryAction 'runFunc)
+						;; the the base list entry
+						(dsf_GetListEntryData 'runFunc) 
+						;; then the base action
+						(hshGet action 'runFunc)
+						;; or maybe even in the root
+						(dsf_GetScreenData 'runFunc)
+					)))
+					;; as said the 'runFunc is the most important aspect
+					;; of this function. It determines the outcome of the
+					;; function. We expect it to return the next ScreenData
+					;; or Nil. If runFunc itself is Nil (ie. never set), or it
+					;; returned Nil, then we check if 'nextScreen is set.
+					;; If it is, it means we want to show that screen. If not,
+					;; we just stay put.
+					(setq screenData (dsf_DoFunc runFunc))
+					
+					; TODO: we must determine the best priority of 'nextScreen and 'screenType
+					;		if the next ScreenData set has a 'screenType set, should we be 
+					;		allowed to override it with a 'nextScreen
+
+					;; lets see if we can find a 'nextScreen
+					(setq nextScreen (dsf_DoUntil (list
+						;; we start with the List Entry Action
+						(hshGet entryAction 'nextScreen)
+						;; then the base list entry
+						(dsf_GetListEntryData 'nextScreen)
+						;; then the base action
+						(hshGet action 'nextScreen)
+						;; then we check the current ScreenData again
+						;; since the runFunc could have updated it
+						(dsf_GetScreenData 'nextScreen)
+					)))
+					;; now let's see if we can find a 'nextPane.
+					;; Procedure is same as for 'nextScreen
+					(setq nextPane (dsf_DoUntil (list
+						(hshGet entryAction 'nextPane)
+						(dsf_GetListEntryData 'nextPane)
+						(hshGet action 'nextPane)
+						(dsf_GetScreenData 'nextPane)
+					)))
+					;; and 'noSave
+					(setq noSave (dsf_DoUntil (list
+						(hshGet entryAction 'noSave)
+						(dsf_GetListEntryData 'noSave)
+						(hshGet action 'noSave)
+						(dsf_GetScreenData 'noSave)
+					)))
+					;; if we have screenData, prepare to move to the next screen
+					;; we double check that screenData isn't an Atom, because that
+					;; would cause alot of problems
+					(dsf_DoDebug "RunAction: Before branching")
+					(if (not (isAtom screenData))
+						(block Nil
+							;; we have to do some checks on 'nextScreen and
+							;; 'nextPane again.
+							(setq nextScreen (dsf_DoUntil (list
+								;; if the next ScreenData set has 'screenType
+								;; set, then override nextScreen
+								(hshGet screenData 'screenType)
+								nextScreen
+							)))
+							(setq nextPane (dsf_DoUntil (list
+								;; if the next ScreenData set has 'paneType
+								;; set, then override nextPane
+								(hshGet screenData 'paneType)
+								nextPane
+							)))
+							;; now we are sure we have some good values for
+							;; 'nextScreen and 'nextPane. Override the ones in
+							;; the ScreenData
+							(hshSet screenData 'screenType nextScreen)
+							(hshSet screenData 'paneType nextPane)
+							;; if we are set to save, do it now
+							(if (not (dsf_DoFunc noSave))
+								;; append the unmodified data to History
+								(lnkAppend dsf_ScreenHistory (dsf_GetScreenData 'unmodified))
+							)
+							;; clear the screen, and move us forward; yipeee
+							(dsf_ClearScreen)
+							(dsf_ShowDockScreen screenData)
+						)
+						(block Nil
+							;; we clearly don't want to move forward in the DSF.
+							;; if we have a 'nextScreen we assume it
+							;; means we want to show that
+							(if nextScreen
+								(block Nil
+									;; make sure that 'nextPane is safe
+									(setq nextPane (dsf_DoUntil (list
+										nextPane
+										"Default"
+									)))
+									;; clear the current screen
+									(dsf_ClearScreen)
+									;; show the next screen
+									(scrShowScreen gScreen nextScreen nextPane)
+								)
+							)
+							;; else we just completely don't care, and assume
+							;; that the user takes care of everything
+						)
+					)
+				)
+			))
+			
+			;; BackAction takes care of returning us 
+			;; to a previous state. It also tries to return
+			;; us to the origin screen if there is no
+			;; history. In worst case it exits the screen.
+			(setq dsf_BackAction (lambda Nil
+				(block Nil
+					;; if we are already running the back function;
+					;; then do nothing
+					(if (not (dsf_RemoveScreenState 'dsf_GoingBack))
+						(block (cnt screen pane prev)
+							;; notify the state that we are running the back function
+							(dsf_SetScreenState 'dsf_goingBack True)
+							;; run the back func if it's there
+							(dsf_DoFunc (dsf_GetScreenData 'backFunc))
+							;; get the history count
+							(setq cnt (count dsf_ScreenHistory))
+							;; if count is 0 or Nil, try to go to origin
+							(if (or (eq cnt 0) (eq cnt Nil))
+								(block Nil
+									(setq screen (dsf_GetScreenState 'originScreen))
+									(setq pane (dsf_DoUntil (list
+										(dsf_GetScreenState 'originPane)
+										"Default"
+									)))
+									;; if we dont have a screen, panic
+									(if (not screen)
+										(dsf_ExitAction)
+										(block Nil
+											;; else clear and show
+											(dsf_ClearScreen)
+											(scrShowScreen gScreen screen pane)
+										)
+									)
+								)
+								;; else lets setup the previous entry
+								(block Nil
+									;; get the previous entry
+									(setq prev (item dsf_ScreenHistory (subtract cnt 1)))
+									;; get the unmodified version
+									(setq prev (hshGet prev 'unmodified))
+									;; remove the last item
+									(setq dsf_ScreenHistory 
+										(lnkRemove dsf_ScreenHistory (subtract cnt 1) Nil)
+									)
+									;; we have our history, clear and show
+									(dsf_ClearScreen)
+									(dsf_ShowDockScreen prev)
+								)
+							)
+						)
+					)
+				)
+			))
+			
+			;; ExitAction takes care of cleaning up after
+			;; us, making sure that the next time DSF is used
+			;; to show a screen, there is no data lingering around.
+			;; It will look for, and run, 'exitFunc before clearing.
+			(setq dsf_ExitAction (lambda Nil
+				(block Nil
+					(dsf_DoDebug "Exiting DSF")
+					;; we have to check if we are already exiting,
+					;; so that we don't run into a nasty loop
+					;; if someone tries to run ExitAction from inside
+					;; the 'exitFunc.
+					(if (not (dsf_GetScreenState 'dsf_Exiting))
+						(block Nil
+							;; notify the state that we are exiting
+							(dsf_SetScreenState 'dsf_Exiting True)
+							;; run the exitFunc
+							(dsf_DoFunc (dsf_GetScreenData 'exitFunc))
+							(dsf_ClearScreen)
+							(dsf_ResetScreen)
+							(scrExitDock gScreen)
+						)
+					)
+					;; we must return nil, so that when we are called
+					;; from inside a runFunc we cause the execution to
+					;; stop. Else DSF would try to show whatever. That's bad!
+					Nil
+				)
+			))
+			
+		;; --------------------------------------------------------
+		;; ScreenHook InternalFunctions
+		;; --------------------------------------------------------
+			
+			;;; HOOK Enumerator
+			;; this functions takes a list of criteria
+			;; and enumerates over all items that match
+			;; these criteria. If any of the matched 
+			;; items are active, they are returned.
+			(setq dsf_GetActiveHooks (lambda (critList)
+				(block (lst)
+					(setq lst (list))
+					;; if critList is not a list, make it one
+					(if (not (isAtom critList))	
+						(setq critList (list critList))
+					)
+					(enum critList crit
+						(itmEnumTypes (cat "t +ScreenHook; " crit) itm
+							(if (dsf_IsHookActive itm)
+								(lnkAppend lst itm)
+							)
+						)
+					)
+					;; if we found no hooks, Nil the list
+					(if (eq (count lst) 0) (setq lst Nil))
+					lst
+				)
+			))
+			;;; HOOK INITIALIZER
+			;; this func is called from the Initialize pane of the screen that
+			;; want's to call the ScreenHook DockScreen
+			;; It hides the action if there are no items advertising themselves for
+			;; the criteria of this screen. It must also be passed the number of the
+			;; action that it's supposed to hide or show.
+			(setq  dsf_InitializeScreenHook (lambda (crit action)
+				(if (not (dsf_GetActiveHooks crit))
+					(scrShowAction gScreen action Nil)
+				)
+			))
+			;; this is a helper initializer for the ScreenHook DockScreen.
+			;; It is called in the action that wants to show the hook selection
+			;; screen. It must be given a list of criteria to match on, a title, 
+			;; description and optionally and screen and pane to return to.
+			(setq dsf_RunScreenHook (lambda (crit title desc originScreen originPane)
+				(dsf_ShowDockScreen (dsf_ScreenHookData crit title desc) originScreen originPane)
+			))
+			;; ScreenHookData is the internal ScreenData representation for 
+			;; the screen hook screen. It builds a CustomPicker list based
+			;; on the criteria passed in. The function must also have a 
+			;; title and description passed in.
+			(setq dsf_ScreenHookData (lambda (critList title desc)
+				(list
+					'screenName		title
+					'paneDesc		desc
+					'screenType		'CustomPicker
+					'paneType		'Default
+					'actions		(list
+						(list
+							'name		'("Select" 'S)
+							'runFunc	'(block (func screenData)
+								(setq func (dsf_GetListEntryData 'preHook))
+								(setq func (dsf_DoFunc func))
+								;; presence of screenData overrides this
+								(setq screenData (dsf_DoFunc (dsf_GetListEntryData 'screenData)))
+								(if (not screenData)
+									func
+									screenData
+								)
+							)
+						)
+					)
+					'customPicker		(block (hookList displayList)
+						(setq hookList (dsf_GetActiveHooks critList))
+						(setq displayList (list))
+						(if hookList
+							(enum hookList itm
+								(lnkAppend displayList
+									(list
+										'title 		(dsf_GetHookTitle itm)
+										'image		(dsf_GetHookImage itm)
+										'subtitle	(dsf_GetHookSubtitle itm)
+										'nextScreen	(dsf_GetHookScreen itm)
+										'nextPane	(dsf_GetHookPane itm)
+										'paneDesc	(dsf_GetHookPaneDesc itm)
+										'preHook	(dsf_GetPreHook itm)
+										'actions	(dsf_GetHookActions itm)
+										'screenData (dsf_GetHookScreenData itm)
+									)
+								)
+							)
+						)
+						displayList
+					)
+				)
+			))
+		;; --------------------------------------------------------
+		;; HelperFunctions
+		;; --------------------------------------------------------
+
+			;; BuildPaneDesc helps us to build complex pane descriptions.
+			;; It accepts one argument, which can be either a string
+			;; or a list. 
+			;; The pane description is stored as 'dsf_PaneDescription
+			;; in the ScreenState.
+			;; If it is a string, the current state will just be overwriten.
+			;; If it is a list, we have some different options.
+			;; The first list item must be the string we want to build with.
+			;; The second list item can be either '- or '+. '- will prepend
+			;; the string to the current message, '+ will append it
+			(setq dsf_BuildPaneDesc (lambda (msg)
+				(block (result)
+					(if (isAtom msg)
+						(setq result msg)
+						(block (tmp)
+							;; tmp is either current message or empty
+							(setq tmp (dsf_GetPaneDesc))  
+							(if (eq (item msg 1) '+) ;; append
+								(setq result (cat tmp (item msg 0)))
+							)
+							(if (eq (item msg 1) '-) ;; prepend
+								(setq result (cat (item msg 0) tmp))
+							)
+						)
+					)
+					(dsf_SetScreenState 'dsf_PaneDescription result)
+				)
+			))
+			
+			;; SetPaneDesc is a bit like BuildPaneDesc, except
+			;; the argument is optional, and it actually updates
+			;; the paneDesc. If we have no argument, the current
+			;; contents of 'dsf_PaneDescription is shown. If not
+			;; empty, the argument is run through BuildPaneDesc first.
+			;; after setting the paneDesc, the State is cleared.
+			(setq dsf_SetPaneDesc (lambda (msg)
+				(block Nil
+					(if msg (dsf_BuildPaneDesc msg))
+					(scrSetDesc gScreen (dsf_GetPaneDesc))
+					(dsf_ClearPaneDesc)
+				)
+			))
+			
+			;; GetPaneDesc simply returns the current 'dsf_PaneDescription
+			(setq dsf_GetPaneDesc (lambda Nil
+				(dsf_DoUntil (list
+					(dsf_GetScreenState 'dsf_PaneDescription)
+					""
+				))
+			))
+			
+			;; ClearPaneDesc clears the state of the paneDesc
+			(setq dsf_ClearPaneDesc (lambda Nil
+				(dsf_SetScreenState 'dsf_PaneDescription Nil)
+			))
+			
+			;; ScreenTypeToUNID is a prectical convenience function
+			;; that allows us to have mods use the UNID's of the 
+			;; DockScreens defined in DSF, without having to specify
+			;; their UNID's explicitly. It takes a screenType argument,
+			;; and returns a UNID. If we can match no screenType,
+			;; we will return the standard screen.
+			(setq dsf_ScreenTypeToUNID (lambda (screenType)
+				(switch
+					(eq screenType "CustomPicker")
+						"&dsDSFCustomPicker;"
+					(eq screenType "ItemPickerPlayer")
+						"&dsDSFItemPickerPlayer;"
+					(eq screenType "ItemPickerStation")
+						"&dsDSFItemPickerStation;"
+					(eq screenType "Display")
+						"&dsDSFDisplay;"
+					(eq screenType "StandardShip")
+						"&dsDSFStandardShip;"
+					(eq screenType "StandardOre")
+						"&dsDSFStandardOre;"
+					(eq screenType "StandardNone")
+						"&dsDSFStandardNone;"
+					(eq screenType "Standard")
+						"&dsDSFStandardNone;"
+					;; if we can match nothing, return the default
+					"&dsDSFStandardNone;"
+				)
+			))
+			
+			;; GetListEntry abstracts away getting the information we
+			;; have set in the in the current list entry. It takes an
+			;; optional key as argument, and returns it's data. If key
+			;; is not set, it returns the entire hash.
+			(setq dsf_GetListEntryData (lambda (key)
+				(if (dsf_IsCustomPickerScreen True)
+					(if key
+						(hshGet (item (scrGetListEntry gScreen) 3) key)
+						(item (scrGetListEntry gScreen) 3)
+					)
+				)
+			))
+		
+			;; IsCustomPicker will check if the current 'screenType
+			;; is a CustomPicker screen. This is required so we 
+			;; don't cause a crash trying to iterate over 
+			;; CustomPicker Entries that dont exist.
+			;; It takes an optional content boolean which when True
+			;; will add a check for the prescence of actual ListEntries.
+			(setq dsf_IsCustomPickerScreen (lambda (content)
+				(block (result)
+					(if (eq (dsf_GetScreenType) "&dsDSFCustomPicker;")
+						(block Nil
+							(setq result True)
+							;; if we want to check for content, but there is
+							;; no list entry, return Nil
+							(if (and content (not (scrGetListEntry gScreen)))
+								(setq result Nil)
+							)
+						)
+					)
+					result
+				)
+			))
+			
+			;; IsItemPickerScreen will check if the current screen is an
+			;; ItemPicker screen. This is required so we don't crash
+			;; the game trying to set the ListFilter of the ItemPicker
+			;; screen. It takes no arguments.
+			(setq dsf_IsItemPickerScreen (lambda Nil
+				(block (screenType result)
+					(setq screenType (dsf_GetScreenType))
+					(switch 
+						(eq screenType "&dsDSFItemPickerPlayer;")
+							(setq result True)
+						(eq screenType "&dsDSFItemPickerStation;")
+							(setq result True)
+					)
+					result
+				)
+				
+			))
+			
+			;; convenience function for getting the current screenType.
+			(setq dsf_GetScreenType (lambda Nil
+				(dsf_GetScreenData 'screenType)
+			))
+			
+			;; DoDebug will print debug information if dsf_Debug
+			;; is set. It takes a string which will be output, and 
+			;; if screen is True, it will be sent to the screen.
+			;; Otherwise it will go into the log
+			(setq dsf_DoDebug (lambda (string screen)
+				(if dsf_Debug
+					(if (or screen dsf_DebugToScreen)
+						(dbgOutput string)
+						(dbgLog string)
+					)
+				)
+			))
+			
+			; TESTING
+			;; This function tries to 'do the right thing'
+			;; with DS funcs. It will either eval it, run it
+			;; directly or return it.
+			(setq dsf_DoFunc (lambda (func)
+				(block (continue result)
+					(setq continue True)
+					;; if the function is Nil, return Nil
+					(if (eq func Nil)
+						(setq continue Nil)
+					)
+					(if continue
+						;; so far we just return (eval func)
+						(setq result (eval func))
+					)
+					result
+				)
+			))
+			
+			; TESTING
+			;; This function attempts to emulate an elseif
+			;; It takes a list of values and
+			;; returns the first one that is non Nil.
+			;; If none is Nil, Nil will be returned.
+			;; TODO: could this be rewritten as a switch?
+			(setq dsf_DoUntil (lambda (lst)
+				(block (i do result)
+					(setq do True)
+					(setq i 0)
+					(loop (and do (ls i (count lst))) 
+						(block Nil
+							(setq result (item lst i))
+							(if result (setq do Nil))
+							(setq i (add i 1))
+						)
+					)
+					result
+				)
+			))
+			
+			;; The following two functions set and get data
+			;; that is stored in ScreenData. They are merely
+			;; convenience functions, part of the DSF API
+			(setq dsf_SetScreenData (lambda (key value)
+				(hshSet dsf_ScreenData key value)
+			))
+			(setq dsf_GetScreenData (lambda (key)
+				(hshGet	dsf_ScreenData key)
+			))
+
+			;; The following three functions work with the
+			;; current state. They are convenience functions,
+			;; and are part of the DSF API
+			(setq dsf_SetScreenState (lambda (key value)
+				(hshSet dsf_ScreenState key value)
+			))
+			(setq dsf_GetScreenState (lambda (key)
+				(hshGet dsf_ScreenState key)
+			))
+			;; RemoveScreenState removes and returns a key's value
+			(setq dsf_RemoveScreenState (lambda (key)
+				(hshRemove dsf_ScreenState key)
+			))
+
+			;; GetScreenName is mostly used by DSF itself.
+			;; It is a wrapper function for getting the current
+			;; screens name, and is used in the ScreenSpecification
+			;; to set the name of the screen.
+			(setq dsf_GetScreenName (lambda Nil
+				(dsf_GetScreenData 'screenName)
+			))
+
+		;; --------------------------------------------------------
+		;; ScreenHook HelperFunctions
+		;; --------------------------------------------------------
+			;; Most of the ScreenHook HelperFunctions deal with
+			;; getting and setting data on the HookAdvertizer.
+		
+			;; generic function for returning data from the hook
+			;; or it's overridden data
+			(setq dsf_GetHookData (lambda (hook data)
+				(block (val)
+					(setq val (dsf_DoUntil (list
+						(itmGetGlobalData hook data)
+						(itmGetStaticData hook data)
+					)))
+					(if (not (isError (eval val)))
+						(setq val (eval val))
+					)
+					val
+				)
+			))
+
+			;; activate a hook			
+			(setq dsf_HookActivate (lambda (hook)
+				(itmSetGlobalData hook "HookDisabled" Nil)
+			))
+			;; de-activate a hook
+			(setq dsf_HookDisable (lambda (hook)
+				(itmSetGlobalData hook "HookDisabled" True)
+			))
+			;; check if a hook is active
+			(setq dsf_IsHookActive (lambda (hook)
+				(not (dsf_GetHookData hook "HookDisabled"))	
+			))
+			;; HookActions allows us to override completely
+			;; the actions for this hook. This will allow complete
+			;; control over the actions. The syntax is the same as
+			;; for normal actions in the DSF. If Specified, no Pre-Hook
+			;; will be run automatically
+			(setq dsf_GetHookActions (lambda (hook)
+				(dsf_GetHookData hook "HookActions")
+			))
+			;; Set the HookActions used for this hook.
+			(setq dsf_SetHookActions (lambda (hook data)
+				(itmSetGlobalData hook "HookActions" data)
+			))
+			;; the pre-hook is run just before the screen
+			;; we are asked to show, is shown
+			(setq dsf_GetPreHook (lambda (hook)
+				(dsf_GetHookData hook "PreHook")
+			))
+			;; Set the PreHook used for this hook.
+			(setq dsf_SetPreHook (lambda (hook data)
+				(itmSetGlobalData hook "PreHook" data)
+			))
+			;; Get the image set for this hook.
+			;; As a very handy default it uses the image associated
+			;; with the item used to specify the hookAdvertiser.
+			(setq dsf_GetHookImage (lambda (hook)
+				(block (image)
+					(setq image (dsf_DoUntil (list
+						(dsf_GetHookData hook "HookImage")
+						(itmGetImageDesc hook)
+					)))
+					image
+				)
+			))
+			;; Set the image used for this hook
+			(setq dsf_SetHookImage (lambda (hook data)
+				(itmSetGlobalData hook "HookImage" data)
+			))
+			;; Get the paneDesc for this hook.
+			(setq dsf_GetHookPaneDesc (lambda (hook)
+				(dsf_GetHookData hook "HookPaneDesc")
+			))
+			;; Set the paneDesc for this hook
+			(setq dsf_SetHookPaneDesc (lambda (hook data)
+				(itmSetGlobalData hook "HookPaneDesc" data)
+			))
+			;; Get the pane to show for this hook. Note, this will
+			;; only be used if we are not advertising a DSF screen
+			;; or if the screen has no paneType set.
+			(setq dsf_GetHookPane (lambda (hook)
+				(block (pane)
+					(setq pane (dsf_DoUntil (list 
+						(dsf_GetHookData hook "HookPane")
+						"Default"
+					)))
+					pane
+				)
+			))
+			;; Set the pane for this hook.
+			(setq dsf_SetHookPane (lambda (hook data)
+				(itmSetGlobalData hook "HookPane" data)
+			))
+			;; Like the HookPane, this HookScreen will only
+			;; be used under certain circumstances.
+			(setq dsf_GetHookScreen (lambda (hook)
+				(dsf_GetHookData hook "HookScreen")
+			))
+			;; Set the HookScreen
+			(setq dsf_OverrideHookScreen (lambda (hook data)
+				(itmSetGlobalData hook "HookScreen" data)
+			))
+			;; Get the Subtitle for this hook
+			(setq dsf_GetHookSubtitle (lambda (hook)
+				(dsf_GetHookData hook "HookSubtitle")
+			))
+			;; set the hook Subtitle
+			(setq dsf_SetHookSubtitle (lambda (hook data)
+				(itmSetGlobalData hook "HookSubtitle" data)
+			))
+			;; Get the Title for this hook
+			(setq dsf_GetHookTitle (lambda (hook)
+				(dsf_GetHookData hook "HookTitle")
+			))
+			;; Set the title for this hook.
+			(setq dsf_SetHookTitle (lambda (hook data)
+				(itmSetGlobalData hook "HookTitle" data)
+			))
+			;; Set the screenData for this hook
+			;; This is for integration with DSF
+			(setq dsf_GetHookScreenData (lambda (hook)
+				(dsf_GetHookData hook "ScreenData")
+			))
+			;; Set the screenData for this hook
+			(setq dsf_SetHookScreenData (lambda (hook data)
+				(itmSetGlobalData hook "ScreenData" data)
+			))
+		)
+		<!-- TRAP END -->
+	</Globals>
+
+
+<!--
+This is the "Standard" DockScreen, without any background set.
+-->
+	<DockScreen UNID="&dsDSFStandardNone;"
+		name=			"=(dsf_GetScreenName)"
+		backgroundID=	"none"
+		>
+		<OnInit>(dsf_ScreenOnInit 7)</OnInit>
+		<Panes>
+			<Default>
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Default>
+			<Counter showCounter="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Counter>
+			<TextInput showTextInput="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</TextInput>
+		</Panes>
+	</DockScreen>
+<!--
+This is the "Standard" DockScreen, with ship interior background
+-->
+	<DockScreen UNID="&dsDSFStandardShip;"
+		name=			"=(dsf_GetScreenName)"
+		backgroundID=	"&rsShipInterior;"
+		>
+		<OnInit>(dsf_ScreenOnInit 7)</OnInit>
+		<Panes>
+			<Default>
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Default>
+			<Counter showCounter="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Counter>
+			<TextInput showTextInput="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</TextInput>
+		</Panes>
+	</DockScreen>
+<!--
+This is the "Standard" DockScreen, with mined ore background
+-->
+	<DockScreen UNID="&dsDSFStandardOre;"
+		name=			"=(dsf_GetScreenName)"
+		backgroundID=	"&rsMinedOreBkgnd;"
+		>
+		<OnInit>(dsf_ScreenOnInit 7)</OnInit>
+		<Panes>
+			<Default>
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Default>
+			<Counter showCounter="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Counter>
+			<TextInput showTextInput="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</TextInput>
+		</Panes>
+	</DockScreen>
+<!-- 
+This is the CustomPicker Screen 
+-->
+	<DockScreen UNID="&dsDSFCustomPicker;"
+		name=			"=(dsf_GetScreenName)"
+		type=			"customPicker"
+		backgroundID=	"&rsItemListScreen;"
+		>
+		<List>(dsf_ListInitialize)</List>
+		<OnInit>(dsf_ScreenOnInit 7)</OnInit>
+		<Panes>
+			<Default>
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Default>
+			<Counter showCounter="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Counter>
+			<TextInput showTextInput="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</TextInput>
+		</Panes>
+	</DockScreen>
+<!-- 
+This is the ItemPicker Screen for the Player 
+-->
+	<DockScreen UNID="&dsDSFItemPickerPlayer;"
+		name=			"=(dsf_GetScreenName)"
+		type=			"itemPicker"
+		backgroundID=	"&rsItemListScreen;"
+		>
+		<ListOptions dataFrom="player" list="*">
+			(dsf_ItemListFilter)
+		</ListOptions>
+		<OnInit>(dsf_ScreenOnInit 7)</OnInit>
+		<Panes>
+			<Default>
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Default>
+			<Counter showCounter="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Counter>
+			<TextInput showTextInput="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</TextInput>
+		</Panes>
+	</DockScreen>
+<!-- 
+This is the ItemPicker Screen for a Station 
+-->
+	<DockScreen UNID="&dsDSFItemPickerStation;"
+		name=			"=(dsf_GetScreenName)"
+		type=			"itemPicker"
+		backgroundID=	"&rsItemListScreen;"
+		>
+		<ListOptions dataFrom="station" list="*">
+			(dsf_ItemListFilter)
+		</ListOptions>
+		<OnInit>(dsf_ScreenOnInit 7)</OnInit>
+		<Panes>
+			<Default>
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Default>
+			<Counter showCounter="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Counter>
+			<TextInput showTextInput="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</TextInput>
+		</Panes>
+	</DockScreen>
+<!-- 
+This is the Display Screen. 
+-->
+	<DockScreen UNID="&dsDSFDisplay;"
+		name=			"=(dsf_GetScreenName)"
+		backgroundID=	"none"
+		>
+		<Display>
+			<!-- 
+				In here we are going to stick 2 ImageTags, one transparent,
+				and one not, maybe also some with valign and align.
+				Several <Text> tags with some reasonable values.
+				It can have color="r,g,b", align='center/left/right'
+				font="Medium/MediumBold/Large/LargeBold/SubTitle" or none
+				id="someid" width, height, left, right, top, bottom
+			-->
+			<Image left="0" right="0" top="0" bottom="0" width="600" height="400" transparent="true">
+			</Image>
+		</Display>
+		<OnInit>(dsf_ScreenOnInit 7)</OnInit>
+		<Panes>
+			<Default>
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Default>
+			<Counter showCounter="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</Counter>
+			<TextInput showTextInput="true">
+				<Initialize>(dsf_PaneInitialize)</Initialize>
+				<Actions>
+					<Action name="Action0" default="1">(dsf_RunAction 0)</Action>
+					<Action name="Action1">(dsf_RunAction 1)</Action>
+					<Action name="Action2">(dsf_RunAction 2)</Action>
+					<Action name="Action3">(dsf_RunAction 3)</Action>
+					<Action name="Action4">(dsf_RunAction 4)</Action>
+					<Action name="Action5">(dsf_RunAction 5)</Action>
+					<Action name="Action6">(dsf_RunAction 6)</Action>
+					<Action name="Action7">(dsf_RunAction 7)</Action>
+					<Action name="Back" key="B">
+						(dsf_BackAction)
+					</Action>
+					<Action name="Exit" key="X" cancel="1">
+						(dsf_ExitAction)
+					</Action>
+				</Actions>
+			</TextInput>
+		</Panes>
+	</DockScreen>
+</TranscendenceExtension>

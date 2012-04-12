@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+
+	<!-- Battle Arena 
+	
+		EXTRA DATA
+		
+		OpponentCount:	Number of opponents left
+		Opponent{n}:	Opponent 0-max
+		Opponents:		Ordered list of all challenges
+		Status:			Status of contest:
+							Nil = No battle in progress
+							1 = Battle in progress
+							2 = Opponent destroyed
+							3 = Player left arena
+	-->
+
+	<StationType UNID="&stBattleArena;"
+			name=				"Battle Arena Maximus"
+			sovereign=			"&svCommonwealth;"
+			dockScreen=			"Main"
+			defaultBackgroundID="&rsBattleArenaBkgnd;"
+			dockingPorts=		"1"
+			canAttack=			"true"
+			multiHull=			"true"
+			immutable=			"true"
+
+			attributes=			"friendly"			
+			level=				"2"
+			>
+
+		<Image			imageID="&rsBattleArena;" imageX="0" imageY="2560" imageWidth="128" imageHeight="256"/>
+
+		<StaticData>
+			<Opponents>
+				(
+					("\"Your first opponent is Tycus Armiger, former squad leader in the Commonwealth Militia, piloting his Ronin/B gunship. The prize is 500 credits. Prepare for combat!\""
+
+						; Opponent(s)
+						&scRoninB;
+
+						500				; Prize
+						1				; Rank achieved
+						)
+
+					("\"Your opponent is Marc Renser, a local gladiator piloting a Sotho-class gunship. If you should defeat him you will earn 500 credits in prize money. Prepare for combat!\""
+
+						; Opponent(s)
+						&scSotho;
+
+						500				; Prize
+						1				; Rank achieved
+						)
+
+					("\"For your next opponent you will face an EI100 missileship commanded by millionaire Roland Chu and his two sons. The prize for surviving is 1,000 credits. Prepare for combat!\""
+
+						; Opponent(s)
+						&scEI100M;
+
+						1000			; Prize
+						1				; Rank achieved
+						)
+
+					("\"Tonight you face a special challenge: An exhibition match against a small fleet of Borer II mining ships. The prize is 1,500 credits. Prepare for combat!\""
+
+						; Opponent(s)
+						(&scBorer-II; &scBorer-II; &scBorer-II; &scBorer-II;)
+
+						1500			; Prize
+						2				; Rank achieved
+						)
+
+					("\"Your next opponent is Flavius Maul, commanding a Meth Enforcer gunship. The prize is 1,500 credits. Prepare for combat!\""
+
+						; Opponent(s)
+						&scMethEnforcer;
+
+						1500			; Prize
+						2				; Rank achieved
+						)
+
+					("\"Your sixth opponent is Ramon Armiger (the son of a pilot you once vanquished) who commands a late-model Ronin/C gunship. Should you survive this personal challenge you will receive 1,500 credits. Prepare for combat!\""
+
+						; Opponent(s)
+						&scRoninC;
+
+						1500			; Prize
+						2				; Rank achieved
+						)
+
+					("\"Your next opponent is a former member of the Penitent Order. She commands a heavily-armed Atonement-class gunship. The prize is 2,000 credits. Prepare for combat!\""
+
+						; Opponent(s)
+						&scAtonement;
+
+						2000			; Prize
+						2				; Rank achieved
+						)
+
+					("\"Finally, you face your ultimate challenge: An exhibition match against a Tripoli-class destroyer! No one in the history of the Games has survived this contest, but should you prevail you will receive a prize of 5,000 credits. Prepare for combat!\""
+
+						; Opponent(s)
+						&scTripoli;
+
+						5000			; Prize
+						3				; Rank achieved
+						)
+					)
+			</Opponents>
+		</StaticData>
+
+		<Events>
+			<OnObjDestroyed>
+				(if (eq aObjDestroyed gPlayerShip)
+					; If the player was destroyed
+					(block Nil
+						; Open arena doors
+						(staSetImageVariant (sysGetObjectByName gSource "arenaDoor1a") 16)
+						(staSetImageVariant (sysGetObjectByName gSource "arenaDoor1b") 17)
+						(staSetImageVariant (sysGetObjectByName gSource "arenaDoor2a") 16)
+						(staSetImageVariant (sysGetObjectByName gSource "arenaDoor2b") 17)
+
+						; Set status
+						(objSetData gSource "Status" Nil)
+						(objSetData gSource "OpponentCount" Nil)
+						)
+
+					; If some other ship was destroyed
+					(if (objGetData gSource "Status")
+						(block (opponentCount)
+							(setq opponentCount (subtract (objGetData gSource "OpponentCount") 1))
+							(objSetData gSource "OpponentCount" opponentCount)
+
+							(if (eq opponentCount 0)
+								(block Nil
+									(objSetData gSource "Status" 2)
+
+									(setq battles (objGetData gPlayerShip "arenaBattles"))
+									(setq opponentsList (objGetStaticData gSource "Opponents"))
+									(plyCredit gPlayer (item (item opponentsList battles) 2))
+									(objSetData gPlayerShip "arenaRank" (item (item opponentsList battles) 3))
+									(plyMessage gPlayer "Victory!")
+									)
+								)
+							)
+						)
+					)
+			</OnObjDestroyed>
+
+			<OnObjDocked>
+				(if (and (eq aDockTarget gSource) (not (eq aObjDocked gPlayerShip)))
+					(block Nil
+						(objMoveTo aObjDocked (sysVectorPolarOffset gSource 270 300))
+						(objUnregisterForEvents gSource aObjDocked)
+						(shpCancelOrders aObjDocked)
+						(shpOrderGate aObjDocked)
+						)
+					)
+			</OnObjDocked>
+
+			<OnObjJumped>
+				(if (eq aObj gPlayerShip)
+					(block Nil
+						; Open arena doors
+						(staSetImageVariant (sysGetObjectByName gSource "arenaDoor1a") 16)
+						(staSetImageVariant (sysGetObjectByName gSource "arenaDoor1b") 17)
+						(staSetImageVariant (sysGetObjectByName gSource "arenaDoor2a") 16)
+						(staSetImageVariant (sysGetObjectByName gSource "arenaDoor2b") 17)
+
+						; Unregister
+						(objUnregisterForEvents gSource gPlayerShip)
+
+						; Send all the opponents away
+						(for i 0 3
+							(block (ship)
+								(setq ship (objGetObjRefData gSource (cat "Opponent" i)))
+								(if ship
+									(block Nil
+										(objMoveTo ship (sysVectorPolarOffset gSource 270 300))
+										(objUnregisterForEvents gSource ship)
+										(shpCancelOrders ship)
+										(shpOrderGate ship)
+										)
+									)
+								)
+							)
+
+						; Set status
+						(objSetData gSource "Status" 3)
+						(objSetData gSource "OpponentCount" Nil)
+						)
+					)
+			</OnObjJumped>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<InitialPane>
+					(block (status)
+						(setq status (objGetData gSource "Status"))
+						(switch
+							(not status)
+								"Default"
+
+							(eq status 1)
+								"StillFighting"
+
+							(eq status 2)
+								"Winner"
+
+							(eq status 3)
+								"PlayerLeft"
+							)
+						)
+				</InitialPane>
+
+				<Panes>
+					<Default
+							desc=	"Welcome to Battle Arena Maximus! Prepare yourself for the greatest show in space! Watch as the best pilots in the Commonwealth compete in mortal combat. The action is so real you'll swear its faked! See your ticket agent for reservations. Enquire within to join the elite combatants.">
+
+						<Actions>
+						<!--
+							<Action name="Purchase tickets" default="1" key="P">
+							</Action>
+						-->
+
+							<Action name="Enter combat" key="E">
+								(if (not (objGetData gPlayerShip "arenaRank"))
+									(scrShowPane gScreen "FirstFight")
+									(scrShowPane gScreen "Fight")
+									)
+							</Action>
+
+							<Action name="Dock Services" key="D">
+								<ShowPane pane="DockServices"/>
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+
+					<Chicken
+							desc=	"&quot;This kind of challenge is not for the weak and fearful. You are wise to decline.&quot;">
+
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								<ShowPane pane="Default"/>
+							</Action>
+
+						</Actions>
+
+					</Chicken>
+
+					<DockServices
+							desc=	"You are at the docking services terminal.">
+
+						<Actions>
+							<Action name="Refuel" key="R">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(intSetCompatibleFuel '((&itHeliumAssembly; 90) (&itHelium3FuelRod; 30)))
+									(scrShowScreen gScreen "&dsRefuel;")
+									)
+							</Action>
+
+							<Action name="Repair or replace armor" key="A" >
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(setq gTechLevel 6)
+									(setq gArmorSegment 0)
+									(setq gMargin 100)
+									(scrShowScreen gScreen "&dsRepairArmor;")
+									)
+							</Action>
+
+							<Action name="Done" cancel="1" key="D">
+								<ShowPane pane="Default"/>
+							</Action>
+
+						</Actions>
+
+					</DockServices>
+
+					<Fight>
+
+						<Initialize>
+							(block (battles opponentsList)
+								(setq opponentsList (objGetStaticData gSource "Opponents"))
+								(setq battles (objGetData gPlayerShip "arenaBattles"))
+								(if (eq battles (count opponentsList))
+									(block Nil
+										(scrSetDesc gScreen "\"No opponent is brave enough to face you!\"")
+										(scrEnableAction gScreen 0 Nil)
+										)
+									(scrSetDesc gScreen (item (item opponentsList battles) 0))
+									)
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="Fight!" default="1" key="F">
+								(block (battles opponentsList)
+									; Get the table of challengers and figure out which
+									; is next.
+									(setq opponentsList (objGetStaticData gSource "Opponents"))
+									(setq battles (objGetData gPlayerShip "arenaBattles"))
+
+									(if (ls battles (count opponentsList))
+										(block (shipClass)
+											(setq opponent Nil)
+											(setq offset 0)
+
+											; Loop over the list of ships, creating each one
+											(enum (item (item opponentsList battles) 1) shipClass
+												(block (thisShip)
+													(setq thisShip
+														(sysCreateShip 
+															shipClass
+															(sysVectorPolarOffset gSource (random 22 24) (add 65 offset))
+															&svOutlaw;
+															"gladiator"
+															)
+														)
+													(shpOrderAttack thisShip gPlayerShip)
+													(shpOrderDock thisShip gSource)
+
+													(objRegisterForEvents gSource thisShip)
+
+													(objSetObjRefData gSource (cat "Opponent" (count opponent)) thisShip)
+
+													(setq offset (add offset 2))
+													(setq opponent (lnkAppend opponent thisShip))
+													)
+												)
+
+											; Close the arena doors
+											(staSetImageVariant (sysGetObjectByName gSource "arenaDoor1a") 1)
+											(staSetImageVariant (sysGetObjectByName gSource "arenaDoor1b") 1)
+											(staSetImageVariant (sysGetObjectByName gSource "arenaDoor2a") 1)
+											(staSetImageVariant (sysGetObjectByName gSource "arenaDoor2b") 1)
+
+											; Register for events
+											(objRegisterForEvents gSource gPlayerShip)
+
+											; Initialize state
+											(objSetData gSource "OpponentCount" (count opponent))
+											(objSetData gSource "Status" 1)
+
+											(scrExitDock gScreen)
+											)
+										)
+									)
+							</Action>
+
+							<Action name="Back out" cancel="1" key="B">
+								(block (battles opponentsList)
+									(setq opponentsList (objGetStaticData gSource "Opponents"))
+									(setq battles (objGetData gPlayerShip "arenaBattles"))
+									(if (eq battles (count opponentsList))
+										(scrShowPane gScreen "Default")
+										(scrShowPane gScreen "Chicken")
+										)
+									)
+							</Action>
+
+						</Actions>
+
+					</Fight>
+
+					<FirstFight
+							desc=	"&quot;Welcome, citizen! You are about to join an elite group of men and women who have conquered their fears and proven their courage and skills in the ultimate test&#x97;mortal combat. All that remains is for you to sign this minor release indemnifying the Maximus Corporation against any liability in the event of harm, death, etc.&quot;">
+
+						<Actions>
+							<Action name="Sign" key="S">
+								(block Nil
+									(objSetData gPlayerShip "arenaRank" 0)
+									(objSetData gPlayerShip "arenaBattles" 0)
+									(scrShowPane gScreen "Fight")
+									)
+							</Action>
+
+							<Action name="Back out" cancel="1" key="B">
+								<ShowPane pane="Chicken"/>
+							</Action>
+
+						</Actions>
+
+					</FirstFight>
+
+					<StillFighting
+							desc=	"&quot;You'll get no help here. Fight your own battles!&quot;">
+
+						<Actions>
+							<Action name="Undock" default="1" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</StillFighting>
+
+					<PlayerLeft
+							desc=	"&quot;You're banned from the games for leaving the arena in the middle of battle!&quot;">
+							
+						<Actions>
+							<Action name="Undock" default="1" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</PlayerLeft>
+
+					<Winner
+							desc=	"&quot;Gladiator, we salute you! The sight of flame and twisted metal has pleased the crowd.&quot;">
+
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								(block Nil
+									; Open arena doors
+									(staSetImageVariant (sysGetObjectByName gSource "arenaDoor1a") 16)
+									(staSetImageVariant (sysGetObjectByName gSource "arenaDoor1b") 17)
+									(staSetImageVariant (sysGetObjectByName gSource "arenaDoor2a") 16)
+									(staSetImageVariant (sysGetObjectByName gSource "arenaDoor2b") 17)
+
+									; Unregister
+									(objUnregisterForEvents gSource gPlayerShip)
+
+									; Set status
+									(objSetData gSource "Status" Nil)
+									(objSetData gSource "OpponentCount" Nil)
+									(objSetData gPlayerShip "arenaBattles" (add (objGetData gPlayerShip "arenaBattles") 1))
+									(scrShowPane gScreen "Default")
+									)
+							</Action>
+
+						</Actions>
+
+					</Winner>
+
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="90"	y="0" />
+		</DockingPorts>
+	</StationType>
+
+	<!-- Battle Arena Wall -->
+
+	<StationType UNID="&stBattleArenaWall;"
+			name=				"(arena wall segment)"
+			sovereign=			"&svCommonwealth;"
+
+			barrier=			"true"
+			barrierEffect=		"&efBattleArenaWallHit;"
+			multiHull=			"true"
+			immutable=			"true"
+
+			mass=				"500"
+			noMapLabel=			"true"
+			>
+
+		<ImageVariants>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="0"    imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="128"  imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="256"  imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="384"  imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="512"  imageWidth="128" imageHeight="128"/>
+			
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="640"  imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="768"  imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="896"  imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="1024" imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="1152" imageWidth="128" imageHeight="128"/>
+
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="1280" imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="1408" imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="1536" imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="1664" imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="1792" imageWidth="128" imageHeight="128"/>
+			
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="1920" imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="2048" imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="2176" imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="2304" imageWidth="128" imageHeight="128"/>
+			<Image			imageID="&rsBattleArena;" imageX="0" imageY="2432" imageWidth="128" imageHeight="128"/>
+		</ImageVariants>
+
+	</StationType>
+
+	<!-- Battle Arena -->
+
+	<SystemType UNID="&ssBattleArena;" noRandomEncounters="true">
+
+		<SystemGroup>
+
+			<!-- Star -->
+
+			<Station type="&stG-TypeStar;" name="Rigel Aurelius"/>
+
+			<!-- Carus -->
+
+			<Orbitals distance="90" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stCrateredPlanet;" 
+								name="Carus" 
+								showOrbit="true"
+								/>
+					</Primary>
+
+					<Orbitals distance="18" angle="random">
+						<Group>
+							<Lookup table="StargateInbound"/>
+
+							<Orbitals count="2" distance="12" angle="equidistant">
+								<Station type="&stCommonwealthDryDock;" name="Rigel Dry Dock" noArticle="true"/>
+
+								<Station type="&stNavSign;" name="Death or Glory Awaits">
+									<InitialData>
+										<Info>
+											"Welcome, Traveler! You have just arrived at Rigel Aurelius, the universe's most famous tourist destination. Millions of us, from all star systems, have come to shed the constraints of our regimented life and trust to the luck of the Games. Join us at Battle Arena Maximus!"
+										</Info>
+									</InitialData>
+								</Station>
+							</Orbitals>
+						</Group>
+					</Orbitals>
+
+				</Group>
+			</Orbitals>
+
+			<!-- Tacitus -->
+
+			<Orbitals distance="3" scale="light-minute" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stCrateredPlanet;" 
+								name="Tacitus" 
+								showOrbit="true"
+								/>
+					</Primary>
+
+					<Orbitals distance="12" angle="random">
+						<RandomStation stationCriteria="*friendly,!debris,!primary" locationAttribs="planetary,planet"/>
+					</Orbitals>
+
+					<Trojan>
+						<Group>
+							<Orbitals count="2d4+4" distance="1d24" angle="random">
+								<Lookup table="AsteroidSmall"/>
+							</Orbitals>
+
+							<Orbitals count="1d6" distance="2d8+8" angle="random">
+								<Lookup table="AsteroidMedium"/>
+							</Orbitals>
+
+							<Orbitals distance="2d8+6" angle="random">
+								<RandomStation stationCriteria="*enemy" locationAttribs="asteroids,trojan"/>
+							</Orbitals>
+						</Group>
+					</Trojan>
+
+				</Group>
+			</Orbitals>
+
+			<!-- Geta -->
+
+			<Orbitals distance="5" scale="light-minute" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stCrateredPlanet;" 
+								name="Geta" 
+								showOrbit="true"
+								/>
+					</Primary>
+
+					<AntiTrojan>
+						<Group>
+							<Orbitals count="4d4+8" distance="1d48" angle="random">
+								<Lookup table="AsteroidSmall"/>
+							</Orbitals>
+
+							<Orbitals count="2d6" distance="1d36" angle="random">
+								<Lookup table="AsteroidMedium"/>
+							</Orbitals>
+
+							<Orbitals distance="2d8+6" angle="random">
+								<RandomStation stationCriteria="*enemy" locationAttribs="asteroids,trojan"/>
+							</Orbitals>
+						</Group>
+					</AntiTrojan>
+
+				</Group>
+			</Orbitals>
+
+			<!-- Severus -->
+
+			<Orbitals distance="9" scale="light-minute" angle="random">
+				<Group>
+					<Primary>
+						<Station type="&stMethaneGasGiant;" 
+								name="Severus" 
+								showOrbit="true"
+								/>
+					</Primary>
+
+					<Orbitals distance="24" angle="random">
+						<Lookup table="StargateOutbound"/>
+					</Orbitals>
+
+					<!-- Battle Arena -->
+
+					<Trojan>
+						<Station type="&stBattleArena;" yOffset="-320"   xOffset="-1024" />
+
+						<!-- ROW 1 -->
+						<Station type="&stBattleArenaWall;" yOffset="1152" xOffset="256"  imageVariant="11"/>
+						<Station type="&stBattleArenaWall;" yOffset="1152" xOffset="384"  imageVariant="14"/>
+						<Station type="&stBattleArenaWall;" yOffset="1152" xOffset="512"  imageVariant="2"/>
+						<Station type="&stBattleArenaWall;" yOffset="1152" xOffset="640"  imageVariant="14"/>
+						<Station type="&stBattleArenaWall;" yOffset="1152" xOffset="768"  imageVariant="4"/>
+
+						<!-- ROW 2 -->
+						<Station type="&stBattleArenaWall;" yOffset="1024" xOffset="128"  imageVariant="13"/>
+						<Station type="&stBattleArenaWall;" yOffset="1024" xOffset="896"  imageVariant="15"/>
+
+						<!-- ROW 3 -->
+						<Station type="&stBattleArenaWall;" yOffset="896"  xOffset="0"	   imageVariant="13"/>
+						<Station type="&stBattleArenaWall;" yOffset="896"  xOffset="1024" imageVariant="3"/>
+
+						<!-- ROW 4 -->
+						<Station type="&stBattleArenaWall;" yOffset="768"  xOffset="-128" imageVariant="1"/>
+						<Station type="&stBattleArenaWall;" yOffset="768"  xOffset="1152" imageVariant="15"/>
+
+						<!-- ROW 5 -->
+						<Station type="&stBattleArenaWall;" yOffset="640"  xOffset="-256" imageVariant="13"/>
+						<Station type="&stBattleArenaWall;" yOffset="640"  xOffset="1280" imageVariant="5"/>
+
+						<!-- ROW 6 -->
+						<Station type="&stBattleArenaWall;" yOffset="512"  xOffset="-384" imageVariant="1"/>
+						<Station type="&stBattleArenaWall;" yOffset="512"  xOffset="1280" imageVariant="12"/>
+
+						<!-- ROW 7 -->
+						<Station type="&stBattleArenaWall;" yOffset="384"  xOffset="-512" imageVariant="13"/>
+						<Station type="&stBattleArenaWall;" yOffset="384"  xOffset="1280" imageVariant="0"/>
+
+						<!-- ROW 8 -->
+						<Station type="&stBattleArenaWall;" yOffset="256"  xOffset="-640" imageVariant="1"/>
+						<Station type="&stBattleArenaWall;" yOffset="256"  xOffset="1280" imageVariant="12"/>
+
+						<!-- ROW 9 -->
+						<Station type="&stBattleArenaWall;" yOffset="128"  xOffset="-768" imageVariant="13"/>
+						<Station type="&stBattleArenaWall;" yOffset="128"  xOffset="1280" imageVariant="6"/>
+
+						<!-- ROW 10 -->
+						<Station type="&stNavSign;"			yOffset="0"	   xOffset="-1024" name="Welcome, Gladiator!">
+							<InitialData>
+								<Info>
+									"Welcome to Battle Arena Maximus! Please enter through the gates and dock at the main station for registration information."
+								</Info>
+							</InitialData>
+						</Station>
+						
+						<Station type="&stBattleArenaWall;" yOffset="0"		xOffset="-896" imageVariant="16" objName="arenaDoor1a"/>
+						<Station type="&stBattleArenaWall;" yOffset="0"		xOffset="1152" imageVariant="16" objName="arenaDoor2a"/>
+
+						<!-- ROW 11 -->
+						<Station type="&stBattleArenaWall;" yOffset="-128"   xOffset="-1024" imageVariant="17" objName="arenaDoor1b"/>
+						<Station type="&stBattleArenaWall;" yOffset="-128"   xOffset="1024" imageVariant="17" objName="arenaDoor2b"/>
+
+						<!-- ROW 12 -->
+						<Station type="&stBattleArenaWall;" yOffset="-256"   xOffset="-1152" imageVariant="18"/>
+						<Station type="&stBattleArenaWall;" yOffset="-256"   xOffset="896"  imageVariant="13"/>
+
+						<!-- ROW 13 -->
+						<Station type="&stBattleArenaWall;" yOffset="-384"   xOffset="-1152" imageVariant="19"/>
+						<Station type="&stBattleArenaWall;" yOffset="-384"   xOffset="768"  imageVariant="1"/>
+
+						<!-- ROW 14 -->
+						<Station type="&stBattleArenaWall;" yOffset="-512"   xOffset="-1152" imageVariant="0"/>
+						<Station type="&stBattleArenaWall;" yOffset="-512"   xOffset="640"  imageVariant="13"/>
+
+						<!-- ROW 15 -->
+						<Station type="&stBattleArenaWall;" yOffset="-640"   xOffset="-1152" imageVariant="12"/>
+						<Station type="&stBattleArenaWall;" yOffset="-640"   xOffset="512"  imageVariant="1"/>
+
+						<!-- ROW 16 -->
+						<Station type="&stBattleArenaWall;" yOffset="-768"   xOffset="-1152" imageVariant="9"/>
+						<Station type="&stBattleArenaWall;" yOffset="-768"   xOffset="384"  imageVariant="13"/>
+
+						<!-- ROW 17 -->
+						<Station type="&stBattleArenaWall;" yOffset="-896"   xOffset="-1024" imageVariant="15"/>
+						<Station type="&stBattleArenaWall;" yOffset="-896"   xOffset="256"  imageVariant="1"/>
+
+						<!-- ROW 18 -->
+						<Station type="&stBattleArenaWall;" yOffset="-1024"  xOffset="-896" imageVariant="3"/>
+						<Station type="&stBattleArenaWall;" yOffset="-1024"  xOffset="128"  imageVariant="13"/>
+
+						<!-- ROW 19 -->
+						<Station type="&stBattleArenaWall;" yOffset="-1152"  xOffset="-768" imageVariant="15"/>
+						<Station type="&stBattleArenaWall;" yOffset="-1152"  xOffset="0"    imageVariant="13"/>
+
+						<!-- ROW 20 -->
+						<Station type="&stBattleArenaWall;" yOffset="-1280"  xOffset="-640" imageVariant="8"/>
+						<Station type="&stBattleArenaWall;" yOffset="-1280"  xOffset="-512" imageVariant="14"/>
+						<Station type="&stBattleArenaWall;" yOffset="-1280"  xOffset="-384" imageVariant="2"/>
+						<Station type="&stBattleArenaWall;" yOffset="-1280"  xOffset="-256" imageVariant="14"/>
+						<Station type="&stBattleArenaWall;" yOffset="-1280"  xOffset="-128" imageVariant="7"/>
+
+						<!-- Nav Beacons -->
+						<Station type="&stNavBeacon;"		yOffset="1408"	 xOffset="512"  imageVariant="0"/>
+						<Station type="&stNavBeacon;"		yOffset="384"	 xOffset="1536" imageVariant="0"/>
+						<Station type="&stNavBeacon;"		yOffset="-512"	 xOffset="-1408" imageVariant="1"/>
+						<Station type="&stNavBeacon;"		yOffset="-1536"	 xOffset="-384" imageVariant="1"/>
+					</Trojan>
+
+				</Group>
+			</Orbitals>
+
+		</SystemGroup>
+
+	</SystemType>
+
+	<!-- Resources -->
+
+	<Image UNID="&rsBattleArena;"	bitmap="Resources\BattleArena.jpg"	bitmask="Resources\BattleArenaMask.bmp"  backColor="0x00000000" loadOnUse="true"/>
+	<Image UNID="&rsBattleArenaBkgnd;" bitmap="Resources\BattleArenaScreen.jpg" loadOnUse="true" />
+	
+</TranscendenceModule>

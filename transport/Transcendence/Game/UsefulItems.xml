@@ -1,0 +1,1537 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+
+<!-- BARRELS -->
+
+	<!-- Barrel of Ablative Armor Coating -->
+
+	<ItemType UNID="&itAblativeArmorCoating;"
+			name=				"barrel of ablative armor coating"
+			level=				"1"
+			value=				"40"
+			mass=				"1000"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem"
+			unknownType=		"&itUnknownBarrel;"
+
+			description=		"This coating is used to protect a ship's armor against laser and particle beam weapons."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"ablative"
+
+			firstPlural=		"true"
+			sortName=			"ablative armor coating, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Barrel of Armor Repair Paste -->
+
+	<ItemType UNID="&itSiliconArmorPatch;"
+			name=				"barrel of armor repair paste"
+			level=				"1"
+			value=				"50"
+			mass=				"1000"
+			frequency=			"common"
+			numberAppearing=	"1d4"
+			unknownType=		"&itUnknownBarrel;"
+			modifiers=			"Consumable"
+
+			description=		"Apply this paste to an armor segment to repair light to moderate damage."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"repairing"
+
+			firstPlural=		"true"
+			sortName=			"armor repair paste, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Barrel of Carbon-Weaver Nanos -->
+
+	<ItemType UNID="&itCarbonWeaverNanos;"
+			name=				"barrel of carbon-weaver nanos"
+			level=				"2"
+			value=				"80"
+			mass=				"1000"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			unknownType=		"&itUnknownBarrel;"
+			modifiers=			"ArmorEnhance; MinorItem"
+
+			description=		"The nanomachines in this paste weave a strong carbon grid through a ship's armor. Armor that has been treated in this way will be stronger and more resistant to damage."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"carbon-weave"
+
+			firstPlural=		"true"
+			sortName=			"carbon-weaver nanos, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Particle Resistance Coating -->
+
+	<ItemType UNID="&itParticleResistCoating;"
+			name=				"barrel of particle resistance coating"
+			level=				"3"
+			value=				"100"
+			mass=				"1000"
+			frequency=			"common"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem"
+			unknownType=		"&itUnknownBarrel;"
+
+			description=		"This coating is used to protect a ship's armor against particle beam weapons."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"particleresist"
+
+			firstPlural=		"true"
+			sortName=			"particle resistance coating, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Radiation Immunity Coating -->
+
+	<ItemType UNID="&itRadiationImmuneCoating;"
+			name=				"barrel of anti-radiation coating"
+			level=				"4"
+			value=				"350"
+			mass=				"1000"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem"
+			unknownType=		"&itUnknownBarrel;"
+
+			description=		"This borocarbide coating absorbs deadly radiation before it can penetrate your ship's hull."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"radiationimmune"
+
+			firstPlural=		"true"
+			sortName=			"anti-radiation coating, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- EMP Immunity Coating -->
+
+	<ItemType UNID="&itEMPImmuneCoating;"
+			name=				"barrel of monopole dust"
+			level=				"5"
+			value=				"700"
+			mass=				"1000"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem"
+			unknownType=		"&itUnknownBarrel5;"
+
+			description=		"When applied to armor, monopole dust dissipates EMP energy, rendering it harmless."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"EMPimmune"
+
+			firstPlural=		"true"
+			sortName=			"monopole dust, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Ion Resistant Coating -->
+
+	<ItemType UNID="&itIonResistCoating;"
+			name=				"barrel of ion resistance coating"
+			level=				"6"
+			value=				"1300"
+			mass=				"1000"
+			frequency=			"common"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem"
+			unknownType=		"&itUnknownBarrel5;"
+
+			description=		"This coating is used to protect a ship's armor against ion damage."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"ionresist"
+
+			firstPlural=		"true"
+			sortName=			"ion resistance coating, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Shield Interfering Coating -->
+
+	<ItemType UNID="&itShieldInterfereCoating;"
+			name=				"barrel of meteorsteel dust"
+			level=				"6"
+			value=				"200"
+			mass=				"1000"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem"
+			unknownType=		"&itUnknownBarrel5;"
+
+			description=		"Meteorsteel interferes with most kinds of shield generators."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"shieldresist"
+
+			firstPlural=		"true"
+			sortName=			"meteorsteel dust, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Ion Effects Immunity Coating -->
+
+	<ItemType UNID="&itIonEffectImmuneCoating;"
+			name=				"barrel of dyon dust"
+			level=				"7"
+			value=				"2800"
+			mass=				"1000"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem"
+			unknownType=		"&itUnknownBarrel5;"
+
+			description=		"Dust activated by dyons immunizes armor against ion effects that disable or damage a ship's systems."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"ioneffectimmune"
+
+			firstPlural=		"true"
+			sortName=			"dyon dust, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Thermo Resistant Coating -->
+
+	<ItemType UNID="&itThermoResistCoating;"
+			name=				"barrel of ithalium paste"
+			level=				"8"
+			value=				"5250"
+			mass=				"1000"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem"
+			unknownType=		"&itUnknownBarrel5;"
+
+			description=		"This coating is used to protect a ship's armor against thermonuclear damage."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"thermoresist"
+
+			firstPlural=		"true"
+			sortName=			"ithalium paste, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Carbon Weaver 2 Coating -->
+
+	<ItemType UNID="&itCarbonWeaver2Coating;"
+			name=				"barrel of orthosteel nanos"
+			level=				"9"
+			value=				"9000"
+			mass=				"1000"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem"
+			unknownType=		"&itUnknownBarrel5;"
+
+			description=		"The nanomachines in this paste weave a strong orthosteel grid through a ship's armor. Armor that has been treated in this way will be stronger and more resistant to damage."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"carbon-weave2"
+
+			firstPlural=		"true"
+			sortName=			"orthosteel nanos, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Barrel of Decon Gel -->
+
+	<ItemType UNID="&itDeconGel;"
+			name=				"barrel of decon gel"
+			level=				"3"
+			value=				"150"
+			mass=				"1000"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			modifiers=			"Consumable"
+			unknownType=		"&itUnknownBarrel;"
+
+			description=		"Decon gel is used to decontaminate radioactive metals, ceramics and other materials. It is ideal for decontaminating a ship's armor and hull."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"decon"
+
+			firstPlural=		"true"
+			sortName=			"decon gel, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Barrel of Degenerating Nanos -->
+
+	<ItemType UNID="&itDegeneratingNanos;"
+			name=				"barrel of degenerating nanos"
+			level=				"4"
+			value=				"25"
+			mass=				"1000"
+			unknownType=		"&itUnknownBarrel;"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; Consumable"
+
+			description=		"These nanomachines are used to recycle old ships and armors into their basic components. Use with caution: Do not allow contact with a ship's armor or hull."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"degenerating"
+
+			firstPlural=		"true"
+			sortName=			"degenerating nanos, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Barrel of Organic Acid -->
+
+	<ItemType UNID="&itOrganicAcid;"
+			name=				"barrel of organic acid"
+			level=				"2"
+			value=				"15"
+			mass=				"1000"
+			frequency=			"common"
+			numberAppearing=	"1d4"
+			unknownType=		"&itUnknownBarrel;"
+			modifiers=			"Consumable; Res;"
+
+			description=		"Powerful organic acids such as these are used in various industrial processes. Use with caution: Do not allow contact with a ship's armor or hull."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"acid"
+
+			firstPlural=		"true"
+			sortName=			"organic acid, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Barrel of Radioactive Waste -->
+
+	<ItemType UNID="&itRadioactiveWaste;"
+			name=				"barrel of radioactive waste"
+			level=				"4"
+			value=				"0"
+			mass=				"1000"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			modifiers=			"Consumable; CannotOrder"
+			unknownType=		"&itUnknownBarrel;"
+
+			description=		"This is a titanium barrel filled with low and medium-level radioactive waste."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"radioactive"
+
+			firstPlural=		"true"
+			sortName=			"radioactive waste, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Barrel of Reactive Armor Coating -->
+
+	<ItemType UNID="&itReactiveArmorCoating;"
+			name=				"barrel of reactive armor coating"
+			level=				"1"
+			value=				"60"
+			mass=				"1000"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			unknownType=		"&itUnknownBarrel;"
+			modifiers=			"ArmorEnhance; MinorItem"
+
+			description=		"This coating reacts when hit by kinetic or chemical explosives and produces an opposite reaction that protect the underlying armor and hull."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"reactive"
+
+			firstPlural=		"true"
+			sortName=			"reactive armor coating, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Barrel of Reflective Armor Coating -->
+
+	<ItemType UNID="&itReflectiveArmorCoating;"
+			name=				"barrel of reflective armor coating"
+			level=				"3"
+			value=				"160"
+			mass=				"1000"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem; Specialty"
+			unknownType=		"&itUnknownBarrel;"
+
+			description=		"This coating is nearly perfectly reflective at all laser weapon wavelengths. A ship's armor coated with this substance will be immune to laser weapons."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"reflective"
+
+			firstPlural=		"true"
+			sortName=			"reflective armor coating, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Barrel of Regenerating Nanos -->
+
+	<ItemType UNID="&itRegeneratingNanos;"
+			name=				"barrel of regenerating nanos"
+			level=				"4"
+			value=				"350"
+			mass=				"1000"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+			modifiers=			"ArmorEnhance; MinorItem; Specialty"
+			unknownType=		"&itUnknownBarrel;"
+
+			description=		"The nanomachines are able to automatically regenerate any armor. Once treated with this paste an armor segment will continue to regenerate even if damaged further."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"regenerating"
+
+			firstPlural=		"true"
+			sortName=			"regenerating nanos, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+
+	<!-- Barrel of Repairing Nanos -->
+
+	<ItemType UNID="&itRepairingNanos;"
+			name=				"barrel of repairing nanos"
+			level=				"3"
+			value=				"125"
+			mass=				"1000"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+			unknownType=		"&itUnknownBarrel;"
+			modifiers=			"Consumable"
+
+			description=		"Apply this paste to an armor segment to repair moderate to heavy damage."
+
+			useScreen=			"&dsUseArmorCoating;"
+			data=				"extra-repairing"
+
+			firstPlural=		"true"
+			sortName=			"repairing nanos, barrel of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+	</ItemType>
+	
+	<!-- Unknown Barrels -->
+
+	<ItemType UNID="&itUnknownBarrel;"
+			name=				"barrel with strange markings"
+			virtual=			"true"
+			level=				"1"
+			value=				"150"
+			modifiers=			"unknown"
+
+			description=		"These barrels are used to hold everything from chemicals to nanomachines. The markings are completely unfamiliar to you."
+
+			firstPlural=		"true"
+			>
+
+		<Names>barrel marked "H3OCH4"; barrel marked "Nanobatch 3281";
+			barrel marked "01-9098371"; barrel marked "Not for Human Consumption";
+			barrel marked "Keep Seal Clean"; barrel marked "Caution! Volatile Compounds";
+			barrel marked "&#xd0;&#xe6;m&#xf6;"; barrel marked "&#xbf;&#xbf;&#xbf;";
+			barrel marked "&#xd7;&#xd7;&#xd7;"; barrel marked "Do Not Open";
+			barrel marked with strange symbols; barrel marked with a bar code;
+			barrel covered with dents; barrel with no markings
+		</Names>
+
+	</ItemType>
+
+	<ItemType UNID="&itUnknownBarrel5;"
+			name=				"barrel with strange markings"
+			virtual=			"true"
+			level=				"5"
+			value=				"2000"
+			modifiers=			"unknown"
+
+			description=		"These barrels are used to hold everything from chemicals to nanomachines. The markings are completely unfamiliar to you."
+
+			firstPlural=		"true"
+			>
+
+		<Names>barrel marked "C4Si3OH4"; barrel marked "Nanobatch A1876B";
+			barrel marked "27-7862481"; barrel marked "Keep Pressurized";
+			barrel marked "Recycle"; barrel marked "Do Not Discard";
+			barrel marked "Danger! Biohazard!"; barrel marked "Use Only As Directed";
+			barrel marked "Salmonite&#xae;"; barrel marked "Do Not Puncture";
+			barrel marked with Arabic script; barrel marked with microdots;
+			barrel marked with Chinese ideograms; barrel with no markings;
+			barrel marked "Gefahr!"; barrel marked "Peligro!"
+		</Names>
+
+	</ItemType>
+
+<!-- ROMS -->
+	
+	<!-- Autopilot ROM -->
+
+	<ItemType UNID="&itAutopilotROM;"
+			name=				"autopilot ROM"
+			level=				"1"
+			value=				"50"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"This program allows the ship's captain to rest while the ship maintains a steady course."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block Nil
+				; Install
+				(if (shpIsAutopilotInstalled gSource)
+					(objSendMessage gSource Nil "Ship already has an autopilot")
+					(block Nil
+						(shpInstallAutopilot gSource)
+						(objSendMessage gSource Nil "Autopilot installed")
+						)
+					)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+
+	</ItemType>
+
+	<!-- Cash Card, Blue -->
+
+	<ItemType UNID="&itCashCardBlue;"
+			name=				"blue cash card"
+			level=				"2"
+			value=				"100"
+			mass=				"1"
+			frequency=			"rare"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Consumable; CannotOrder"
+
+			description=		"This ROM stores digital cash and may be redeemed automatically with your ship's computer."
+
+			charges=			"4d25"
+			valueCharges=		"true"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block (amount)
+				(setq amount (multiply (itmGetCharges gItem) 2))
+				(objSendMessage gSource Nil (cat amount " credits deposited to your account."))
+				(plyCredit gPlayer amount)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Cash Card, Gold -->
+
+	<ItemType UNID="&itCashCardGold;"
+			name=				"gold cash card"
+			level=				"4"
+			value=				"1000"
+			mass=				"1"
+			frequency=			"rare"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Consumable; CannotOrder"
+
+			description=		"This ROM stores digital cash and may be redeemed automatically with your ship's computer."
+
+			charges=			"4d25"
+			valueCharges=		"true"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block (amount)
+				(setq amount (multiply (itmGetCharges gItem) 10))
+				(objSendMessage gSource Nil (cat amount " credits deposited to your account."))
+				(plyCredit gPlayer amount)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Cash Card, Platinum -->
+
+	<ItemType UNID="&itCashCardPlatinum;"
+			name=				"platinum cash card"
+			level=				"6"
+			value=				"10000"
+			mass=				"1"
+			frequency=			"rare"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Consumable; CannotOrder"
+
+			description=		"This ROM stores digital cash and may be redeemed automatically with your ship's computer."
+
+			charges=			"4d25"
+			valueCharges=		"true"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block (amount)
+				(setq amount (multiply (itmGetCharges gItem) 100))
+				(objSendMessage gSource Nil (cat amount " credits deposited to your account."))
+				(plyCredit gPlayer amount)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Data ROM 
+	
+	EXTRA DATA
+	
+	text:			The document contents of the data ROM should be stored in this data variable
+					(itmSetData theItem "text" "{the document content}")
+	
+	-->
+
+	<ItemType UNID="&itDataROM;"
+			name=				"data ROM"
+			level=				"1"
+			value=				"0"
+			mass=				"1"
+			frequency=			"notrandom"
+			modifiers=			"Info; MinorItem; NotForSale"
+
+			description=		"Data ROMs are used to store everything from personal mail to ship's logs."
+
+			useScreen=			"&dsUseDataROM;"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+		
+	</ItemType>
+
+	<!-- ROM: enhance visual display -->
+
+	<ItemType UNID="&itEnhanceSRSROM;"
+			name=				"visual display enhancement ROM"
+			level=				"2"
+			value=				"150"
+			mass=				"1"
+			frequency=			"common"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"This ROM enhances a ship's visual display to show the bearing of ships and stations beyond normal visual range."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block Nil
+				(switch
+					(shpIsBlind gSource)
+						(block Nil
+							(shpFixBlindness gSource)
+							(objSendMessage gSource Nil "Visual display repaired")
+							)
+							
+					(shpIsSRSEnhanced gSource)
+						(objSendMessage gSource Nil "Visual display already enhanced")
+						
+					(block Nil
+						(shpEnhanceSRS gSource)
+						(objSendMessage gSource Nil "Visual display enhanced")
+						)
+					)
+					
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- ROM: Defective visual display -->
+
+	<ItemType UNID="&itSRSDamageROM;"
+			name=				"defective visual display ROM"
+			level=				"2"
+			value=				"5"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"This ROM would normally enhance a ship's visual display, but a manufacturing defect makes it worse than useless. Plugging this in to your ship's computer will temporarily damage your display screen."
+
+			sortName=			"visual display ROM, defective"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block Nil
+				(shpMakeBlind gSource 3000)
+				(objSendMessage gSource Nil "ROM failure: Visual display temporarily damaged")
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+	
+	<!-- ROM: Enhance shields -->
+
+	<ItemType UNID="&itEnhanceShieldsROM;"
+			name=				"shield enhancement ROM"
+			level=				"2"
+			value=				"500"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"This ROM upgrades a shield generator so that it is more effective at absorbing damage. The ROM works on generators up to technology level VI."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block (notFound)
+				; Install
+				(setq notFound True)
+				(objEnumItems gSource "sI" theItem
+					(block (shieldItem)
+						(setq shieldItem theItem)
+						(if notFound
+							(block Nil
+								(switch
+									; Alien items cannot be enhanced
+									(itmHasModifier shieldItem "Alien")
+										(objSendMessage gSource Nil "Shield generator is too alien for the ROM to enhance")
+
+									; If the shield generator is too advanced, then nothing happens
+									(gr (itmGetLevel shieldItem) 6)
+										(objSendMessage gSource Nil "Shield generator is too advanced for the ROM to enhance")
+
+									; If the item is damaged, we repair it
+									(itmIsDamaged shieldItem)
+										(block Nil
+											(shpRepairItem gSource theItem)
+											(objSendMessage gSource Nil "Shield generator has been repaired")
+											)
+
+									; Enhance the shield generator
+									(block (result)
+										(setq result (shpEnhanceItem gSource theItem 0x0102))
+										(objSendMessage gSource Nil (intItemEnhanceStatus result "Your shields are more powerful" "shield generator"))
+										)
+									)
+								(setq notFound Nil)
+								)
+							)
+						)
+					)
+
+				(if notFound
+					(objSendMessage gSource Nil "Shield generator required")
+					)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Rowena's Weapons and Armor: Vol 1 -->
+
+	<ItemType UNID="&itRowenaVol1;"
+			name=				"ROM of Rowena's Weapons and Armor: Volume I"
+			level=				"1"
+			value=				"50"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"The definitive guide to starship weapons and armor. This ROM contains specification for commercially available weapons and armor of the Commonwealth."
+
+			firstPlural=		"true"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block Nil
+				(objSendMessage gSource Nil "\"Rowena's Weapons and Armor (Volume I)\" installed")
+				(itmEnumTypes "adsw" itemType
+					(if (and (geq (itmGetLevel itemType) 1) (leq (itmGetLevel itemType) 5))
+						(itmSetReference itemType)
+						)
+					)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Rowena's Weapons and Armor: Vol 2 -->
+
+	<ItemType UNID="&itRowenaVol2;"
+			name=				"ROM of Rowena's Weapons and Armor: Volume II"
+			level=				"4"
+			value=				"500"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"The definitive guide to starship weapons and armor. This ROM contains specification for military weapons and armor used in the Commonwealth."
+
+			firstPlural=		"true"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block Nil
+				(objSendMessage gSource Nil "\"Rowena's Weapons and Armor (Volume II)\" installed")
+				(itmEnumTypes "adsw" itemType
+					(if (and (geq (itmGetLevel itemType) 6) (leq (itmGetLevel itemType) 10))
+						(itmSetReference itemType)
+						)
+					)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Rowena's Weapons and Armor: Vol 3 -->
+
+	<ItemType UNID="&itRowenaVol3;"
+			name=				"ROM of Rowena's Weapons and Armor: Volume III"
+			level=				"8"
+			value=				"2500"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"The definitive guide to starship weapons and armor. This ROM contains specification for weapons and armor used by the Ancient Races."
+
+			firstPlural=		"true"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block Nil
+				(objSendMessage gSource Nil "\"Rowena's Weapons and Armor (Volume III)\" installed")
+				(itmEnumTypes "adsw" itemType
+					(if (and (geq (itmGetLevel itemType) 11) (leq (itmGetLevel itemType) 15))
+						(itmSetReference itemType)
+						)
+					)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Rowena's Weapons and Armor: Vol 4 -->
+
+	<ItemType UNID="&itRowenaVol4;"
+			name=				"ROM of Rowena's Weapons and Armor: Volume IV"
+			level=				"12"
+			value=				"10000"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"The definitive guide to starship weapons and armor. This ROM contains specification for weapons and armor developed by the Halo Races."
+
+			firstPlural=		"true"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block Nil
+				(objSendMessage gSource Nil "\"Rowena's Weapons and Armor (Volume IV)\" installed")
+				(itmEnumTypes "adsw" itemType
+					(if (and (geq (itmGetLevel itemType) 16) (leq (itmGetLevel itemType) 20))
+						(itmSetReference itemType)
+						)
+					)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Rowena's Weapons and Armor: Vol 5 -->
+
+	<ItemType UNID="&itRowenaVol5;"
+			name=				"ROM of Rowena's Weapons and Armor: Volume V"
+			level=				"16"
+			value=				"30000"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"The definitive guide to starship weapons and armor. This ROM contains specification for weapons and armor used by the Hierodules and the entities Oracus and Domina."
+
+			firstPlural=		"true"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block Nil
+				(objSendMessage gSource Nil "\"Rowena's Weapons and Armor (Volume V)\" installed")
+				(itmEnumTypes "adsw" itemType
+					(if (and (geq (itmGetLevel itemType) 21) (leq (itmGetLevel itemType) 25))
+						(itmSetReference itemType)
+						)
+					)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- System Map ROM -->
+
+	<ItemType UNID="&itSystemMapROM;"
+			name=				"system map ROM"
+			level=				"2"
+			value=				"100"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Consumable; Info"
+
+			description=		"This program accesses the central cartography libraries to generate a map of the current system."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block (obj mappedAll mapEnemy)
+				(setq mappedAll True)
+				
+				; Compute the probability of mapping an enemy station
+				(switch
+					(geq (sysGetLevel) 7)
+						(setq mapEnemy 0)
+						
+					(geq (sysGetLevel) 3)
+						(setq mapEnemy (subtract 360 (multiply 72 (subtract (sysGetLevel) 2))))
+						
+					(setq mapEnemy 360)
+					)
+				
+				; Iterate over all stations in the system
+				(enum (sysFindObject gSource "Ts") obj
+					(switch
+						(and (objIsEnemy gSource obj) (gr (add (objGetDestiny obj) 1) mapEnemy))
+							(setq mappedAll Nil)
+						
+						(objHasAttribute obj "uncharted")
+							(setq mappedAll Nil)
+							
+						(objSetKnown obj)
+						)
+					)
+
+				(if mappedAll
+					(objSendMessage gSource Nil "Mapped all stations in system")
+					(objSendMessage gSource Nil "Mapped charted stations in system")
+					)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Military System Map ROM -->
+
+	<ItemType UNID="&itMilitaryMapROM;"
+			name=				"military map ROM"
+			level=				"4"
+			value=				"500"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Consumable; Info; Military"
+
+			description=		"This program accesses military databases to generate a map of enemy stations in the system."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block Nil
+				(if	(not (sysFindObject gSource "Ts AB:commonwealth;"))
+				
+					; If there are no commonwealth stations in the system, then we cannot function
+					(block Nil
+						(objSendMessage gSource Nil "Unable to connect to military cartography in this system")
+						)
+						
+					; Otherwise, we map all enemy stations
+					(block (obj)
+						(enum (sysFindObject gSource "ETs") obj
+							(objSetKnown obj)
+							)
+							
+						(objSendMessage gSource Nil "Mapped all enemy stations in system")
+						
+						; Remove ROM
+						(objRemoveItem gSource gItem 1)
+						)
+					)
+					
+				; Identify the item
+				(itmSetKnown gItem)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Targeting Computer ROM -->
+
+	<ItemType UNID="&itTargetingComputerROM;"
+			name=				"targeting program ROM"
+			level=				"3"
+			value=				"300"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"A targeting program is required to aim guided missiles such as the KM500 Stiletto."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block Nil
+				(if (shpIsTargetingComputerInstalled gPlayerShip)
+					(objSendMessage gSource Nil "Ship already has targeting program")
+					(block Nil
+						(shpInstallTargetingComputer gPlayerShip)
+						(objSendMessage gSource Nil "Targeting program installed")
+						)
+					)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+	<!-- Unknown ROM -->
+
+	<ItemType UNID="&itUnknownROM;"
+			name=				"ROM biosoft"
+			virtual=			"true"
+			level=				"1"
+			value=				"150"
+			modifiers=			"unknown"
+
+			description=		"These ROM biochips are generally used to upgrade a computer's neural network. Unfortunately, you have no knowledge of the software's specific nature or purpose."
+
+			secondPlural=		"true"
+			>
+
+		<Names>ROM biosoft labeled "1701"; ROM biosoft labeled "0x0009FFD9";
+			ROM biosoft labeled "Serenity"; ROM biosoft labeled "Storm";
+			ROM biosoft labeled "V y ger"; ROM biosoft labeled "Codeslinger";
+			ROM biosoft labeled "5.0.1"; ROM biosoft labeled "TI901";
+			ROM biosoft labeled "1.4b"; ROM biosoft labeled "3.0";
+			ROM biosoft labeled "X10.3"; ROM biosoft labeled "r2";
+			ROM biosoft labeled "&#xd8;"; ROM biosoft labeled "0xbaadf00d";
+			ROM biosoft labeled "Release 3.2"; ROM biosoft labeled "&#xdf;eta";
+			ROM biosoft labeled "&#xa9;2418 NeuroSoft, rce"; ROM biosoft labeled "&#xa9;2401 Black Sun, rce";
+			ROM biosoft with no label; ROM biosoft labeled "GAAADTAG"
+		</Names>
+
+	</ItemType>
+	
+<!-- SHIELD ENHANCEMENTS -->
+
+	<!-- Diamond field crystal -->
+
+	<ItemType UNID="&itDiamondCrystal;"
+			name=				"diamond field crystal"
+			level=				"8"
+			value=				"2500"
+			mass=				"10"
+			frequency=			"rare"
+			unknownType=		"&vtUnknownFieldCrystal;"
+			modifiers=			"MinorItem; FieldCrystal"
+
+			description=		"Diamond field crystals increase the power of tech VII-XII shield generators. Unlike other field crystals, a generator can use multiple diamond field crystals."
+			>
+
+		<Image imageID="&rsItems1;" imageX="288" imageY="384" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intFieldCrystalUse 0x0100 "Your shields are more powerful")
+		</Invoke>
+	</ItemType>
+
+	<!-- Yellow Etherium field crystal -->
+
+	<ItemType UNID="&itYellowEtheriumCrystal;"
+			name=				"yellow etherium field crystal"
+			level=				"8"
+			value=				"2500"
+			mass=				"10"
+			frequency=			"rare"
+			unknownType=		"&vtUnknownFieldCrystal;"
+			modifiers=			"MinorItem; FieldCrystal"
+
+			description=		"Yellow etherium is used to create energy fields that reflect positron energy."
+			>
+
+		<Image imageID="&rsItems1;" imageX="288" imageY="384" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intFieldCrystalUse 0x0369 "Your shields now reflect positron damage")
+		</Invoke>
+	</ItemType>
+
+	<!-- Decayed Etherium field crystal -->
+
+	<ItemType UNID="&itDecayedEtheriumCrystal;"
+			name=				"decayed etherium field crystal"
+			level=				"7"
+			value=				"10"
+			mass=				"10"
+			frequency=			"uncommon"
+			unknownType=		"&vtUnknownFieldCrystal;"
+			modifiers=			"MinorItem; FieldCrystal"
+
+			description=		"In pristine state, this field crystal is used to reflect ion energy. But this decayed crystal would do more harm than good."
+			>
+
+		<Image imageID="&rsItems1;" imageX="288" imageY="384" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intFieldCrystalUse 0x834A "Your shields fade")
+		</Invoke>
+	</ItemType>
+
+	<!-- Blue Etherium field crystal -->
+
+	<ItemType UNID="&itBlueEtheriumCrystal;"
+			name=				"blue etherium field crystal"
+			level=				"7"
+			value=				"2000"
+			mass=				"10"
+			frequency=			"rare"
+			unknownType=		"&vtUnknownFieldCrystal;"
+			modifiers=			"MinorItem; FieldCrystal"
+
+			description=		"Blue etherium is used to create energy fields that reflect ion energy."
+			>
+
+		<Image imageID="&rsItems1;" imageX="288" imageY="384" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intFieldCrystalUse 0x0349 "Your shields now reflect ion damage")
+		</Invoke>
+	</ItemType>
+
+	<!-- Molbidium field crystal -->
+
+	<ItemType UNID="&itMolbidiumCrystal;"
+			name=				"molbidium field crystal"
+			level=				"7"
+			value=				"1500"
+			mass=				"10"
+			frequency=			"common"
+			unknownType=		"&vtUnknownFieldCrystal;"
+			modifiers=			"MinorItem; FieldCrystal"
+
+			description=		"Molbidium crystals are often used to increase the power density of shield generators."
+			>
+
+		<Image imageID="&rsItems1;" imageX="288" imageY="384" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intFieldCrystalUse 0x0103 "Your shields are more powerful")
+		</Invoke>
+	</ItemType>
+
+	<!-- Green Etherium field crystal -->
+
+	<ItemType UNID="&itGreenEtheriumCrystal;"
+			name=				"green etherium field crystal"
+			level=				"6"
+			value=				"1000"
+			mass=				"10"
+			frequency=			"uncommon"
+			unknownType=		"&vtUnknownFieldCrystal;"
+			modifiers=			"MinorItem; FieldCrystal"
+
+			description=		"Green etherium is used to create energy fields that reflect particle beam energy."
+			>
+
+		<Image imageID="&rsItems1;" imageX="288" imageY="384" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intFieldCrystalUse 0x0329 "Your shields now reflect particle damage")
+		</Invoke>
+	</ItemType>
+
+<!-- WEAPON ENHANCEMENTS -->
+
+	<!-- Laser Amplifier -->
+
+	<ItemType UNID="&itLaserAmplifier;"
+			name=				"laser amplifier"
+			level=				"1"
+			value=				"250"
+			mass=				"25"
+			frequency=			"uncommon"
+			modifiers=			"MinorItem"
+
+			description=		"Laser amplifiers are used to repair and upgrade laser weapons."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="576" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intEnhanceWeaponUse 0x0100 0 "is more powerful")
+		</Invoke>
+	</ItemType>
+
+	<!-- Kinetic Upgrade -->
+
+	<ItemType UNID="&itKineticUpgrade;"
+			name=				"kinetic upgrade"
+			level=				"2"
+			value=				"350"
+			mass=				"50"
+			frequency=			"rare"
+			modifiers=			"MinorItem"
+
+			description=		"Kinetic upgrades increase the damage of a kinetic weapon."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="576" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intEnhanceWeaponUse 0x0100 1 "is more powerful")
+		</Invoke>
+	</ItemType>
+
+	<!-- Particle Upgrade -->
+
+	<ItemType UNID="&itParticleUpgrade;"
+			name=				"particle source upgrade"
+			level=				"4"
+			value=				"500"
+			mass=				"25"
+			frequency=			"uncommon"
+			modifiers=			"MinorItem"
+
+			description=		"This weapon upgrade increases the power of particle beams."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="576" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intEnhanceWeaponUse 0x0100 2 "is more powerful")
+		</Invoke>
+	</ItemType>
+
+	<!-- Blast Upgrade -->
+
+	<ItemType UNID="&itBlastUpgrade;"
+			name=				"hexagene booster"
+			level=				"5"
+			value=				"1000"
+			mass=				"75"
+			frequency=			"uncommon"
+			modifiers=			"MinorItem"
+
+			description=		"This high-explosive upgrade increases the damage done by blast weapons."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="576" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intEnhanceWeaponUse 0x0100 3 "is more powerful")
+		</Invoke>
+	</ItemType>
+
+	<!-- Ion Upgrade -->
+
+	<ItemType UNID="&itIonUpgrade;"
+			name=				"ion power capacitor"
+			level=				"7"
+			value=				"2500"
+			mass=				"50"
+			frequency=			"rare"
+			modifiers=			"MinorItem"
+
+			description=		"Ion power capicitors are used to increase the destructive power of ion weapons."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="576" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intEnhanceWeaponUse 0x0100 4 "is more powerful")
+		</Invoke>
+	</ItemType>
+
+	<!-- Thermo Upgrade -->
+
+	<ItemType UNID="&itThermoUpgrade;"
+			name=				"tritium injector"
+			level=				"8"
+			value=				"5000"
+			mass=				"150"
+			frequency=			"uncommon"
+			modifiers=			"MinorItem"
+
+			description=		"This weapon upgrade increases the damage done by thermo weapons."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="576" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intEnhanceWeaponUse 0x0100 5 "is more powerful")
+		</Invoke>
+	</ItemType>
+
+	<!-- Weapon Enhancement ROM -->
+
+	<ItemType UNID="&itWeaponSpeedROM;"
+			name=				"weapon optimizer ROM"
+			level=				"3"
+			value=				"750"
+			mass=				"1"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"This ROM increases the rate of fire of the ship's primary weapon."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(intEnhanceWeaponUse 0x1002 Nil "has an improved fire rate")
+		</Invoke>
+	</ItemType>
+
+	<!-- Defective Weapon Enhancement ROM -->
+
+	<ItemType UNID="&itDamageWeaponROM;"
+			name=				"defective weapon enhancement ROM"
+			level=				"3"
+			value=				"5"
+			mass=				"1"
+			frequency=			"veryrare"
+			unknownType=		"&itUnknownROM;"
+			modifiers=			"Info; MinorItem"
+
+			description=		"Because of a manufacturing defect, this ROM damages the ship's primary weapon when installed."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Invoke>
+			(block (notFound)
+				; Install
+				(setq notFound True)
+				(objEnumItems gPlayerShip "wI" theItem
+					(block (weaponItem)
+						(setq weaponItem theItem)
+						(if (and notFound 
+								(eq (shpGetItemDeviceName gSource weaponItem) 0))
+							(block Nil
+								(shpDamageItem gSource theItem)
+								(objSendMessage gSource Nil (cat (itmGetName weaponItem 33) " damaged by defective ROM"))
+								(setq notFound Nil)
+								)
+							)
+						)
+					)
+
+				(if notFound
+					(objSendMessage gSource Nil "Primary weapon required")
+					)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Remove ROM
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+	</ItemType>
+
+<!-- GLOBALS -->
+	
+	<Globals>
+		(block Nil
+			(setq intEnhanceWeaponUse (lambda (newMods damageType successText)
+				(block (notFound)
+					; Install
+					(setq notFound True)
+					(objEnumItems gSource "w~lI" theItem
+						(block (weaponItem)
+							(setq weaponItem theItem)
+							(if (and 
+									notFound 
+									(leq (itmGetLevel weaponItem) 10)
+									(or (not damageType) (eq (itmGetDamageType weaponItem) damageType))
+									(eq (shpGetItemDeviceName gSource weaponItem) 0)
+									)
+								(block Nil
+									(switch
+										; If the item is damaged, we repair it
+										(and (itmIsDamaged weaponItem) (ls newMods 0x8000))
+											(block Nil
+												(shpRepairItem gSource theItem)
+												(objSendMessage gSource Nil (cat (itmGetName weaponItem 33) " has been repaired"))
+												)
+												
+										; Enhance the weapon
+										(block (result)
+											(setq result (shpEnhanceItem gSource theItem newMods))
+											(objSendMessage gSource Nil (intItemEnhanceStatus result (cat "Your " (itmGetName weaponItem 32) " " successText) (cat "your " (itmGetName weaponItem 32))))
+											)
+										)
+									(setq notFound Nil)
+									)
+								)
+							)
+						)
+						
+					; Item is identified
+					
+					(itmSetKnown gItem)
+
+					; If we did not find a weapon to enhance, then no effect. Otherwise
+					; we consume the item
+					
+					(if notFound
+						(objSendMessage gSource Nil "The enhancement has no effect")
+						(objRemoveItem gSource gItem 1)
+						)
+					)
+				))
+			)
+	</Globals>
+
+</TranscendenceModule>

@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+
+	<!-- Mining Laser -->
+
+	<ItemType UNID="&itMiningLaser;"
+			name=				"mining laser"
+			level=				"2"
+			value=				"550"
+			mass=				"2000"
+			frequency=			"rare"
+			modifiers=			"EnergyWeapon; MajorItem; Specialty"
+			showReference=		"true"
+
+			description=		"This powerful laser is generally used for asteroid mining."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"beam"
+
+				repeating=			"4"
+				damage=				"laser:1d4; mining3"
+				fireRate=			"30"
+				lifetime=			"15"
+				powerUse=			"40"
+
+				beamType=			"laser"
+				primaryColor=		"0x5f, 0xf1, 0x2a"
+				secondaryColor=		"0x00, 0xff, 0x00"
+				sound=				"&snLaserCannon;"
+				>
+		</Weapon>
+
+	</ItemType>
+
+	<!-- Miner's Cargo Hold -->
+
+	<ItemType UNID="&itMinersCargoHold;"
+			name=				"miners's cargo hold"
+			level=				"3"
+			value=				"1500"
+			mass=				"1250"
+			frequency=			"rare"
+			numberAppearing=	"1"
+			modifiers=			"MajorItem; MinersHold"
+
+			description=		"Designed for mining ships, this cargo hold has grapples to bring ore on board."
+
+			sortName=			"cargo hold, miners"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="192" imageWidth="96" imageHeight="96"/>
+
+		<CargoHoldDevice
+				cargoSpace=		"80"
+				/>
+
+	</ItemType>
+
+	<!-- Mined Ore -->
+
+	<StationType UNID="&stMinedOre;"
+			name=				"Mined Ore"
+			noArticle=			"true"
+			sovereign=			"&svIndependent;"
+			dockScreen=			"&dsMinedOre;"
+
+			maxStructuralHitPoints="100"
+
+			scale=				"ship"
+			mobile=				"true"
+			mass=				"10"
+			destroyWhenEmpty=	"true"
+			noMapIcon=			"true"
+			>
+
+		<ImageVariants>
+			<Image			imageID="&rsStations1;" imageX="560" imageY="512" imageWidth="24" imageHeight="24" />
+			<Image			imageID="&rsStations1;" imageX="560" imageY="536" imageWidth="24" imageHeight="24" />
+			<Image			imageID="&rsStations1;" imageX="560" imageY="560" imageWidth="24" imageHeight="24" />
+			<Image			imageID="&rsStations1;" imageX="560" imageY="584" imageWidth="24" imageHeight="24" />
+		</ImageVariants>
+
+		<DockingPorts>
+			<Port x="0"		y="40" />
+			<Port x="0"		y="-40" />
+			<Port x="40"	y="0" />
+			<Port x="-40"	y="0" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Small Asteroid with Ore -->
+
+	<StationType UNID="&stOreSmallAsteroid;"
+			name=				"(small ore asteroid)"
+			scale=				"world"
+			sovereign=			"&svIndependent;"
+
+			attributes=			"asteroid"
+			
+			ejectaType=			"&vtStoneAsteroidEjecta;"
+			>
+		
+		<ImageVariants>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="768" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="800" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="832" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="864" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="896" imageWidth="32" imageHeight="32"/>
+
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="928" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="960" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="992" imageWidth="32" imageHeight="32"/>
+		</ImageVariants>
+		
+		<Items>
+			<Table>
+				<Item chance="20" count="45-60"		item="&itTitaniumOre;"/>
+				<Item chance="13" count="15-20"		item="&itPalladiumOre;"/>
+				<Item chance="16" count="15-20"		item="&itPlasteelOre;"/>
+				<Item chance="10" count="1-10"		item="&itUraniumOre;"/>
+				<Item chance="2"  count="10-50"		item="&itUraniumOre;"/>
+				<Item chance="10" count="5-10"		item="&itCeralloyOre;"/>
+				<Item chance="10" count="5-10"		item="&itHeliumRegolith;"/>
+				<Item chance="8"  count="1-6"		item="&itCobaltThoriumOre;"/>
+				<Item chance="5"  count="1-4"		item="&itGoldOre;"/>
+				<Item chance="1"  count="1-35"		item="&itGoldOre;"/>
+				<Item chance="4"  count="1-4"		item="&itDuralloyOre;"/>
+				<Item chance="1"  count="5-15"		item="&itDuralloyOre;"/>
+			</Table>
+		</Items>
+		
+		<Events>
+			<OnMining>
+				(intAsteroidOnMining 100)
+			</OnMining>
+		</Events>
+
+	</StationType>
+	
+	<!-- Medium Asteroid with Ore -->
+
+	<StationType UNID="&stOreMediumAsteroid;"
+		name=				"(medium ore asteroid)"
+		scale=				"world"
+		sovereign=			"&svIndependent;"
+
+		attributes=			"asteroid"
+
+		ejectaType=			"&vtStoneAsteroidEjecta;"
+		>
+		
+		<Names>Asteroid %1%0%0%0%0%0</Names>
+		
+		<ImageVariants>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="0"   imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="64"  imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="128" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="192" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="256" imageWidth="64" imageHeight="64"/>
+
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="320" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="384" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="128" imageY="448" imageWidth="64" imageHeight="64"/>
+		</ImageVariants>
+		
+		<Items>
+			<Table count="1d6">
+				<Item chance="20" count="45-60"		item="&itTitaniumOre;"/>
+				<Item chance="13" count="15-20"		item="&itPalladiumOre;"/>
+				<Item chance="16" count="15-20"		item="&itPlasteelOre;"/>
+				<Item chance="10" count="1-10"		item="&itUraniumOre;"/>
+				<Item chance="2"  count="10-50"		item="&itUraniumOre;"/>
+				<Item chance="10" count="5-10"		item="&itCeralloyOre;"/>
+				<Item chance="10" count="5-10"		item="&itHeliumRegolith;"/>
+				<Item chance="8"  count="1-6"		item="&itCobaltThoriumOre;"/>
+				<Item chance="5"  count="1-4"		item="&itGoldOre;"/>
+				<Item chance="1"  count="1-35"		item="&itGoldOre;"/>
+				<Item chance="4"  count="1-4"		item="&itDuralloyOre;"/>
+				<Item chance="1"  count="5-15"		item="&itDuralloyOre;"/>
+			</Table>
+		</Items>
+		
+		<Events>
+			<OnMining>
+				(intAsteroidOnMining 100)
+			</OnMining>
+		</Events>
+
+	</StationType>
+
+	<!-- Small Frost Asteroid with Ore -->
+
+	<StationType UNID="&stOreSmallFrostAsteroid;"
+		name=				"(small frost ore asteroid)"
+		scale=				"world"
+		sovereign=			"&svIndependent;"
+
+		attributes=			"asteroid"
+
+		ejectaType=			"&vtIceAsteroidEjecta;"
+		>
+		
+		<ImageVariants>
+			<Image			imageID="&rsWorlds1;" imageX="224" imageY="768" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="224" imageY="800" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="224" imageY="832" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="224" imageY="864" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="224" imageY="896" imageWidth="32" imageHeight="32"/>
+
+			<Image			imageID="&rsWorlds1;" imageX="224" imageY="928" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="224" imageY="960" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds1;" imageX="224" imageY="992" imageWidth="32" imageHeight="32"/>
+		</ImageVariants>
+		
+		<Items>
+			<Table>
+				<Item chance="23" count="10-15"		item="&itPalladiumOre;"/>
+				<Item chance="15" count="15-20"		item="&itPlasteelOre;"/>
+				<Item chance="10" count="1-5"		item="&itUraniumOre;"/>
+				<Item chance="15" count="10-15"		item="&itCeralloyOre;"/>
+				<Item chance="12" count="1-10"		item="&itHeliumRegolith;"/>
+				<Item chance="10" count="1-6"		item="&itCobaltThoriumOre;"/>
+				<Item chance="5"  count="1-4"		item="&itGoldOre;"/>
+				<Item chance="5"  count="1-6"		item="&itDuralloyOre;"/>
+				<Item chance="3"  count="5-10"		item="&itXenotiteOre;"/>
+				<Item chance="2"  count="5-10"		item="&itOrthoSteelOre;"/>
+			</Table>
+		</Items>
+		
+		<Events>
+			<OnMining>
+				(intAsteroidOnMining 50)
+			</OnMining>
+		</Events>
+
+	</StationType>
+
+	<!-- Medium Frost Asteroid with Ore -->
+
+	<StationType UNID="&stOreMediumFrostAsteroid;"
+		name=				"(medium frost ore asteroid)"
+		scale=				"world"
+		sovereign=			"&svIndependent;"
+
+		attributes=			"asteroid"
+
+		ejectaType=			"&vtIceAsteroidEjecta;"
+		>
+		
+		<ImageVariants>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="0"   imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="64"  imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="128" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="192" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="256" imageWidth="64" imageHeight="64"/>
+
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="320" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="384" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds1;" imageX="192" imageY="448" imageWidth="64" imageHeight="64"/>
+		</ImageVariants>
+		
+		<Items>
+			<Table count="1d6">
+				<Item chance="23" count="10-15"		item="&itPalladiumOre;"/>
+				<Item chance="15" count="15-20"		item="&itPlasteelOre;"/>
+				<Item chance="10" count="1-5"		item="&itUraniumOre;"/>
+				<Item chance="15" count="10-15"		item="&itCeralloyOre;"/>
+				<Item chance="12" count="1-10"		item="&itHeliumRegolith;"/>
+				<Item chance="10" count="1-6"		item="&itCobaltThoriumOre;"/>
+				<Item chance="5"  count="1-4"		item="&itGoldOre;"/>
+				<Item chance="5"  count="1-6"		item="&itDuralloyOre;"/>
+				<Item chance="3"  count="5-10"		item="&itXenotiteOre;"/>
+				<Item chance="2"  count="5-10"		item="&itOrthoSteelOre;"/>
+			</Table>
+		</Items>
+		
+		<Events>
+			<OnMining>
+				(intAsteroidOnMining 50)
+			</OnMining>
+		</Events>
+
+	</StationType>
+
+	<!-- Small Metallic Asteroid with Ore -->
+
+	<StationType UNID="&stOreSmallMetallicAsteroid;"
+		name=				"(asteroid)"
+		scale=				"world"
+		sovereign=			"&svIndependent;"
+
+		attributes=			"asteroid"
+		
+		ejectaType=			"&vtMetallicAsteroidEjecta;"
+		>
+		<ImageVariants>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="0"   imageY="128"	imageWidth="32" imageHeight="32"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="32"  imageY="128"	imageWidth="32" imageHeight="32"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="64"  imageY="128"	imageWidth="32" imageHeight="32"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="96"  imageY="128"	imageWidth="32" imageHeight="32"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="128" imageY="128"	imageWidth="32" imageHeight="32"/>
+
+			<Image	imageID="&rsMetallicAsteroids;" imageX="160"   imageY="128"	imageWidth="32" imageHeight="32"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="192"   imageY="128"	imageWidth="32" imageHeight="32"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="224"   imageY="128"	imageWidth="32" imageHeight="32"/>
+		</ImageVariants>
+
+		<Items>
+			<Table>
+				<Item chance="20" count="15-35"		item="&itPlasteelOre;"/>
+				<Item chance="10" count="5-10"		item="&itUraniumOre;"/>
+				<Item chance="15" count="10-15"		item="&itCeralloyOre;"/>
+				<Item chance="10" count="1-10"		item="&itGoldOre;"/>
+				<Item chance="5"  count="5-10"		item="&itXenotiteOre;"/>
+				<Item chance="15" count="5-10"		item="&itDuralloyOre;"/>
+				<Item chance="10" count="1-10"		item="&itPlatinumOre;"/>
+				<Item chance="10" count="5-15"		item="&itOrthoSteelOre;"/>
+				<Item chance="5"  count="5-10"		item="&itIthaliumOre;"/>
+			</Table>
+		</Items>
+
+		<Events>
+			<OnMining>
+				(intAsteroidOnMining 30)
+			</OnMining>
+		</Events>
+
+	</StationType>
+
+	<!-- Medium Metallic Asteroid with Ore -->
+
+	<StationType UNID="&stOreMediumMetallicAsteroid;"
+		name=				"(asteroid)"
+		scale=				"world"
+		sovereign=			"&svIndependent;"
+
+		attributes=			"asteroid"
+
+		ejectaType=			"&vtMetallicAsteroidEjecta;"
+		>
+
+		<ImageVariants>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="0"   imageY="0"		imageWidth="64" imageHeight="64"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="64"  imageY="0"		imageWidth="64" imageHeight="64"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="128" imageY="0"		imageWidth="64" imageHeight="64"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="192" imageY="0"		imageWidth="64" imageHeight="64"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="0"   imageY="64"	imageWidth="64" imageHeight="64"/>
+
+			<Image	imageID="&rsMetallicAsteroids;" imageX="64"  imageY="64"	imageWidth="64" imageHeight="64"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="128" imageY="64"	imageWidth="64" imageHeight="64"/>
+			<Image	imageID="&rsMetallicAsteroids;" imageX="192" imageY="64"	imageWidth="64" imageHeight="64"/>
+		</ImageVariants>
+
+		<Items>
+			<Table count="1d6">
+				<Item chance="20" count="15-35"		item="&itPlasteelOre;"/>
+				<Item chance="10" count="5-10"		item="&itUraniumOre;"/>
+				<Item chance="15" count="10-15"		item="&itCeralloyOre;"/>
+				<Item chance="10" count="1-10"		item="&itGoldOre;"/>
+				<Item chance="5"  count="5-10"		item="&itXenotiteOre;"/>
+				<Item chance="15" count="5-10"		item="&itDuralloyOre;"/>
+				<Item chance="10" count="1-10"		item="&itPlatinumOre;"/>
+				<Item chance="10" count="5-15"		item="&itOrthoSteelOre;"/>
+				<Item chance="5"  count="5-10"		item="&itIthaliumOre;"/>
+			</Table>
+		</Items>
+
+		<Events>
+			<OnMining>
+				(intAsteroidOnMining 30)
+			</OnMining>
+		</Events>
+
+	</StationType>
+
+	<!-- Small Volcanic Asteroid with Ore -->
+
+	<StationType UNID="&stOreSmallVolcanicAsteroid;"
+		name=				"(small volcanic ore asteroid)"
+		scale=				"world"
+		sovereign=			"&svIndependent;"
+
+		attributes=			"asteroid"
+
+		ejectaType=			"&vtVolcanicAsteroidEjecta;"
+		>
+		
+		<ImageVariants>
+			<Image			imageID="&rsWorlds2;" imageX="192" imageY="768" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds2;" imageX="192" imageY="800" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds2;" imageX="192" imageY="832" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds2;" imageX="192" imageY="864" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds2;" imageX="192" imageY="896" imageWidth="32" imageHeight="32"/>
+
+			<Image			imageID="&rsWorlds2;" imageX="192" imageY="928" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds2;" imageX="192" imageY="960" imageWidth="32" imageHeight="32"/>
+			<Image			imageID="&rsWorlds2;" imageX="192" imageY="992" imageWidth="32" imageHeight="32"/>
+		</ImageVariants>
+		
+		<Items>
+			<Table>
+				<Item chance="15"  count="5-10"		item="&itGoldOre;"/>
+				<Item chance="20"  count="1-35"		item="&itXenotiteOre;"/>
+				<Item chance="10"  count="5-10"		item="&itDuralloyOre;"/>
+				<Item chance="10"  count="1-10"		item="&itPlatinumOre;"/>
+				<Item chance="15"  count="10-60"	item="&itOrthoSteelOre;"/>
+				<Item chance="10"  count="5-25"		item="&itPteracniumOre;"/>
+				<Item chance="8"  count="1-10"		item="&itIthaliumOre;"/>
+				<Item chance="2"  count="10-35"		item="&itIthaliumOre;"/>
+				<Item chance="5"  count="1-6"		item="&itTetramiteOre;"/>
+				<Item chance="2"  count="1-4"		item="&itNeutroniumOre;"/>
+				<Item chance="2"  count="1-2"		item="&itHyperonicOre;"/>
+				<Item chance="1"  count="1"			item="&itEtheriumOre;"/>
+			</Table>
+		</Items>
+
+		<Events>
+			<OnMining>
+				(intAsteroidOnMining 20)
+			</OnMining>
+		</Events>
+
+	</StationType>
+
+	<!-- Medium Volcanic Asteroid with Ore -->
+
+	<StationType UNID="&stOreMediumVolcanicAsteroid;"
+		name=				"(medium volcanic ore asteroid)"
+		scale=				"world"
+		sovereign=			"&svIndependent;"
+
+		attributes=			"asteroid"
+
+		ejectaType=			"&vtVolcanicAsteroidEjecta;"
+		>
+		
+		<ImageVariants>
+			<Image			imageID="&rsWorlds2;" imageX="128" imageY="512" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds2;" imageX="128" imageY="576" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds2;" imageX="128" imageY="640" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds2;" imageX="128" imageY="704" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds2;" imageX="128" imageY="768" imageWidth="64" imageHeight="64"/>
+
+			<Image			imageID="&rsWorlds2;" imageX="128" imageY="832" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds2;" imageX="128" imageY="896" imageWidth="64" imageHeight="64"/>
+			<Image			imageID="&rsWorlds2;" imageX="128" imageY="960" imageWidth="64" imageHeight="64"/>
+		</ImageVariants>
+		
+		<Items>
+			<Table count="1d6">
+				<Item chance="15"  count="5-10"		item="&itGoldOre;"/>
+				<Item chance="20"  count="1-35"		item="&itXenotiteOre;"/>
+				<Item chance="10"  count="5-10"		item="&itDuralloyOre;"/>
+				<Item chance="10"  count="1-10"		item="&itPlatinumOre;"/>
+				<Item chance="15"  count="10-60"	item="&itOrthoSteelOre;"/>
+				<Item chance="10"  count="5-25"		item="&itPteracniumOre;"/>
+				<Item chance="8"  count="1-10"		item="&itIthaliumOre;"/>
+				<Item chance="2"  count="10-35"		item="&itIthaliumOre;"/>
+				<Item chance="5"  count="1-6"		item="&itTetramiteOre;"/>
+				<Item chance="2"  count="1-4"		item="&itNeutroniumOre;"/>
+				<Item chance="2"  count="1-2"		item="&itHyperonicOre;"/>
+				<Item chance="1"  count="1"			item="&itEtheriumOre;"/>
+			</Table>
+		</Items>
+		
+		<Events>
+			<OnMining>
+				(intAsteroidOnMining 20)
+			</OnMining>
+		</Events>
+
+	</StationType>
+
+	<!-- Global -->
+
+	<Globals>
+		(block Nil
+			(setq intAsteroidOnMining (lambda (miningDifficulty)
+				(block (theOre)
+					; Figure out what ore exists here
+					(setq theOre (random (objGetItems gSource "* +Ore;")))
+							
+					; Our chance of getting something is based on the probability
+					; We adjust it a bit because we don't want it to always succeed
+					
+					(if (and theOre
+							(leq (random 1 100) (divide (multiply aMineProbability miningDifficulty) 100))
+							)
+						(block (totalTons minedOre)
+							; Figure out how many tons we mined
+							(setq totalTons (random 1 50))
+							(if (ls totalTons aHP)
+								(setq totalTons aHP)
+								)
+							(if (gr totalTons (itmGetCount theOre))
+								(setq totalTons (itmGetCount theOre))
+								)
+							
+							; Set the amount of ore to mine	
+							(setq theOre (itmCreate (itmGetUNID theOre) totalTons))
+							
+							; Create the mined ore
+							(setq minedOre (sysCreateStation &stMinedOre; aMinePos))
+							(objRemoveItem gSource theOre)
+							(objAddItem minedOre theOre)
+							(objIncVel minedOre (sysVectorPolarOffset Nil aMineDir 2))
+							)
+						)
+					)
+				))
+			)
+	</Globals>
+
+	<!-- Mined Ore Dock Screen -->
+
+	<DockScreen UNID="&dsMinedOre;"
+			name=			"=(objGetName gSource)"
+			backgroundID=	"&rsMinedOreBkgnd;"
+			>
+			
+		<InitialPane>
+			(if (objGetItems gSource "*")
+				"Default"
+				"Empty"
+				)
+		</InitialPane>
+
+		<Panes>
+			<Default
+					desc=	"You are floating next to boulders of mined ore.">
+
+				<Actions>
+					<Action name="Bring aboard" key="B" default="1" >
+						(block Nil
+							(if (objGetItems gPlayerShip "*I +MinersHold;")
+								(block Nil
+									(setq gPrevScreen "&dsMinedOre;")
+									(scrShowScreen gScreen "&dsLoot;")
+									)
+								(scrShowPane gScreen "NoMinersHold")
+								)
+							)
+					</Action>
+
+					<Action name="Leave" cancel="1" key="L">
+						<Exit/>
+					</Action>
+				</Actions>
+
+			</Default>
+			
+			<NoMinersHold>
+				<Initialize>
+					(scrSetDesc gScreen "Without a miner's cargo hold you find it difficult to bring aboard all the ore. You will only be able to recover part of the ore. Continue?")
+				</Initialize>
+				
+				<Actions>
+					<Action name="Continue" key="C" default="1">
+						(block (oreToRemove)
+							; Remove 75% of the ore
+							(setq oreToRemove Nil)
+							(objEnumItems gSource "* +Ore;" theItem
+								(block (count)
+									(setq count (divide (multiply 75 (itmGetCount theItem)) 100))
+									(if (gr count 0)
+										(setq oreToRemove (append oreToRemove (list (itmSetCount theItem count))))
+										)
+									)
+								)
+								
+							(enum oreToRemove theItem
+								(objRemoveItem gSource theItem)
+								)
+							
+							; Loot
+							(setq gPrevScreen "&dsMinedOre;")
+							(scrShowScreen gScreen "&dsLoot;")
+							)
+					</Action>
+					
+					<Action name="Leave" key="L" cancel="1">
+						<Exit/>
+					</Action>
+				</Actions>
+			</NoMinersHold>
+			
+			<Empty
+					desc=	"You are floating next to boulders of mined ore.">
+					
+				<Actions>
+					<Action name="Leave" default="1" cancel="1" key="L">
+						<Exit/>
+					</Action>
+				</Actions>
+			</Empty>
+		</Panes>
+	</DockScreen>
+
+	<!-- Resources -->
+
+	<Image UNID="&rsMinedOreBkgnd;" bitmap="Resources\MinedOreScreen.jpg" loadOnUse="true" />
+	
+</TranscendenceModule>

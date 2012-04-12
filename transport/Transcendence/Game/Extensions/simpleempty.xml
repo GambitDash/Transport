@@ -1,0 +1,141 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TranscendenceAdventure
+[
+	<!ENTITY unidExtension					"0xD005F100">
+	<!ENTITY adtestDesc					"0xD005F101">
+	<!ENTITY ssSimpleStartempty				"0xD005F102">
+]>
+<TranscendenceAdventure UNID="&unidExtension;" version="0.99c">	
+
+	<AdventureDesc
+			unid=			"&adtestDesc;"
+			name=			"Simple testing of empty"
+			backgroundID=	"&rsPart1Cover;"
+			>
+		<Events>
+			<OnGameStart>
+				(block Nil
+					(gamSetCrawlImage &rsProlog1;)
+					(gamSetCrawlText (cat
+						"When the dream came, you knew Domina had chosen you. "
+						"You would sacrifice everything for the chance She offered: "
+						"to join Her at the Galactic Core, the eternal temple of the gods.\n\n"
+						"Leaving your former life behind, you begin the long journey. "
+						"No matter what obstacles lie in your path "
+						"you will not fail Domina. You will reach the Galactic Core."
+						))
+					)
+			</OnGameStart>
+
+			<OnGameEnd>
+				(block Nil
+					(gamSetCrawlImage
+						(if (eq aEndGameReason 'leftHumanSpace)
+							&rsEndGameEscaped;
+							&rsEndGameDestroyed;
+							)
+						)
+
+					(gamSetCrawlText 
+						(plyComposeString gPlayer
+							(cat
+								"%name% " aEpitaph ". "
+								"%name% visited "
+								(if (eq aSystemsVisited 1)
+									"a single star system "
+									(cat aSystemsVisited " star systems ")
+									)
+								"and destroyed "
+								(switch
+									(or (eq aEnemiesDestroyed 0) (not aBestEnemyClass))
+										"no enemy ships"
+
+									(eq aEnemiesDestroyed aBestEnemiesDestroyed)
+										(if (eq aEnemiesDestroyed 1)
+											(shpGetClassName aBestEnemyClass 0x04)
+											(cat aEnemiesDestroyed " " (shpGetClassName aBestEnemyClass 0x02))
+											)
+
+									(eq aBestEnemiesDestroyed 1)
+										(cat aEnemiesDestroyed " enemy ships, including " (shpGetClassName aBestEnemyClass 0x04))
+
+									(cat aEnemiesDestroyed " enemy ships, including " aBestEnemiesDestroyed " " (shpGetClassName aBestEnemyClass 0x02))
+									)
+								". "
+								(if (eq aEndGameReason 'leftHumanSpace)
+									"\n\nTo be continued..."
+									"%He% never reached the Galactic Core."
+									)
+								)
+							)
+						)
+					)
+			</OnGameEnd>
+		</Events>
+	</AdventureDesc>
+	
+	<SystemTopology>
+
+		<!-- LEVEL I -->
+
+		<Node ID="SE" rootNode="true">
+			<System 
+					name=			"Eridani"
+					level=			"1"
+					attributes=		"newBeyond"
+					>
+				<System UNID="&ssSimpleStartempty;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Outbound" DestID="EndGame"/>
+			</StarGates>
+		</Node>
+
+
+
+		<Node	ID="EndGame"
+				endGame="true"
+				endGameReason="leftHumanSpace"
+				epitaph="left Human Space on a journey to the Galactic Core"
+				>
+		</Node>
+
+
+	</SystemTopology>	
+	
+
+	
+	<SystemType UNID="&ssSimpleStartempty;">
+
+		<SystemGroup>
+
+
+
+
+			<Orbitals distance="1" scale="light-minute" angle="random">
+				<Group>
+			
+
+					<Orbitals distance="2" angle="random">
+						<Group>
+							<Marker objName="Start"/>
+						</Group>
+					</Orbitals>
+
+					<Orbitals distance="5" angle="random">
+						<Group>
+							<Lookup table="StargateOutbound"/>
+						</Group>
+					</Orbitals>
+					
+				</Group>
+			</Orbitals>
+
+
+
+		</SystemGroup>
+
+	</SystemType>		
+	
+</TranscendenceAdventure>

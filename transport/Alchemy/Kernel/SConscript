@@ -1,0 +1,14 @@
+import os
+
+Import('env')
+
+### Build the local objects
+sources = [ 'CArchiver.cpp', 'CAtomTable.cpp', 'CDataFile.cpp', 'CDictionary.cpp', 'CFileDirectory.cpp', 'CFileReadBlock.cpp', 'CFileWriteStream.cpp', 'CIDTable.cpp', 'CIntArray.cpp', 'CINTDynamicArray.cpp', 'CIntSet.cpp', 'CMemoryStream.cpp', 'CObjectArray.cpp', 'CObject.cpp', 'CRegKey.cpp', 'CResourceReadBlock.cpp', 'CSharedObjectQueue.cpp', 'CStringArray.cpp', 'CString.cpp', 'CStructArray.cpp', 'CSymbolTable.cpp', 'CTextFileLog.cpp', 'Kernel.cpp', 'Math.cpp', 'Path.cpp', 'Pattern.cpp', 'Time.cpp', 'Utilities.cpp' ]
+ignored_sources = ['CFileReadStream.cpp', 'CSet.cpp' ] 
+cppflags = ['-Wall', '-Werror', '-Wextra' ] # cached for later use.
+env.StaticLibrary('libkernel', sources, CPPPATH = ['/usr/local/include/SDL', '../../Includes' ] )
+
+### Include subdirectories
+env.SConscript(dirs = ['test'])
+
+

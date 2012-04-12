@@ -1,0 +1,11 @@
+Import('env')
+
+sources = [ 'main.cpp', 'TestCString.cpp', 'TestCDataFile.cpp' ]
+cppflags = ['-Wall', '-Werror', '-Wextra' ] # cached for later use.
+unittest = env.Program('kernel-test', sources,
+		LIBS = [ 'cppunit', 'dl', 'kernel', 'SDL'],
+		LIBPATH = ['..'],
+		CPPFLAGS = [ '-ggdb' ],
+		CPPPATH = ['/usr/local/include/SDL', '../../../Includes' ])
+env.Test(".test-passed", unittest)
+env.Alias("kernel-test", ".test-passed")

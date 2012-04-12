@@ -1,0 +1,3178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TranscendenceModule>
+
+	<!-- CorporateCruiser -->
+	
+	<ShipClass UNID="&scCorporateCruiser;"
+			manufacturer=		"Corporate"
+			class=				""
+			type=				"cruiser"
+			score=				"2160"
+			techOrder=			"mech"
+			
+			mass=				"8000"
+			cargoSpace=			"1000"
+			thrust=				"5000"
+			maneuver=			"12"
+			maxSpeed=			"20"
+
+			cyberDefenseLevel=	"8"
+
+			explosionType=		"&vtThermoExplosion2;"
+			leavesWreck=		"100"
+			   
+			attributes=			"corporate,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itQuadroCarbideArmor;" />
+			<ArmorSection start="330" span="15" armorID="&itQuadroCarbideArmor;" />
+			<ArmorSection start="315" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="300" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="285" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itQuadroCarbideArmor;" />
+			<ArmorSection start="180" span="15" armorID="&itQuadroCarbideArmor;" />
+
+			<ArmorSection start="165" span="15" armorID="&itQuadroCarbideArmor;" />
+			<ArmorSection start="150" span="15" armorID="&itQuadroCarbideArmor;" />
+			<ArmorSection start="135" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="30"  span="15" armorID="&itQuadroCarbideArmor;" nonCritical="general"/>
+			<ArmorSection start="15"  span="15" armorID="&itQuadroCarbideArmor;" />
+			<ArmorSection start="0"   span="15" armorID="&itQuadroCarbideArmor;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itRasiermesserLauncher;" secondaryWeapon="true" minFireArc="340" maxFireArc="200" posAngle="120" posRadius="60"/>
+			<Device deviceID="&itRasiermesserLauncher;" secondaryWeapon="true" minFireArc="160" maxFireArc="20" posAngle="240" posRadius="60"/>
+			<Device deviceID="&itPlasmaShieldGenerator;"/>
+		</Devices>
+
+		<Image imageID="&rsLargeShips1;" imageX="576" imageY="0" imageWidth="192" imageHeight="192" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+			<Item count="40d20" item="&itGotha10Missile;"/>
+			<Item count="2d12" item="&itPteracniumFuelRod;"/>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"25"
+			fireAccuracy=		"95"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	
+	<!-- Adventurer Outfitters -->
+
+	<StationType UNID="&stAdventurerOutfitters;"
+			name=				"Adventurer Outfitters"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itGusokuArmor;"
+			maxHitPoints=		"250"
+			hitPoints=			"250"
+			repairRate=			"3"
+			fireRateAdj=		"15"
+			explosionType=		"&vtThermoExplosion1;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"---ru cu--- ----- ----- -----"
+			locationCriteria=	"+planetary,-asteroids"
+
+			noArticle=			"true"
+			>
+
+		<Image			imageID="&rsStations6;" imageX="0" imageY="640" imageWidth="128" imageHeight="256"/>
+
+		<Ships>
+			<Ship					count="2" class="&scCenturion;" orders="guard"/>
+			<Table count="1d4">
+				<Ship chance="25"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="25"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="4">
+			<Table>
+				<Ship chance="65"	count="1" class="&scCenturion;" orders="guard"/>
+				<Ship chance="10"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="10"	count="1" class="&scEI500;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="10"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Devices>
+			<Device deviceID="&itHeavyIonBlaster;"	omnidirectional="true"/>
+		</Devices>
+
+		<Items>
+			<RandomItem count="1d12" 
+					criteria=		"w -Specialty; -NotForSale;"
+					levelFrequency=	"---ru cur"
+					enhanced=		"5"
+					enhancement=	"=(intHPEnhancement1)"
+					/>
+
+			<RandomItem count="1d12" 
+					criteria=		"d~w -Specialty; -NotForSale;"
+					levelFrequency=	"---ru cur"
+					enhanced=		"5"
+					enhancement=	"=(intCorporateGenerateEnhancement gItem)"
+					/>
+
+			<RandomItem count="1d12" 
+					criteria=		"a -Specialty; -NotForSale;"
+					levelFrequency=	"---ru cur"
+					enhanced=		"5"
+					enhancement=	"=(intHPEnhancement1)"
+					/>
+
+			<RandomItem count="1d12" 
+					criteria=		"u -Specialty; -NotForSale;"
+					levelFrequency=	"---ru cur"
+					/>
+
+			<RandomItem count="2d12" 
+					criteria=		"m -Specialty; -NotForSale;"
+					levelFrequency=	"---ru cur"
+					/>
+					
+			<RandomItem count="1d6" 
+					criteria=		"adu -Specialty; -NotForSale;"
+					levelFrequency=	"----- rucur"
+					/>
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="100000" replenish="5000">
+			<Sell	criteria="*NU -Illegal; -ID; -NotForSale;"	priceAdj="115"/>
+			<Buy	criteria="adumfNU -Illegal; -ID; -NotForSale;"	priceAdj="50"/>
+			<Buy	criteria="adumfNU -Illegal; -ID;"				priceAdj="10"/>
+		</Trade>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default>
+						<Initialize>
+							(scrSetDesc gScreen "Welcome to Adventurer Outfitters! We've been serving mercenaries, explorers, and pilgrims since 2311.")
+						</Initialize>
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+
+									(setq gInstallCriteria "w")
+									(setq gTechLevel 8)
+									(setq gTechModifier Nil)
+									(setq gCheckMilitaryID True)
+									(setq gInstallMargin 100)
+									(scrShowScreen gScreen "&dsExchangeBuy;")
+									)
+							</Action>
+							
+							<Action name="Sell items" key="S">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+
+							<Action name="Dock Services" key="D">
+								<ShowPane pane="DockServices"/>
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+						</Actions>
+
+					</Default>
+
+					<DockServices
+							desc=	"You are at the docking services terminal.">
+
+						<Actions>
+							<Action name="Refuel" key="R">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(intSetCompatibleFuel '((&itXenotiteFuelRod; 160) (&itHeliumAssembly; 75) (&itHelium3FuelRod; 25)))
+									(scrShowScreen gScreen "&dsRefuel;")
+									)
+							</Action>
+
+							<Action name="Install weapon" key="W" >
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(setq gTechLevel 8)
+									(setq gTechModifier Nil)
+									(setq gCheckMilitaryID True)
+									(setq gMargin 100)
+									(scrShowScreen gScreen "&dsInstallWeapon;")
+									)
+							</Action>
+
+							<Action name="Remove weapon" key="V" >
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(scrShowScreen gScreen "&dsRemoveWeapon;")
+									)
+							</Action>
+
+							<Action name="Done" cancel="1" key="N">
+								<ShowPane pane="Default"/>
+							</Action>
+
+						</Actions>
+
+					</DockServices>
+
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="83"	y="29" />
+			<Port x="-83"	y="29" />
+			<Port x="97"	y="-9" />
+			<Port x="-97"	y="-9" />
+			<Port x="84"	y="-72" />
+			<Port x="-84"	y="-72" />
+			<Port x="30"	y="-111" />
+			<Port x="-30"	y="-111" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Armor Dealer -->
+
+	<StationType UNID="&stArmorDealer;"
+			name=				"(armor dealer)"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itCeralloyArmor;"
+			maxHitPoints=		"100"
+			hitPoints=			"100"
+			repairRate=			"1"
+			explosionType=		"&vtBlastExplosion3;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"ccuv- ----- ----- ----- -----"
+			locationCriteria=	"+planetary,-asteroids"
+
+			noArticle=			"true"
+			>
+
+		<Names>Armor United; Brentano Armor; Carbellium Armor Systems;
+				Dreadnought Armor; Enterprise Armor Dealer; Full Protection Systems;
+				Gargantua Defense Systems; Hellforge Armor; Indomitable Armor Systems;
+				Jacob's Armor; Krenel Armors, rce; Loki Defense Systems; Murasaki Armor Corporation;
+				Nerling Armor Dealers; Ooro Armors; Pangea Protection Equipment;
+				Quen Ho Armor; Ransom Armor Corporation; Sentinel Protection Equipment;
+				Tenhove Defense Dealer; Umagahli Armor Systems; Viceroy Armor;
+				Wei Chang Armor Dealer; %s Armor Systems</Names>
+
+		<Image			imageID="&rsStations1;" imageX="256" imageY="256" imageWidth="128" imageHeight="128"/>
+
+		<Ships>
+			<Ship					count="2" class="&scRoninC;" orders="guard"/>
+			<Table count="1d2">
+				<Ship chance="50"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="25"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="4">
+			<Table>
+				<Ship chance="50"	count="1" class="&scRoninC;" orders="guard"/>
+				<Ship chance="25"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="15"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="10"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Items>
+			<RandomItem count="10" 
+					criteria=		"as -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"ucu--"
+					enhanced=		"10"
+					enhancement=	"=(intHPEnhancement1)"
+					/>
+			<RandomItem count="10" 
+					criteria=		"as -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"-ucu-"
+					enhanced=		"5"
+					enhancement=	"=(intHPEnhancement1)"
+					/>
+			<RandomItem count="5" 
+					criteria=		"as -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"-rucu r"
+					/>
+			<RandomItem count="3" 
+					criteria=		"as -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"--ruc ur"
+					/>
+
+			<Item count="3d4"	item="&itAblativeArmorCoating;" />
+			<Item count="3d4"	item="&itSiliconArmorPatch;" />
+			<Item count="1d2"	item="&itMonopoleDeflector;" />
+
+			<Item chance="70" count="1d4"	item="&itCarbonWeaverNanos;" />
+			<Item chance="10" count="1d4"	item="&itDegeneratingNanos;" />
+			<Item chance="70" count="1d4"	item="&itReactiveArmorCoating;" />
+			<Item chance="30" count="1d2"	item="&itReflectiveArmorCoating;" />
+			<Item chance="10" count="1d2"	item="&itRegeneratingNanos;" />
+			<Item chance="30" count="1d4"	item="&itRepairingNanos;" />
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="50000" replenish="2500">
+			<Sell	criteria="*NU -Illegal; -ID; -NotForSale;"	priceAdj="110"/>
+			<Buy	criteria="asU -Illegal; -NotForSale;"	priceAdj="90"/>
+			<Buy	criteria="asU -Illegal; -ID;"				priceAdj="10"/>
+		</Trade>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default
+							desc=	"You are docked at an armor dealer station.">
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+
+									(setq gInstallCriteria "d")
+									(setq gTechLevel 6)
+									(setq gTechModifier Nil)
+									(setq gCheckMilitaryID True)
+									(setq gInstallMargin 50)
+
+									(scrShowScreen gScreen "&dsExchangeBuy;")
+									)
+							</Action>
+
+							<Action name="Sell items" key="S">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+
+							<Action name="Repair or replace armor" key="A" >
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Default")
+									(setq gTechLevel 7)
+									(setq gArmorSegment 0)
+									(setq gMargin 100)
+									(scrShowScreen gScreen "&dsRepairArmor;")
+									)
+							</Action>
+
+							<Action name="Upgrade shield generator" key="H">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Default")
+
+									(setq gItem (itmCreate &itMonopoleDeflector; 1))
+									(setq gCost (add (itmGetPrice gItem) (divide (itmGetInstallCost gItem) 2)))
+									(setq gCheckMilitaryID True)
+									(scrShowScreen gScreen "&dsInstallSpecificDevice;")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="64" />
+			<Port x="64"	y="0" />
+			<Port x="0"		y="0" />
+			<Port x="50"	y="90" />
+			<Port x="90"	y="20" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Arms Dealer -->
+
+	<StationType UNID="&stArmsDealer;"
+			name=				"(arms dealer)"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itCeralloyArmor;"
+			maxHitPoints=		"150"
+			hitPoints=			"150"
+			repairRate=			"2"
+			explosionType=		"&vtThermoExplosion1;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"uccr- ----- ----- ----- -----"
+			locationCriteria=	"+planetary,-asteroids"
+
+			noArticle=			"true"
+			>
+
+		<Names>Azure Protection Systems; Bixbie Arms; Chiba Arms Dealers; 
+				Dreadnought Arms; Excimer Systems; Farside Defense Systems;
+				General Arms, rce; Hastur Weapons; Iberian Defense Systems;
+				Jacob's Arms; Kraken Weapons, rce; Laser Armada; Ming Systems;
+				Nrummer Weapons Corp.; Obelisk Weapons; Penitent Defender;
+				Quixote Arms Corporation; Raptor Systems, rce; Security Weapons;
+				Tenhove Defense Dealer; Ultimate Weapons; Victory Systems;
+				Weapons World; %s Weapon Systems</Names>
+
+		<Image			imageID="&rsStations1;" imageX="256" imageY="384" imageWidth="128" imageHeight="128"/>
+
+		<Ships>
+			<Ship					count="2" class="&scRoninC;" orders="guard"/>
+			<Table count="1d4">
+				<Ship chance="50"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="25"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="4">
+			<Table>
+				<Ship chance="50"	count="1" class="&scRoninC;" orders="guard"/>
+				<Ship chance="25"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="15"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="10"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Items>
+			<RandomItem count="10" 
+					criteria=		"w -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"c----"
+					enhanced=		"10"
+					enhancement=	"=(intHPEnhancement2)"
+					/>
+			<RandomItem count="15" 
+					criteria=		"w -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"ucu--"
+					enhanced=		"10"
+					enhancement=	"=(intHPEnhancement1)"
+					/>
+			<RandomItem count="8" 
+					criteria=		"w -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"rucur"
+					enhanced=		"5"
+					enhancement=	"=(intHPEnhancement1)"
+					/>
+
+			<RandomItem count="20" 
+					criteria=		"m -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"ucu--"
+					/>
+			<RandomItem count="10" 
+					criteria=		"m -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"rucur"
+					/>
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="50000" replenish="2500">
+			<Sell	criteria="*NU -Illegal; -ID; -NotForSale;"	priceAdj="110"/>
+			<Buy	criteria="mwU -Illegal; -NotForSale;"	priceAdj="60"/>
+			<Buy	criteria="mwU -Illegal; -ID;"				priceAdj="10"/>
+		</Trade>
+
+		<StaticData>
+			<WeaponUpgradeList>
+				(
+					&itNAMIMissileLauncher;
+					&itOmniLaserCannon;
+					&itTurbolaserCannon;
+					&itArbalestCannon;
+					&itSlamCannon;
+					&itParticleBeamWeapon;
+				)
+			</WeaponUpgradeList>
+		</StaticData>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnCreate>
+				; Pick a random upgrade
+				(objSetData gSource "WeaponUpgrade" (random 0 5))
+			</OnCreate>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default>
+
+						<Initialize>
+							(block Nil
+								(scrSetDesc gScreen "You are docked at an arms dealer station.")
+								(setq gItem (itmCreate (item (objGetStaticData gSource "WeaponUpgradeList") (objGetData gSource "WeaponUpgrade")) 1))
+								(scrSetActionLabel gScreen 2 (cat "Install " (itmGetName gItem 0)))
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+
+									(setq gInstallCriteria "d")
+									(setq gTechLevel 6)
+									(setq gTechModifier Nil)
+									(setq gCheckMilitaryID True)
+									(setq gInstallMargin 50)
+
+									(scrShowScreen gScreen "&dsExchangeBuy;")
+									)
+							</Action>
+
+							<Action name="Sell items" key="S">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+
+							<Action name="Install new weapon" key="I">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Default")
+
+									(setq gItem (itmCreate (item (objGetStaticData gSource "WeaponUpgradeList") (objGetData gSource "WeaponUpgrade")) 1))
+									(setq gCost (add (itmGetPrice gItem) (divide (itmGetInstallCost gItem) 2)))
+									(setq gCheckMilitaryID True)
+									(scrShowScreen gScreen "&dsInstallSpecificDevice;")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="70" />
+			<Port x="0"		y="-70" />
+			<Port x="50"	y="50" />
+			<Port x="50"	y="-50" />
+			<Port x="70"	y="0" />
+			<Port x="-70"	y="0" />
+			<Port x="-50"	y="50" />
+			<Port x="-50"	y="-50" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Arms Dealer, Makayev -->
+
+	<StationType UNID="&stArmsDealerMakayev;"
+			name=				"Makayev-Energia Space Systems"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"&dsArmsDealerSpecial;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itBlastPlate;"
+			maxHitPoints=		"350"
+			hitPoints=			"350"
+			repairRate=			"5"
+			explosionType=		"&vtThermoExplosion1;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"--rur v---- ----- ----- -----"
+			locationCriteria=	"+planetary,-asteroids"
+
+			noArticle=			"true"
+			>
+
+		<Image			imageID="&rsStations1;" imageX="256" imageY="384" imageWidth="128" imageHeight="128"/>
+
+		<Ships>
+			<Ship					count="2" class="&scCenturion;" orders="guard"/>
+			<Table count="1d4">
+				<Ship chance="25"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="20"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="4">
+			<Table>
+				<Ship chance="65"	count="1" class="&scCenturion;" orders="guard"/>
+				<Ship chance="10"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="10"	count="1" class="&scEI100;" orders="gateOnThreat"/>
+				<Ship chance="10"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Devices>
+			<Device deviceID="&itMarkIHowitzer;"	omnidirectional="true"/>
+		</Devices>
+
+		<Items>
+			<RandomItem count="1d12" 
+					criteria=		"w +Makayev; -NotForSale;"
+					levelFrequency=	"--ruc ur"
+					enhanced=		"10"
+					enhancement=	"=(intMakayevWeaponEnhancement)"
+					/>
+
+			<RandomItem count="2d12" 
+					criteria=		"a +Makayev; -NotForSale;"
+					levelFrequency=	"--ruc ur"
+					enhanced=		"10"
+					enhancement=	"=(intMakayevArmorEnhancement)"
+					/>
+
+			<Item chance="95"	count="12d100"	item="&itStrelkaWhite;" />
+			<Item chance="95"	count="6d100"	item="&itStrelkaGreen;" />
+			<Item chance="95"	count="3d100"	item="&itStrelkaRed;" />
+			<Item chance="50"	count="3d100"	item="&itStrelkaBlack;" />
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="50000" replenish="2500">
+			<Sell	criteria="*NU -Illegal; -ID; -NotForSale;"	priceAdj="120"/>
+		</Trade>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<StaticData>
+			<LongName>"a Makayev-Energia weapons franchise"</LongName>
+		</StaticData>
+
+		<DockingPorts>
+			<Port x="0"		y="70" />
+			<Port x="0"		y="-70" />
+			<Port x="50"	y="50" />
+			<Port x="50"	y="-50" />
+			<Port x="70"	y="0" />
+			<Port x="-70"	y="0" />
+			<Port x="-50"	y="50" />
+			<Port x="-50"	y="-50" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Arms Dealer, Bushido -->
+
+	<StationType UNID="&stArmsDealerBushido;"
+			name=				"Bushido Merchant"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"&dsArmsDealerSpecial;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itGusokuArmor;"
+			maxHitPoints=		"300"
+			hitPoints=			"300"
+			repairRate=			"5"
+			explosionType=		"&vtThermoExplosion1;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"---ru rv--- ----- ----- -----"
+			locationCriteria=	"+planetary,-asteroids"
+			>
+
+		<Image			imageID="&rsStations1;" imageX="256" imageY="384" imageWidth="128" imageHeight="128"/>
+
+		<Ships>
+			<Ship					count="2" class="&scCenturion;" orders="guard"/>
+			<Table count="1d4">
+				<Ship chance="25"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="20"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="4">
+			<Table>
+				<Ship chance="65"	count="1" class="&scCenturion;" orders="guard"/>
+				<Ship chance="10"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="10"	count="1" class="&scEI100;" orders="gateOnThreat"/>
+				<Ship chance="10"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Devices>
+			<Device deviceID="&itNeutronBlaster;"	omnidirectional="true"/>
+		</Devices>
+
+		<Items>
+			<RandomItem count="1d12" 
+					criteria=		"w +Bushido; -NotForSale;"
+					levelFrequency=	"---ru cur"
+					enhanced=		"10"
+					enhancement=	"=(intBushidoWeaponEnhancement)"
+					/>
+
+			<RandomItem count="1d12" 
+					criteria=		"s +Bushido; -NotForSale;"
+					levelFrequency=	"---ru cur"
+					enhanced=		"10"
+					enhancement=	"=(intBushidoShieldEnhancement)"
+					/>
+
+			<RandomItem count="1d12" 
+					criteria=		"a +Bushido; -NotForSale;"
+					levelFrequency=	"---ru cur"
+					enhanced=		"10"
+					enhancement=	"=(intBushidoArmorEnhancement)"
+					/>
+
+			<RandomItem count="1d12" 
+					criteria=		"a +Bushido; -NotForSale;"
+					levelFrequency=	"----- rucur"
+					enhanced=		"5"
+					enhancement=	"=(intBushidoArmorEnhancement)"
+					/>
+
+			<Item chance="95"	count="20d8"	item="&itParticleBoltCartridge;" />
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="50000" replenish="2500">
+			<Sell	criteria="*NU -Illegal; -ID; -NotForSale;"	priceAdj="120"/>
+		</Trade>
+
+		<Events>
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<StaticData>
+			<LongName>"a Bushido arms dealer"</LongName>
+		</StaticData>
+
+		<DockingPorts>
+			<Port x="0"		y="70" />
+			<Port x="0"		y="-70" />
+			<Port x="50"	y="50" />
+			<Port x="50"	y="-50" />
+			<Port x="70"	y="0" />
+			<Port x="-70"	y="0" />
+			<Port x="-50"	y="50" />
+			<Port x="-50"	y="-50" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Auton Dealer -->
+
+	<StationType UNID="&stAutonDealer;"
+			name=				"(auton dealer)"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itAdvancedPlasteelPlate;"
+			maxHitPoints=		"350"
+			hitPoints=			"350"
+			repairRate=			"5"
+			explosionType=		"&vtThermoExplosion1;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"--rcu ur--- ----- ----- -----"
+			locationCriteria=	"+planetary,-asteroids"
+
+			noArticle=			"true"
+			>
+
+		<Names>Auton Universe; Brehzen's Used Autons; Chiba Auton Dealers;
+				Dresden Autonomous Defenders; Ehrlenmeyer Autons; Frenzy Autons;
+				General Autons, rce; Hastur Used Autons; Ixin Autons Dealer;
+				Ji Autons; Kyrrin Used Autons; Laser Autons, rce; Merlin Autons;
+				Nrummer Weapons Corp.; Oort Autons, rce; Planetary Autons;
+				Qing Long Autons; Raptor Systems, rce; Security Autons;
+				Tenhove Defense Dealer; Ultimate Autons; Victory Systems;
+				Weapons World; %s Auton Dealers</Names>
+
+		<Image			imageID="&rsStations4;" imageX="128" imageY="192" imageWidth="128" imageHeight="256"/>
+
+		<Ships>
+			<Ship					count="2" class="&scCenturion;" orders="guard"/>
+			<Table count="1d4">
+				<Ship chance="25"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="20"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="4">
+			<Table>
+				<Ship chance="65"	count="1" class="&scCenturion;" orders="guard"/>
+				<Ship chance="10"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="10"	count="1" class="&scEI100;" orders="gateOnThreat"/>
+				<Ship chance="10"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Items>
+			<RandomItem count="20" 
+					criteria=		"* -Illegal; -Military; +Auton; -NotForSale;"
+					level=			"4"
+					levelCurve=		"2"
+					/>
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="50000" replenish="2500">
+			<Sell	criteria="*NU -Illegal; -ID; -NotForSale;"	priceAdj="110"/>
+			<Buy	criteria="*NU +Auton; -Illegal; -NotForSale;"	priceAdj="90"/>
+		</Trade>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default
+							desc=	"You are docked at an auton dealer.">
+
+						<Actions>
+							<Action name="Buy autons" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gInstallCriteria Nil)
+									(scrShowScreen gScreen "&dsExchangeBuy;")
+									)
+							</Action>
+
+							<Action name="Sell autons" key="S">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+
+							<Action name="Repair active autons" key="R">
+								(block Nil
+									; Figure out the list of autons for the player
+									(setq gList (sysFindObject gPlayerShip "s B:auton; O:escort;"))
+									(if gList
+										(scrShowPane gScreen "RepairAutons")
+										(scrShowPane gScreen "NoAutons")
+										)
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+
+					<NoAutons
+							desc=	"A sales droid approaches you: &quot;You do not currently have any autons to repair, but I would be delighted to show you some of our newest models.&quot;">
+
+						<Actions>
+							<Action name="Leave" cancel="1" default="1" key="L">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</NoAutons>
+
+					<RepairAutons>
+						<Initialize>
+							(block Nil
+								; Figure out how much it would cost to repair the player's
+								; autons.
+
+								(setq gCost 0)
+								(enum gList auton
+									(for i 0 (subtract (shpGetArmorCount auton) 1)
+										(setq gCost (add gCost (multiply 5 (objGetArmorDamage auton i))))
+										)
+									)
+
+								(switch
+									; If the autons have no damage, then there is nothing to do
+									(eq gCost 0)
+										(block Nil
+											(scrSetDesc gScreen "There is no damage to your autons.")
+											(scrEnableAction gScreen 0 Nil)
+											)
+
+									; If the player cannot afford it.
+									(gr gCost (plyGetCredits gPlayer))
+										(block Nil
+											(scrSetDesc gScreen (cat "Repairing the damage to your autons would cost " gCost " credits. Unfortunately, you do not have enough credits to proceed."))
+											(scrEnableAction gScreen 0 Nil)
+											)
+
+									; Otherwise, we're OK
+									(scrSetDesc gScreen (cat "Repairing the damage to your autons will cost " gCost " credits. Do you wish to proceed?"))
+									)
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="Repair" default="1" key="R">
+								(block Nil
+									(enum gList auton
+										(for i 0 (subtract (shpGetArmorCount auton) 1)
+											(objRepairArmor auton i)
+											)
+										)
+
+									(plyCharge gPlayer gCost)
+									(scrShowPane gScreen "Default")
+									)
+							</Action>
+
+							<Action name="Leave" cancel="1" key="L">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</RepairAutons>
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="90" />
+			<Port x="0"		y="-90" />
+			<Port x="60"	y="60" />
+			<Port x="60"	y="-60" />
+			<Port x="90"	y="0" />
+			<Port x="-90"	y="0" />
+			<Port x="-60"	y="60" />
+			<Port x="-60"	y="-60" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Corporate Enclave -->
+
+	<StationType UNID="&stCorporateEnclave;"
+			name=				"Corporate Enclave"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itCeralloyArmor;"
+			maxHitPoints=		"150"
+			hitPoints=			"150"
+			repairRate=			"2"
+			explosionType=		"&vtBlastExplosion3;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,populated"
+			levelFrequency=		"ruuur ----- ----- ----- -----"
+			locationCriteria=	"-asteroids"
+			>
+
+		<Image			imageID="&rsStations1;" imageX="128" imageY="256" imageWidth="128" imageHeight="256"/>
+
+		<Ships>
+			<Table count="1d4+2">
+				<Ship chance="50" count="1" class="&scEI100;"/>
+				<Ship chance="25" count="1" class="&scSapphireYacht;"/>
+				<Ship chance="25" count="1" class="&scBorer;"/>
+			</Table>
+		</Ships>
+
+		<Trade currency="credit" creditConversion="100" max="50000" replenish="2500">
+			<Buy	criteria="*NU +Lux; -Illegal;"	priceAdj="120"/>
+			<Buy	criteria="*NU +Meds; -Illegal;"	priceAdj="120"/>
+			<Buy	criteria="*NU +Food; -Illegal;"	priceAdj="110"/>
+			<Buy	criteria="*NU +Res; -Illegal;"	priceAdj="105"/>
+		</Trade>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default
+							desc=	"You are in the docking level of a Corporate Enclave. The citizens of the station work for various members of the Corporate Hierarchy.">
+
+						<Actions>
+							<Action name="Corporate Level" default="1" key="C">
+								<Navigate screen="CorporateLevel" />
+							</Action>
+
+							<Action name="Residential Level" key="R">
+								<ShowPane pane="ResidentialLevel"/>
+							</Action>
+
+							<Action name="Maintenance Level" key="M">
+								(if (objGetItems gPlayerShip "*U+Illegal; -ID")
+									(scrShowPane gScreen "Illegals")
+									(scrShowPane gScreen "MaintenanceLevel")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+
+					<Illegals
+							desc=	"You are in the maintenance level of a Corporate Enclave. The door to the maintenance shop is open and you hear voices inside.">
+
+						<Actions>
+							<Action name="Enter maintenance shop" default="1" key="E">
+								<ShowPane pane="MaintenanceShop"/>
+							</Action>
+
+							<Action name="Leave" cancel="1" key="L">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</Illegals>
+
+					<MaintenanceLevel
+							desc=	"You are in the maintenance level of a Corporate Enclave. The drone of the atmosphere processors and the waste converters drowns out all other noises. There is an empty maintenance shop here filled with various machines and droids; an empty laudanum ampule peeks out from under the workbench.">
+
+						<Actions>
+							<Action name="Leave" default="1" cancel="1" key="L">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</MaintenanceLevel>
+
+					<MaintenanceShop
+							desc=	"You are in the maintenance shop surrounded by various machines and droids. There are four men in the room repairing various items. One of the men walks towards you and says, &quot;You must be the new delivery person. Show me what you've got to sell.&quot;">
+
+						<Actions>
+							<Action name="&quot;Sorry, you have me confused with someone else.&quot;" cancel="1" key="S">
+								<ShowPane pane="Illegals"/>
+							</Action>
+
+							<Action name="&quot;The merchandise is in my cargo hold.&quot;" default="1" key="M">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin 10)
+									(setq gBuyCriteria "*NU +Illegal; -ID")
+									(setq gMaxPrice 50000)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+						</Actions>
+					</MaintenanceShop>
+
+					<ResidentialLevel
+							desc=	"You are in the residential level of a Corporate Enclave. This level holds the apartments and dwelling units of mid-level corporate citizens. The units are small and somewhat homogenous, though everyone you meet seems happy.">
+
+						<Actions>
+							<Action name="Leave" default="1" cancel="1" key="L">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</ResidentialLevel>
+
+				</Panes>
+			</Main>
+
+			<CorporateLevel
+				name=			"=(objGetName gSource)"
+				>
+
+				<Panes>
+					<Default
+							desc=	"You are in the corporate level of a Corporate Enclave. The day-to-day services and manufacturing of the various corporations are carried-out on this level.">
+
+						<Actions>
+							<Action name="Sell items" default="1" key="S">
+								(block Nil
+									(setq gPrevScreen "CorporateLevel")
+									(setq gMargin Nil)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+
+							<Action name="Leave" cancel="1" key="L">
+								<Navigate screen="Main" />
+							</Action>
+						</Actions>
+					</Default>
+
+				</Panes>
+
+			</CorporateLevel>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="135" />
+			<Port x="0"		y="-15" />
+			<Port x="50"	y="110" />
+			<Port x="50"	y="10" />
+			<Port x="75"	y="60" />
+			<Port x="-75"	y="60" />
+			<Port x="-50"	y="110" />
+			<Port x="-50"	y="10" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Fuel Depot -->
+
+	<StationType UNID="&stFuelDepot;"
+			name=				"(fuel depot)"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itCeralloyArmor;"
+			maxHitPoints=		"100"
+			hitPoints=			"100"
+			repairRate=			"1"
+			explosionType=		"&vtThermoExplosion1;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"cccuu rv--- ----- ----- -----"
+			locationCriteria=	"+planetary,-OuterSystem"
+
+			noArticle=			"true"
+			>
+
+		<Names>Antares Fuel; Bapco Fuel; Cerulean Energy;
+				Dilithium Fuels, rce; Energy Supplies, rce; Fentano Fuels;
+				Gargantua Fuel Systems; Herenix Fuel &amp; Energy; Impala Refueling;
+				Jerry's Ship Fuel; Konstantine Fuels; Lexi Starship Fuels; Miranda Fueling Depot;
+				Ngari Fuels; Otomo Fuels; Pergium Fuel &amp; Supplies;
+				Qi jin Fuels; Revenant Fuels; Sanchez Fuel;
+				Tander Fuel &amp; Energy; Urion Fuels; Vanderberg Fuels;
+				Wehesaken Fuel Depot; %s Fuel</Names>
+
+		<Image imageID="&rsStations1;" imageX="156" imageY="512" imageWidth="100" imageHeight="192"/>
+
+		<Ships>
+			<Ship					count="1d2" class="&scCenturion;" orders="guard"/>
+			<Table count="1d4">
+				<Ship chance="50"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="25"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="3">
+			<Table>
+				<Ship chance="25" count="1" class="&scEI100;" orders="gateOnThreat"/>
+				<Ship chance="10" count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="15" count="1" class="&scBorer;" orders="gateOnThreat"/>
+				<Ship chance="25" count="1" class="&scCenturion;" orders="guard"/>
+				<Ship chance="25" count="1" class="&scRoninC;" orders="guard"/>
+			</Table>
+		</Reinforcements>
+
+		<Items>
+			<Item				count="8d20"	item="&itHelium3FuelRod;" />
+			<Item				count="4d20"	item="&itHeliumAssembly;" />
+			<Item				count="4d20"	item="&itWaterIce;" />
+			<Item chance="50"	count="1"		item="&itSystemMapROM;" />
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="5000" replenish="250">
+			<Sell	criteria="*NU -Illegal; -ID; -NotForSale;"	priceAdj="100"/>
+		</Trade>
+
+		<Events>
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default>
+
+						<Initialize>
+							(scrSetDesc gScreen (cat "Welcome to " (objGetName gSource) ", your most reliable source of starship fuel and a member of the Earth Industries Conglomerate. All our fuel has been produced to the exacting standards required by today's reactors. Please use the terminal to proceed with your transaction."))
+						</Initialize>
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin 0)
+									(setq gShowCriteria "*NU -Illegal;")
+									(setq gInstallCriteria Nil)
+									(scrShowScreen gScreen "&dsExchangeBuy;")
+									)
+							</Action>
+
+							<Action name="Refuel" key="R">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane Nil)
+									(intSetCompatibleFuel '((&itHeliumAssembly; 69) (&itHelium3FuelRod; 19)))
+									(scrShowScreen gScreen "&dsRefuel;")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="135" />
+			<Port x="0"		y="-15" />
+			<Port x="50"	y="110" />
+			<Port x="50"	y="10" />
+			<Port x="75"	y="60" />
+			<Port x="-75"	y="60" />
+			<Port x="-50"	y="110" />
+			<Port x="-50"	y="10" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Merchant Prince Hotel -->
+
+	<StationType UNID="&stHotel;"
+			name=				"(merchant prince hotel)"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itCeralloyArmor;"
+			maxHitPoints=		"150"
+			hitPoints=			"150"
+			repairRate=			"4"
+			explosionType=		"&vtBlastExplosion3;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"ucurr v---- ----- ----- -----"
+			locationCriteria=	"*"
+
+			definiteArticle=	"true"
+			>
+
+		<Names>Beta Gemini Hotel; Honoku-Tomashi Hotel; Manchurian Oriental Hotel;
+				Merchant Prince Hotel; Savanna Hotel; Seven Sisters Hotel;
+				Virgin %s Hotel; %s Interstellar Hotel</Names>
+
+		<Image			imageID="&rsStations2;" imageX="0" imageY="256" imageWidth="192" imageHeight="256"/>
+
+		<Ships>
+			<Ship					count="1d2" class="&scRoninC;" orders="guard"/>
+			<Table count="1d4">
+				<Ship chance="50"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="25"	count="1" class="&scT31ArmedTransport;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Trade currency="credit" creditConversion="100" max="25000" replenish="1250">
+			<Buy	criteria="*NU +Lux; -Illegal;"	priceAdj="125"/>
+			<Buy	criteria="*NU +Food; -Illegal;"	priceAdj="110"/>
+			<Buy	criteria="*NU" item="&itWaterIce;"		priceAdj="110"/>
+			<Buy	criteria="*NU" item="&itStimuzine;"		priceAdj="110"/>
+			<Buy	criteria="*NU" item="&itMedicalSupplies;"		priceAdj="110"/>
+			<Buy	criteria="*NU" item="&itBiofactorPaste;"		priceAdj="110"/>
+			<Buy	criteria="*NU" item="&itHypermycin;"		priceAdj="110"/>
+		</Trade>
+		
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default>
+
+						<Initialize>
+							(scrSetDesc gScreen (cat "Welcome to " (objGetName gSource 4) "."))
+						</Initialize>
+
+						<Actions>
+							<Action name="Restaurant" key="R" >
+								(block (hasID hasIllegals)
+									; See if the player has a Black Market ID or
+									; any illegal items
+
+									(objEnumItems gPlayerShip "*U" theItem
+										(block Nil
+											(if (itmHasModifier theItem 'Illegal)
+												(setq hasIllegals True)
+												)
+
+											(if (itmHasModifier theItem 'BlackMarketID)
+												(setq hasID True)
+												)
+											)
+										)
+
+									; If the player has a Black Market ID then she is treated
+									; with respect.
+									;
+									; If the player has illegal items, then she encounters
+									; a black market recruiter or an enforcement unit.
+									;
+									; If the player has neither, then she feels out of place.
+
+									(switch
+										(objGetData gSource "Declined")
+											(scrShowPane gScreen "Restaurant-NoRespect")
+
+										hasID
+											(scrShowPane gScreen "Restaurant-Respect")
+
+										(objGetGlobalData gSource "EncounterDone")
+											(scrShowPane gScreen "Restaurant-NoRespect")
+
+										hasIllegals
+											(scrShowPane gScreen "Restaurant-Illegals")
+
+										(scrShowPane gScreen "Restaurant-NoRespect")
+										)
+									)
+							</Action>
+
+							<Action name="Loading Dock" key="L">
+								<Navigate screen="LoadingDock"/>
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+
+					<Restaurant-Respect
+							desc="As you enter the restaurant the maitre d' welcomes you warmly and shows you to a table. Envious patrons look on while you eat a wonderful dish of Hogei Salmon with organic yams and sweet plum sauce.">
+
+						<Actions>
+							<Action name="Leave" Key="L" default="1" cancel="1" >
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</Restaurant-Respect>
+
+					<Restaurant-NoRespect
+							desc="The maitre d' leaves you waiting for several minutes. When he finally turns to you he coldly tells you that there are no tables available. You feel out of place here.">
+
+						<Actions>
+							<Action name="Leave" Key="L" default="1" cancel="1" >
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</Restaurant-NoRespect>
+
+					<Restaurant-Illegals
+							desc="The maitre d' tells you that no tables are available and shows you to the bar instead. At the bar you strike up a conversation with two brothers from Eridani who seem to be a little evasive about their business.">
+
+						<Actions>
+							<Action name="Continue" Key="C" default="1">
+								(block Nil
+									(objSetGlobalData gSource "EncounterDone" True)
+									(scrShowPane gScreen "Restaurant-Illegals2")
+									)
+							</Action>
+							<Action name="Leave" Key="L" cancel="1" >
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</Restaurant-Illegals>
+
+					<Restaurant-Illegals2>
+
+						<Initialize>
+							(block Nil
+								(setq gItem (random (objGetItems gPlayerShip "*U +Illegal;")))
+								(scrSetDesc gScreen (cat "As you finish dinner one of the brothers says, \"I wish I could get a hold of some " (itmGetName gItem 2) ".\" You respond:"))
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="&quot;I have some on my ship!&quot;" Key="I" default="1" >
+								(if (ls (random 1 20) 20)
+									(scrShowPane gScreen "Restaurant-Illegals3")
+									(scrShowPane gScreen "Restaurant-Busted")
+									)
+							</Action>
+							<Action name="&quot;Sorry, I can't help you.&quot;" Key="S" cancel="1" >
+								(block Nil
+									(objSetData gSource "Declined" True)
+									(scrShowPane gScreen "Restaurant-Illegals4")
+									)
+							</Action>
+						</Actions>
+					</Restaurant-Illegals2>
+
+					<Restaurant-Illegals3>
+
+						<Initialize>
+							(block Nil
+								(setq gCost (multiply (itmGetPrice gItem) (itmGetCount gItem)))
+								(scrSetDesc gScreen (cat "The brothers offer you " gCost " credits for " (itmGetName gItem 8) "."))
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="Accept" Key="A" default="1" >
+								<ShowPane pane="Restaurant-Illegals5"/>
+							</Action>
+							<Action name="Decline" Key="D" cancel="1" >
+								(block Nil
+									(objSetData gSource "Declined" True)
+									(scrShowPane gScreen "Restaurant-Illegals4")
+									)
+							</Action>
+						</Actions>
+					</Restaurant-Illegals3>
+
+					<Restaurant-Illegals4
+							desc="Finding nothing else to talk about, you finish eating in silence.">
+
+						<Actions>
+							<Action name="Leave" Key="L" default="1" cancel="1" >
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</Restaurant-Illegals4>
+
+					<Restaurant-Illegals5
+							desc="You exchange the merchandise for the money at the dock. As they are about to leave, one of the brothers hands you an identification chip and says, &quot;You probably won't find us here again, but use this at a black market station if you want to do more business.&quot;">
+
+						<Initialize>
+							(block Nil
+								(plyCredit gPlayer gCost)
+								(objRemoveItem gPlayerShip gItem)
+								(objAddItem gPlayerShip (itmCreate &itBlackMarketID; 1))
+								(itmSetKnown &itBlackMarketID;)
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="Leave" Key="L" default="1" cancel="1" >
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</Restaurant-Illegals5>
+
+					<Restaurant-Busted>
+
+						<Initialize>
+							(if (geq (plyGetCredits gPlayer) 1000)
+								(block Nil
+									(plyCharge gPlayer 1000)
+									(scrSetDesc gScreen "The brothers pull out badges and guns. \"You are under arrest for the attempted sale of illegal merchandise. Normally you could be imprisoned for your crimes, but we're going to let you go with just a 1000 credit fine.\"")
+									(setq gPaid True)
+									)
+								(block Nil
+									(scrSetDesc gScreen "The brothers pull out badges and guns. \"You are under arrest for the attempted sale of illegal merchandise.\"")
+									(plyDestroyed gPlayer "imprisoned for smuggling")
+									(setq gPaid Nil)
+									)
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="Continue" Key="C" default="1" cancel="1">
+								(if gPaid
+									(scrShowPane gScreen "Default")
+									(scrExitDock gScreen)
+									)
+							</Action>
+						</Actions>
+					</Restaurant-Busted>
+
+				</Panes>
+			</Main>
+
+			<LoadingDock
+				name=			"=(objGetName gSource)"
+				>
+
+				<Panes>
+					<Default>
+						<Initialize>
+							(scrSetDesc gScreen (cat "You are in the loading dock of " (objGetName gSource 4) "."))
+						</Initialize>
+
+						<Actions>
+							<Action name="Sell items" key="S" default="1">
+								(block Nil
+									(setq gPrevScreen "LoadingDock")
+									(setq gMargin Nil)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+
+							<Action name="Leave" cancel="1" key="L">
+								<Navigate screen="Main"/>
+							</Action>
+						</Actions>
+					</Default>
+				</Panes>
+
+			</LoadingDock>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="-90" />
+			<Port x="96"	y="-70" />
+			<Port x="-96"	y="-70" />
+			<Port x="105"	y="-25" />
+			<Port x="-105"	y="-25" />
+			<Port x="68"	y="-100" />
+			<Port x="-68"	y="-100" />
+			<Port x="70"	y="0" />
+			<Port x="-70"	y="0" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Ice Farm -->
+
+	<StationType UNID="&stIceFarm;"
+			name=				"Ice Farm"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itPlasteelPlate;"
+			maxHitPoints=		"75"
+			hitPoints=			"75"
+			repairRate=			"1"
+			explosionType=		"&vtBlastExplosion2;"
+			ejectaType=			"&vtIceAsteroidEjecta;"
+
+			attributes=			"independent,friendly,envAir,envAvoidsFire,populated"
+			levelFrequency=		"rccuu rv--- ----- ----- -----"
+			locationCriteria=	"++frost,-InnerSystem"
+			>
+
+		<Image			imageID="&rsStations1;" imageX="512" imageY="384" imageWidth="128" imageHeight="128"/>
+
+		<Ships>
+			<Ship			count="1d3+1"	class="&scTenhoveSentinel;"	orders="patrol" patrolDist="5"/>
+		</Ships>
+
+		<Items>
+			<Item				count="4d12"	item="&itEuropanIceMoss;" />
+			<Item				count="1d12"	item="&itEuropanIceVodka;" />
+			<Item chance="50"	count="2d12"	item="&itHogeiSalmon;" />
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="10000" replenish="500">
+			<Sell	criteria="*NU +Lux; -NotForSale;"	priceAdj="75"/>
+			
+			<Buy	criteria="*NU +Food; -Illegal; &lt;=$100 -NotForSale;"	priceAdj="150"/>
+			<Buy	criteria="*NU" item="&itHydrocarbons;"		priceAdj="200"/>
+			<Buy	criteria="*NU" item="&itHelium3FuelRod;"	priceAdj="200"/>
+			<Buy	criteria="*NU" item="&itOrganicAcid;"		priceAdj="200"/>
+			<Buy	criteria="*NU" item="&itMedicalSupplies;"	priceAdj="200"/>
+			<Buy	criteria="*NU" item="&itHyperfiberRoll;"	priceAdj="200"/>
+			<Buy	criteria="*NU" item="&itBiofactorPaste;"	priceAdj="200"/>
+		</Trade>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"Ice Farm"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+				
+				<Panes>
+					<Default
+							desc=	"You are docked at an independent ice farm on a small asteroid. Cold and stale air blows out of a wheezing recycler and you hear the drone of struggling generators and pumps.">
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gInstallCriteria Nil)
+									(scrShowScreen gScreen "&dsExchangeBuy;")
+									)
+							</Action>
+
+							<Action name="Sell items" key="S">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="40" />
+			<Port x="0"		y="-60" />
+			<Port x="60"	y="0" />
+			<Port x="-60"	y="0" />
+			<Port x="-60"	y="60" />
+			<Port x="60"	y="-60" />
+			<Port x="40"	y="-40" />
+			<Port x="-40"	y="-40" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Insurance Company -->
+
+	<StationType UNID="&stInsuranceCompany;"
+			name=				"Clavius Insurance Conglomerate"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itCeralloyArmor;"
+			maxHitPoints=		"250"
+			hitPoints=			"250"
+			repairRate=			"4"
+			explosionType=		"&vtBlastExplosion3;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"-rucu r---- ----- ----- -----"
+			locationCriteria=	"+planetary,-asteroids"
+
+			definiteArticle=	"true"
+			>
+
+		<Image			imageID="&rsStations2;" imageX="0" imageY="0" imageWidth="128" imageHeight="256"/>
+
+		<Ships>
+			<Table count="1d4+2">
+				<Ship chance="50" count="1" class="&scEI100;"/>
+				<Ship chance="25" count="1" class="&scSapphireYacht;"/>
+				<Ship chance="25" count="1" class="&scBorer;"/>
+			</Table>
+		</Ships>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default>
+						<Initialize>
+							(scrSetDesc gScreen (cat "Welcome to the " (sysGetName) " System branch of the Clavius Insurance Conglomerate. Since 2071 we have been providing hazard insurance services to freelancers and entrepreneurs throughout Human Space."))
+						</Initialize>
+
+						<Actions>
+							<Action name="Purchase insurance" default="1" key="P">
+								(switch
+									(plyIsInsured gPlayer)
+										(scrShowPane gScreen "AlreadyInsured")
+
+									(geq (plyGetInsuranceClaims gPlayer) 3)
+										(scrShowPane gScreen "TooRisky")
+
+									(scrShowPane gScreen "BuyInsurance")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+
+					<AlreadyInsured
+							desc= "You are already insured by our conglomerate. Rest assured that you are protected against all losses by the most comprehensive insurance in the Commonwealth.">
+
+						<Actions>
+							<Action name="Continue" cancel="1" default="1" key="C">
+								<ShowPane pane="Default"/>
+							</Action>
+
+						</Actions>
+
+					</AlreadyInsured>
+
+					<TooRisky
+							desc= "Unfortunately, we do not have an insurance product suitable for the risky lifestyle that you lead.">
+
+						<Actions>
+							<Action name="Continue" cancel="1" default="1" key="C">
+								<ShowPane pane="Default"/>
+							</Action>
+
+						</Actions>
+
+					</TooRisky>
+
+					<BuyInsurance>
+						<Initialize>
+							(block (desc)
+								(switch
+									(eq (plyGetInsuranceClaims gPlayer) 0)
+										(setq gCost 10000)
+
+									(eq (plyGetInsuranceClaims gPlayer) 1)
+										(setq gCost 50000)
+
+									(eq (plyGetInsuranceClaims gPlayer) 2)
+										(setq gCost 100000)
+
+									(setq gCost 1000000)
+									)
+
+								(setq desc (cat "Our conglomerate specializes in providing full personal and property coverage against death and destruction. Claims are settled by full replacement of life and property, including resuscitation and cloning. Based on your risk profile we can offer you full coverage for " gCost " credits. "))
+
+								(if (ls (plyGetCredits gPlayer) gCost)
+									(block Nil
+										(scrSetDesc gScreen (cat desc "Unfortunately, you cannot afford this service currently, but we urge you to return as soon as your financial situation improves."))
+										(scrEnableAction gScreen 0 Nil)
+										)
+									(scrSetDesc gScreen (cat desc "Do you wish to purchase this service?"))
+									)
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="Purchase" default="1" key="P">
+								(if (geq (plyGetCredits gPlayer) gCost)
+									(block Nil
+										(plyInsure gPlayer)
+										(plyCharge gPlayer gCost)
+										(scrShowPane gScreen "Done")
+										)
+									)
+							</Action>
+
+							<Action name="Cancel" cancel="1" key="C">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+
+					</BuyInsurance>
+
+					<Done
+							desc= "Thank you for your purchase. We wish you a long and happy life, secure in the knowledge that the oldest and most powerful insurance conglomerate stands behind you.">
+
+						<Actions>
+							<Action name="Continue" cancel="1" default="1" key="C">
+								<ShowPane pane="Default"/>
+							</Action>
+
+						</Actions>
+
+					</Done>
+
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="135" />
+			<Port x="0"		y="-15" />
+			<Port x="50"	y="110" />
+			<Port x="50"	y="10" />
+			<Port x="75"	y="60" />
+			<Port x="-75"	y="60" />
+			<Port x="-50"	y="110" />
+			<Port x="-50"	y="10" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Taikon Ventures -->
+
+	<StationType UNID="&stTaikonVentures;"
+			name=				"Taikon Ventures"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itQuadroCarbideArmor;"
+			maxHitPoints=		"300"
+			hitPoints=			"300"
+			repairRate=			"5"
+			fireRateAdj=		"10"
+			explosionType=		"&vtThermoExplosion3;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"----- -uur- ----- ----- -----"
+			locationCriteria=	"+planetary,-asteroids"
+
+			noArticle=			"true"
+			>
+
+		<Image			imageID="&rsStations8;" imageX="0" imageY="448" imageWidth="128" imageHeight="192"/>
+
+		<Ships>
+			<Ship					count="2" class="&scCenturionX;" orders="guard"/>
+			<Table count="1d4">
+				<Ship chance="50"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="4">
+			<Table>
+				<Ship chance="65"	count="1" class="&scCenturionX;" orders="guard"/>
+				<Ship chance="10"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="15"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="10"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Devices>
+			<Device deviceID="&itHeavyIonBlaster;"	omnidirectional="true"/>
+		</Devices>
+
+		<Items>
+			<RandomItem count="1d6" 
+					criteria=		"d +Taikon;"
+					level=			"9"
+					levelCurve=		"1"
+					/>
+			<RandomItem count="1d6" 
+					criteria=		"a +Taikon;"
+					level=			"9"
+					levelCurve=		"1"
+					/>
+			<RandomItem count="3d6" 
+					criteria=		"m +Taikon;"
+					level=			"9"
+					levelCurve=		"1"
+					/>
+			<RandomItem count="1d6" 
+					criteria=		"*"
+					level=			"9"
+					levelCurve=		"1"
+					/>
+			<RandomItem count="2d6" 
+					criteria=		"*~ad -Alien;"
+					level=			"9"
+					levelCurve=		"1"
+					/>
+			<RandomItem count="1d3" 
+					criteria=		"* +Alien;"
+					level=			"9"
+					levelCurve=		"2"
+					/>
+			<Item	count="6d12" item="&itPteracniumFuelRod;"/>
+		</Items>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(block Nil
+						(if (not (objGetData gPlayerShip "rins"))
+							(objSetData gPlayerShip "rins" 0)
+							)
+						(intCorporateOnInit "Main")
+						)
+				</OnInit>
+					
+				<Panes>
+					<Default
+							desc=	"You are docked at a Taikon Ventures station.">
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Default")
+									(setq gMargin intTaikonBuyMargin)
+									(scrShowScreen gScreen "&dsRingerBuy;")
+									)
+							</Action>
+
+							<Action name="Dock Services" default="1" key="D">
+								(scrShowPane gScreen "DockServices")
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+					</Default>
+						
+					<DockServices
+							desc=	"You are at the docking services terminal.">
+							
+						<Actions>
+							<Action name="Refuel" key="R">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									
+									; If the player ship can use pteracnium, then 
+									; use that. Otherwise, use helium assemblies
+									
+									(setq gItem (itmCreate &itPteracniumFuelRod; 1))
+									(if (shpIsFuelCompatible gPlayerShip gItem)
+										(setq gCost 50)
+										(block Nil
+											(setq gItem (itmCreate &itHeliumAssembly; 1))
+											(setq gCost 15)
+											)
+										)
+										
+									(scrShowScreen gScreen "&dsRingerRefuel;")
+									)
+							</Action>
+								
+							<Action name="Repair or replace armor" key="A">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(setq gTechLevel 11)
+									(setq gArmorSegment 0)
+									(setq gMargin 100)
+									(scrShowScreen gScreen "&dsRingerRepairArmor;")
+									)
+							</Action>
+								
+							<Action name="Install device" key="D">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(setq gTechLevel 9)
+									(setq gTechModifier "Taikon")
+									(setq gCheckMilitaryID Nil)
+									(setq gMargin 100)
+									(scrShowScreen gScreen "&dsRingerInstallDevice;")
+									)
+							</Action>
+								
+							<Action name="Remove device" key="V">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(setq gMargin 100)
+									(scrShowScreen gScreen "&dsRingerRemoveDevice;")
+									)
+							</Action>
+								
+							<Action name="Done" key="N" cancel="1">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</DockServices>
+						
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="68"	y="35" />
+			<Port x="42"	y="-71" />
+			<Port x="-74"	y="-39" />
+			<Port x="-38"	y="63" />
+			<Port x="90"	y="-31" />
+			<Port x="-28"	y="-90" />
+			<Port x="-101"	y="21" />
+			<Port x="36"	y="88" />
+		</DockingPorts>
+
+	</StationType>
+
+	<!-- Trading Post -->
+
+	<StationType UNID="&stCorporateTradingPost;"
+			name=				"Corporate Trading Post"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itAdvancedPlasteelPlate;"
+			maxHitPoints=		"350"
+			hitPoints=			"350"
+			repairRate=			"5"
+			explosionType=		"&vtThermoExplosion1;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"---rc uur-- ----- ----- -----"
+			locationCriteria=	"+planetary,-asteroids"
+
+			noArticle=			"true"
+			>
+
+		<Image			imageID="&rsStations4;" imageX="0" imageY="448" imageWidth="192" imageHeight="192"/>
+		
+		<Animations>
+			<Animation x="-39" y="-45">
+				<Image	imageID="&rsTradingPostAnimation;" imageX="0" imageY="0" imageWidth="64" imageHeight="80" imageFrameCount="40" imageTicksPerFrame="4" />
+			</Animation>
+		</Animations>
+
+		<Ships>
+			<Ship					count="2" class="&scCenturion;" orders="guard"/>
+			<Table count="1d4">
+				<Ship chance="25"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="20"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="4">
+			<Table>
+				<Ship chance="65"	count="1" class="&scCenturion;" orders="guard"/>
+				<Ship chance="10"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="10"	count="1" class="&scEI100;" orders="gateOnThreat"/>
+				<Ship chance="10"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Items>
+			<RandomItem count="10" 
+					criteria=		"* -Illegal; -Military; -Alien; -Specialty; -NotForSale;"
+					level=			"5"
+					levelCurve=		"0"
+					/>
+			<RandomItem count="15" 
+					criteria=		"* -Illegal; -Military; -Alien; -Specialty; -NotForSale;"
+					level=			"6"
+					levelCurve=		"1"
+					/>
+			<RandomItem count="8" 
+					criteria=		"* -Illegal; -Military; -Alien; -Specialty; -NotForSale;"
+					level=			"7"
+					levelCurve=		"2"
+					/>
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="250000" replenish="12500">
+			<Sell	criteria="*NU -Illegal; -NotForSale; -ID;"	priceAdj="110"/>
+			<Buy	criteria="amswNU -Illegal; -NotForSale;"	priceAdj="45"/>
+			<Buy	criteria="*NU -Illegal; -ID; -NotForSale;"	priceAdj="85"/>
+			<Buy	criteria="*NU -Illegal; -ID;"				priceAdj="10"/>
+		</Trade>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+			
+			<OnObjDestroyed>
+				(if (and (eq (objGetData gSource "MissionStatus") "intransit")
+						(eq aObjDestroyed (objGetObjRefData gSource "Transport")))
+					(block Nil
+						(objSetData gSource "MissionStatus" "failed")
+						)
+					)
+			</OnObjDestroyed>
+			
+			<OnObjDocked>
+				(if (and (eq (objGetData gSource "MissionStatus") "intransit")
+						(eq aObjDocked (objGetObjRefData gSource "Transport"))
+						(eq aDockTarget gSource))
+					(block Nil
+						(objRemoveItem aObjDocked (objGetData gSource "Order"))
+						(objSetData gSource "MissionStatus" "arrived")
+						)
+					)
+			</OnObjDocked>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default
+							desc=	"You are docked at a Corporate Trading Post.">
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gInstallCriteria Nil)
+									(scrShowScreen gScreen "&dsExchangeBuy;")
+									)
+							</Action>
+
+							<Action name="Sell items" key="S">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+
+							<Action name="Order items" key="O">
+								(switch
+									(eq (objGetData gSource "MissionStatus") "intransit")
+										(scrShowScreen gScreen "OrderInTransit")
+										
+									(eq (objGetData gSource "MissionStatus") "arrived")
+										(scrShowScreen gScreen "OrderReady")
+
+									(eq (objGetData gSource "MissionStatus") "failed")
+										(scrShowScreen gScreen "OrderFailed")
+										
+									; If the player has exceeded quota, then she cannot order
+									(geq (objGetData gSource "OrderCount") 1)
+										(scrShowScreen gScreen "QuotaExceeded")
+									
+									; Show order screen	
+									(scrShowScreen gScreen "OrderItem")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+				</Panes>
+			</Main>
+			
+			<OrderItem
+				name=			"=(objGetName gSource)"
+				>
+				
+				<Panes>
+					<Default
+							desc="Please enter an item to search for in our catalog database:"
+							showTextInput="true">
+							
+						<Actions>
+							<Action name="Order" default="1">
+								(block Nil
+									(setq gItem (itmCreateByName "* -Illegal; -Military; -Alien; -ID; -CannotOrder; -NotForSale; &lt;10" (scrGetInputText gScreen) 1))
+									
+									(switch
+										; If we couldn't understand, say so
+										(not gItem)
+											(scrShowPane gScreen "UnknownItem")
+
+										; Otherwise, ask for a count
+										(block Nil
+											(setq gCost (itmGetActualPrice gItem))
+											
+											; Add 40% markup
+											(setq gCost (divide (multiply gCost 140) 100))
+
+											; Compute max count
+											(switch
+												(leq (itmGetFrequency gItem) 1)
+													(setq gMaxCount 1)
+
+												(leq (itmGetFrequency gItem) 4)
+													(setq gMaxCount (itmGetMaxAppearing gItem))
+
+												(leq (itmGetFrequency gItem) 10)
+													(setq gMaxCount (multiply 3 (itmGetMaxAppearing gItem)))
+
+												(setq gMaxCount (multiply 10 (itmGetMaxAppearing gItem)))
+												)
+											
+											(scrShowPane gScreen "GetCount")
+											)
+										)
+									)
+							</Action>
+							
+							<Action name="Cancel" cancel="1">
+								(scrShowScreen gScreen "Main")
+							</Action>
+						</Actions>
+					</Default>
+					
+					<GetCount
+							showCounter="true">
+							
+						<Initialize>
+							(scrSetDesc gScreen
+								(cat "The catalog contains a listing for " (itmGetName gItem 0x102) ". "
+									(if (eq gMaxCount 1) "There is one left in the warehouse." (cat "There are " gMaxCount " left in the warehouse."))
+									"\n\nHow many do you wish to order?"
+									)
+								)
+						</Initialize>
+							
+						<Actions>
+							<Action name="Order" default="1" key="O">
+								(switch
+									(gr (scrGetCounter gScreen) gMaxCount)
+										(scrSetCounter gScreen gMaxCount)
+
+									(gr (scrGetCounter gScreen) 0)
+										(block Nil
+											(setq gItem (itmCreate (itmGetUNID gItem) (scrGetCounter gScreen)))
+											(scrShowPane gScreen "ConfirmOrder")
+											)
+									)
+							</Action>
+							
+							<Action name="Cancel" cancel="1" key="C">
+								(scrShowPane gScreen "Default")
+							</Action>
+						</Actions>
+					</GetCount>
+					
+					<ConfirmOrder>
+					
+						<Initialize>
+							(block (desc shippingCost eachItem)
+								; Shipping cost 500 credits per ton
+								(setq shippingCost (multiply 500 (divide (add (multiply (itmGetMass gItem) (itmGetCount gItem)) 999) 1000)))
+
+								; Compute price of each item
+								(setq eachItem (itmGetActualPrice gItem))
+								
+								; Charge a 40% markup
+								(setq eachItem (divide (multiply eachItem 140) 100))
+								
+								; Compute total cost
+								(setq gCost (add (multiply (itmGetCount gItem) eachItem) shippingCost))
+								
+								(setq desc
+									(cat "Order: " (itmGetName gItem 0x108) "\n"
+										"Unit price: " eachItem
+											(if (gr (itmGetCount gItem) 1) (cat " (" (itmGetCount gItem) " for " (multiply eachItem (itmGetCount gItem)) ")") "")
+											"\n"
+										"Shipping &amp; Handling: " shippingCost "\n"
+										"Total: " gCost "\n\n"
+										)
+									)
+									
+								(if (gr gCost (plyGetCredits gPlayer))
+									(setq desc (cat desc "Unfortunately, you do not have enough credits to complete the order."))
+									(setq desc (cat desc "Do you wish to place the order?"))
+									)
+									
+								(scrSetDesc gScreen desc)
+								(scrEnableAction gScreen 0 (leq gCost (plyGetCredits gPlayer)))
+								)
+						</Initialize>
+						
+						<Actions>
+							<Action name="Place Order" default="1" key="P">
+								(block (transport)
+									; Create a transport at the nearest gate and put the item on it
+									(setq transport (sysCreateShip &scEI100; (objGetNearestStargate gSource) &svCorporate;))
+									(objAddItem transport gItem)
+									
+									; Order the transport to dock with the station and then gate out
+									(shpOrderDock transport gSource)
+									(shpOrderWait transport (random 5 10))
+									(shpOrderGate transport)
+									
+									; Register the transport so we know if it got destroyed
+									(objRegisterForEvents gSource transport)
+									
+									; Remember the item and the transport
+									(objSetData gSource "Order" gItem)
+									(objSetObjRefData gSource "Transport" transport)
+									
+									; Set the mission status
+									(objSetData gSource "MissionStatus" "intransit")
+									
+									; Charge the player
+									(plyCharge gPlayer gCost)
+									(objIncData gSource "OrderCount" 1)
+									
+									(scrShowPane gScreen "ThankYou")
+									)
+							</Action>
+							
+							<Action name="Cancel" cancel="1" key="C">
+								(scrShowPane gScreen "Default")
+							</Action>
+						</Actions>
+						
+					</ConfirmOrder>
+					
+					<ThankYou
+							desc="Your order has been placed and will be ready as soon as it arrives. Please check back at this screen to see the status of your order.">
+							
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								(scrShowScreen gScreen "Main")
+							</Action>
+						</Actions>
+					</ThankYou>
+
+					<UnknownItem
+							desc="Sorry, there are no items in the catalog matching that description."
+							>
+							
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								(scrShowPane gScreen "Default")
+							</Action>
+						</Actions>
+					</UnknownItem>
+				</Panes>
+			</OrderItem>
+
+			<OrderInTransit
+				name=			"=(objGetName gSource)"
+				>
+				
+				<Panes>
+					<Default>
+						<Initialize>
+							(scrSetDesc gScreen
+								(cat "Your order for " (itmGetName (objGetData gSource "Order") 0x108) " has been placed and is in route. "
+									"The transport holding your order is currently " (objGetDistance gSource (objGetObjRefData gSource "Transport")) " light-seconds away."
+									)
+								)
+						</Initialize>
+					
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								(scrShowScreen gScreen "Main")
+							</Action>
+						</Actions>
+					</Default>
+				</Panes>
+			</OrderInTransit>
+			
+			<OrderReady
+				name=			"=(objGetName gSource)"
+				>
+				
+				<Panes>
+					<Default>
+						<Initialize>
+							(block (spaceNeeded)
+								(setq gItem (objGetData gSource "Order"))
+								(setq spaceNeeded (multiply (itmGetMass gItem) (itmGetCount gItem)))
+								
+								(if (geq (objGetCargoSpaceLeft gPlayerShip) spaceNeeded)
+									(block Nil
+										(scrSetDesc gScreen (cat "Your order for " (itmGetName gItem 0x108) " has arrived and has been placed in your cargo hold.\n\nThank you for your business!"))
+										(setq gResult True)
+										)
+									(block Nil
+										(scrSetDesc gScreen (cat "Your order for " (itmGetName gItem 0x108) " is ready. Unfortunately, you do not have enough room in your cargo hold. Please return when you have freed up enough room."))
+										(setq gResult Nil)
+										)
+									)
+								)
+						</Initialize>
+					
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								(block Nil
+									(if gResult
+										(block Nil
+											(objAddItem gPlayerShip gItem)
+											(objSetData gSource "MissionStatus" Nil)
+											)
+										)
+									(scrShowScreen gScreen "Main")
+									)
+							</Action>
+						</Actions>
+					</Default>
+				</Panes>
+			</OrderReady>
+
+			<OrderFailed
+				name=			"=(objGetName gSource)"
+				>
+				
+				<Panes>
+					<Default>
+						<Initialize>
+							(scrSetDesc gScreen
+								(cat "We regret to inform you that your order for " (itmGetName (objGetData gSource "Order") 0x108) " has been destroyed in transit. "
+									"As we are not liable for losses due to external events, we respectfully recommend that you pursue the matter with your insurance company, if any."
+									)
+								)
+						</Initialize>
+					
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								(block Nil
+									(objSetData gSource "MissionStatus" Nil)
+									(scrShowScreen gScreen "Main")
+									)
+							</Action>
+						</Actions>
+					</Default>
+				</Panes>
+			</OrderFailed>
+
+			<QuotaExceeded
+				name=			"=(objGetName gSource)"
+				>
+				
+				<Panes>
+					<Default>
+						<Initialize>
+							(scrSetDesc gScreen
+								(cat "Sorry, only one order per customer!\n\nPlease buy our in-stock items or visit another Trading Post at a system near you.")
+								)
+						</Initialize>
+					
+						<Actions>
+							<Action name="Continue" default="1" cancel="1" key="C">
+								(scrShowScreen gScreen "Main")
+							</Action>
+						</Actions>
+					</Default>
+				</Panes>
+			</QuotaExceeded>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="92" />
+			<Port x="38"	y="85" />
+			<Port x="105"	y="60" />
+			<Port x="124"	y="-20" />
+			<Port x="64"	y="-92" />
+			<Port x="0"		y="-120" />
+			<Port x="-102"	y="-66" />
+			<Port x="-100"	y="16" />
+			<Port x="-84"	y="78" />
+		</DockingPorts>
+
+	</StationType>
+	
+	<!-- Wondrous Devices -->
+
+	<StationType UNID="&stWondrousDevices;"
+			name=				"Thor's Wondrous Devices"
+			sovereign=			"&svCorporate;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itAdvancedPlasteelPlate;"
+			maxHitPoints=		"350"
+			hitPoints=			"350"
+			repairRate=			"5"
+			explosionType=		"&vtThermoExplosion1;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envAir,envEarth,envFire,envWater,populated"
+			levelFrequency=		"---ru ur--- ----- ----- -----"
+			locationCriteria=	"+planetary,-asteroids"
+
+			noArticle=			"true"
+			>
+
+		<Image			imageID="&rsStations5;" imageX="128" imageY="384" imageWidth="128" imageHeight="256"/>
+
+		<Ships>
+			<Ship					count="2" class="&scCenturion;" orders="guard"/>
+			<Table count="1d4">
+				<Ship chance="25"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scEI100;" orders="gateOnThreat" />
+				<Ship chance="25"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+				<Ship chance="20"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scBorer;" orders="gateOnThreat"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="4">
+			<Table>
+				<Ship chance="65"	count="1" class="&scCenturion;" orders="guard"/>
+				<Ship chance="10"	count="1" class="&scEI500;" orders="gateOnThreat" />
+				<Ship chance="10"	count="1" class="&scEI100;" orders="gateOnThreat"/>
+				<Ship chance="10"	count="1" class="&scWolfen;" orders="gateOnThreat"/>
+				<Ship chance="5"	count="1" class="&scSapphireYacht;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Items>
+			<RandomItem count="10" 
+					criteria=		"admu -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"----c"
+					enhanced=		"5"
+					enhancement=	"=(intCorporateGenerateEnhancement gItem)"
+					/>
+			<RandomItem count="15" 
+					criteria=		"admu -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"----u cu"
+					enhanced=		"5"
+					enhancement=	"=(intCorporateGenerateEnhancement gItem)"
+					/>
+			<RandomItem count="8" 
+					criteria=		"admu -Illegal; -Military; -NotForSale;"
+					levelFrequency=	"----r ucur"
+					enhanced=		"1"
+					enhancement=	"=(intCorporateGenerateEnhancement gItem)"
+					/>
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="250000" replenish="12500">
+			<Sell	criteria="*NU -Illegal; -ID; -NotForSale;"	priceAdj="110"/>
+			<Buy	criteria="admuNU -Illegal; -ID; -NotForSale;"	priceAdj="90"/>
+			<Buy	criteria="admuNU -Illegal; -ID;"				priceAdj="10"/>
+		</Trade>
+
+		<Events>
+			<OnContractGenerate>
+				(intGenerateIndustrialRequestContract1)
+			</OnContractGenerate>
+
+			<OnContractQuery>True</OnContractQuery>
+
+			<OnDestroy>
+				(intCorporateOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intCorporateOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default
+							desc=	"You are docked at a franchise of Thor's Wondrous Devices.">
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gInstallCriteria Nil)
+									(scrShowScreen gScreen "&dsExchangeBuy;")
+									)
+							</Action>
+
+							<Action name="Sell items" key="S">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gMargin Nil)
+									(setq gTitle Nil)
+									(scrShowScreen gScreen "&dsExchangeSell;")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="90"	y="15" />
+			<Port x="-90"	y="15" />
+			<Port x="90"	y="90" />
+			<Port x="-90"	y="90" />
+			<Port x="60"	y="-30" />
+			<Port x="-60"	y="-30" />
+
+			<Port x="0"		y="-50" />
+			<Port x="0"		y="130" />
+		</DockingPorts>
+
+	</StationType>
+
+	<Globals>
+		(block Nil
+			(setq intBushidoArmorEnhancement (lambda Nil
+				(random (list 0x0101 0x0102 0x0102 0x0103 0x0309 0x0329))
+				))
+
+			(setq intBushidoShieldEnhancement (lambda Nil
+				(random (list 0x0101 0x0102 0x0102 0x0103 0x0104 0x0824 0x0842 0xf03))
+				))
+
+			(setq intBushidoWeaponEnhancement (lambda Nil
+				(random (list 0x0101 0x0102 0x0102 0x0103 0x0f03 0x1002))
+				))
+
+			(setq intCorporateCrime (lambda (severity description)
+				(if (gr severity (int (objGetData gPlayerShip "corpCrimeSeverity")))
+					(block Nil
+						(objSetData gPlayerShip "corpCrimeSeverity" severity)
+						(objSetData gPlayerShip "corpCrime" description)
+						)
+					)
+				))
+				
+			(setq intCorporateGenerateEnhancement (lambda (theItem)
+				(block (theCategory)
+					(setq theCategory (itmGetCategory theItem))
+					(switch
+						; Armor enhancements
+						(eq theCategory 0x0002)
+							(random (list 0x0101 0x0102 0x0102 0x0103))
+							
+						; Shield enhancements
+						(eq theCategory 0x0080)
+							(random (list 0x0101 0x0102 0x0102 0x0103))
+							
+						; Weapon enhancements
+						(eq theCategory 0x0004)
+							(random (list 0x0101 0x0102 0x0102 0x0103))
+							
+						0x0000
+						)
+					)
+				))
+				
+			(setq intCorporateOnInit (lambda (prevScreen)
+				(block Nil
+					(setq gPrevScreen prevScreen)
+
+					(switch
+						; If the ship is radioactive then refuse dock
+						(shpIsRadioactive gPlayerShip)
+							(scrShowScreen gScreen "&dsRefuseContamination;")
+							
+						; If the player has committed crimes, then she's in trouble
+						(geq (int (objGetData gPlayerShip "corpCrimeSeverity")) 2)
+							(scrShowScreen gScreen "&dsCorporateImprison;")
+
+						; Check if the player has any active contracts
+						(intShowContractDeliveryScreen)
+							(scrShowScreen gScreen "&dsContractDelivery;")
+						)
+					)
+				))
+
+			(setq intCorporateOnDestroy (lambda Nil
+				(block (corporateCruiser theDestroyer)
+					; Destroy items on the station
+					(intDestroyItems gSource)
+					
+					; Create a corporate cruiser to avenge the station
+					(setq corporateCruiser
+						(sysCreateShip &scCorporateCruiser; (objGetNearestStargate gSource) &svCorporate;)
+						)
+
+					; If someone destroyed the station, avenge
+					(setq theDestroyer (objGetOrderGiver aDestroyer aDestroyReason))
+					(if (and theDestroyer
+							(objCanAttack theDestroyer)
+							(not (eq (objGetSovereign theDestroyer) &svCorporate;)))
+						(block Nil
+							(objSendMessage gPlayerShip gSource "Security alert! Deploy corporate enforcer!")
+							(shpOrderAttack corporateCruiser theDestroyer)
+							
+							; Since the cruiser is busy, deploy some transports to loot the station
+							(for i 1 (random 1 3)
+								(block (transport)
+									(setq transport
+										(sysCreateShip &scEI500; (objGetNearestStargate gSource) &svCorporate;)
+										)
+										
+									(shpOrderLoot transport gSource)
+									(shpOrderGate transport)
+									)
+								)
+							)
+						)
+						
+					; If the player destroyed the station, then she is banned
+					(if (eq (objGetOrderGiver aDestroyer aDestroyReason) gPlayerShip)
+						(intCorporateCrime 3 (cat "the destruction of " (objGetName gSource 4)))
+						)
+
+					; Take all the items from the station (so that others won't loot it)
+					(shpOrderLoot corporateCruiser gSource)
+
+					; Gate out
+					(shpOrderGate corporateCruiser)
+					)
+				))
+				
+			(setq intHPEnhancement1 (lambda Nil
+				(random (list 0x0101 0x0101 0x0102 0x0102 0x0103))
+				))
+
+			(setq intHPEnhancement2 (lambda Nil
+				(random (list 0x0101 0x0102 0x0102 0x0103 0x0103 0x0104))
+				))
+
+			(setq intHPEnhancement3 (lambda Nil
+				(random (list 0x0102 0x0103 0x0103 0x0104 0x0104 0x0105))
+				))
+				
+			(setq intMakayevArmorEnhancement (lambda Nil
+				(random (list 0x0101 0x0102 0x0102 0x0103 0x0103 0x0104 0x0b00 0x0c00))
+				))
+
+			(setq intMakayevWeaponEnhancement (lambda Nil
+				(random (list 0x0102 0x0103 0x0103 0x0104 0x0104 0x0105))
+				))
+
+			(setq intTaikonBuyMargin (lambda (thisItem)
+				(block (cost)
+					(switch
+						; Better not be installed or damaged
+						(or (itmIsInstalled thisItem) (itmIsDamaged thisItem))
+							(setq cost 0)
+
+						; 'Taikon' items are cheaper here
+						(itmHasModifier thisItem "Taikon")
+							(setq cost (divide (multiply (itmGetPrice thisItem) 17) 100))
+						
+						; 'RingerValuable' items are expensive
+						(itmHasModifier thisItem "RingerValuable")
+							(setq cost (divide (multiply (itmGetPrice thisItem) 102) 100))
+							
+						; 'Alien' items for 1/4 cost
+						(itmHasModifier thisItem "Alien")
+							(setq cost (divide (multiply (itmGetPrice thisItem) 25) 100))
+							
+						; All other items for 1/5 price
+						(setq cost (divide (multiply (itmGetPrice thisItem) 20) 100))
+						)
+
+					; round up
+					(setq cost (multiply (divide (add cost 4) 5) 5))
+
+					(if (gr cost 0)
+						cost
+						Nil
+						)
+					)
+				))
+			)
+	</Globals>
+
+	<!-- Arms Dealer Screen -->
+
+	<DockScreen UNID="&dsArmsDealerSpecial;"
+		name=			"=(objGetName gSource)"
+		>
+
+		<OnInit>
+			(intCorporateOnInit "Main")
+		</OnInit>
+
+		<Panes>
+			<Default>
+				<Initialize>
+					(scrSetDesc gScreen (cat "You are docked at " (objGetStaticData gSource "LongName") "."))
+				</Initialize>
+
+				<Actions>
+					<Action name="Buy items" default="1" key="B">
+						(block Nil
+							(setq gPrevScreen "&dsArmsDealerSpecial;")
+							(setq gMargin Nil)
+
+							(setq gInstallCriteria "w")
+							(setq gTechLevel 8)
+							(setq gTechModifier Nil)
+							(setq gCheckMilitaryID True)
+							(setq gInstallMargin 100)
+							(scrShowScreen gScreen "&dsExchangeBuy;")
+							)
+					</Action>
+
+					<Action name="Dock Services" key="D">
+						<ShowPane pane="DockServices"/>
+					</Action>
+
+					<Action name="Undock" cancel="1" key="U">
+						<Exit/>
+					</Action>
+				</Actions>
+
+			</Default>
+
+			<DockServices
+					desc=	"You are at the docking services terminal.">
+
+				<Actions>
+					<Action name="Refuel" key="R">
+						(block Nil
+							(setq gPrevScreen "&dsArmsDealerSpecial;")
+							(setq gPrevPane "DockServices")
+							(intSetCompatibleFuel '((&itHeliumAssembly; 75) (&itHelium3FuelRod; 25)))
+							(scrShowScreen gScreen "&dsRefuel;")
+							)
+					</Action>
+
+					<Action name="Install weapon" key="W" >
+						(block Nil
+							(setq gPrevScreen "&dsArmsDealerSpecial;")
+							(setq gPrevPane "DockServices")
+							(setq gTechLevel 8)
+							(setq gTechModifier Nil)
+							(setq gCheckMilitaryID True)
+							(setq gMargin 100)
+							(scrShowScreen gScreen "&dsInstallWeapon;")
+							)
+					</Action>
+
+					<Action name="Remove weapon" key="V" >
+						(block Nil
+							(setq gPrevScreen "&dsArmsDealerSpecial;")
+							(setq gPrevPane "DockServices")
+							(scrShowScreen gScreen "&dsRemoveWeapon;")
+							)
+					</Action>
+
+					<Action name="Done" cancel="1" key="N">
+						<ShowPane pane="Default"/>
+					</Action>
+
+				</Actions>
+
+			</DockServices>
+
+		</Panes>
+	</DockScreen>
+
+	<!-- Corporate Imprison -->
+
+	<DockScreen UNID="&dsCorporateImprison;"
+			name=				"=(objGetName gSource)"
+			>
+
+		<Panes>
+			<Default>
+				<Initialize>
+					(block Nil
+						(scrSetDesc gScreen (cat "As you enter the station you are surrounded by heavily armed soldiers. A Corporate officer approaches you: \"You are under arrest for " (objGetData gPlayerShip "corpCrime") "\"" ))
+						(plyDestroyed gPlayer (cat "imprisoned for " (objGetData gPlayerShip "corpCrime")))
+						)
+				</Initialize>
+
+				<Actions>
+					<Action name="Continue" default="1" cancel="1" key="C">
+						(scrExitDock gScreen)
+					</Action>
+				</Actions>
+
+			</Default>
+		</Panes>
+
+	</DockScreen>
+	
+	<!-- Resources -->
+
+	<Image UNID="&rsTradingPostAnimation;" bitmap="Resources\TradingPostGenericAd.jpg" bitmask="Resources\TradingPostGenericAdMask.bmp" backColor="0x00000000"/>
+	
+</TranscendenceModule>

@@ -1,0 +1,10 @@
+Import('env')
+
+sources = [ 'main.cpp', '/usr/local/lib/libSDL.a'];
+sources += ['TestCG16bitImage.cpp'];
+sources += ['TestCG16bitFont.cpp'];
+
+libs = ['cppunit', 'dl', 'kernel', 'dxutil', 'SDL_gfx', 'SDL_image', 'SDL_ttf', 'SDL_mixer', 'smpeg', 'boost_system-mt'];
+unittest = env.Program('dxutil-test', sources, LIBS = libs, CPPPATH = ['/usr/local/include/SDL', '../../Includes' ] )
+env.Test(".test-passed", unittest)
+env.Alias("dxutil-test", ".test-passed")

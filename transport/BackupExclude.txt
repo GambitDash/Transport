@@ -1,0 +1,17 @@
+.obj
+.pch
+.ncb
+.opt
+.map
+.pdb
+.idb
+.lib
+.exe
+.ilk
+.scc
+BuildLog.htm
+.bak
+.tmp
+.sav
+.res
+.user

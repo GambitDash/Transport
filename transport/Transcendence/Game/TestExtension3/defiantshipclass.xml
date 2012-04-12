@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE TranscendenceExtension
+	[
+	<!ENTITY unidExtension				"0xDADA1000">
+	<!ENTITY unidSfPhaserVIII			"0xDADA1110">
+	<!ENTITY unidSfPhaserX				"0xDADA1111">
+	<!ENTITY unidSfPhaserXII			"0xDADA1112">
+	<!ENTITY unidSfPulsePhaser			"0xDADA1113">
+	<!ENTITY unidSfTorpedoLauncher			"0xDADA1120">
+	<!ENTITY unidSfTorpedoMarkVI			"0xDADA1121">
+	<!ENTITY unidSfTorpedoMarkVIII			"0xDADA1122">
+	<!ENTITY unidSfTorpedoMarkX			"0xDADA1123">
+	<!ENTITY unidSfTorpedoMarkXXV			"0xDADA1124">
+	<!ENTITY unidSfTorpedoMarkQII			"0xDADA1125">
+	<!ENTITY unidDefiantClass			"0xDADA1200">
+	<!ENTITY unidLCARS				"0xDADA1300">
+	<!ENTITY unidBussard				"0xDADA1301">
+	<!ENTITY rsDefiantImg				"0xDADA1401">
+	<!ENTITY rsDefiantScr				"0xDADA1402">
+	<!ENTITY rsDefiantShl				"0xDADA1403">
+]>
+
+<TranscendenceExtension UNID="&unidExtension;" version="0.99c">
+
+<!-- The LCARS - original design by Dalva on Xerelus -->
+<ItemType UNID="&unidLCARS;"
+	name=				"Federation LCARS"
+	level=				"10"
+	value=				"30000"
+	mass=				"10000"
+	powerUse=			"10000"
+	frequency=			"uncommon"
+	modifiers=			"MajorItem; QuantumCPU"
+	description=		"This Library Computer Access and Retrieval System (LCARS) is the common operating system employed by the Federation that used sophisticated artificial intelligence to execute voice commands and also Mnemonic Cubes."
+	>
+	<Image imageID="&rsItems1;" imageX="0" imageY="192" imageWidth="96" imageHeight="96"/>
+	<MiscellaneousDevice
+			powerUse=		"50"
+			/>
+</ItemType>
+
+<!-- The Bussard Ramscoop - original design by Dalva on Xerelus -->
+<ItemType UNID="&unidBussard;"
+		name=				"Bussard Ramscoop"
+		level=				"10"
+		value=				"50000"
+		mass=				"20000"
+		frequency=			"veryrare"
+		modifiers=			"MajorItem"
+		description=		"The Bussard Ramscoop is a device, usually attached to the forward end of a warp nacelle, which is used for collecting hydrogen to refuel the spaceship's engine. It's a standard device for all federation spaceships."
+		>
+		<Image imageID="&rsItems1;" imageX="0" imageY="192" imageWidth="96" imageHeight="96"/>
+		<SolarDevice
+				refuel=			"5000"
+				/>
+</ItemType>
+
+<!-- The Starfleet Phaser Series - based on the original design by Dalva on Xerelus -->
+<ItemType UNID="&unidSfPhaserXII;"
+		name=				"Starfleet Phaser Type XII"
+		level=				"10"
+		value=				"100000"
+		mass=				"50000"
+		frequency=			"veryrare"
+		modifiers=			"EnergyWeapon; MajorItem; Military"
+		description=		"this phaser type XII is the most advanced and powerful phaser ever used in spaceships. Plasma is passed to a phaser emitter resulting in a beam of nadion particles, damaging everything that contacts it. the omni can be switched on and off"
+         >
+	<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+	<Weapon
+			type=				"missile"
+			omnidirectional=		"true"
+			damage=				"plasma:2d8; WMD1"
+			fireRate=			"1"
+			missileSpeed=			"90"
+			lifetime=			"25"
+			powerUse=			"15000"
+			vaporTrailLength=		"10"
+			vaporTrailWidth=		"15"
+			vaporTrailWidthInc=		"10"
+			vaporTrailColor=		"0x00, 0xff, 0xff"
+			sound=				"&snLaserCannon;" >
+			sortName=			"Phaser12"
+	</Weapon>
+</ItemType>  		
+<ItemType UNID="&unidSfPhaserX;"
+		name=				"Starfleet Phaser Type X"
+		level=				"10"
+		value=				"100000"
+		mass=				"50000"
+		frequency=			"veryrare"
+		modifiers=			"EnergyWeapon; MajorItem; Military"
+		description=		"Phaser Type X is the most common phaser used in spaceships. Plasma is passed to a phaser emitter resulting in a beam of nadion particles, damaging everything that contacts it."
+         >
+	<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+	<Weapon
+			type=				"missile"
+			omnidirectional=		"true"
+			damage=				"plasma:2d4"
+			fireRate=			"1"
+			missileSpeed=			"90"
+			lifetime=			"20"
+			powerUse=			"15000"
+			vaporTrailLength=		"10"
+			vaporTrailWidth=		"15"
+			vaporTrailWidthInc=		"10"
+			vaporTrailColor=		"0xff, 0xff, 0x00"
+			sound=				"&snLaserCannon;" >
+			sortName=			"Phaser10"
+	</Weapon>
+</ItemType>
+<ItemType UNID="&unidSfPhaserVIII;"
+		name=				"Starfleet Phaser Type VIII"
+		level=				"10"
+		value=				"100000"
+		mass=				"50000"
+		frequency=			"veryrare"
+		modifiers=			"EnergyWeapon; MajorItem; Military"
+		description=		"Phaser Type VIII is has eaned it's place in history, being one of the first phasers to be deployed in Starfleet ships on a massive scale."
+         >
+	<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+	<Weapon
+			type=				"missile"
+			omnidirectional=		"true"
+			damage=				"plasma:1d4"
+			fireRate=			"1"
+			missileSpeed=			"90"
+			lifetime=			"15"
+			powerUse=			"15000"
+			vaporTrailLength=		"10"
+			vaporTrailWidth=		"15"
+			vaporTrailWidthInc=		"10"
+			vaporTrailColor=		"0xff, 0x00, 0x00"
+			sound=				"&snLaserCannon;" >
+			sortName=			"Phaser08"
+	</Weapon>
+</ItemType>  		
+
+<!-- Starfleet Pulse Phaser - Original design by Cygnus.X1-->
+<ItemType UNID="&unidSfPulsePhaser;"
+	name=				"Pulse Phaser Cannon"
+	level=				"10"
+	value=				"750000"
+	mass=				"3000"
+	frequency=			"rare"
+	modifiers=			"EnergyWeapon; MajorItem; Military; Taikon"
+	description=		"The Pulse Phaser Cannon functions similarly to a standard Phaser, but without a continuous beam. The energy emissions are instead stored in a magnetic field, allowing them to coalesce and agitate to higher energy states. The field is then redirected, forcing the burst of Phaser energy toward the target."
+	>
+	<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+	<Weapon
+		configuration=		"dual"
+		powerUse=			"1500"
+		
+		type=				"missile"
+		damage=				"plasma:4d10; WMD1"
+		fireRate=			"10"
+		missileSpeed=		"65"
+		lifetime=			"15"
+		sound=				"&snRecoillessCannon;"
+		vaporTrailLength=	"2"
+		vaporTrailWidth=	"110"
+		vaporTrailWidthInc=	"2"
+		vaporTrailColor=	"0xff, 0xff, 0x00"
+		>
+		<Effect>
+		<MoltenBolt
+				width=				"5"
+				length=				"4"
+				growth=				"6"
+				primaryColor=		"0xff, 0xff, 0x00"
+				secondaryColor=		"0xbb, 0xbb, 0x00"
+		/>
+		</Effect>
+	</Weapon>
+</ItemType>
+
+<!-- Starfleet Torpedo Launcher Series - Original design by Cygnus.x1 -->
+
+<ItemType UNID="&unidSfTorpedoLauncher;"
+		name=				"Starfleet Torpedo Launcher"
+		level=				"8"
+		value=				"70000"
+		mass=				"3000"
+		frequency=			"uncommon"
+		modifiers=			"MajorItem; Military; Rasiermesser"
+		description=		"One of Starfleet's most common and reliable weapon systems has always been their torpedoes, they are all smart ordinance with variations in payload, typically using a matter/antimatter warhead."
+		>
+	<Image imageID="&rsItems1;" imageX="0" imageY="480" imageWidth="96" imageHeight="96"/>
+	<Weapon
+			fireRate=			"15"
+			powerUse=			"50"
+			launcher=			"true"
+			>
+		<Missiles>
+			<Missile ammoID="&unidSfTorpedoMarkVI;"
+					type=			"missile"
+					lifetime=		"100"
+					damage=			"antimatter:2d10; momentum1; WMD2"
+					missileSpeed=	"50"
+					hitPoints=		"15"
+					directional=	"true"
+					maneuverability="1"
+					sound=			"&snMissileLauncher;"
+					vaporTrailLength="10"
+					vaporTrailWidth="150"
+					vaporTrailWidthInc="5"
+					vaporTrailColor="0xff, 0x00, 0x00"
+					>
+				<Image imageID="&rsMissiles2;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+				<Effect>
+					<Starburst
+							spikeCount=		"1d6+2"
+							spikeLength=	"2d20"
+							primaryColor=	"0xff, 0x50, 0x50"
+							secondaryColor=	"0xff, 0x00, 0x00"
+							/>
+				</Effect>
+			</Missile>
+			<Missile ammoID="&unidSfTorpedoMarkVIII;"
+					type=			"missile"
+					lifetime=		"120"
+					damage=			"antimatter:3d10; momentum2; WMD2"
+					missileSpeed=	"60"
+					hitPoints=		"20"
+					directional=	"true"
+					maneuverability="2"
+					sound=			"&snMissileLauncher;"
+					vaporTrailLength="10"
+					vaporTrailWidth="150"
+					vaporTrailWidthInc="5"
+					vaporTrailColor="0xff, 0xff, 0x00"
+					>
+				<Image imageID="&rsMissiles2;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+				<Effect>
+					<Starburst
+							spikeCount=		"1d6+2"
+							spikeLength=	"2d20"
+							primaryColor=	"0xff, 0xff, 0x00"
+							secondaryColor=	"0x80, 0x80, 0x00"
+							/>
+				</Effect>
+			</Missile>
+			<Missile ammoID="&unidSfTorpedoMarkX;"
+					type=			"missile"
+					lifetime=		"130"
+					damage=			"antimatter:4d10; momentum3; WMD2"
+					missileSpeed=	"70"
+					hitPoints=		"25"
+					directional=	"true"
+					maneuverability="3"
+					sound=			"&snMissileLauncher;"
+					vaporTrailLength="10"
+					vaporTrailWidth="150"
+					vaporTrailWidthInc="5"
+					vaporTrailColor="0xff, 0xff, 0x00"
+					>
+				<Image imageID="&rsMissiles2;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+				<Effect>
+					<Starburst
+							spikeCount=		"1d6+4"
+							spikeLength=	"3d20"
+							primaryColor=	"0xff, 0xff, 0xff"
+							secondaryColor=	"0x80, 0x80, 0x80"
+							/>
+				</Effect>
+			</Missile>
+			<Missile ammoID="&unidSfTorpedoMarkXXV;"
+					type=			"missile"
+					lifetime=		"140"
+					damage=			"antimatter:5d10; momentum4; WMD3"
+					missileSpeed=	"80"
+					hitPoints=		"30"
+					directional=	"true"
+					maneuverability="3"
+					sound=			"&snMissileLauncher;"
+					vaporTrailLength="10"
+					vaporTrailWidth="150"
+					vaporTrailWidthInc="5"
+					vaporTrailColor="0xff, 0xff, 0xff"
+					>
+				<Image imageID="&rsMissiles2;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+				<Effect>
+					<Starburst
+							spikeCount=		"2d6+2"
+							spikeLength=	"3d25"
+							primaryColor=	"0xff, 0xff, 0xff"
+							secondaryColor=	"0xaa, 0xaa, 0xaa"
+							/>
+				</Effect>
+			</Missile>
+			<Missile ammoID="&unidSfTorpedoMarkQII;"
+					type=			"missile"
+					lifetime=		"130"
+					damage=			"antimatter:4d20; momentum5; WMD4"
+					missileSpeed=	"85"
+					hitPoints=		"35"
+					directional=	"true"
+					maneuverability="4"
+					sound=			"&snMissileLauncher;"
+					vaporTrailLength="10"
+					vaporTrailWidth="150"
+					vaporTrailWidthInc="5"
+					vaporTrailColor="0xff, 0xff, 0xff"
+					>
+				<Image imageID="&rsMissiles2;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+				<Effect>
+					<Starburst
+							spikeCount=		"4d6+2"
+							spikeLength=	"3d25"
+							primaryColor=	"0xff, 0xff, 0x00"
+							secondaryColor=	"0x80, 0x80, 0x80"
+							/>
+				</Effect>
+			</Missile>
+		</Missiles>
+	</Weapon>
+</ItemType>
+
+<!-- Starfleet Torpedo Series, Items - Original design by Cygnus.x1 -->
+
+<ItemType UNID="&unidSfTorpedoMarkVI;"
+		name=				"Starfleet Torpedo Mark VI"
+		level=				"9"
+		value=				"150"
+		mass=				"35"
+		frequency=			"rare"
+		numberAppearing=	"8d20"
+		modifiers=			"Consumable; Military; Missile;"
+		description=		"The first photonic torpedo developed by Starfleet after spatial torpedoes simply did not have enough punch, it combines a limited tracking system with a matter-antimatter warhead."
+		sortName=			"TorpedoM06"
+		>
+	<Image imageID="&rsItems1;" imageX="0" imageY="96" imageWidth="96" imageHeight="96"/>
+</ItemType>
+<ItemType UNID="&unidSfTorpedoMarkVIII;"
+		name=				"Starfleet Torpedo Mark VIII"
+		level=				"9"
+		value=				"150"
+		mass=				"35"
+		frequency=			"rare"
+		numberAppearing=	"8d20"
+		modifiers=			"Consumable; Military; Missile;"
+		description=		"Starfleet improved the original torpedo with a better propulsion system, smarter seeker AI, and a larger matter-antimatter warhead."
+		sortName=			"TorpedoM08"
+		>
+	<Image imageID="&rsItems1;" imageX="0" imageY="96" imageWidth="96" imageHeight="96"/>
+</ItemType>
+<ItemType UNID="&unidSfTorpedoMarkX;"
+		name=				"Starfleet Torpedo Mark X"
+		level=				"9"
+		value=				"150"
+		mass=				"35"
+		frequency=			"rare"
+		numberAppearing=	"4d20"
+		modifiers=			"Consumable; Military; Missile;"
+		description=		"This rare version of the photon torpedo did not stay in mass production for long, but once again has improved seeker AI, a bigger engine, and even more matter-antimatter in the warhead."
+		sortName=			"TorpedoM10"
+		>
+	<Image imageID="&rsItems1;" imageX="0" imageY="96" imageWidth="96" imageHeight="96"/>
+</ItemType>
+<ItemType UNID="&unidSfTorpedoMarkXXV;"
+		name=				"Starfleet Torpedo Mark XXV"
+		level=				"9"
+		value=				"150"
+		mass=				"35"
+		frequency=			"rare"
+		numberAppearing=	"4d20"
+		modifiers=			"Consumable; Military; Missile;"
+		description=		"This is the final version of the standard photon torpedos, it has the best of everything that can be squeezed into it."
+		sortName=			"TorpedoM25"
+		>
+	<Image imageID="&rsItems1;" imageX="0" imageY="96" imageWidth="96" imageHeight="96"/>
+</ItemType>
+<ItemType UNID="&unidSfTorpedoMarkQII;"
+		name=				"Starfleet Pho-torp Mark Q-II"
+		level=				"9"
+		value=				"150"
+		mass=				"35"
+		frequency=			"rare"
+		numberAppearing=	"1d10"
+		modifiers=			"Consumable; Military; Missile;"
+		description=		"Quantum Torpedoes are much more powerful than their photonic predecesors. By using the energy matrix created by the matter-animatter annihalation, federation scientists have finally found a way to tap the zero point energy, thereby releasing a miniture comsic bang. This weapon is capable of destroying entire cities and demolishing even small moons."
+		sortName=			"TorpedoQ02"
+		>
+	<Image imageID="&rsItems1;" imageX="0" imageY="96" imageWidth="96" imageHeight="96"/>
+</ItemType>
+
+<!-- Defiant Shipclass, gfx by Digdug, majority of code scripted by Cygnus.X1 -->
+<ShipClass UNID="&unidDefiantClass;"
+	manufacturer=		"Cygnus X1 Research and Development"
+	class=				"STDS9 Defiant"
+	type=				"medium gunship"
+	score=				"1550"
+	techOrder=			"biomech"
+		
+	mass=				"250"
+	fuelCapacity=		"3750000"
+	reactorPower=		"1000000"
+	maxReactorFuel=		"60000000"
+	cargoSpace=			"200"
+	maxCargoSpace=		"300"
+	maxArmor=			"20000"
+	thrust=				"600"
+	maneuver=			"3"
+	maxSpeed=			"30"
+	maxDevices=			"15"
+	leavesWreck=		"50"
+	rotationCount=		"40"
+	>
+	<Armor>
+		<ArmorSection start="315" span="90" armorID="&itStealthPlate;" areaSet="0,2" />
+		<ArmorSection start="225" span="90" armorID="&itStealthPlate;" areaSet="3,4" />
+		<ArmorSection start="135" span="90" armorID="&itStealthPlate;" areaSet="1,6" />
+		<ArmorSection start="45"  span="90" armorID="&itStealthPlate;" areaSet="7,13" />
+	</Armor>
+	<Devices>
+		<Device deviceID="&unidSfPhaserVIII;"/>
+		<Device deviceID="&unidSfPhaserX;"/>
+		<Device deviceID="&unidSfPhaserXII;"/>
+		<Device deviceID="&unidSfPulsePhaser;"/>
+		<Device deviceID="&unidSfTorpedoLauncher;"/>
+		<Device deviceID="&itPlasmaShieldGenerator;"/>
+		<Device deviceID="&it1GWReactor;"/>
+		<Device deviceID="&unidLCARS;"/>
+		<Device deviceID="&unidBussard;"/>
+		<Device deviceID="&itTranspaceJumpdrive;"/>
+<!--		<Device deviceID="&itInertialessDrive;"/> -->
+	</Devices>
+	<Items>
+		<Item count="50" item="&unidSfTorpedoMarkVI;"/>
+		<Item count="50" item="&unidSfTorpedoMarkVIII;"/>
+		<Item count="50" item="&unidSfTorpedoMarkX;"/>
+		<Item count="50" item="&unidSfTorpedoMarkXXV;"/>
+		<Item count="50" item="&unidSfTorpedoMarkQII;"/>
+		<Item count="4" item="&itRegeneratingNanos;"/>
+		<Item count="1" item="&itEnhanceSRSROM;"/>
+		<Item count="10" item="&itEnhanceShieldsROM;"/>
+		<Item count="1" item="&itRowenaVol1;"/>
+		<Item count="1" item="&itRowenaVol2;"/>
+		<Item count="1" item="&itRowenaVol3;"/>
+		<Item count="1" item="&itRowenaVol4;"/>
+		<Item count="1" item="&itRowenaVol5;"/>
+		<Item count="15" item="&itDiamondCrystal;"/>
+		<Item count="50" item="&itSystemMapROM;"/>
+		<Item count="50" item="&itMilitaryMapROM;"/>
+		<Item count="1" item="&itTargetingComputerROM;"/>
+		<Item count="10" item="&itWeaponSpeedROM;"/>
+		<Item count="1" item="&itMilitaryID;"/>
+		<Item count="1" item="&itBlackMarketID;"/>
+		<Item count="25" item="&itCashCardPlatinum;"/>
+		<Item count="1000" item="&itDeathCube;"/>
+		<Item count="1000" item="&itCDMArchive;"/>
+		<Item count="5000" item="&itPromethiumCrystal;"/>
+		<Item count="100" item="&itHadronVacuumFuelCell;"/>
+	</Items>
+		<Image imageID="&rsDefiantImg;" imageX="0" imageY="0" imageWidth="64" imageHeight="64" imageFrameCount="0" imageTicksPerFrame="0"/>
+	<DriveImages>
+		<NozzleImage imageID="&rsDriveExhaust2;" imageX="0" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+		<NozzlePos x="-41" y="-16"/>
+		<NozzlePos x="-41" y="16"/>
+	</DriveImages>
+	<AISettings
+		fireRateAdj=		"30"
+		fireAccuracy=		"100"
+		perception=			"9"
+		/>
+	<PlayerSettings
+		desc=				"Digdug made the gfx, but I'm coding the ship itself."
+		largeImage=			"&rsDefiantScr;"
+		initialClass=		"true">
+		<ArmorDisplay>
+			<ArmorSection name="forward"
+					imageID="&rsWolfenArmor;" 
+					imageX="0" imageY="0" imageWidth="52" imageHeight="15"
+					destX="42" destY="19" hpX="55" hpY="18"
+					nameY="8" nameBreakWidth="200" nameDestX="0" nameDestY="10" />
+			<ArmorSection name="starboard"
+					imageID="&rsWolfenArmor;" 
+					imageX="75" imageY="0" imageWidth="23" imageHeight="69"
+					destX="94" destY="34" hpX="97" hpY="60"
+					nameY="30" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+			<ArmorSection name="port"
+					imageID="&rsWolfenArmor;" 
+					imageX="52" imageY="0" imageWidth="23" imageHeight="69"
+					destX="19" destY="34" hpX="13" hpY="60"
+					nameY="52" nameBreakWidth="200" nameDestX="0" nameDestY="8" />
+			<ArmorSection name="aft"
+					imageID="&rsWolfenArmor;" 
+					imageX="0" imageY="75" imageWidth="52" imageHeight="16"
+					destX="42" destY="103" hpX="55" hpY="107"
+					nameY="74" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+		</ArmorDisplay>
+
+		<ShieldDisplay>
+			<Image imageID="&rsDefiantShl;" imageX="0" imageY="0" imageWidth="136" imageHeight="136"/>
+		</ShieldDisplay>
+
+		<ReactorDisplay>
+			<Image imageID="&rsZubrinReactor;" 
+						imageX="0" imageY="0" imageWidth="256" imageHeight="60"/>
+
+			<PowerLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="60" imageWidth="202" imageHeight="14"
+						destX="54" destY="9"/>
+
+			<FuelLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="74" imageWidth="194" imageHeight="14"
+						destX="54" destY="37"/>
+
+			<FuelLowLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="88" imageWidth="194" imageHeight="14"/>
+
+			<ReactorText x="62" y="22" width="154" height="14"/>
+			<PowerLevelText x="62" y="0" width="154" height="9"/>
+			<FuelLevelText x="62" y="51" width="154" height="9"/>
+		</ReactorDisplay>
+
+	</PlayerSettings>
+</ShipClass>
+
+<Image UNID="&rsDefiantImg;" bitmap="defiant.bmp" bitmask="defiantmask.bmp" backColor="0x00000000"/>
+<Image UNID="&rsDefiantScr;" bitmap="defiantlarge.jpg" loadOnUse="true" />
+<Image UNID="&rsDefiantShl;" bitmap="Shieldsdefiant.jpg" backColor="0x00000000"/>
+
+</TranscendenceExtension>
