@@ -1,0 +1,9 @@
+This is the port I did of Transcendence based on 0.99c.
+
+It requires several boost multithreaded libraries, SDL, and others.  I
+recommend running 'scons' to discover what libraries are missing.
+
+See the core repo at:
+    https://github.com/kronosaur/Transcendence
+
+Enoy!
